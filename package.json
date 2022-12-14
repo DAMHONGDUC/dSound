@@ -12,7 +12,8 @@
   "dependencies": {
     "lint-staged": "^13.1.0",
     "react": "18.1.0",
-    "react-native": "0.70.6"
+    "react-native": "0.70.6",
+    "react-native-splash-screen": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -31,9 +32,7 @@
   "jest": {
     "preset": "react-native"
   },
-  "lint-staged":
-    {
-      "src/**/*.{js,jsx}": "prettier --write",
-      "src/**/*.{js,jsx}": "eslint"
-    }
+  "lint-staged": {
+    "src/**/*.{js,jsx}": "eslint"
+  }
 }
