@@ -21,12 +21,16 @@ export default function SignInPage() {
       <View style={styles.footer}>
         <FacebookSocialButton
           buttonText="Sign in with Facebook"
-          buttonViewStyle={{ height: 50, width: 250, marginBottom: 10 }}
+          buttonViewStyle={{
+            height: 50,
+            width: 250,
+            marginBottom: 10,
+          }}
           onPress={() => {}}
         ></FacebookSocialButton>
         <GoogleSocialButton
-          buttonText="Sign in with Facebook"
-          buttonViewStyle={{ height: 50, width: 250 }}
+          buttonText="Sign in with Google"
+          buttonViewStyle={{ height: 50, width: 250, borderColor: COLORS.grey }}
           onPress={() => {}}
         ></GoogleSocialButton>
       </View>

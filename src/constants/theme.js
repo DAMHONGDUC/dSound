@@ -12,6 +12,7 @@ export const COLORS = {
   yellow: "#F4D03F",
   primaryBackground: "#f5f5f5",
   facebook: "#4267B2",
+  black: "#000000",
 };
 
 export const SIZES = {

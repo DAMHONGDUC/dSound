@@ -21,12 +21,16 @@ export default function RegisterPage() {
       <View style={styles.footer}>
         <FacebookSocialButton
           buttonText="Continue with Facebook"
-          buttonViewStyle={{ height: 50, width: 250, marginBottom: 10 }}
+          buttonViewStyle={{
+            height: 50,
+            width: 250,
+            marginBottom: 10,
+          }}
           onPress={() => {}}
         ></FacebookSocialButton>
         <GoogleSocialButton
-          buttonText="Continue with Facebook"
-          buttonViewStyle={{ height: 50, width: 250 }}
+          buttonText="Continue with Google"
+          buttonViewStyle={{ height: 50, width: 250, borderColor: COLORS.grey }}
           onPress={() => {}}
         ></GoogleSocialButton>
       </View>
@@ -59,10 +63,5 @@ const styles = StyleSheet.create({
     fontSize: SIZES.h0,
     color: COLORS.white,
     marginBottom: 50,
-  },
-  text_header: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 30,
   },
 });
