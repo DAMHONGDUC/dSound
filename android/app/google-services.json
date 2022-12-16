@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "362500748669",
+    "project_id": "dsound-75b9f",
+    "storage_bucket": "dsound-75b9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362500748669:android:f6fd7b0e6c044b6a5e4814",
+        "android_client_info": {
+          "package_name": "com.dsound"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362500748669-fvb0pj0ohbas2on547ejaruh8n6mgp7a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBbz_GEJh4wEQzFZH1KSNwRy_AmFAfje0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362500748669-fvb0pj0ohbas2on547ejaruh8n6mgp7a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

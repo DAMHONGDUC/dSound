@@ -10,9 +10,13 @@ export const COLORS = {
   grey: "#C1C0C9",
   primary: "#EB455F",
   yellow: "#F4D03F",
+  primaryBackground: "#f5f5f5",
+  facebook: "#4267B2",
+  black: "#000000",
 };
 
 export const SIZES = {
+  h0: 30,
   h1: 22,
   h2: 20,
   h3: 18,

@@ -10,10 +10,12 @@
     "lint": "eslint src/**/*.{js,jsx}"
   },
   "dependencies": {
+    "@react-native-firebase/app": "^16.4.6",
     "lint-staged": "^13.1.0",
     "react": "18.1.0",
     "react-native": "0.70.6",
     "react-native-app-intro-slider": "^4.0.4",
+    "react-native-social-buttons": "^1.2.0",
     "react-native-splash-screen": "^3.3.0",
     "react-native-svg": "^13.6.0"
   },
@@ -37,7 +39,6 @@
     "preset": "react-native"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": "eslint",
     "src/**/*.{js,jsx}": "prettier --write"
   }
 }
