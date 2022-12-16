@@ -251,6 +251,8 @@ android {
 
 dependencies {
 
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0' 
+
     implementation 'com.facebook.android:facebook-android-sdk:latest.release'
 
     implementation 'com.google.firebase:firebase-analytics'
