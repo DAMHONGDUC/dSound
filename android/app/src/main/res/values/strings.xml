@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">dSound</string>
+    <string name="facebook_app_id">486835856886648</string>
+    <string name="facebook_client_token">274440a99d557db27e6c0e6007affcab</string>
 </resources>
