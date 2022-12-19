@@ -1,17 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { View, Text, StyleSheet, StatusBar } from "react-native";
-import SplashScreen from "react-native-splash-screen";
+import { onFacebookButtonPress, onGoogleButtonPress } from "./AuthenFunction";
 import { COLORS, SIZES } from "constants/theme";
 import {
   FacebookSocialButton,
   GoogleSocialButton,
 } from "react-native-social-buttons";
 
-export default function SignInPage() {
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
-
+export default function SignInPage({ navigation }) {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />
@@ -26,12 +22,22 @@ export default function SignInPage() {
             width: 250,
             marginBottom: 10,
           }}
-          onPress={() => {}}
+          onPress={() =>
+            onFacebookButtonPress().then(() => {
+              console.log("Signed in with Facebook!");
+              navigation.navigate("Home");
+            })
+          }
         ></FacebookSocialButton>
         <GoogleSocialButton
           buttonText="Sign in with Google"
           buttonViewStyle={{ height: 50, width: 250, borderColor: COLORS.grey }}
-          onPress={() => {}}
+          onPress={() =>
+            onGoogleButtonPress().then(() => {
+              console.log("Signed in with Google!");
+              navigation.navigate("Home");
+            })
+          }
         ></GoogleSocialButton>
       </View>
     </View>
