@@ -1,44 +1,46 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View, Text, StyleSheet, StatusBar } from "react-native";
-import { onFacebookButtonPress, onGoogleButtonPress } from "./AuthenFunction";
+import { handleFacebookLogin, handleGoogleLogin } from "./AuthenFunction";
 import { COLORS, SIZES } from "constants/theme";
 import {
   FacebookSocialButton,
   GoogleSocialButton,
 } from "react-native-social-buttons";
+import { AuthContext } from "constants/values";
 
 export default function SignInPage({ navigation }) {
+  const { handleAfterSignIn } = useContext(AuthContext);
+
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />
+
       <View style={styles.header}>
         <Text style={styles.title}>Sign in Now!</Text>
       </View>
+
       <View style={styles.footer}>
         <FacebookSocialButton
           buttonText="Sign in with Facebook"
-          buttonViewStyle={{
-            height: 50,
-            width: 250,
-            marginBottom: 10,
-          }}
-          onPress={() =>
-            onFacebookButtonPress().then(() => {
-              console.log("Signed in with Facebook!");
-              navigation.navigate("Home");
-            })
-          }
+          buttonViewStyle={styles.btnFBtyle}
+          onPress={() => handleFacebookLogin(handleAfterSignIn)}
         ></FacebookSocialButton>
         <GoogleSocialButton
           buttonText="Sign in with Google"
-          buttonViewStyle={{ height: 50, width: 250, borderColor: COLORS.grey }}
-          onPress={() =>
-            onGoogleButtonPress().then(() => {
-              console.log("Signed in with Google!");
-              navigation.navigate("Home");
-            })
-          }
+          buttonViewStyle={styles.btnGGtyle}
+          onPress={() => handleGoogleLogin(handleAfterSignIn)}
         ></GoogleSocialButton>
+
+        <Text style={styles.textLink}>
+          I'm a new member.
+          <Text
+            style={styles.textLinkRight}
+            onPress={() => navigation.navigate("Register")}
+          >
+            {" "}
+            Register
+          </Text>
+        </Text>
       </View>
     </View>
   );
@@ -74,5 +76,25 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "bold",
     fontSize: 30,
+  },
+  btnFBtyle: {
+    height: 50,
+    width: 250,
+    marginBottom: 10,
+  },
+  btnGGtyle: {
+    height: 50,
+    width: 250,
+    borderColor: COLORS.grey,
+    marginBottom: 20,
+  },
+  textLink: {
+    color: "#000000",
+    fontSize: 14,
+  },
+  textLinkRight: {
+    color: COLORS.primary,
+    fontWeight: "bold",
+    fontSize: 15,
   },
 });

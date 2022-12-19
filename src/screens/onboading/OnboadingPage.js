@@ -5,7 +5,7 @@ import { COLORS, SIZES, windowWidth, windowHeight } from "constants/theme";
 import Onboading1 from "assets/Onboarding1.svg";
 import Onboading2 from "assets/Onboarding2.svg";
 import Onboading3 from "assets/Onboarding3.svg";
-import { storeData } from "helper/Helper";
+import { storeData } from "helper";
 import { ONBOARDING_COMPLETE, ONBOARDING_STATE } from "constants/values";
 
 const slides = [
@@ -64,6 +64,11 @@ export default function OnboadingPage({ navigation }) {
     );
   };
 
+  const OnDone = async () => {
+    await storeData(ONBOARDING_STATE, ONBOARDING_COMPLETE);
+    navigation.navigate("AuthenticationStack", { screen: "Register" });
+  };
+
   return (
     <AppIntroSlider
       data={slides}
@@ -84,10 +89,7 @@ export default function OnboadingPage({ navigation }) {
       renderNextButton={() => buttonLabel("Next")}
       renderSkipButton={() => buttonLabel("Skip")}
       renderDoneButton={() => buttonLabel("Done")}
-      onDone={async () => {
-        navigation.navigate("Register");
-        await storeData(ONBOARDING_STATE, ONBOARDING_COMPLETE);
-      }}
+      onDone={OnDone}
     />
   );
 }

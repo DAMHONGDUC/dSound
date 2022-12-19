@@ -1,13 +1,27 @@
 import auth from "@react-native-firebase/auth";
 import { LoginManager, AccessToken } from "react-native-fbsdk-next";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
-import { storeData } from "helper/Helper";
+import { storeData } from "helper";
 import { LOGIN_TOKEN } from "constants/values";
 
 GoogleSignin.configure({
   webClientId:
     "362500748669-fvb0pj0ohbas2on547ejaruh8n6mgp7a.apps.googleusercontent.com",
 });
+
+export function handleFacebookLogin(handleAfterSignIn) {
+  onFacebookButtonPress().then(() => {
+    console.log("Log in complete with Facebook!");
+    handleAfterSignIn();
+  });
+}
+
+export function handleGoogleLogin(handleAfterSignIn) {
+  onGoogleButtonPress().then(() => {
+    console.log("Log in complete with Google!");
+    handleAfterSignIn();
+  });
+}
 
 export async function onGoogleButtonPress() {
   // Check if your device supports Google Play
