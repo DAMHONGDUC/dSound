@@ -9,8 +9,6 @@ GoogleSignin.configure({
   webClientId: Config.GOOGLE_WEB_CLIENT_ID,
 });
 
-console.log("config ", Config.GOOGLE_WEB_CLIENT_ID);
-
 export function handleFacebookLogin(handleAfterSignIn) {
   onFacebookButtonPress().then(() => {
     console.log("Log in complete with Facebook!");
