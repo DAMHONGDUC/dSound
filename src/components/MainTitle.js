@@ -1,8 +1,6 @@
 import { COLORS } from "constants/theme";
 import { Image, View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
 export default function MainTitle() {
   return (
@@ -13,7 +11,7 @@ export default function MainTitle() {
       />
       <Text style={styles.text}>dSound</Text>
       <TouchableOpacity style={{ flex: 0.1 }}>
-        <FontAwesome5 name={"search"} solid />
+        <AntDesign name={"search1"} color={COLORS.black} size={24} solid />
       </TouchableOpacity>
     </View>
   );

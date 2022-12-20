@@ -8,18 +8,9 @@ import {
   Animated,
 } from "react-native";
 import { TabView, SceneMap } from "react-native-tab-view";
-
-const SuggestedRoute = () => (
-  <View style={{ flex: 1, backgroundColor: "#ff4081" }} />
-);
-
-const SongsRoute = () => (
-  <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
-);
-
-const ArtistsRoute = () => (
-  <View style={{ flex: 1, backgroundColor: "#f00" }} />
-);
+import SuggestedRoute from "./SuggestedRoute";
+import SongsRoute from "./SongsRoute";
+import ArtistsRoute from "./ArtistsRoute";
 
 const renderScene = SceneMap({
   suggested: SuggestedRoute,
@@ -39,9 +30,9 @@ export default function HomePage() {
     return (
       <View style={styles.tabBar}>
         {props.navigationState.routes.map((route, i, key) => {
-          key = i;
           return (
             <TouchableOpacity
+              key={i}
               style={styles.tabItem}
               onPress={() => setTabIndex(i)}
             >
