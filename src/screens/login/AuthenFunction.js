@@ -3,11 +3,13 @@ import { LoginManager, AccessToken } from "react-native-fbsdk-next";
 import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { storeData } from "helper";
 import { LOGIN_TOKEN } from "constants/values";
+import Config from "react-native-config";
 
 GoogleSignin.configure({
-  webClientId:
-    "362500748669-fvb0pj0ohbas2on547ejaruh8n6mgp7a.apps.googleusercontent.com",
+  webClientId: Config.GOOGLE_WEB_CLIENT_ID,
 });
+
+console.log("config ", Config.GOOGLE_WEB_CLIENT_ID);
 
 export function handleFacebookLogin(handleAfterSignIn) {
   onFacebookButtonPress().then(() => {
