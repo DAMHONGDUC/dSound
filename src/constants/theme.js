@@ -13,6 +13,7 @@ export const COLORS = {
   primaryBackground: "#f5f5f5",
   facebook: "#4267B2",
   black: "#000000",
+  unSelectTab: "#B2B2B2",
 };
 
 export const SIZES = {
