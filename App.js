@@ -1,9 +1,5 @@
-import OnboadingPage from "screens/onboading/onboadingPage";
-import RegisterPage from "screens/login/registerPage";
-import SignInPage from "screens/login/signInPage";
+import RootNavigation from "navigation/RootNavigation";
 
 export default function App() {
-  //return <OnboadingPage></OnboadingPage>;
-  return <RegisterPage></RegisterPage>;
-  //return <SignInPage></SignInPage>;
+  return <RootNavigation></RootNavigation>;
 }

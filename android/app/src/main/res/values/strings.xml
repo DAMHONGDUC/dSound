@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">dSound</string>
+    <string name="facebook_app_id">5788774031205298</string>
+    <string name="fb_login_protocol_scheme">fb5788774031205298</string>
+    <string name="facebook_client_token">02bfc2c8b6f3ce34b337e90c2c59ff88</string>
 </resources>

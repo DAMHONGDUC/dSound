@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { View, Text, Image, StatusBar, StyleSheet } from "react-native";
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { COLORS, SIZES, windowWidth, windowHeight } from "constants/theme";
-import SplashScreen from "react-native-splash-screen";
 import Onboading1 from "assets/Onboarding1.svg";
 import Onboading2 from "assets/Onboarding2.svg";
 import Onboading3 from "assets/Onboarding3.svg";
+import { storeData } from "helper";
+import { ONBOARDING_COMPLETE, ONBOARDING_STATE } from "constants/values";
 
 const slides = [
   {
@@ -54,17 +55,18 @@ function OnboardingFile(type) {
   }
 }
 
-export default function OnboadingPage() {
-  useEffect(() => {
-    SplashScreen.hide();
-  }, []);
-
+export default function OnboadingPage({ navigation }) {
   const buttonLabel = (label) => {
     return (
       <View style={styles.button}>
         <Text style={styles.buttonText}>{label}</Text>
       </View>
     );
+  };
+
+  const OnDone = async () => {
+    await storeData(ONBOARDING_STATE, ONBOARDING_COMPLETE);
+    navigation.navigate("AuthenticationStack", { screen: "Register" });
   };
 
   return (
@@ -87,7 +89,7 @@ export default function OnboadingPage() {
       renderNextButton={() => buttonLabel("Next")}
       renderSkipButton={() => buttonLabel("Skip")}
       renderDoneButton={() => buttonLabel("Done")}
-      onDone={() => {}}
+      onDone={OnDone}
     />
   );
 }
