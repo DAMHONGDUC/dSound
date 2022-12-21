@@ -2,6 +2,8 @@ import { COLORS } from "constants/theme";
 import { StyleSheet, View, Text } from "react-native";
 import SeparateLine from "components/SeparateLine";
 import RowCustom from "screens/song/SongRow";
+import { getTop100 } from "api/ZingMp3API";
+import { useEffect } from "react";
 
 const songs = [
   {
@@ -28,6 +30,15 @@ const songs = [
 ];
 
 export default function SongsRoute() {
+  useEffect(() => {
+    console.log("re-render");
+    // async function fetchData() {
+    //   const data = await getTop100();
+    //   console.log(data);
+    // }
+    getTop100().then((data) => console.log(data));
+  });
+
   return (
     <View style={styles.container}>
       <Text style={styles.mainText}>{songs.length} Songs</Text>
