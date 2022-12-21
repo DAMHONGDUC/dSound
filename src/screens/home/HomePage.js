@@ -8,9 +8,9 @@ import {
   Animated,
 } from "react-native";
 import { TabView, SceneMap } from "react-native-tab-view";
-import SuggestedRoute from "./SuggestedRoute";
-import SongsRoute from "./SongsRoute";
-import ArtistsRoute from "./ArtistsRoute";
+import SuggestedRoute from "../suggested/SuggestedRoute";
+import SongsRoute from "../song/SongsRoute";
+import ArtistsRoute from "../artist/ArtistsRoute";
 
 const renderScene = SceneMap({
   suggested: SuggestedRoute,
@@ -40,6 +40,7 @@ export default function HomePage() {
                 style={{
                   fontWeight: "bold",
                   color: tabIndex == i ? COLORS.primary : COLORS.unSelectTab,
+                  fontSize: 16,
                 }}
               >
                 {route.title}
