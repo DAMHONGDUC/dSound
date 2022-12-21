@@ -5,22 +5,22 @@ import RowCustom from "screens/song/SongRow";
 
 const songs = [
   {
-    name: "Song 1",
-    artist: "Artist 1",
+    name: "Star Boy",
+    artist: "The Weekend",
     duration: "03:01",
     image: require("assets/starboy.png"),
     id: 0,
   },
   {
-    name: "Song 2",
-    artist: "Artist 2",
+    name: "Save Your Tear",
+    artist: "The Weekend",
     duration: "03:01",
     image: require("assets/starboy.png"),
     id: 1,
   },
   {
-    name: "Song 3",
-    artist: "Artist 3",
+    name: "Blinding Lights",
+    artist: "The Weekend",
     duration: "03:01",
     image: require("assets/starboy.png"),
     id: 2,

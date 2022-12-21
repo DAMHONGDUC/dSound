@@ -8,10 +8,12 @@ export default RowCustom = ({ image, name, artist, duration, onClick }) => {
     <View style={styles.container}>
       <Image style={styles.image} source={image}></Image>
       <View style={styles.containerCenter}>
-        <Text style={styles.name}>{name}</Text>
+        <Text numberOfLines={1} style={styles.name}>
+          {name}
+        </Text>
         <View style={styles.containerArtist}>
           <Text numberOfLines={1} style={styles.artist}>
-            artiartistartistartistst
+            {artist}{" "}
           </Text>
           <Text style={styles.duration}>| {duration} mins</Text>
         </View>
@@ -24,7 +26,7 @@ export default RowCustom = ({ image, name, artist, duration, onClick }) => {
           solid
         />
       </TouchableOpacity>
-      <TouchableOpacity style={{ marginLeft: 13 }}>
+      <TouchableOpacity>
         <Feather name={"more-vertical"} color={COLORS.black} size={25} />
       </TouchableOpacity>
     </View>
@@ -40,12 +42,11 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   containerCenter: {
-    marginLeft: 10,
     flexDirection: "column",
-    marginRight: 15,
   },
   containerArtist: {
     flexDirection: "row",
+    width: 170,
   },
   image: {
     height: 70,
@@ -57,11 +58,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 10,
+    maxWidth: 160,
   },
   artist: {
     color: COLORS.title,
     fontSize: 13,
-    maxWidth: 100,
+    maxWidth: 110,
   },
   duration: {
     color: COLORS.title,
