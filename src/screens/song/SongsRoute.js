@@ -46,7 +46,7 @@ export default function SongsRoute() {
     <View style={styles.container}>
       {data100Song ? (
         <>
-          <Text style={styles.mainText}>{data100Song.length} songs</Text>
+          <Text style={styles.mainText}>Top {data100Song.length}</Text>
           <SeparateLine></SeparateLine>
           <FlatList
             data={data100Song}
@@ -61,30 +61,6 @@ export default function SongsRoute() {
           color={COLORS.primary}
         ></ActivityIndicator>
       )}
-
-      {/* <Text style={styles.mainText}>
-        {data100Song ? data100Song.length : 0} songs
-      </Text>
-      <SeparateLine></SeparateLine>
-      <ScrollView>
-        {song.leng > 0 ? (
-          data100Song.map((e) => (
-            <SongRow
-              key={e.encodeId}
-              image={{ uri: e.thumbnailM }}
-              name={e.title}
-              artist={e.artistsNames}
-              duration={e.duration}
-            ></SongRow>
-          ))
-        ) : (
-          <ActivityIndicator
-            style={{ alignSelf: "center" }}
-            size={"large"}
-            color={COLORS.primary}
-          ></ActivityIndicator>
-        )}
-      </ScrollView> */}
     </View>
   );
 }
@@ -93,10 +69,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.white,
-    padding: 20,
+    padding: 15,
   },
   mainText: {
-    color: COLORS.black,
+    color: COLORS.primary,
     fontSize: 16,
     fontWeight: "bold",
   },

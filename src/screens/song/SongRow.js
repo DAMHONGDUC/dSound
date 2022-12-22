@@ -11,6 +11,12 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Feather from "react-native-vector-icons/Feather";
 
 export default SongRow = ({ image, name, artist, duration, onClick }) => {
+  const durationFormat = () => {
+    let minutes = Math.floor(duration / 60);
+    let seconds = duration - minutes * 60;
+    return "0" + minutes + ":" + seconds;
+  };
+
   return (
     <TouchableHighlight
       underlayColor={COLORS.songRowClickColor}
@@ -24,9 +30,13 @@ export default SongRow = ({ image, name, artist, duration, onClick }) => {
           </Text>
           <View style={styles.containerArtist}>
             <Text numberOfLines={1} style={styles.artist}>
-              {artist}{" "}
+              {artist}
+              {"  "}
             </Text>
-            <Text style={styles.duration}>| {duration} mins</Text>
+            <Text style={styles.duration}>
+              |{"  "}
+              {durationFormat(duration)} mins
+            </Text>
           </View>
         </View>
         <TouchableOpacity>
@@ -76,7 +86,7 @@ const styles = StyleSheet.create({
   artist: {
     color: COLORS.title,
     fontSize: 13,
-    maxWidth: 110,
+    maxWidth: 100,
   },
   duration: {
     color: COLORS.title,
