@@ -1,57 +1,90 @@
 import { COLORS } from "constants/theme";
-import { StyleSheet, View, Text } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  ActivityIndicator,
+  FlatList,
+} from "react-native";
 import SeparateLine from "components/SeparateLine";
-import RowCustom from "screens/song/SongRow";
-import { getTop100 } from "api/ZingMp3API";
-import { useEffect } from "react";
+import SongRow from "screens/song/SongRow";
+import { get100Song, getSongById } from "api/SongAPI";
+import { useEffect, useState } from "react";
 
-const songs = [
-  {
-    name: "Star Boy",
-    artist: "The Weekend",
-    duration: "03:01",
-    image: require("assets/starboy.png"),
-    id: 0,
-  },
-  {
-    name: "Save Your Tear",
-    artist: "The Weekend",
-    duration: "03:01",
-    image: require("assets/starboy.png"),
-    id: 1,
-  },
-  {
-    name: "Blinding Lights",
-    artist: "The Weekend",
-    duration: "03:01",
-    image: require("assets/starboy.png"),
-    id: 2,
-  },
-];
+const song = [];
 
 export default function SongsRoute() {
+  const [data100Song, setdata100Song] = useState();
+
   useEffect(() => {
-    console.log("re-render");
-    // async function fetchData() {
-    //   const data = await getTop100();
-    //   console.log(data);
-    // }
-    getTop100().then((data) => console.log(data));
-  });
+    const fetchData = async () => {
+      const data = await get100Song();
+      setdata100Song(data);
+    };
+
+    fetchData();
+  }, []);
+
+  const getSongData = async (songId) => {
+    const data = await getSongById(songId);
+    console.log("data bai hat", data.data);
+  };
+
+  const renderItem = ({ item }) => {
+    return (
+      <SongRow
+        onClick={() => getSongData(item.encodeId)}
+        image={{ uri: item.thumbnailM }}
+        name={item.title}
+        artist={item.artistsNames}
+        duration={item.duration}
+      ></SongRow>
+    );
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.mainText}>{songs.length} Songs</Text>
+      {data100Song ? (
+        <>
+          <Text style={styles.mainText}>{data100Song.length} songs</Text>
+          <SeparateLine></SeparateLine>
+          <FlatList
+            data={data100Song}
+            renderItem={renderItem}
+            keyExtractor={(item) => item.encodeId}
+          />
+        </>
+      ) : (
+        <ActivityIndicator
+          style={{ alignSelf: "center" }}
+          size={"large"}
+          color={COLORS.primary}
+        ></ActivityIndicator>
+      )}
+
+      {/* <Text style={styles.mainText}>
+        {data100Song ? data100Song.length : 0} songs
+      </Text>
       <SeparateLine></SeparateLine>
-      {songs.map((e) => (
-        <RowCustom
-          key={e.id}
-          image={e.image}
-          name={e.name}
-          artist={e.artist}
-          duration={e.duration}
-        ></RowCustom>
-      ))}
+      <ScrollView>
+        {song.leng > 0 ? (
+          data100Song.map((e) => (
+            <SongRow
+              key={e.encodeId}
+              image={{ uri: e.thumbnailM }}
+              name={e.title}
+              artist={e.artistsNames}
+              duration={e.duration}
+            ></SongRow>
+          ))
+        ) : (
+          <ActivityIndicator
+            style={{ alignSelf: "center" }}
+            size={"large"}
+            color={COLORS.primary}
+          ></ActivityIndicator>
+        )}
+      </ScrollView> */}
     </View>
   );
 }

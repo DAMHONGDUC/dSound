@@ -29,7 +29,7 @@ export default function HomePage() {
   renderTabBar = (props) => {
     return (
       <View style={styles.tabBar}>
-        {props.navigationState.routes.map((route, i, key) => {
+        {props.navigationState.routes.map((route, i) => {
           return (
             <TouchableOpacity
               key={i}

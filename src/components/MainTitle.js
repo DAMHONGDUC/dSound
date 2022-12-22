@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
+    marginTop: 10,
   },
   text: {
     flex: 0.8,

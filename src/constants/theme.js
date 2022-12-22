@@ -11,6 +11,7 @@ export const COLORS = {
   primary: "#EB455F",
   yellow: "#F4D03F",
   primaryBackground: "#f5f5f5",
+  songRowClickColor: "#f5f5f5",
   facebook: "#4267B2",
   black: "#000000",
   unSelectTab: "#B2B2B2",
