@@ -19,6 +19,7 @@ export default function SongsRoute() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await get100Song();
+      console.log(data);
       setdata100Song(data);
     };
 
