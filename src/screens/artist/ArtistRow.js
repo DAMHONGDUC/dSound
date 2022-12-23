@@ -7,10 +7,10 @@ import {
   TouchableOpacity,
   TouchableHighlight,
 } from "react-native";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+
 import Feather from "react-native-vector-icons/Feather";
 
-export default SongRow = ({ image, name, artist, duration, onClick }) => {
+export default ArtistRow = ({ image, name, artist, duration, onClick }) => {
   const durationFormat = () => {
     let minutes = Math.floor(duration / 60);
     let seconds = duration - minutes * 60;
@@ -28,25 +28,11 @@ export default SongRow = ({ image, name, artist, duration, onClick }) => {
           <Text numberOfLines={1} style={styles.name}>
             {name}
           </Text>
-          <View style={styles.containerArtist}>
-            <Text numberOfLines={1} style={styles.artist}>
-              {artist}
-              {"  "}
-            </Text>
-            <Text style={styles.duration}>
-              |{"  "}
-              {durationFormat(duration)} mins
-            </Text>
-          </View>
+          <Text numberOfLines={1} style={styles.follow}>
+            88620 Follow
+          </Text>
         </View>
-        <TouchableOpacity>
-          <FontAwesome5
-            name={"play-circle"}
-            color={COLORS.primary}
-            size={29}
-            solid
-          />
-        </TouchableOpacity>
+
         <TouchableOpacity>
           <Feather name={"more-vertical"} color={COLORS.black} size={25} />
         </TouchableOpacity>
@@ -67,27 +53,22 @@ const styles = StyleSheet.create({
   containerCenter: {
     flexDirection: "column",
     width: 200,
-    marginLeft: 10,
-  },
-  containerArtist: {
-    flexDirection: "row",
   },
   image: {
-    height: 70,
-    width: 70,
-    borderRadius: 15,
+    height: 80,
+    width: 80,
+    borderRadius: 40,
   },
   name: {
     color: COLORS.black,
     fontSize: 16,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginBottom: 20,
     maxWidth: 160,
   },
-  artist: {
+  follow: {
     color: COLORS.title,
     fontSize: 13,
-    maxWidth: 100,
   },
   duration: {
     color: COLORS.title,

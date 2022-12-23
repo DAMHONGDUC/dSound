@@ -19,7 +19,6 @@ export default function SongsRoute() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await get100Song();
-      console.log(data);
       setdata100Song(data);
     };
 
@@ -47,7 +46,7 @@ export default function SongsRoute() {
     <View style={styles.container}>
       {data100Song ? (
         <>
-          <Text style={styles.mainText}>Top {data100Song.length}</Text>
+          <Text style={styles.mainText}>Top {data100Song.length} song</Text>
           <SeparateLine></SeparateLine>
           <FlatList
             data={data100Song}

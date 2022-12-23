@@ -2,7 +2,7 @@ import { hashParamNoId, hashParam } from "./Crypto";
 import { requestZingMp3 } from "./ZingMp3API";
 
 // getTop100
-const getTop100 = async () => {
+export const getTop100PlayList = async () => {
   try {
     const res = await requestZingMp3("/api/v2/page/get/top-100", {
       sig: hashParamNoId("/api/v2/page/get/top-100"),
@@ -27,7 +27,7 @@ const reduceProperty = (data) => {
 // get 100 song of the first playlist in top 100
 export const get100Song = async () => {
   try {
-    const top100 = await getTop100();
+    const top100 = await getTop100PlayList();
 
     const playlistId = top100?.data[0]?.items[0]?.encodeId;
 
