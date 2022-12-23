@@ -47,7 +47,6 @@ export const getArtist = async () => {
         }
       });
 
-      console.log(artist);
       if (artist.length > 0) return reduceProperty(artist);
     }
   } catch (err) {
