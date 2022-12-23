@@ -20,7 +20,7 @@ export default function MainStack() {
         name="PlayMusicPage"
         component={PlayMusicPage}
         options={{
-          headerShadowVisible: false,
+          headerShown: false,
         }}
       />
     </Stack.Navigator>
