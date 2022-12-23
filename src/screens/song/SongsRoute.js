@@ -11,9 +11,7 @@ import SongRow from "screens/song/SongRow";
 import { get100Song, getSongById } from "api/SongAPI";
 import { useEffect, useState } from "react";
 
-const song = [];
-
-export default function SongsRoute() {
+export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
 
   useEffect(() => {
@@ -28,6 +26,8 @@ export default function SongsRoute() {
   const getSongData = async (songId) => {
     const data = await getSongById(songId);
     console.log("data bai hat", data.data);
+
+    navigation.navigate("PlayMusicPage");
   };
 
   const renderItem = ({ item }) => {

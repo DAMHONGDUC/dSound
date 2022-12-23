@@ -7,24 +7,31 @@ import {
   TouchableOpacity,
   Animated,
 } from "react-native";
-import { TabView, SceneMap } from "react-native-tab-view";
+import { TabView } from "react-native-tab-view";
 import SuggestedRoute from "../suggested/SuggestedRoute";
 import SongsRoute from "../song/SongsRoute";
 import ArtistsRoute from "../artist/ArtistsRoute";
 
-const renderScene = SceneMap({
-  suggested: SuggestedRoute,
-  songs: SongsRoute,
-  artists: ArtistsRoute,
-});
-
-export default function HomePage() {
+export default function HomePage({ navigation }) {
   const [tabIndex, setTabIndex] = useState(0);
   const [routes] = useState([
     { key: "suggested", title: "Suggested" },
     { key: "songs", title: "Songs" },
     { key: "artists", title: "Artists" },
   ]);
+
+  renderScene = ({ route }) => {
+    switch (route.key) {
+      case "suggested":
+        return <SuggestedRoute navigation={navigation} />;
+      case "songs":
+        return <SongsRoute navigation={navigation} />;
+      case "artists":
+        return <ArtistsRoute navigation={navigation} />;
+      default:
+        return null;
+    }
+  };
 
   renderTabBar = (props) => {
     return (
