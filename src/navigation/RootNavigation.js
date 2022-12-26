@@ -24,12 +24,12 @@ export default function RootNavigation() {
 
     getData(LOGIN_TOKEN).then((value) => {
       if (value) setisSignedIn(true);
-      console.log(LOGIN_TOKEN, ": ", value);
+      // console.log(LOGIN_TOKEN, ": ", value);
     });
 
     getData(ONBOARDING_STATE).then((value) => {
       if (value === ONBOARDING_COMPLETE) setisOnboardingComplete(true);
-      console.log(ONBOARDING_STATE, ": ", value);
+      //   console.log(ONBOARDING_STATE, ": ", value);
     });
   }, []);
 

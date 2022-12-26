@@ -23,11 +23,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
+    marginTop: 10,
   },
   text: {
     flex: 0.8,
     marginLeft: 15,
-    fontSize: 17,
+    fontSize: 20,
     color: COLORS.black,
     fontWeight: "500",
   },
