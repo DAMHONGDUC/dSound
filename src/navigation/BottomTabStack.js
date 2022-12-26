@@ -4,6 +4,7 @@ import FavoritePage from "screens/favorite/FavoritePage";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { COLORS } from "constants/theme";
+import TopTabStack from "./TopTabStack";
 
 const BottomTab = createBottomTabNavigator();
 

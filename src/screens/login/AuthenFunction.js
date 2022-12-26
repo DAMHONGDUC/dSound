@@ -11,14 +11,12 @@ GoogleSignin.configure({
 
 export function handleFacebookLogin(handleAfterSignIn) {
   onFacebookButtonPress().then(() => {
-    console.log("Log in complete with Facebook!");
     handleAfterSignIn();
   });
 }
 
 export function handleGoogleLogin(handleAfterSignIn) {
   onGoogleButtonPress().then(() => {
-    console.log("Log in complete with Google!");
     handleAfterSignIn();
   });
 }

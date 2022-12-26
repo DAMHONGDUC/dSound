@@ -15,9 +15,7 @@ const getCookie = async () => {
         return element; // return cookie
       });
     }
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const requestZingMp3 = async (path, qs) => {
@@ -42,7 +40,5 @@ export const requestZingMp3 = async (path, qs) => {
     });
 
     if (res) return res;
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };

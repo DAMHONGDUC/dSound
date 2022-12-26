@@ -10,13 +10,7 @@ import {
 
 import Feather from "react-native-vector-icons/Feather";
 
-export default ArtistRow = ({ image, name, artist, duration, onClick }) => {
-  const durationFormat = () => {
-    let minutes = Math.floor(duration / 60);
-    let seconds = duration - minutes * 60;
-    return "0" + minutes + ":" + seconds;
-  };
-
+export default ArtistRow = ({ image, name, onClick, totalFollow }) => {
   return (
     <TouchableHighlight
       underlayColor={COLORS.songRowClickColor}
@@ -29,7 +23,7 @@ export default ArtistRow = ({ image, name, artist, duration, onClick }) => {
             {name}
           </Text>
           <Text numberOfLines={1} style={styles.follow}>
-            88620 Follow
+            {totalFollow} Follow
           </Text>
         </View>
 
@@ -63,7 +57,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: 16,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 15,
     maxWidth: 160,
   },
   follow: {
