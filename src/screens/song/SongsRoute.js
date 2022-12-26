@@ -10,9 +10,12 @@ import SeparateLine from "components/SeparateLine";
 import SongRow from "screens/song/SongRow";
 import { get100Song, getSongById } from "api/SongAPI";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { activeSong } from "redux/slices/playerSlide";
 
 export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,15 +26,22 @@ export default function SongsRoute({ navigation }) {
     fetchData();
   }, []);
 
-  const getSongData = async (songId) => {
-    const data = await getSongById(songId);
+  const getSongData = async (item) => {
+    const data = await getSongById(item.encodeId);
+
+    const song = {
+      ...item,
+      link: data.data["128"],
+    };
+
+    dispatch(activeSong(song));
     navigation.navigate("PlayMusicPage");
   };
 
   const renderItem = ({ item }) => {
     return (
       <SongRow
-        onClick={() => getSongData(item.encodeId)}
+        onClick={() => getSongData(item)}
         image={{ uri: item.thumbnailM }}
         name={item.title}
         artist={item.artistsNames}

@@ -12,9 +12,13 @@ import Feather from "react-native-vector-icons/Feather";
 
 export default SongRow = ({ image, name, artist, duration, onClick }) => {
   const durationFormat = () => {
-    let minutes = Math.floor(duration / 60);
-    let seconds = duration - minutes * 60;
-    return "0" + minutes + ":" + seconds;
+    let min = Math.floor(duration / 60);
+    let sec = duration - min * 60;
+
+    let minutes = min < 10 ? "0" + min : min;
+    let seconds = sec < 10 ? "0" + sec : sec;
+
+    return minutes + ":" + seconds;
   };
 
   return (
