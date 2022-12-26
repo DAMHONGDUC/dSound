@@ -9,9 +9,7 @@ export const getTop100PlayList = async () => {
     });
 
     if (res) return res;
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 const reduceProperty = (data) => {
@@ -39,9 +37,7 @@ export const get100Song = async () => {
 
       if (res.data.song.items) return reduceProperty(res.data.song.items);
     }
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 // getSong by id
@@ -53,7 +49,5 @@ export const getSongById = (songId) => {
     });
 
     if (res) return res;
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };

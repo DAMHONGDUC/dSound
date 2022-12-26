@@ -25,8 +25,6 @@ export default function SongsRoute({ navigation }) {
 
   const getSongData = async (songId) => {
     const data = await getSongById(songId);
-    console.log("data bai hat", data.data);
-
     navigation.navigate("PlayMusicPage");
   };
 

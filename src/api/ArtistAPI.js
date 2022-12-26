@@ -11,21 +11,6 @@ const reduceProperty = (data) => {
   }));
 };
 
-const checkElementExist = (id, data) => {
-  data.forEach((element) => {
-    console.log("id", id, ", ", id.length);
-    console.log("element.id", element.id, ", ", element.id.length);
-    var str1 = "hello world";
-    var str2 = "hello world";
-    if (str1 === str2) {
-      console.log("entry");
-      return true;
-    }
-  });
-
-  return false;
-};
-
 // get artist of the top 100 playlist
 export const getArtist = async () => {
   try {
@@ -49,7 +34,5 @@ export const getArtist = async () => {
 
       if (artist.length > 0) return reduceProperty(artist);
     }
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
