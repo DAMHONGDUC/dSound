@@ -9,24 +9,23 @@ import SliderSection from "./SliderSection";
 import LyricSection from "./LyricSection";
 import { useDispatch, useSelector } from "react-redux";
 import TrackPlayer, { State } from "react-native-track-player";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   setUpPlayer,
   setIsPlaying,
   setIsPause,
-  setSongLink,
+  setSongURL,
 } from "redux/slices/playerSlide";
+import { getSongURL } from "api/SongAPI";
 
 export default PlayMusic = ({ navigation }) => {
   const dispatch = useDispatch();
-  const activeSong = useSelector((state) => state.player.activeSong);
+  const [currURL, setcurrURL] = useState();
+
   const currPlaylist = useSelector((state) => state.player.currPlaylist);
   const isSetUpPlayer = useSelector((state) => state.player.isSetUpPlayer);
   const isPlaying = useSelector((state) => state.player.isPlaying);
-  const isPause = useSelector((state) => state.player.isPause);
   const currIndex = useSelector((state) => state.player.currIndex);
-
-  console.log("isSetUpPlayer", isSetUpPlayer);
 
   useEffect(() => {
     const setUpTrackPlayer = async () => {
@@ -40,25 +39,35 @@ export default PlayMusic = ({ navigation }) => {
   }, []);
 
   useEffect(() => {
+    const getthisURL = async () => {
+      const currSongURL = await getSongURL(currPlaylist[currIndex].id);
+      setcurrURL(currSongURL);
+    };
+
+    getthisURL();
+  }, []);
+
+  useEffect(() => {
+    dispatch(setSongURL({ index: currIndex, url: currURL }));
+  }, [currURL]);
+
+  useEffect(() => {
     const addTrack = async () => {
       if (isSetUpPlayer) {
         await TrackPlayer.add(currPlaylist);
       }
     };
     addTrack();
-  }, [isSetUpPlayer, currPlaylist]);
+  }, [currPlaylist]);
 
   const onPress = async () => {
-    console.log("currIndex", currIndex);
-    dispatch(setSongLink({ index: currIndex, link: "123" }));
-    console.log(currPlaylist);
-    // if (!isPlaying) {
-    //   await TrackPlayer.play();
-    //   dispatch(setIsPlaying(true));
-    // } else {
-    //   await TrackPlayer.pause();
-    //   dispatch(setIsPlaying(false));
-    // }
+    if (!isPlaying) {
+      await TrackPlayer.play();
+      dispatch(setIsPlaying(true));
+    } else {
+      await TrackPlayer.pause();
+      dispatch(setIsPlaying(false));
+    }
   };
 
   return (

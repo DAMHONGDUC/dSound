@@ -14,10 +14,11 @@ export const getTop100PlayList = async () => {
 
 const reduceProperty = (data) => {
   return data.map((e) => ({
-    encodeId: e.encodeId,
+    id: e.encodeId,
+    url: "",
     title: e.title,
-    artistsNames: e.artistsNames,
-    thumbnailM: e.thumbnailM,
+    artist: e.artistsNames,
+    artwork: e.thumbnailM,
     duration: e.duration,
   }));
 };
@@ -49,5 +50,12 @@ export const getSongById = (songId) => {
     });
 
     if (res) return res;
+  } catch (err) {}
+};
+
+export const getSongURL = async (id) => {
+  try {
+    const data = await getSongById(id);
+    return data.data["128"];
   } catch (err) {}
 };

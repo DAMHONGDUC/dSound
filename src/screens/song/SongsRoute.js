@@ -32,13 +32,12 @@ export default function SongsRoute({ navigation }) {
   }, []);
 
   const getSongData = async (item, index) => {
-    const data = await getSongById(item.encodeId);
+    const data = await getSongById(item.id);
     dispatch(setCurrIndex(index));
     const song = {
       ...item,
-      link: data.data["128"],
+      url: data.data["128"],
     };
-
     dispatch(activeSong(song));
     navigation.navigate("PlayMusicPage");
   };
@@ -47,9 +46,9 @@ export default function SongsRoute({ navigation }) {
     return (
       <SongRow
         onClick={() => getSongData(item, index)}
-        image={{ uri: item.thumbnailM }}
+        image={{ uri: item.artwork }}
         name={item.title}
-        artist={item.artistsNames}
+        artist={item.artist}
         duration={item.duration}
       ></SongRow>
     );
@@ -64,7 +63,7 @@ export default function SongsRoute({ navigation }) {
           <FlatList
             data={data100Song}
             renderItem={renderItem}
-            keyExtractor={(item) => item.encodeId}
+            keyExtractor={(item) => item.id}
           />
         </>
       ) : (

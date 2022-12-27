@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import TrackPlayer from "react-native-track-player";
+import { createSlice } from "@reduxjs/toolkit";
+import { cloneDeep } from "lodash";
 
 const initialState = {
   activeSong: {},
@@ -18,20 +18,16 @@ export const playerSlide = createSlice({
       state.activeSong = action.payload;
     },
     setCurrPlaylist: (state, action) => {
-      const data = action.payload.map((e) => ({
-        id: e.encodeId,
-        url: "",
-        title: e.title,
-        artist: e.artistsNames,
-        artwork: e.thumbnailM,
-      }));
-
-      state.currPlaylist = data;
+      state.currPlaylist = action.payload;
     },
-    setSongLink: (state, action) => {
-      const data = state.currPlaylist;
+    setSongURL: (state, action) => {
+      const data = cloneDeep(state.currPlaylist);
 
-      data[action.index].link = action.link;
+      data[action.payload.index] = {
+        ...data[action.payload.index],
+        url: action.payload.url,
+      };
+
       state.currPlaylist = data;
     },
     setCurrIndex: (state, action) => {
@@ -56,7 +52,7 @@ export const {
   setCurrIndex,
   setUpPlayer,
   setIsPlaying,
-  setSongLink,
+  setSongURL,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;
