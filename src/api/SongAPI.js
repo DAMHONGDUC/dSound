@@ -12,15 +12,20 @@ export const getTop100PlayList = async () => {
   } catch (err) {}
 };
 
-const reduceProperty = (data) => {
-  return data.map((e) => ({
+const reduceProperty = async (data) => {
+  const songData = data.map((e) => ({
     id: e.encodeId,
-    url: "",
+    url: null,
     title: e.title,
     artist: e.artistsNames,
     artwork: e.thumbnailM,
     duration: e.duration,
   }));
+
+  const URL = await getSongURL(songData[0].id);
+  songData[0].url = URL;
+
+  return songData;
 };
 
 // get 100 song of the first playlist in top 100
@@ -36,7 +41,7 @@ export const get100Song = async () => {
         sig: hashParam("/api/v2/page/get/playlist", playlistId),
       });
 
-      if (res.data.song.items) return reduceProperty(res.data.song.items);
+      if (res.data.song.items) return await reduceProperty(res.data.song.items);
     }
   } catch (err) {}
 };

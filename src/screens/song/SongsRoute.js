@@ -16,6 +16,7 @@ import {
   setCurrPlaylist,
   setCurrIndex,
 } from "redux/slices/playerSlide";
+import TrackPlayer from "react-native-track-player";
 
 export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
@@ -26,26 +27,22 @@ export default function SongsRoute({ navigation }) {
       const data = await get100Song();
       setdata100Song(data);
       dispatch(setCurrPlaylist(data));
+
+      await TrackPlayer.add(data);
     };
 
     fetchData();
   }, []);
 
-  const getSongData = async (item, index) => {
-    const data = await getSongById(item.id);
+  const getSongData = async (index) => {
     dispatch(setCurrIndex(index));
-    const song = {
-      ...item,
-      url: data.data["128"],
-    };
-    dispatch(activeSong(song));
     navigation.navigate("PlayMusicPage");
   };
 
   const renderItem = ({ item, index }) => {
     return (
       <SongRow
-        onClick={() => getSongData(item, index)}
+        onClick={() => getSongData(index)}
         image={{ uri: item.artwork }}
         name={item.title}
         artist={item.artist}

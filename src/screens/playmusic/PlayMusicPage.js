@@ -10,64 +10,46 @@ import LyricSection from "./LyricSection";
 import { useDispatch, useSelector } from "react-redux";
 import TrackPlayer, { State } from "react-native-track-player";
 import { useEffect, useState } from "react";
-import {
-  setUpPlayer,
-  setIsPlaying,
-  setIsPause,
-  setSongURL,
-} from "redux/slices/playerSlide";
+import { setCurrIndex, setSongURL } from "redux/slices/playerSlide";
 import { getSongURL } from "api/SongAPI";
+import { cloneDeep } from "lodash";
 
 export default PlayMusic = ({ navigation }) => {
   const dispatch = useDispatch();
-  const [currURL, setcurrURL] = useState();
-
   const currPlaylist = useSelector((state) => state.player.currPlaylist);
-  const isSetUpPlayer = useSelector((state) => state.player.isSetUpPlayer);
-  const isPlaying = useSelector((state) => state.player.isPlaying);
   const currIndex = useSelector((state) => state.player.currIndex);
 
-  useEffect(() => {
-    const setUpTrackPlayer = async () => {
-      if (!isSetUpPlayer) {
-        await TrackPlayer.setupPlayer();
-        dispatch(setUpPlayer(true));
-      }
-    };
+  const setUpSongURL = async (index) => {
+    let currSong = cloneDeep(currPlaylist[index]);
 
-    setUpTrackPlayer();
-  }, []);
+    if (index !== 0 && !currSong.url) {
+      const URL = await getSongURL(currPlaylist[index].id);
+      currSong.url = URL;
+      dispatch(setSongURL(index, URL));
 
-  useEffect(() => {
-    const getthisURL = async () => {
-      const currSongURL = await getSongURL(currPlaylist[currIndex].id);
-      setcurrURL(currSongURL);
-    };
+      await TrackPlayer.add(currSong, index);
+      await TrackPlayer.remove(index + 1);
 
-    getthisURL();
-  }, []);
-
-  useEffect(() => {
-    dispatch(setSongURL({ index: currIndex, url: currURL }));
-  }, [currURL]);
-
-  useEffect(() => {
-    const addTrack = async () => {
-      if (isSetUpPlayer) {
-        await TrackPlayer.add(currPlaylist);
-      }
-    };
-    addTrack();
-  }, [currPlaylist]);
+      const tracks = await TrackPlayer.getQueue();
+    }
+  };
 
   const onPress = async () => {
-    if (!isPlaying) {
-      await TrackPlayer.play();
-      dispatch(setIsPlaying(true));
-    } else {
-      await TrackPlayer.pause();
-      dispatch(setIsPlaying(false));
-    }
+    await setUpSongURL(currIndex);
+    await TrackPlayer.play();
+  };
+
+  const onNext = async () => {
+    await setUpSongURL(currIndex + 1);
+    await TrackPlayer.skipToNext();
+
+    dispatch(setCurrIndex(currIndex + 1));
+  };
+
+  const onPrevious = async () => {
+    // await setUpSongURL(currIndex - 1);
+    // await TrackPlayer.skipToPrevious();
+    // dispatch(setCurrIndex(currIndex - 1));
   };
 
   return (
@@ -80,7 +62,11 @@ export default PlayMusic = ({ navigation }) => {
         ></Image>
         <NameSection></NameSection>
         <SliderSection></SliderSection>
-        <PlaySection onPress={onPress}></PlaySection>
+        <PlaySection
+          onPress={onPress}
+          onNext={onNext}
+          onPrevious={onPrevious}
+        ></PlaySection>
         <LyricSection></LyricSection>
       </ScrollView>
     </SafeAreaView>

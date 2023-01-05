@@ -4,7 +4,7 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { COLORS } from "constants/theme";
 import { useState } from "react";
 
-export default PlaySection = ({ onPress }) => {
+export default PlaySection = ({ onPress, onNext, onPrevious }) => {
   const [isPlay, setisPlay] = useState(false);
 
   const togglePlay = () => {
@@ -14,7 +14,7 @@ export default PlaySection = ({ onPress }) => {
 
   return (
     <View style={styles.playSection}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onPrevious}>
         <MaterialIcons
           name="skip-previous"
           color={COLORS.primary}
@@ -29,7 +29,7 @@ export default PlaySection = ({ onPress }) => {
           solid
         />
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onNext}>
         <MaterialIcons
           name="skip-next"
           color={COLORS.primary}
