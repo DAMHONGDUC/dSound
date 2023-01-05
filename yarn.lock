@@ -6871,10 +6871,10 @@ react-native-tab-view@^3.3.4:
   dependencies:
     use-latest-callback "^0.1.5"
 
-react-native-track-player@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/react-native-track-player/-/react-native-track-player-3.0.0.tgz"
-  integrity sha512-iYPh25+VWvTaz2Aija8H9L8A0RP1hhFS+svDo+J7AcamjyXzrvN0zpMHyawLVzGLs6OSMeqjAphjEKykZDhLQw==
+react-native-track-player@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-track-player/-/react-native-track-player-3.1.0.tgz#683f862dee01058169121101f73d6d23c0540a06"
+  integrity sha512-IJBprPO2YVA/iMgI317ny/tAFVDir2dy6w2t1BVeb+j1788MYBhO9VcygyyONGKckn8NwtnmsrP9r61CcwJLPA==
 
 react-native-vector-icons@^9.2.0:
   version "9.2.0"

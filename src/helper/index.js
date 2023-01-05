@@ -19,10 +19,7 @@ export const getData = async (storeKey) => {
 
 export const durationFormat = (duration) => {
   let min = Math.floor(duration / 60);
-  let sec = duration - min * 60;
+  let sec = Math.floor(duration % 60);
 
-  let minutes = min < 10 ? "0" + min : min;
-  let seconds = sec < 10 ? "0" + sec : sec;
-
-  return minutes + ":" + seconds;
+  return String(min).padStart(2, "0") + ":" + String(sec).padStart(2, "0");
 };

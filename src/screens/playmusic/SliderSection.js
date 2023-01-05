@@ -3,24 +3,47 @@ import { Text, View, StyleSheet } from "react-native";
 import { COLORS, windowWidth } from "constants/theme";
 import { useSelector } from "react-redux";
 import { durationFormat } from "helper";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import TrackPlayer, { useProgress } from "react-native-track-player";
 
-export default SliderSection = () => {
+export default SliderSection = ({ onEndSlider }) => {
   const activeSong = useSelector((state) => state.player.activeSong);
-  const [currTime, setcurrTime] = useState("00:00");
+  const [sliding, setsliding] = useState();
+  const [sliderValue, setsliderValue] = useState(0);
+  const progress = useProgress();
+
+  const sliderValueChange = (value) => {
+    setsliderValue(value);
+  };
+
+  useEffect(() => {
+    if (sliderValue === activeSong.duration) {
+      //onEndSlider();
+    }
+  }, [sliderValue]);
+
+  useEffect(() => {
+    //if (!sliding) TrackPlayer.seekTo(sliderValue);
+  }, [sliding]);
 
   return (
     <>
       <Slider
         style={styles.slider}
         minimumValue={0}
-        maximumValue={1}
+        maximumValue={activeSong.duration}
         minimumTrackTintColor={COLORS.primary}
         maximumTrackTintColor="#000000"
         thumbTintColor={COLORS.primary}
+        value={progress.position}
+        onValueChange={sliderValueChange}
+        onSlidingStart={() => setsliding(true)}
+        onSlidingComplete={() => setsliding(false)}
       />
       <View style={styles.timeRow}>
-        <Text style={[styles.time, { marginLeft: 17 }]}>{currTime}</Text>
+        <Text style={[styles.time, { marginLeft: 17 }]}>
+          {durationFormat(progress.position)}
+        </Text>
         <Text style={[styles.time, { marginRight: 17 }]}>
           {durationFormat(activeSong.duration)}
         </Text>

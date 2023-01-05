@@ -38,13 +38,12 @@ export default PlayMusic = ({ navigation }) => {
 
       await TrackPlayer.add(currSong, index);
       await TrackPlayer.remove(index + 1);
-
-      const tracks = await TrackPlayer.getQueue();
     }
   };
 
   const onPress = async () => {
     await setUpSongURL(currIndex);
+    await TrackPlayer.skip(currIndex);
     await TrackPlayer.play();
   };
 
@@ -56,9 +55,13 @@ export default PlayMusic = ({ navigation }) => {
   };
 
   const onPrevious = async () => {
-    // await setUpSongURL(currIndex - 1);
-    // await TrackPlayer.skipToPrevious();
-    // dispatch(setCurrIndex(currIndex - 1));
+    if (currIndex >= 1) {
+      await setUpSongURL(currIndex - 1);
+      await TrackPlayer.skip(currIndex - 1);
+      await TrackPlayer.play();
+
+      dispatch(setCurrIndex(currIndex - 1));
+    }
   };
 
   return (
@@ -70,7 +73,7 @@ export default PlayMusic = ({ navigation }) => {
           source={{ uri: activeSong.artwork }}
         ></Image>
         <NameSection></NameSection>
-        <SliderSection></SliderSection>
+        <SliderSection onEndSlider={onNext}></SliderSection>
         <PlaySection
           onPress={onPress}
           onNext={onNext}
