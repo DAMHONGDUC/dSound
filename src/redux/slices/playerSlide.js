@@ -4,6 +4,7 @@ import { cloneDeep } from "lodash";
 const initialState = {
   currPlaylist: [],
   currIndex: 0,
+  activeSong: {},
 };
 
 export const playerSlide = createSlice({
@@ -26,10 +27,13 @@ export const playerSlide = createSlice({
     setCurrIndex: (state, action) => {
       state.currIndex = action.payload;
     },
+    setActiveSong: (state, action) => {
+      state.activeSong = action.payload;
+    },
   },
 });
 
-export const { setCurrPlaylist, setCurrIndex, setSongURL } =
+export const { setCurrPlaylist, setCurrIndex, setSongURL, setActiveSong } =
   playerSlide.actions;
 
 export default playerSlide.reducer;

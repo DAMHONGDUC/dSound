@@ -10,7 +10,11 @@ import LyricSection from "./LyricSection";
 import { useDispatch, useSelector } from "react-redux";
 import TrackPlayer, { State } from "react-native-track-player";
 import { useEffect, useState } from "react";
-import { setCurrIndex, setSongURL } from "redux/slices/playerSlide";
+import {
+  setCurrIndex,
+  setSongURL,
+  setActiveSong,
+} from "redux/slices/playerSlide";
 import { getSongURL } from "api/SongAPI";
 import { cloneDeep } from "lodash";
 
@@ -18,6 +22,11 @@ export default PlayMusic = ({ navigation }) => {
   const dispatch = useDispatch();
   const currPlaylist = useSelector((state) => state.player.currPlaylist);
   const currIndex = useSelector((state) => state.player.currIndex);
+  const activeSong = useSelector((state) => state.player.activeSong);
+
+  useEffect(() => {
+    dispatch(setActiveSong(currPlaylist[currIndex]));
+  }, [currIndex]);
 
   const setUpSongURL = async (index) => {
     let currSong = cloneDeep(currPlaylist[index]);
@@ -58,7 +67,7 @@ export default PlayMusic = ({ navigation }) => {
         <HeaderSection navigation={navigation}></HeaderSection>
         <Image
           style={styles.image}
-          source={require("assets/starboy.png")}
+          source={{ uri: activeSong.artwork }}
         ></Image>
         <NameSection></NameSection>
         <SliderSection></SliderSection>

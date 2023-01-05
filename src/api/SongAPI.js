@@ -64,3 +64,16 @@ export const getSongURL = async (id) => {
     return data.data["128"];
   } catch (err) {}
 };
+
+// getLyric
+export const getLyric = async (songId) => {
+  try {
+    const res = await requestZingMp3("/api/v2/lyric/get/lyric", {
+      id: songId,
+      sig: hashParam("/api/v2/lyric/get/lyric", songId),
+    });
+
+    console.log(res);
+    if (res) return res;
+  } catch (err) {}
+};

@@ -12,7 +12,7 @@ import { get100Song, getSongById } from "api/SongAPI";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import {
-  activeSong,
+  setActiveSong,
   setCurrPlaylist,
   setCurrIndex,
 } from "redux/slices/playerSlide";
@@ -34,7 +34,8 @@ export default function SongsRoute({ navigation }) {
     fetchData();
   }, []);
 
-  const getSongData = async (index) => {
+  const onSongRowClick = async (item, index) => {
+    dispatch(setActiveSong(item));
     dispatch(setCurrIndex(index));
     navigation.navigate("PlayMusicPage");
   };
@@ -42,7 +43,7 @@ export default function SongsRoute({ navigation }) {
   const renderItem = ({ item, index }) => {
     return (
       <SongRow
-        onClick={() => getSongData(index)}
+        onClick={() => onSongRowClick(item, index)}
         image={{ uri: item.artwork }}
         name={item.title}
         artist={item.artist}

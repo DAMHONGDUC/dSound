@@ -1,8 +1,14 @@
 import Slider from "@react-native-community/slider";
 import { Text, View, StyleSheet } from "react-native";
 import { COLORS, windowWidth } from "constants/theme";
+import { useSelector } from "react-redux";
+import { durationFormat } from "helper";
+import { useState } from "react";
 
 export default SliderSection = () => {
+  const activeSong = useSelector((state) => state.player.activeSong);
+  const [currTime, setcurrTime] = useState("00:00");
+
   return (
     <>
       <Slider
@@ -14,8 +20,10 @@ export default SliderSection = () => {
         thumbTintColor={COLORS.primary}
       />
       <View style={styles.timeRow}>
-        <Text style={[styles.time, { marginLeft: 17 }]}>03:35</Text>
-        <Text style={[styles.time, { marginRight: 17 }]}>03:50</Text>
+        <Text style={[styles.time, { marginLeft: 17 }]}>{currTime}</Text>
+        <Text style={[styles.time, { marginRight: 17 }]}>
+          {durationFormat(activeSong.duration)}
+        </Text>
       </View>
     </>
   );

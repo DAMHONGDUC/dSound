@@ -1,14 +1,17 @@
 import { Text, StyleSheet } from "react-native";
 import { COLORS } from "constants/theme";
+import { useSelector } from "react-redux";
 
 export default NameSection = () => {
+  const activeSong = useSelector((state) => state.player.activeSong);
+
   return (
     <>
       <Text numberOfLines={1} style={styles.name}>
-        Star Boy
+        {activeSong.title}
       </Text>
       <Text numberOfLines={1} style={styles.artist}>
-        The Weekend, Daft Punk
+        {activeSong.artist}
       </Text>
     </>
   );

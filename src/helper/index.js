@@ -16,3 +16,13 @@ export const getData = async (storeKey) => {
     // error reading value
   }
 };
+
+export const durationFormat = (duration) => {
+  let min = Math.floor(duration / 60);
+  let sec = duration - min * 60;
+
+  let minutes = min < 10 ? "0" + min : min;
+  let seconds = sec < 10 ? "0" + sec : sec;
+
+  return minutes + ":" + seconds;
+};
