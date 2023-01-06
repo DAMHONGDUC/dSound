@@ -14,6 +14,7 @@ import {
   setCurrIndex,
   setSongURL,
   setActiveSong,
+  setShowBottomPlay,
 } from "redux/slices/playerSlide";
 import { getSongURL } from "api/SongAPI";
 import { cloneDeep } from "lodash";
@@ -23,6 +24,10 @@ export default PlayMusic = ({ navigation }) => {
   const currPlaylist = useSelector((state) => state.player.currPlaylist);
   const currIndex = useSelector((state) => state.player.currIndex);
   const activeSong = useSelector((state) => state.player.activeSong);
+
+  useEffect(() => {
+    dispatch(setShowBottomPlay(false));
+  }, []);
 
   useEffect(() => {
     dispatch(setActiveSong(currPlaylist[currIndex]));

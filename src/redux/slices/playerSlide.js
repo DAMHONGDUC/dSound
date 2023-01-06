@@ -5,6 +5,7 @@ const initialState = {
   currPlaylist: [],
   currIndex: 0,
   activeSong: {},
+  showBottomPlay: true,
 };
 
 export const playerSlide = createSlice({
@@ -30,10 +31,18 @@ export const playerSlide = createSlice({
     setActiveSong: (state, action) => {
       state.activeSong = action.payload;
     },
+    setShowBottomPlay: (state, action) => {
+      state.showBottomPlay = action.payload;
+    },
   },
 });
 
-export const { setCurrPlaylist, setCurrIndex, setSongURL, setActiveSong } =
-  playerSlide.actions;
+export const {
+  setCurrPlaylist,
+  setCurrIndex,
+  setSongURL,
+  setActiveSong,
+  setShowBottomPlay,
+} = playerSlide.actions;
 
 export default playerSlide.reducer;

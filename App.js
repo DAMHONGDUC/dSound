@@ -6,18 +6,18 @@ import TrackPlayer from "react-native-track-player";
 import BottomPlayer from "components/BottomPlayer";
 
 export default function App() {
-  // useEffect(() => {
-  //   const setUpTrackPlayer = async () => {
-  //     await TrackPlayer.setupPlayer();
-  //   };
+  useEffect(() => {
+    const setUpTrackPlayer = async () => {
+      await TrackPlayer.setupPlayer();
+    };
 
-  //   setUpTrackPlayer();
-  // }, []);
+    setUpTrackPlayer();
+  }, []);
 
   return (
     <Provider store={store}>
-      <RootNavigation/>
-      <BottomPlayer/>
+      <RootNavigation />
+      <BottomPlayer />
     </Provider>
   );
 }

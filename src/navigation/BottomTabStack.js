@@ -16,6 +16,7 @@ export default function BottomTabStack() {
       screenOptions={{
         tabBarStyle: {
           height: 55,
+          elevation: 0,
         },
         tabBarItemStyle: { paddingVertical: 5 },
       }}
