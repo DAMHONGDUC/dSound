@@ -48,6 +48,7 @@ export default function SongsRoute({ navigation }) {
         name={item.title}
         artist={item.artist}
         duration={item.duration}
+        id={item.id}
       ></SongRow>
     );
   };
