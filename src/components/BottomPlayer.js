@@ -1,14 +1,22 @@
 import { COLORS } from "constants/theme";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  TouchableHighlight,
+} from "react-native";
 import { useSelector } from "react-redux";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import LinearGradient from "react-native-linear-gradient";
 import PlayerController from "helper/PlayerController";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import TrackPlayer, { useProgress } from "react-native-track-player";
+import { rootNavigationRef } from "navigation/RootNavigation";
 
-export default BottomPlayer = () => {
+export default BottomPlayer = ({ navigation }) => {
   const progress = useProgress();
   const activeSong = useSelector((state) => state.player.activeSong);
   const showBottomPlay = useSelector((state) => state.player.showBottomPlay);
@@ -16,6 +24,7 @@ export default BottomPlayer = () => {
   const isPlaying = useSelector((state) => state.player.isPlaying);
   const currPlaylist = useSelector((state) => state.player.currPlaylist);
   const currIndex = useSelector((state) => state.player.currIndex);
+  const [progressBar, setprogressBar] = useState(0);
 
   useEffect(() => {
     const listenTrackEnd = async () => {
@@ -25,6 +34,8 @@ export default BottomPlayer = () => {
         if (sec === activeSong.duration || sec + 1 === activeSong.duration) {
           PlayerController.onNext(currIndex, currPlaylist);
         }
+
+        setprogressBar((sec / activeSong.duration) * 100);
       }
     };
 
@@ -35,59 +46,69 @@ export default BottomPlayer = () => {
     PlayerController.onPlayPause(isPlaying);
   };
 
+  const handleBottomPlayerClick = () => {
+    rootNavigationRef.current?.navigate("MainStack", {
+      screen: "PlayMusicPage",
+    });
+  };
+
   return (
     !isEmpty &&
     showBottomPlay && (
       <View style={styles.constainer}>
-        <LinearGradient
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-          colors={["#205295", "#0A2647", "#1A120B"]}
-        >
-          <View style={styles.progress}></View>
-          <View style={styles.row}>
-            <View style={styles.row2}>
-              <Image
-                style={styles.image}
-                source={{ uri: activeSong.artwork }}
-              ></Image>
-              <View style={styles.titleSection}>
-                <Text numberOfLines={1}>{activeSong.title}</Text>
-                <Text numberOfLines={1}>{activeSong.artist}</Text>
+        <TouchableHighlight onPress={handleBottomPlayerClick}>
+          <LinearGradient
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            colors={["#205295", "#0A2647", "#1A120B"]}
+          >
+            <View
+              style={[styles.progress, { width: `${progressBar}%` }]}
+            ></View>
+            <View style={styles.row}>
+              <View style={styles.row2}>
+                <Image
+                  style={styles.image}
+                  source={{ uri: activeSong.artwork }}
+                ></Image>
+                <View style={styles.titleSection}>
+                  <Text numberOfLines={1}>{activeSong.title}</Text>
+                  <Text numberOfLines={1}>{activeSong.artist}</Text>
+                </View>
+              </View>
+              <View style={styles.row3}>
+                <TouchableOpacity style={[styles.button, { marginRight: 35 }]}>
+                  <FontAwesome5
+                    name={"heart"}
+                    color={COLORS.white}
+                    size={23}
+                    solid
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={[styles.button, { width: 20 }]}
+                  onPress={handlePlayPause}
+                >
+                  {isPlaying ? (
+                    <Fontisto
+                      name={"pause"}
+                      color={COLORS.white}
+                      size={22}
+                      solid
+                    />
+                  ) : (
+                    <FontAwesome5
+                      name={"play"}
+                      color={COLORS.white}
+                      size={22}
+                      solid
+                    />
+                  )}
+                </TouchableOpacity>
               </View>
             </View>
-            <View style={styles.row3}>
-              <TouchableOpacity style={[styles.button, { marginRight: 35 }]}>
-                <FontAwesome5
-                  name={"heart"}
-                  color={COLORS.white}
-                  size={23}
-                  solid
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[styles.button, { width: 20 }]}
-                onPress={handlePlayPause}
-              >
-                {isPlaying ? (
-                  <Fontisto
-                    name={"pause"}
-                    color={COLORS.white}
-                    size={22}
-                    solid
-                  />
-                ) : (
-                  <FontAwesome5
-                    name={"play"}
-                    color={COLORS.white}
-                    size={22}
-                    solid
-                  />
-                )}
-              </TouchableOpacity>
-            </View>
-          </View>
-        </LinearGradient>
+          </LinearGradient>
+        </TouchableHighlight>
       </View>
     )
   );
@@ -118,7 +139,7 @@ const styles = StyleSheet.create({
   },
   progress: {
     height: 3,
-    backgroundColor: COLORS.white,
+    backgroundColor: COLORS.orange,
   },
   titleSection: {
     marginLeft: 10,

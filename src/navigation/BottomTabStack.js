@@ -7,11 +7,14 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { COLORS } from "constants/theme";
 import TopTabStack from "./TopTabStack";
 import SearchPage from "screens/search/searchPage";
+import BottomPlayer from "components/BottomPlayer";
 
 const BottomTab = createBottomTabNavigator();
 
 export default function BottomTabStack() {
   return (
+    // <>
+    //  <BottomPlayer />
     <BottomTab.Navigator
       screenOptions={{
         tabBarStyle: {
@@ -58,5 +61,6 @@ export default function BottomTabStack() {
         }}
       />
     </BottomTab.Navigator>
+    // </>
   );
 }

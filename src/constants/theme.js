@@ -15,6 +15,7 @@ export const COLORS = {
   facebook: "#4267B2",
   black: "#000000",
   unSelectTab: "#B2B2B2",
+  orange: "#FF7B54",
 };
 
 export const SIZES = {
