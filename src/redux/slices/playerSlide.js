@@ -6,6 +6,8 @@ const initialState = {
   currIndex: 0,
   activeSong: {},
   showBottomPlay: true,
+  isPlaying: false,
+  //isPause: false,
 };
 
 export const playerSlide = createSlice({
@@ -34,6 +36,12 @@ export const playerSlide = createSlice({
     setShowBottomPlay: (state, action) => {
       state.showBottomPlay = action.payload;
     },
+    setIsPlaying: (state, action) => {
+      state.isPlaying = action.payload;
+    },
+    // setIsPause: (state, action) => {
+    //   state.isPause = action.payload;
+    // },
   },
 });
 
@@ -43,6 +51,8 @@ export const {
   setSongURL,
   setActiveSong,
   setShowBottomPlay,
+  setIsPlaying,
+  //setIsPause,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

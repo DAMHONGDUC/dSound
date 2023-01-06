@@ -2,34 +2,52 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { COLORS } from "constants/theme";
-import { useState } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import PlayerController from "helper/PlayerController";
 
-export default PlaySection = ({ onPress, onNext, onPrevious }) => {
-  const [isPlay, setisPlay] = useState(false);
+export default PlaySection = () => {
+  const currPlaylist = useSelector((state) => state.player.currPlaylist);
+  const currIndex = useSelector((state) => state.player.currIndex);
+  const activeSong = useSelector((state) => state.player.activeSong);
+  const isPlaying = useSelector((state) => state.player.isPlaying);
 
-  const togglePlay = () => {
-    isPlay ? setisPlay(false) : setisPlay(true);
-    onPress();
+  useEffect(() => {
+    if (currPlaylist[currIndex].id !== activeSong.id) {
+      PlayerController.onPlayNew(currIndex, currPlaylist);
+    }
+  }, []);
+
+  const handlePlayPause = () => {
+    PlayerController.onPlayPause(isPlaying);
+  };
+
+  const handlePrevious = () => {
+    PlayerController.onPrevious(currIndex, currPlaylist);
+  };
+
+  const handleNext = () => {
+    PlayerController.onNext(currIndex, currPlaylist);
   };
 
   return (
     <View style={styles.playSection}>
-      <TouchableOpacity onPress={onPrevious}>
+      <TouchableOpacity onPress={handlePrevious}>
         <MaterialIcons
           name="skip-previous"
           color={COLORS.primary}
           size={40}
         ></MaterialIcons>
       </TouchableOpacity>
-      <TouchableOpacity onPress={togglePlay}>
+      <TouchableOpacity onPress={handlePlayPause}>
         <FontAwesome5
-          name={isPlay ? "pause-circle" : "play-circle"}
+          name={isPlaying ? "pause-circle" : "play-circle"}
           color={COLORS.primary}
           size={60}
           solid
         />
       </TouchableOpacity>
-      <TouchableOpacity onPress={onNext}>
+      <TouchableOpacity onPress={handleNext}>
         <MaterialIcons
           name="skip-next"
           color={COLORS.primary}

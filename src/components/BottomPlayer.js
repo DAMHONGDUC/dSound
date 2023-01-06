@@ -2,12 +2,38 @@ import { COLORS } from "constants/theme";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { useSelector } from "react-redux";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import Fontisto from "react-native-vector-icons/Fontisto";
 import LinearGradient from "react-native-linear-gradient";
+import PlayerController from "helper/PlayerController";
+import { useEffect } from "react";
+import TrackPlayer, { useProgress } from "react-native-track-player";
 
 export default BottomPlayer = () => {
+  const progress = useProgress();
   const activeSong = useSelector((state) => state.player.activeSong);
   const showBottomPlay = useSelector((state) => state.player.showBottomPlay);
   const isEmpty = Object.keys(activeSong).length === 0;
+  const isPlaying = useSelector((state) => state.player.isPlaying);
+  const currPlaylist = useSelector((state) => state.player.currPlaylist);
+  const currIndex = useSelector((state) => state.player.currIndex);
+
+  useEffect(() => {
+    const listenTrackEnd = async () => {
+      if (isPlaying) {
+        const sec = Math.floor(progress.position / 1);
+
+        if (sec === activeSong.duration || sec + 1 === activeSong.duration) {
+          PlayerController.onNext(currIndex, currPlaylist);
+        }
+      }
+    };
+
+    listenTrackEnd();
+  }, [progress.position]);
+
+  const handlePlayPause = () => {
+    PlayerController.onPlayPause(isPlaying);
+  };
 
   return (
     !isEmpty &&
@@ -31,9 +57,7 @@ export default BottomPlayer = () => {
               </View>
             </View>
             <View style={styles.row3}>
-              <TouchableOpacity
-                style={[styles.playButton, { marginRight: 35 }]}
-              >
+              <TouchableOpacity style={[styles.button, { marginRight: 35 }]}>
                 <FontAwesome5
                   name={"heart"}
                   color={COLORS.white}
@@ -41,13 +65,25 @@ export default BottomPlayer = () => {
                   solid
                 />
               </TouchableOpacity>
-              <TouchableOpacity style={styles.playButton}>
-                <FontAwesome5
-                  name={"play"}
-                  color={COLORS.white}
-                  size={22}
-                  solid
-                />
+              <TouchableOpacity
+                style={[styles.button, { width: 20 }]}
+                onPress={handlePlayPause}
+              >
+                {isPlaying ? (
+                  <Fontisto
+                    name={"pause"}
+                    color={COLORS.white}
+                    size={22}
+                    solid
+                  />
+                ) : (
+                  <FontAwesome5
+                    name={"play"}
+                    color={COLORS.white}
+                    size={22}
+                    solid
+                  />
+                )}
               </TouchableOpacity>
             </View>
           </View>
@@ -89,7 +125,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-around",
   },
-  playButton: {
+  button: {
     marginRight: 20,
   },
 });

@@ -35,8 +35,8 @@ export default function SongsRoute({ navigation }) {
   }, []);
 
   const onSongRowClick = async (item, index) => {
-    dispatch(setActiveSong(item));
     dispatch(setCurrIndex(index));
+
     navigation.navigate("PlayMusicPage");
   };
 

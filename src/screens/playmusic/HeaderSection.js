@@ -1,4 +1,4 @@
-import Ionicons from "react-native-vector-icons/Ionicons";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Feather from "react-native-vector-icons/Feather";
 import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { COLORS } from "constants/theme";
@@ -16,12 +16,12 @@ export default HeaderSection = ({ navigation }) => {
   return (
     <View style={styles.row}>
       <TouchableOpacity>
-        <Ionicons
+        <MaterialIcons
           onPress={collap}
-          name="arrow-back"
+          name="expand-more"
           color={COLORS.black}
-          size={24}
-        ></Ionicons>
+          size={30}
+        ></MaterialIcons>
       </TouchableOpacity>
 
       <TouchableOpacity>
