@@ -10,32 +10,45 @@ import SeparateLine from "components/SeparateLine";
 import SongRow from "screens/song/SongRow";
 import { get100Song, getSongById } from "api/SongAPI";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import {
+  setActiveSong,
+  setCurrPlaylist,
+  setCurrIndex,
+} from "redux/slices/playerSlide";
+import TrackPlayer from "react-native-track-player";
 
 export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await get100Song();
       setdata100Song(data);
+      dispatch(setCurrPlaylist(data));
+
+      await TrackPlayer.add(data);
     };
 
     fetchData();
   }, []);
 
-  const getSongData = async (songId) => {
-    const data = await getSongById(songId);
+  const onSongRowClick = async (item, index) => {
+    dispatch(setCurrIndex(index));
+
     navigation.navigate("PlayMusicPage");
   };
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item, index }) => {
     return (
       <SongRow
-        onClick={() => getSongData(item.encodeId)}
-        image={{ uri: item.thumbnailM }}
+        onClick={() => onSongRowClick(item, index)}
+        image={{ uri: item.artwork }}
         name={item.title}
-        artist={item.artistsNames}
+        artist={item.artist}
         duration={item.duration}
+        id={item.id}
       ></SongRow>
     );
   };
@@ -49,7 +62,7 @@ export default function SongsRoute({ navigation }) {
           <FlatList
             data={data100Song}
             renderItem={renderItem}
-            keyExtractor={(item) => item.encodeId}
+            keyExtractor={(item) => item.id}
           />
         </>
       ) : (

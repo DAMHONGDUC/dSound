@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { getData } from "helper";
-import { useState, useEffect } from "react";
+import { useState, useEffect, createRef } from "react";
 import SplashScreen from "react-native-splash-screen";
 import {
   ONBOARDING_COMPLETE,
@@ -14,6 +14,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthContext } from "constants/values";
 
 const RootStack = createNativeStackNavigator();
+export const rootNavigationRef = createRef();
 
 export default function RootNavigation() {
   const [isSignedIn, setisSignedIn] = useState(false);
@@ -47,7 +48,7 @@ export default function RootNavigation() {
         handleAfterSignOut,
       }}
     >
-      <NavigationContainer>
+      <NavigationContainer ref={rootNavigationRef}>
         <RootStack.Navigator>
           <>
             {!isOnboardingComplete && (

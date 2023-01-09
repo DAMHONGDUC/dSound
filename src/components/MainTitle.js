@@ -1,6 +1,6 @@
 import { COLORS } from "constants/theme";
 import { Image, View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import AntDesign from "react-native-vector-icons/AntDesign";
+import Feather from "react-native-vector-icons/Feather";
 
 export default function MainTitle() {
   return (
@@ -11,7 +11,7 @@ export default function MainTitle() {
       />
       <Text style={styles.text}>dSound</Text>
       <TouchableOpacity style={{ flex: 0.1 }}>
-        <AntDesign name={"search1"} color={COLORS.black} size={24} solid />
+        <Feather name={"settings"} color={COLORS.black} size={22} solid />
       </TouchableOpacity>
     </View>
   );

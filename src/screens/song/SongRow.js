@@ -9,13 +9,17 @@ import {
 } from "react-native";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Feather from "react-native-vector-icons/Feather";
+import { durationFormat } from "helper";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
-export default SongRow = ({ image, name, artist, duration, onClick }) => {
-  const durationFormat = () => {
-    let minutes = Math.floor(duration / 60);
-    let seconds = duration - minutes * 60;
-    return "0" + minutes + ":" + seconds;
-  };
+export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
+  const activeSong = useSelector((state) => state.player.activeSong);
+  // const [isActive, setisActive] = useEffect(false);
+
+  // useEffect(() => {
+  //   if (activeSong.id) setisActive(activeSong.id === id ? true : false);
+  // }, [activeSong]);
 
   return (
     <TouchableHighlight
@@ -25,7 +29,13 @@ export default SongRow = ({ image, name, artist, duration, onClick }) => {
       <View style={styles.container}>
         <Image style={styles.image} source={image}></Image>
         <View style={styles.containerCenter}>
-          <Text numberOfLines={1} style={styles.name}>
+          <Text
+            numberOfLines={1}
+            style={[
+              styles.name,
+              { color: activeSong.id === id ? COLORS.primary : COLORS.black },
+            ]}
+          >
             {name}
           </Text>
           <View style={styles.containerArtist}>
@@ -41,8 +51,8 @@ export default SongRow = ({ image, name, artist, duration, onClick }) => {
         </View>
         <TouchableOpacity>
           <FontAwesome5
-            name={"play-circle"}
-            color={COLORS.primary}
+            name={activeSong.id === id ? "pause-circle" : "play-circle"}
+            color={activeSong.id === id ? COLORS.primary : COLORS.primary}
             size={29}
             solid
           />
@@ -78,7 +88,6 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   name: {
-    color: COLORS.black,
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 10,

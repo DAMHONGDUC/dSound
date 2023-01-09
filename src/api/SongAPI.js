@@ -12,14 +12,20 @@ export const getTop100PlayList = async () => {
   } catch (err) {}
 };
 
-const reduceProperty = (data) => {
-  return data.map((e) => ({
-    encodeId: e.encodeId,
+const reduceProperty = async (data) => {
+  const songData = data.map((e) => ({
+    id: e.encodeId,
+    url: null,
     title: e.title,
-    artistsNames: e.artistsNames,
-    thumbnailM: e.thumbnailM,
+    artist: e.artistsNames,
+    artwork: e.thumbnailM,
     duration: e.duration,
   }));
+
+  const URL = await getSongURL(songData[0].id);
+  songData[0].url = URL;
+
+  return songData;
 };
 
 // get 100 song of the first playlist in top 100
@@ -35,7 +41,7 @@ export const get100Song = async () => {
         sig: hashParam("/api/v2/page/get/playlist", playlistId),
       });
 
-      if (res.data.song.items) return reduceProperty(res.data.song.items);
+      if (res.data.song.items) return await reduceProperty(res.data.song.items);
     }
   } catch (err) {}
 };
@@ -48,6 +54,26 @@ export const getSongById = (songId) => {
       sig: hashParam("/api/v2/song/get/streaming", songId),
     });
 
+    if (res) return res;
+  } catch (err) {}
+};
+
+export const getSongURL = async (id) => {
+  try {
+    const data = await getSongById(id);
+    return data.data["128"];
+  } catch (err) {}
+};
+
+// getLyric
+export const getLyric = async (songId) => {
+  try {
+    const res = await requestZingMp3("/api/v2/lyric/get/lyric", {
+      id: songId,
+      sig: hashParam("/api/v2/lyric/get/lyric", songId),
+    });
+
+    console.log(res);
     if (res) return res;
   } catch (err) {}
 };
