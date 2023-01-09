@@ -18,14 +18,7 @@ export const playerSlide = createSlice({
       state.currPlaylist = action.payload;
     },
     setSongURL: (state, action) => {
-      let data = cloneDeep(state.currPlaylist);
-
-      data[action.payload.index] = {
-        ...data[action.payload.index],
-        url: action.payload.url,
-      };
-
-      state.currPlaylist = data;
+      state.currPlaylist[action.payload.index].url = action.payload.url;
     },
     setCurrIndex: (state, action) => {
       state.currIndex = action.payload;

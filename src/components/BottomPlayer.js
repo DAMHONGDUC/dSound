@@ -15,15 +15,14 @@ import PlayerController from "helper/PlayerController";
 import { useEffect, useState } from "react";
 import TrackPlayer, { useProgress } from "react-native-track-player";
 import { rootNavigationRef } from "navigation/RootNavigation";
+import { useNavigation } from "@react-navigation/native";
 
-export default BottomPlayer = ({ navigation }) => {
+export default BottomPlayer = () => {
+  const { activeSong, showBottomPlay, isPlaying, currPlaylist, currIndex } =
+    useSelector((state) => state.player);
+
   const progress = useProgress();
-  const activeSong = useSelector((state) => state.player.activeSong);
-  const showBottomPlay = useSelector((state) => state.player.showBottomPlay);
   const isEmpty = Object.keys(activeSong).length === 0;
-  const isPlaying = useSelector((state) => state.player.isPlaying);
-  const currPlaylist = useSelector((state) => state.player.currPlaylist);
-  const currIndex = useSelector((state) => state.player.currIndex);
   const [progressBar, setprogressBar] = useState(0);
 
   useEffect(() => {

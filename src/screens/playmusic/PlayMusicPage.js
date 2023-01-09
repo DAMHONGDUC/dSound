@@ -22,7 +22,7 @@ export default PlayMusic = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.conatiner}>
       <ScrollView>
-        <HeaderSection navigation={navigation}></HeaderSection>
+        <HeaderSection></HeaderSection>
         <Image
           style={styles.image}
           source={

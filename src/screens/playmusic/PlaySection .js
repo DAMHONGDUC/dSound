@@ -7,10 +7,9 @@ import { useSelector } from "react-redux";
 import PlayerController from "helper/PlayerController";
 
 export default PlaySection = () => {
-  const currPlaylist = useSelector((state) => state.player.currPlaylist);
-  const currIndex = useSelector((state) => state.player.currIndex);
-  const activeSong = useSelector((state) => state.player.activeSong);
-  const isPlaying = useSelector((state) => state.player.isPlaying);
+  const { currPlaylist, currIndex, activeSong, isPlaying } = useSelector(
+    (state) => state.player
+  );
 
   useEffect(() => {
     if (currPlaylist[currIndex].id !== activeSong.id) {

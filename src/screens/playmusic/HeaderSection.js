@@ -4,9 +4,11 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 import { COLORS } from "constants/theme";
 import { useDispatch } from "react-redux";
 import { setShowBottomPlay } from "redux/slices/playerSlide";
+import { useNavigation } from "@react-navigation/native";
 
-export default HeaderSection = ({ navigation }) => {
+export default HeaderSection = () => {
   const dispatch = useDispatch();
+  const navigation = useNavigation();
 
   const collap = () => {
     navigation.pop();
@@ -15,7 +17,7 @@ export default HeaderSection = ({ navigation }) => {
 
   return (
     <View style={styles.row}>
-      <TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
         <MaterialIcons
           onPress={collap}
           name="expand-more"
@@ -36,5 +38,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 10,
+  },
+  button: {
+    width: 40,
   },
 });
