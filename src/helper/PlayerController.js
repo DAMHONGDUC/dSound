@@ -11,10 +11,10 @@ import { store } from "redux/store";
 
 export default class PlayerController {
   static async setUpSongURL(index, currPlaylist) {
-    let currSong = cloneDeep(currPlaylist[index]);
+    let currSong = cloneDeep(currPlaylist.items[index]);
 
     if (index !== 0 && !currSong.url) {
-      const URL = await getSongURL(currPlaylist[index].id);
+      const URL = await getSongURL(currPlaylist.items[index].id);
       currSong.url = URL;
 
       store.dispatch(setSongURL({ index: index, url: URL }));
@@ -29,7 +29,7 @@ export default class PlayerController {
     await TrackPlayer.skip(currIndex);
     await TrackPlayer.play();
 
-    store.dispatch(setActiveSong(currPlaylist[currIndex]));
+    store.dispatch(setActiveSong(currPlaylist.items[currIndex]));
     store.dispatch(setIsPlaying(true));
   }
 
@@ -48,7 +48,7 @@ export default class PlayerController {
     await TrackPlayer.skipToNext();
 
     store.dispatch(setCurrIndex(currIndex + 1));
-    store.dispatch(setActiveSong(currPlaylist[currIndex + 1]));
+    store.dispatch(setActiveSong(currPlaylist.items[currIndex + 1]));
     store.dispatch(setIsPlaying(true));
   }
 
@@ -59,8 +59,16 @@ export default class PlayerController {
       await TrackPlayer.play();
 
       store.dispatch(setCurrIndex(currIndex - 1));
-      store.dispatch(setActiveSong(currPlaylist[currIndex - 1]));
+      store.dispatch(setActiveSong(currPlaylist.items[currIndex - 1]));
       store.dispatch(setIsPlaying(true));
+    }
+  }
+
+  static async resetTrackPlayer() {
+    const tracks = await TrackPlayer.getQueue();
+
+    if (tracks.length > 0) {
+      await TrackPlayer.reset();
     }
   }
 }

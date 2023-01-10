@@ -50,7 +50,8 @@ export const getNewSong = async () => {
     if (dataPlaylist) {
       const data = filterBySectionType(dataPlaylist, "new-release");
 
-      if (data[0]?.items?.all) return reducePropertySong(data[0].items.all);
+      if (data[0]?.items?.all)
+        return reducePropertySong(data[0].items.all, "newSong");
     }
   } catch (err) {}
 };

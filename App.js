@@ -16,8 +16,8 @@ export default function App() {
 
   return (
     <Provider store={store}>
-        <RootNavigation />
-        <BottomPlayer />
+      <RootNavigation />
+      <BottomPlayer />
     </Provider>
   );
 }

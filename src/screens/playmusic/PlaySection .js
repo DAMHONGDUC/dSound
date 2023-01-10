@@ -12,7 +12,7 @@ export default PlaySection = () => {
   );
 
   useEffect(() => {
-    if (currPlaylist[currIndex].id !== activeSong.id) {
+    if (currPlaylist.items[currIndex].id !== activeSong.id) {
       PlayerController.onPlayNew(currIndex, currPlaylist);
     }
   }, []);

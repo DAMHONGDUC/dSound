@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setShowBottomPlay } from "redux/slices/playerSlide";
 
-export default PlayMusic = ({ navigation }) => {
+export default PlayMusic = () => {
   const dispatch = useDispatch();
   const activeSong = useSelector((state) => state.player.activeSong);
 

@@ -1,34 +1,43 @@
-import { View, StyleSheet, Image, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  TouchableHighlight,
+} from "react-native";
 import { COLORS } from "constants/theme";
 import { windowWidth } from "constants/theme";
 
-export default NewSongRow = ({ image, title, artist }) => {
+export default NewSongRow = ({ image, title, artist, onClick }) => {
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={image}></Image>
-      <View style={styles.containerTitle}>
-        <Text numberOfLines={1} style={styles.title}>
-          {title}
-        </Text>
-        <Text
-          numberOfLines={1}
-          style={[styles.title, { fontSize: 10, color: COLORS.title }]}
-        >
-          {artist}
-        </Text>
+    <TouchableHighlight underlayColor={COLORS.white} onPress={onClick}>
+      <View style={styles.container}>
+        <Image style={styles.image} source={image}></Image>
+        <View style={styles.containerTitle}>
+          <Text numberOfLines={1} style={styles.title}>
+            {title}
+          </Text>
+          <Text
+            numberOfLines={1}
+            style={[styles.title, { fontSize: 10, color: COLORS.title }]}
+          >
+            {artist}
+          </Text>
+        </View>
       </View>
-    </View>
+    </TouchableHighlight>
   );
 };
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-    marginTop: 7,
+    marginTop: 5,
+    marginBottom: 5,
   },
   containerTitle: {
     flexDirection: "column",
     justifyContent: "space-evenly",
-    backgroundColor: "#D6E4E5",
+    backgroundColor: COLORS.newSongRow,
     borderBottomRightRadius: 5,
     borderTopRightRadius: 5,
   },
