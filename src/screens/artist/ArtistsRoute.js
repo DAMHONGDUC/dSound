@@ -10,6 +10,7 @@ import SeparateLine from "components/SeparateLine";
 import ArtistRow from "screens/artist/ArtistRow";
 import { useEffect, useState } from "react";
 import { getArtist } from "api/ArtistAPI";
+import Loading from "components/Loading";
 
 const song = [];
 
@@ -49,11 +50,7 @@ export default function ArtistsRoute() {
           />
         </>
       ) : (
-        <ActivityIndicator
-          style={{ alignSelf: "center" }}
-          size={"large"}
-          color={COLORS.primary}
-        ></ActivityIndicator>
+        <Loading />
       )}
     </View>
   );

@@ -12,7 +12,7 @@ export const getTop100PlayList = async () => {
   } catch (err) {}
 };
 
-const reduceProperty = async (data) => {
+export const reducePropertySong = async (data) => {
   const songData = data.map((e) => ({
     id: e.encodeId,
     url: null,
@@ -41,7 +41,8 @@ export const get100Song = async () => {
         sig: hashParam("/api/v2/page/get/playlist", playlistId),
       });
 
-      if (res.data.song.items) return await reduceProperty(res.data.song.items);
+      if (res.data.song.items)
+        return await reducePropertySong(res.data.song.items);
     }
   } catch (err) {}
 };

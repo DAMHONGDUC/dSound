@@ -60,8 +60,7 @@ export default TopTabStack = () => {
                 style={{
                   fontWeight: "bold",
                   fontSize: 16,
-                  color:
-                    tabIndex == index ? COLORS.primary : COLORS.unSelectTab,
+                  color: tabIndex == index ? COLORS.black : COLORS.unSelectTab,
                 }}
               >
                 {label}

@@ -16,7 +16,7 @@ export default class PlayerController {
     if (index !== 0 && !currSong.url) {
       const URL = await getSongURL(currPlaylist[index].id);
       currSong.url = URL;
-      console.log(URL);
+
       store.dispatch(setSongURL({ index: index, url: URL }));
 
       await TrackPlayer.add(currSong, index);

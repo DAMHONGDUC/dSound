@@ -17,6 +17,7 @@ import {
   setCurrIndex,
 } from "redux/slices/playerSlide";
 import TrackPlayer from "react-native-track-player";
+import Loading from "components/Loading";
 
 export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
@@ -66,11 +67,7 @@ export default function SongsRoute({ navigation }) {
           />
         </>
       ) : (
-        <ActivityIndicator
-          style={{ alignSelf: "center" }}
-          size={"large"}
-          color={COLORS.primary}
-        ></ActivityIndicator>
+        <Loading />
       )}
     </View>
   );
