@@ -50,7 +50,6 @@ export default function SuggestedRoute() {
   }, [dataSuggestedPlaylist, dataNewSong]);
 
   const onClickSongRow = async (index) => {
-    console.log(dataNewSong);
     if (currPlaylist.id !== dataNewSong.id) {
       PlayerController.resetTrackPlayer();
 

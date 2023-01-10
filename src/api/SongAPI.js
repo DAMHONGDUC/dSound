@@ -1,5 +1,6 @@
 import { hashParamNoId, hashParam } from "./Crypto";
 import { requestZingMp3 } from "./ZingMp3API";
+import { Alert } from "react-native";
 
 // getTop100
 export const getTop100PlayList = async () => {
@@ -13,7 +14,10 @@ export const getTop100PlayList = async () => {
 };
 
 export const reducePropertySong = async (data, playlistId) => {
-  const songData = data.map((e) => ({
+  // get all song have "streamingStatus": 1 (1 - normal, 2 - VIP)
+  const dataFilter = data.filter((e) => e.streamingStatus === 1);
+
+  const songData = dataFilter.map((e) => ({
     id: e.encodeId,
     url: null,
     title: e.title,
@@ -68,7 +72,8 @@ export const getSongById = (songId) => {
 export const getSongURL = async (id) => {
   try {
     const data = await getSongById(id);
-    return data.data["128"];
+
+    if (data.data["128"]) return data.data["128"];
   } catch (err) {}
 };
 
