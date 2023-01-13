@@ -7,7 +7,7 @@ const initialState = {
   activeSong: {},
   showBottomPlay: true,
   isPlaying: false,
-  //isPause: false,
+  needWitchPlaylist: false,
 };
 
 export const playerSlide = createSlice({
@@ -18,7 +18,7 @@ export const playerSlide = createSlice({
       state.currPlaylist = action.payload;
     },
     setSongURL: (state, action) => {
-      state.currPlaylist[action.payload.index].url = action.payload.url;
+      state.currPlaylist.items[action.payload.index].url = action.payload.url;
     },
     setCurrIndex: (state, action) => {
       state.currIndex = action.payload;
@@ -32,9 +32,6 @@ export const playerSlide = createSlice({
     setIsPlaying: (state, action) => {
       state.isPlaying = action.payload;
     },
-    // setIsPause: (state, action) => {
-    //   state.isPause = action.payload;
-    // },
   },
 });
 
@@ -45,7 +42,6 @@ export const {
   setActiveSong,
   setShowBottomPlay,
   setIsPlaying,
-  //setIsPause,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

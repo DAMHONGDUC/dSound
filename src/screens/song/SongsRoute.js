@@ -12,29 +12,41 @@ import { get100Song, getSongById } from "api/SongAPI";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import {
-  setActiveSong,
   setCurrPlaylist,
   setCurrIndex,
+  setActiveSong,
 } from "redux/slices/playerSlide";
 import TrackPlayer from "react-native-track-player";
+import Loading from "components/Loading";
+import PlayerController from "helper/PlayerController";
+import { useSelector } from "react-redux";
 
 export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
   const dispatch = useDispatch();
 
+  const { isPlaying, currPlaylist } = useSelector((state) => state.player);
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await get100Song();
       setdata100Song(data);
-      dispatch(setCurrPlaylist(data));
-
-      await TrackPlayer.add(data);
     };
 
     fetchData();
   }, []);
 
   const onSongRowClick = async (item, index) => {
+    if (currPlaylist.id !== data100Song.id) {
+      PlayerController.resetTrackPlayer();
+
+      dispatch(setCurrPlaylist(data100Song));
+
+      await TrackPlayer.getState();
+      await TrackPlayer.add(data100Song.items);
+      await TrackPlayer.getState();
+    }
+
     dispatch(setCurrIndex(index));
 
     navigation.navigate("PlayMusicPage");
@@ -60,17 +72,13 @@ export default function SongsRoute({ navigation }) {
           <Text style={styles.mainText}>Top {data100Song.length} song</Text>
           <SeparateLine></SeparateLine>
           <FlatList
-            data={data100Song}
+            data={data100Song.items}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
           />
         </>
       ) : (
-        <ActivityIndicator
-          style={{ alignSelf: "center" }}
-          size={"large"}
-          color={COLORS.primary}
-        ></ActivityIndicator>
+        <Loading />
       )}
     </View>
   );

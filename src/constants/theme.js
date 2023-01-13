@@ -16,6 +16,7 @@ export const COLORS = {
   black: "#000000",
   unSelectTab: "#B2B2B2",
   orange: "#FF7B54",
+  newSongRow: "#D6E4E5",
 };
 
 export const SIZES = {
