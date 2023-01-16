@@ -2,12 +2,17 @@ import { View, Text, StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { COLORS } from "constants/theme";
 import PlaylistRow from "./PlaylistRow";
+import { useNavigation } from "@react-navigation/native";
 
 export default SuggestedPlaylist = ({ playlists }) => {
+  const navigation = useNavigation();
+
   const renderItem = ({ item, index }) => {
     return (
       <PlaylistRow
-        onClick={() => {}}
+        onClick={() => {
+          navigation.navigate("PlaylistPage");
+        }}
         title={item.title}
         image={{ uri: item.image }}
         des={item.des}

@@ -1,16 +1,28 @@
-import { View, StyleSheet, Image, Text } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  TouchableHighlight,
+} from "react-native";
 import { COLORS } from "constants/theme";
 
 export default PlaylistRow = ({ title, image, des, onClick }) => {
   return (
-    <View style={styles.container}>
-      <Image style={styles.image} source={image}></Image>
+    <TouchableHighlight
+      underlayColor={COLORS.songRowClickColor}
+      style={styles.container}
+      onPress={onClick}
+    >
       <View>
-        <Text numberOfLines={2} style={styles.title}>
-          {title}
-        </Text>
+        <Image style={styles.image} source={image}></Image>
+        <View>
+          <Text numberOfLines={2} style={styles.title}>
+            {title}
+          </Text>
+        </View>
       </View>
-    </View>
+    </TouchableHighlight>
   );
 };
 
@@ -19,6 +31,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     backgroundColor: COLORS.white,
     marginRight: 10,
+    borderRadius: 15,
   },
   containerTitle: {
     flexDirection: "column",

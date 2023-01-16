@@ -8,6 +8,7 @@ import { COLORS } from "constants/theme";
 import TopTabStack from "./TopTabStack";
 import SearchPage from "screens/search/searchPage";
 import BottomPlayer from "components/BottomPlayer";
+import HomeStack from "./HomeStack";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -26,7 +27,7 @@ export default function BottomTabStack() {
     >
       <BottomTab.Screen
         name="Home"
-        component={HomePage}
+        component={HomeStack}
         options={{
           headerShown: false,
           tabBarLabel: "Home",
