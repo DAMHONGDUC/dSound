@@ -72,7 +72,7 @@ export default function SongsRoute({ navigation }) {
           <Text style={styles.mainText}>Top {data100Song.length} song</Text>
           <SeparateLine></SeparateLine>
           <FlatList
-            data={data100Song.items}
+            data={data100Song.songs}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
           />

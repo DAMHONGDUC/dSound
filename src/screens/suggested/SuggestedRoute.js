@@ -37,6 +37,16 @@ export default function SuggestedRoute() {
 
   useEffect(() => {
     const fetchData = async () => {
+      const data = await getSuggestedPlaylist();
+
+      setdataSuggestedPlaylist(data);
+    };
+
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
       const data = await getNewSong();
 
       setdataNewSong(data);
@@ -70,7 +80,7 @@ export default function SuggestedRoute() {
       <View style={styles.container}>
         <Text style={styles.title}>Mới Phát Hành</Text>
         <View style={styles.newSong}>
-          {dataNewSong.items.slice(0, 6).map((e, index) => (
+          {dataNewSong.songs.slice(0, 6).map((e, index) => (
             <NewSongRow
               key={e.id}
               title={e.title}

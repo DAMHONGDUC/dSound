@@ -6,13 +6,30 @@ import {
   TouchableHighlight,
 } from "react-native";
 import { COLORS } from "constants/theme";
+import { getDetailPlaylist } from "api/PlaylistAPI";
+import { setCurrPlaylist } from "redux/slices/playerSlide";
+import { useDispatch } from "react-redux";
 
-export default PlaylistRow = ({ title, image, des, onClick }) => {
+export default PlaylistRow = ({ title, image, id, onClick }) => {
+  const dispatch = useDispatch();
+
+  const getDataDetailPlaylist = async () => {
+    dispatch(setCurrPlaylist([]));
+
+    const data = await getDetailPlaylist(id);
+    dispatch(setCurrPlaylist(data));
+  };
+
+  const onPress = () => {
+    onClick();
+    getDataDetailPlaylist();
+  };
+
   return (
     <TouchableHighlight
       underlayColor={COLORS.songRowClickColor}
       style={styles.container}
-      onPress={onClick}
+      onPress={onPress}
     >
       <View>
         <Image style={styles.image} source={image}></Image>

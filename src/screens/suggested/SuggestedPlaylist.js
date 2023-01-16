@@ -3,6 +3,7 @@ import { FlatList } from "react-native-gesture-handler";
 import { COLORS } from "constants/theme";
 import PlaylistRow from "./PlaylistRow";
 import { useNavigation } from "@react-navigation/native";
+import { getDetailPlaylist } from "api/PlaylistAPI";
 
 export default SuggestedPlaylist = ({ playlists }) => {
   const navigation = useNavigation();
@@ -16,6 +17,7 @@ export default SuggestedPlaylist = ({ playlists }) => {
         title={item.title}
         image={{ uri: item.image }}
         des={item.des}
+        id={item.id}
       ></PlaylistRow>
     );
   };
