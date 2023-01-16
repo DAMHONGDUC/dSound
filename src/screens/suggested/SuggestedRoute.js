@@ -14,6 +14,7 @@ import {
   setActiveSong,
 } from "redux/slices/playerSlide";
 import PlayerController from "helper/PlayerController";
+import { useGetPlaylistByIdQuery } from "redux/api/apiSlice";
 
 export default function SuggestedRoute() {
   const [dataSuggestedPlaylist, setdataSuggestedPlaylist] = useState();
@@ -24,6 +25,13 @@ export default function SuggestedRoute() {
   const navigation = useNavigation();
 
   const { isPlaying, currPlaylist } = useSelector((state) => state.player);
+
+  const { data, error, isLoading } = useGetPlaylistByIdQuery("ZU6A87W6");
+
+  useEffect(() => {
+    console.log(isLoading);
+    if (!isLoading) console.log(data);
+  });
 
   useEffect(() => {
     const fetchData = async () => {

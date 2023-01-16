@@ -6,14 +6,15 @@ export const CTIME = Math.floor(Date.now() / 1000);
 const URL = "https://zingmp3.vn";
 const API_KEY = "88265e23d4284f25963e6eedac8fbfa3";
 
-const getCookie = async () => {
+export const getCookie = async () => {
   try {
     const res = await axios.get(`${URL}`);
 
-    if (res.headers["set-cookie"]) {
-      res.headers["set-cookie"].map((element, index) => {
-        return element; // return cookie
-      });
+    if (res.headers["set-cookie"][0]) {
+      return res.headers["set-cookie"][0];
+      // res.headers["set-cookie"].map((element, index) => {
+      //   return element; // return cookie
+      // });
     }
   } catch (err) {}
 };

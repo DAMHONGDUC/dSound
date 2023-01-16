@@ -33,8 +33,6 @@ export const reducePropertySong = async (data, playlistId) => {
   result.id = playlistId;
   result.items = songData;
 
-  //console.log(result);
-
   return result;
 };
 
@@ -85,7 +83,22 @@ export const getLyric = async (songId) => {
       sig: hashParam("/api/v2/lyric/get/lyric", songId),
     });
 
-    console.log(res);
     if (res) return res;
   } catch (err) {}
 };
+
+// getDetailPlaylist
+// public getDetailPlaylist(playlistId: string): Promise<any> {
+//   return new Promise<any>((resolve, rejects) => {
+//     this.requestZingMp3("/api/v2/page/get/playlist", {
+//       id: playlistId,
+//       sig: this.hashParam("/api/v2/page/get/playlist", playlistId)
+//     })
+//       .then((res) => {
+//         resolve(res)
+//       })
+//       .catch((err) => {
+//         rejects(err)
+//       })
+//   })
+// }

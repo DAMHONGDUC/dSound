@@ -12,13 +12,21 @@ import MainStack from "./MainStack";
 import OnboardingStack from "./OnboardingStack";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthContext } from "constants/values";
+import { useDispatch } from "react-redux";
+import { setCookies } from "redux/slices/playerSlide";
+import { getCookie } from "api/ZingMp3API";
 
 const RootStack = createNativeStackNavigator();
 export const rootNavigationRef = createRef();
 
 export default function RootNavigation() {
+  const dispatch = useDispatch();
   const [isSignedIn, setisSignedIn] = useState(false);
   const [isOnboardingComplete, setisOnboardingComplete] = useState(false);
+
+  useEffect(() => {
+    getCookie().then((res) => dispatch(setCookies(res)));
+  }, []);
 
   useEffect(() => {
     SplashScreen.hide();

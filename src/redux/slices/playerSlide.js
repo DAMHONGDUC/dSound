@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { cloneDeep } from "lodash";
 
 const initialState = {
   currPlaylist: [],
@@ -8,6 +7,7 @@ const initialState = {
   showBottomPlay: true,
   isPlaying: false,
   needWitchPlaylist: false,
+  cookies: {},
 };
 
 export const playerSlide = createSlice({
@@ -32,6 +32,9 @@ export const playerSlide = createSlice({
     setIsPlaying: (state, action) => {
       state.isPlaying = action.payload;
     },
+    setCookies: (state, action) => {
+      state.cookies = action.payload;
+    },
   },
 });
 
@@ -42,6 +45,7 @@ export const {
   setActiveSong,
   setShowBottomPlay,
   setIsPlaying,
+  setCookies,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;
