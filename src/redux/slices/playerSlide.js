@@ -7,7 +7,7 @@ const initialState = {
   activeSong: {},
   showBottomPlay: true,
   isPlaying: false,
-  needWitchPlaylist: false,
+  showMainHeader: true,
 };
 
 export const playerSlide = createSlice({
@@ -32,6 +32,9 @@ export const playerSlide = createSlice({
     setIsPlaying: (state, action) => {
       state.isPlaying = action.payload;
     },
+    setShowMainHeader: (state, action) => {
+      state.showMainHeader = action.payload;
+    },
   },
 });
 
@@ -42,6 +45,7 @@ export const {
   setActiveSong,
   setShowBottomPlay,
   setIsPlaying,
+  setShowMainHeader,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

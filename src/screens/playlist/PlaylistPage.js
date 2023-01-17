@@ -8,12 +8,19 @@ import Loading from "components/Loading";
 import SongRow from "screens/song/SongRow";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { setShowMainHeader } from "redux/slices/playerSlide";
 
 export default PlaylistPage = () => {
   const { currPlaylist } = useSelector((state) => state.player);
   const [dataPlaylist, setdataPlaylist] = useState();
   const navigation = useNavigation();
   const route = useRoute();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setShowMainHeader(false));
+  }, []);
 
   useEffect(() => {
     const getDataDetailPlaylist = async () => {
@@ -52,7 +59,9 @@ export default PlaylistPage = () => {
           data={dataPlaylist.songs}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
-          ListHeaderComponent={() => <PlaylistHeader playlist={dataPlaylist} />}
+          ListHeaderComponent={() => (
+            <PlaylistHeader navigation={navigation} playlist={dataPlaylist} />
+          )}
         />
       ) : (
         <Loading />

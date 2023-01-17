@@ -2,7 +2,7 @@ import { COLORS } from "constants/theme";
 import { Image, View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Feather from "react-native-vector-icons/Feather";
 
-export default function MainTitle() {
+export default function MainHeader() {
   return (
     <View style={styles.container}>
       <Image

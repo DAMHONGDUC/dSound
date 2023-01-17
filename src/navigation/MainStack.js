@@ -1,19 +1,23 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomTabStack from "./BottomTabStack";
-import MainTitle from "components/MainTitle";
+import MainHeader from "components/MainHeader";
 import PlayMusicPage from "screens/playmusic/PlayMusicPage";
+import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 
 export default function MainStack() {
+  const { showMainHeader } = useSelector((state) => state.player);
+
   return (
     <Stack.Navigator>
       <Stack.Screen
         name="BottomTabStack"
         component={BottomTabStack}
         options={{
-          headerTitle: () => <MainTitle />,
+          headerTitle: () => <MainHeader />,
           headerShadowVisible: false,
+          headerShown: showMainHeader,
         }}
       />
       <Stack.Screen
