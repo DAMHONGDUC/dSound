@@ -11,25 +11,11 @@ import { setCurrPlaylist } from "redux/slices/playerSlide";
 import { useDispatch } from "react-redux";
 
 export default PlaylistRow = ({ title, image, id, onClick }) => {
-  const dispatch = useDispatch();
-
-  const getDataDetailPlaylist = async () => {
-    dispatch(setCurrPlaylist([]));
-
-    const data = await getDetailPlaylist(id);
-    dispatch(setCurrPlaylist(data));
-  };
-
-  const onPress = () => {
-    onClick();
-    getDataDetailPlaylist();
-  };
-
   return (
     <TouchableHighlight
       underlayColor={COLORS.songRowClickColor}
       style={styles.container}
-      onPress={onPress}
+      onPress={onClick}
     >
       <View>
         <Image style={styles.image} source={image}></Image>

@@ -5,14 +5,16 @@ import { COLORS } from "constants/theme";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import PlayerController from "helper/PlayerController";
+import { useRoute } from "@react-navigation/native";
 
 export default PlaySection = () => {
   const { currPlaylist, currIndex, activeSong, isPlaying } = useSelector(
     (state) => state.player
   );
+  const route = useRoute();
 
   useEffect(() => {
-    if (currPlaylist.items[currIndex].id !== activeSong.id) {
+    if (route.params.currSongId !== activeSong.id) {
       PlayerController.onPlayNew(currIndex, currPlaylist);
     }
   }, []);

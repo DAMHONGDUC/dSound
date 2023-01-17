@@ -6,15 +6,16 @@ import {
   setSongURL,
   setActiveSong,
   setIsPlaying,
+  setCurrPlaylist,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
 
 export default class PlayerController {
   static async setUpSongURL(index, currPlaylist) {
-    let currSong = cloneDeep(currPlaylist.items[index]);
+    let currSong = cloneDeep(currPlaylist.songs[index]);
 
     if (index !== 0 && !currSong.url) {
-      const URL = await getSongURL(currPlaylist.items[index].id);
+      const URL = await getSongURL(currPlaylist.songs[index].id);
       currSong.url = URL;
 
       store.dispatch(setSongURL({ index: index, url: URL }));
@@ -29,7 +30,7 @@ export default class PlayerController {
     await TrackPlayer.skip(currIndex);
     await TrackPlayer.play();
 
-    store.dispatch(setActiveSong(currPlaylist.items[currIndex]));
+    store.dispatch(setActiveSong(currPlaylist.songs[currIndex]));
     store.dispatch(setIsPlaying(true));
   }
 
@@ -48,7 +49,7 @@ export default class PlayerController {
     await TrackPlayer.skipToNext();
 
     store.dispatch(setCurrIndex(currIndex + 1));
-    store.dispatch(setActiveSong(currPlaylist.items[currIndex + 1]));
+    store.dispatch(setActiveSong(currPlaylist.songs[currIndex + 1]));
     store.dispatch(setIsPlaying(true));
   }
 
@@ -59,7 +60,7 @@ export default class PlayerController {
       await TrackPlayer.play();
 
       store.dispatch(setCurrIndex(currIndex - 1));
-      store.dispatch(setActiveSong(currPlaylist.items[currIndex - 1]));
+      store.dispatch(setActiveSong(currPlaylist.songs[currIndex - 1]));
       store.dispatch(setIsPlaying(true));
     }
   }
@@ -70,5 +71,27 @@ export default class PlayerController {
     if (tracks.length > 0) {
       await TrackPlayer.reset();
     }
+  }
+
+  static async onSongRowClick(
+    currPlaylist,
+    data,
+    index,
+    currSongId,
+    navigation
+  ) {
+    if (currPlaylist.id !== data.id) {
+      PlayerController.resetTrackPlayer();
+
+      store.dispatch(setCurrPlaylist(data));
+
+      // await TrackPlayer.getState();
+      await TrackPlayer.add(data.songs);
+      //  await TrackPlayer.getState();
+    }
+
+    store.dispatch(setCurrIndex(index));
+
+    navigation.navigate("PlayMusicPage", { currSongId: currSongId });
   }
 }

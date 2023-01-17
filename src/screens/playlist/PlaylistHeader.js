@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
   },
   name: {
     color: COLORS.black,
-    fontSize: 22,
+    fontSize: 21,
     fontWeight: "500",
   },
   creatorContainer: {
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   description: {
     color: COLORS.title,
-    fontSize: 15,
+    fontSize: 14,
   },
   likes: {
     color: COLORS.title,

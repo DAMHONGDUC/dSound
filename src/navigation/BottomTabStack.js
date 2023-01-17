@@ -21,6 +21,7 @@ export default function BottomTabStack() {
         tabBarStyle: {
           height: 55,
           elevation: 0,
+          backgroundColor: COLORS.tabBarColor,
         },
         tabBarItemStyle: { paddingVertical: 5 },
       }}
