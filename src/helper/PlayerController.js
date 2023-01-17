@@ -69,6 +69,7 @@ export default class PlayerController {
     const tracks = await TrackPlayer.getQueue();
 
     if (tracks.length > 0) {
+      await TrackPlayer.pause();
       await TrackPlayer.reset();
     }
   }
@@ -81,13 +82,11 @@ export default class PlayerController {
     navigation
   ) {
     if (currPlaylist.id !== data.id) {
-      PlayerController.resetTrackPlayer();
+      await PlayerController.resetTrackPlayer();
 
       store.dispatch(setCurrPlaylist(data));
 
-      // await TrackPlayer.getState();
       await TrackPlayer.add(data.songs);
-      //  await TrackPlayer.getState();
     }
 
     store.dispatch(setCurrIndex(index));
