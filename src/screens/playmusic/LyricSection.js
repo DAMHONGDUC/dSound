@@ -11,7 +11,6 @@ export default LyricSection = () => {
   useEffect(() => {
     // const fetchLyric = async () => {
     //   const data = await getLyric(activeSong.id);
-    //   setLyric(data);
     // };
 
     // fetchLyric();

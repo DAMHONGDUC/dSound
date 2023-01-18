@@ -32,7 +32,9 @@ export default PlaylistHeader = ({ playlist, navigation, dataPlaylist }) => {
 
       <Text style={styles.name}>{playlist.title}</Text>
       <View style={styles.creatorContainer}>
-        <Text style={styles.description}>{playlist.description}</Text>
+        <Text numberOfLines={2} style={styles.description}>
+          {playlist.description}
+        </Text>
         <Text style={styles.likes}>{playlist.like} Likes</Text>
       </View>
       <TouchableOpacity onPress={handlePlayPlaylist}>
@@ -47,6 +49,7 @@ export default PlaylistHeader = ({ playlist, navigation, dataPlaylist }) => {
 const styles = StyleSheet.create({
   container: {
     marginBottom: 20,
+    marginTop: 10,
   },
   image: {
     width: 200,
