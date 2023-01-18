@@ -1,34 +1,54 @@
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import Feather from "react-native-vector-icons/Feather";
-import { View, TouchableOpacity, StyleSheet } from "react-native";
+import { View, TouchableOpacity, StyleSheet, BackHandler } from "react-native";
 import { COLORS } from "constants/theme";
 import { useDispatch } from "react-redux";
 import { setShowBottomPlay } from "redux/slices/playerSlide";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
+import { useCallback, useEffect } from "react";
 
 export default HeaderSection = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
-  const collap = () => {
+  const handleBackButton = () => {
     navigation.pop();
     dispatch(setShowBottomPlay(true));
   };
 
+  useFocusEffect(
+    useCallback(() => {
+      const onBackPress = () => {
+        dispatch(setShowBottomPlay(true));
+      };
+
+      const subscription = BackHandler.addEventListener(
+        "hardwareBackPress",
+        onBackPress
+      );
+
+      return () => subscription.remove();
+    }, [])
+  );
+
   return (
     <View style={styles.row}>
-      <TouchableOpacity style={styles.button}>
-        <MaterialIcons
-          onPress={collap}
-          name="expand-more"
-          color={COLORS.black}
-          size={30}
-        ></MaterialIcons>
-      </TouchableOpacity>
+      <View style={styles.view}>
+        <TouchableOpacity>
+          <MaterialIcons
+            onPress={handleBackButton}
+            name="expand-more"
+            color={COLORS.black}
+            size={37}
+          ></MaterialIcons>
+        </TouchableOpacity>
+      </View>
 
-      <TouchableOpacity>
-        <Feather name={"more-vertical"} color={COLORS.black} size={25} />
-      </TouchableOpacity>
+      <View style={styles.view}>
+        <TouchableOpacity>
+          <Feather name={"more-vertical"} color={COLORS.black} size={27} />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -39,7 +59,11 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 10,
   },
-  button: {
-    width: 40,
+  view: {
+    width: 60,
+    height: 60,
+    //backgroundColor: COLORS.yellow,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

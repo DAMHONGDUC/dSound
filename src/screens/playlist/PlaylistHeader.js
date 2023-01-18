@@ -1,12 +1,8 @@
 import { COLORS } from "constants/theme";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { useDispatch } from "react-redux";
-import { setShowMainHeader } from "redux/slices/playerSlide";
 
 export default PlaylistHeader = ({ playlist, navigation }) => {
-  const dispatch = useDispatch();
-
   const handleBackButton = () => {
     navigation.pop();
   };
@@ -14,9 +10,12 @@ export default PlaylistHeader = ({ playlist, navigation }) => {
   return (
     <View style={styles.container}>
       <Image source={{ uri: playlist.image }} style={styles.image} />
-      <TouchableOpacity onPress={handleBackButton} style={styles.backButton}>
-        <Ionicons name="arrow-back" color={COLORS.black} size={25}></Ionicons>
-      </TouchableOpacity>
+      <View style={styles.backButton}>
+        <TouchableOpacity onPress={handleBackButton}>
+          <Ionicons name="arrow-back" color={COLORS.black} size={25}></Ionicons>
+        </TouchableOpacity>
+      </View>
+
       <Text style={styles.name}>{playlist.title}</Text>
       <View style={styles.creatorContainer}>
         <Text style={styles.description}>{playlist.description}</Text>
@@ -40,6 +39,7 @@ const styles = StyleSheet.create({
     height: 200,
     margin: 15,
     alignSelf: "center",
+    marginTop: 25,
   },
   name: {
     color: COLORS.black,
@@ -54,8 +54,11 @@ const styles = StyleSheet.create({
   },
   backButton: {
     position: "absolute",
-    left: 0,
-    top: 10,
+    width: 60,
+    height: 60,
+    // backgroundColor: COLORS.yellow,
+    alignItems: "flex-start",
+    justifyContent: "center",
   },
   description: {
     color: COLORS.title,

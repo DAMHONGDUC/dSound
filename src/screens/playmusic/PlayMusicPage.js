@@ -44,14 +44,16 @@ const styles = StyleSheet.create({
   conatiner: {
     flex: 1,
     backgroundColor: COLORS.white,
-    padding: 20,
+    // paddingLeft: 20,
+    // paddingRight: 20,
+    // paddingBottom: 20,
   },
   image: {
     height: windowWidth - 70,
     width: windowWidth - 70,
-    borderRadius: 35,
+    borderRadius: 20,
     alignSelf: "center",
-    marginTop: 40,
+    marginTop: 10,
     marginBottom: 20,
   },
 });

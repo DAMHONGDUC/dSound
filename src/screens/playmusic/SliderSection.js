@@ -59,5 +59,7 @@ const styles = StyleSheet.create({
   timeRow: {
     flexDirection: "row",
     justifyContent: "space-between",
+    paddingLeft: 21,
+    paddingRight: 21,
   },
 });
