@@ -23,10 +23,11 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    marginTop: 10,
+    padding: 10,
+    backgroundColor: COLORS.white,
   },
   text: {
-    flex: 0.8,
+    flex: 0.9,
     marginLeft: 15,
     fontSize: 20,
     color: COLORS.black,

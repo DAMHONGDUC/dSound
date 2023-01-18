@@ -5,6 +5,7 @@ import ArtistsRoute from "screens/artist/ArtistsRoute";
 import { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Animated } from "react-native";
 import { COLORS } from "constants/theme";
+import MainHeader from "components/MainHeader";
 
 const TopTab = createMaterialTopTabNavigator();
 
@@ -13,61 +14,65 @@ export default TopTabStack = () => {
 
   MyTabBar = ({ state, descriptors, navigation, position }) => {
     return (
-      <View style={styles.tabBar}>
-        {state.routes.map((route, index) => {
-          const { options } = descriptors[route.key];
-          const label =
-            options.tabBarLabel !== undefined
-              ? options.tabBarLabel
-              : options.title !== undefined
-              ? options.title
-              : route.name;
+      <View style={{ flexDirection: "column", height: 110 }}>
+        <MainHeader></MainHeader>
+        <View style={styles.tabBar}>
+          {state.routes.map((route, index) => {
+            const { options } = descriptors[route.key];
+            const label =
+              options.tabBarLabel !== undefined
+                ? options.tabBarLabel
+                : options.title !== undefined
+                ? options.title
+                : route.name;
 
-          const isFocused = state.index === index;
+            const isFocused = state.index === index;
 
-          const onPress = () => {
-            const event = navigation.emit({
-              type: "tabPress",
-              target: route.key,
-            });
+            const onPress = () => {
+              const event = navigation.emit({
+                type: "tabPress",
+                target: route.key,
+              });
 
-            if (!isFocused && !event.defaultPrevented) {
-              navigation.navigate(route.name);
-            }
+              if (!isFocused && !event.defaultPrevented) {
+                navigation.navigate(route.name);
+              }
 
-            setTabIndex(index);
-          };
+              setTabIndex(index);
+            };
 
-          const onLongPress = () => {
-            navigation.emit({
-              type: "tabLongPress",
-              target: route.key,
-            });
-          };
+            const onLongPress = () => {
+              navigation.emit({
+                type: "tabLongPress",
+                target: route.key,
+              });
+            };
 
-          return (
-            <TouchableOpacity
-              key={index}
-              accessibilityRole="button"
-              accessibilityState={isFocused ? { selected: true } : {}}
-              accessibilityLabel={options.tabBarAccessibilityLabel}
-              testID={options.tabBarTestID}
-              onPress={onPress}
-              onLongPress={onLongPress}
-              style={styles.tabItem}
-            >
-              <Animated.Text
-                style={{
-                  fontWeight: "bold",
-                  fontSize: 16,
-                  color: tabIndex == index ? COLORS.black : COLORS.unSelectTab,
-                }}
+            return (
+              <TouchableOpacity
+                key={index}
+                accessibilityRole="button"
+                accessibilityState={isFocused ? { selected: true } : {}}
+                accessibilityLabel={options.tabBarAccessibilityLabel}
+                testID={options.tabBarTestID}
+                onPress={onPress}
+                onLongPress={onLongPress}
+                style={styles.tabItem}
               >
-                {label}
-              </Animated.Text>
-            </TouchableOpacity>
-          );
-        })}
+                <Animated.Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 16,
+                    color:
+                      tabIndex == index ? COLORS.black : COLORS.unSelectTab,
+                  }}
+                >
+                  {label}
+                </Animated.Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
       </View>
     );
   };

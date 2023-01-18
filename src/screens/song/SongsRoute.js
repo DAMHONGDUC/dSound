@@ -62,7 +62,9 @@ export default function SongsRoute({ navigation }) {
     <View style={styles.container}>
       {data100Song ? (
         <>
-          <Text style={styles.mainText}>Top {data100Song.length} song</Text>
+          <Text style={styles.mainText}>
+            Top {data100Song.songs.length} song
+          </Text>
           <SeparateLine></SeparateLine>
           <FlatList
             data={data100Song.songs}

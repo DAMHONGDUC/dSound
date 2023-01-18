@@ -15,9 +15,8 @@ export default function MainStack() {
         name="BottomTabStack"
         component={BottomTabStack}
         options={{
-          headerTitle: () => <MainHeader />,
           headerShadowVisible: false,
-          headerShown: showMainHeader,
+          headerShown: false,
         }}
       />
       <Stack.Screen

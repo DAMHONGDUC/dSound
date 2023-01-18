@@ -48,6 +48,7 @@ export default BottomPlayer = () => {
   const handleBottomPlayerClick = () => {
     rootNavigationRef.current?.navigate("MainStack", {
       screen: "PlayMusicPage",
+      params: { currSongId: activeSong.id },
     });
   };
 

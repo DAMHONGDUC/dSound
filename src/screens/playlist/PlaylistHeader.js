@@ -8,7 +8,6 @@ export default PlaylistHeader = ({ playlist, navigation }) => {
   const dispatch = useDispatch();
 
   const handleBackButton = () => {
-    dispatch(setShowMainHeader(true));
     navigation.pop();
   };
 

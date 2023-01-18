@@ -59,22 +59,6 @@ export default function SuggestedRoute() {
     if (dataSuggestedPlaylist && dataNewSong) setisLoaded(true);
   }, [dataSuggestedPlaylist, dataNewSong]);
 
-  const onClickSongRow = async (index) => {
-    if (currPlaylist.id !== dataNewSong.id) {
-      PlayerController.resetTrackPlayer();
-
-      dispatch(setCurrPlaylist(dataNewSong));
-
-      await TrackPlayer.getState();
-      await TrackPlayer.add(dataNewSong.items);
-      await TrackPlayer.getState();
-    }
-
-    dispatch(setCurrIndex(index));
-
-    navigation.navigate("PlayMusicPage");
-  };
-
   return isLoaded ? (
     <ScrollView>
       <View style={styles.container}>
@@ -86,7 +70,15 @@ export default function SuggestedRoute() {
               title={e.title}
               image={{ uri: e.artwork }}
               artist={e.artist}
-              onClick={() => onClickSongRow(index)}
+              onClick={() => {
+                PlayerController.onSongRowClick(
+                  currPlaylist,
+                  dataNewSong,
+                  index,
+                  e.id,
+                  navigation
+                );
+              }}
             ></NewSongRow>
           ))}
         </View>

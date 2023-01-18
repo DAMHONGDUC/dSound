@@ -49,14 +49,14 @@ export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
             </Text>
           </View>
         </View>
-        <TouchableOpacity>
-          <FontAwesome5
-            name={activeSong.id === id ? "pause-circle" : "play-circle"}
-            color={activeSong.id === id ? COLORS.primary : COLORS.primary}
-            size={29}
-            solid
-          />
-        </TouchableOpacity>
+
+        <FontAwesome5
+          name={activeSong.id === id ? "pause-circle" : "play-circle"}
+          color={activeSong.id === id ? COLORS.primary : COLORS.primary}
+          size={29}
+          solid
+        />
+
         <TouchableOpacity>
           <Feather name={"more-vertical"} color={COLORS.black} size={25} />
         </TouchableOpacity>

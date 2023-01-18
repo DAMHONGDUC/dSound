@@ -11,11 +11,13 @@ import ArtistRow from "screens/artist/ArtistRow";
 import { useEffect, useState } from "react";
 import { getArtist } from "api/ArtistAPI";
 import Loading from "components/Loading";
+import { useNavigation } from "@react-navigation/native";
 
 const song = [];
 
 export default function ArtistsRoute() {
   const [dataArtist, setdataArtist] = useState();
+  const navigation = useNavigation();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +31,9 @@ export default function ArtistsRoute() {
   const renderItem = ({ item }) => {
     return (
       <ArtistRow
-        onClick={() => {}}
+        onClick={() => {
+          navigation.navigate("PlaylistPage", { playlistId: item.id });
+        }}
         image={{ uri: item.thumbnailM }}
         name={item.name}
         totalFollow={item.totalFollow}
