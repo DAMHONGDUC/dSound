@@ -1,10 +1,24 @@
 import { COLORS } from "constants/theme";
+import PlayerController from "helper/PlayerController";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useSelector } from "react-redux";
 
-export default PlaylistHeader = ({ playlist, navigation }) => {
+export default PlaylistHeader = ({ playlist, navigation, dataPlaylist }) => {
   const handleBackButton = () => {
     navigation.pop();
+  };
+
+  const { currIndex, currPlaylist } = useSelector((state) => state.player);
+
+  const handlePlayPlaylist = () => {
+    PlayerController.onSongRowClick(
+      currPlaylist,
+      dataPlaylist,
+      0,
+      dataPlaylist.songs[0].id,
+      navigation
+    );
   };
 
   return (
@@ -21,7 +35,7 @@ export default PlaylistHeader = ({ playlist, navigation }) => {
         <Text style={styles.description}>{playlist.description}</Text>
         <Text style={styles.likes}>{playlist.like} Likes</Text>
       </View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handlePlayPlaylist}>
         <View style={styles.button}>
           <Text style={styles.buttonText}>PLAY</Text>
         </View>

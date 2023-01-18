@@ -7,6 +7,7 @@ import {
   setActiveSong,
   setIsPlaying,
   setCurrPlaylist,
+  setShowBottomPlay,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
 
@@ -46,7 +47,8 @@ export default class PlayerController {
 
   static async onNext(currIndex, currPlaylist) {
     await PlayerController.setUpSongURL(currIndex + 1, currPlaylist);
-    await TrackPlayer.skipToNext();
+    await TrackPlayer.skip(currIndex + 1);
+    await TrackPlayer.play();
 
     store.dispatch(setCurrIndex(currIndex + 1));
     store.dispatch(setActiveSong(currPlaylist.songs[currIndex + 1]));

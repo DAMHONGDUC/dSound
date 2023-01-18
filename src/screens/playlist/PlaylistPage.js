@@ -53,7 +53,11 @@ export default PlaylistPage = () => {
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
           ListHeaderComponent={() => (
-            <PlaylistHeader navigation={navigation} playlist={dataPlaylist} />
+            <PlaylistHeader
+              dataPlaylist={dataPlaylist}
+              navigation={navigation}
+              playlist={dataPlaylist}
+            />
           )}
         />
       ) : (
