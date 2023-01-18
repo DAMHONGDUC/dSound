@@ -23,8 +23,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "center",
-    padding: 10,
     backgroundColor: COLORS.white,
+    paddingLeft: 15,
+    paddingRight: 5,
   },
   text: {
     flex: 0.9,

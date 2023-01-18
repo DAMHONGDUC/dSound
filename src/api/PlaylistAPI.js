@@ -12,7 +12,7 @@ const reducePropertyItems = (data) => {
   return data.map((e) => ({
     id: e.encodeId,
     title: e.title,
-    image: e.thumbnail,
+    image: e.thumbnailM,
     des: e.sortDescription,
   }));
 };
@@ -80,7 +80,7 @@ const reducePropertyDetailPlaylist = async (data) => {
 
   result.id = data.encodeId;
   result.title = data.title;
-  result.image = data.thumbnail;
+  result.image = data.thumbnailM;
   result.like = data.like;
   result.description = data.sortDescription;
   result.duration = data.song?.totalDuration;

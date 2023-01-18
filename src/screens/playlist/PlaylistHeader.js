@@ -33,22 +33,24 @@ export default PlaylistHeader = ({ playlist, navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
     marginBottom: 20,
   },
   image: {
     width: 200,
     height: 200,
     margin: 15,
+    alignSelf: "center",
   },
   name: {
     color: COLORS.black,
     fontSize: 21,
     fontWeight: "500",
+    alignSelf: "center",
   },
   creatorContainer: {
     flexDirection: "column",
     marginTop: 7,
+    alignSelf: "flex-start",
   },
   backButton: {
     position: "absolute",
@@ -71,6 +73,7 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     justifyContent: "center",
     alignItems: "center",
+    alignSelf: "center",
   },
   buttonText: {
     color: "white",
