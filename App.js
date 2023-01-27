@@ -20,7 +20,6 @@ export default function App() {
           Capability.Pause,
           Capability.SkipToNext,
           Capability.SkipToPrevious,
-          Capability.Stop,
         ],
         compactCapabilities: [
           Capability.Play,
