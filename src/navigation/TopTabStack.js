@@ -46,6 +46,8 @@ export default TopTabStack = () => {
                 type: "tabLongPress",
                 target: route.key,
               });
+
+              setTabIndex(index);
             };
 
             return (
@@ -64,7 +66,7 @@ export default TopTabStack = () => {
                     fontWeight: "bold",
                     fontSize: 16,
                     color:
-                      tabIndex == index ? COLORS.black : COLORS.unSelectTab,
+                      tabIndex === index ? COLORS.black : COLORS.unSelectTab,
                   }}
                 >
                   {label}
