@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { cloneDeep } from "lodash";
 
 const initialState = {
   currPlaylist: [],
@@ -7,7 +6,6 @@ const initialState = {
   activeSong: {},
   showBottomPlay: true,
   isPlaying: false,
-  needWitchPlaylist: false,
 };
 
 export const playerSlide = createSlice({
@@ -18,7 +16,7 @@ export const playerSlide = createSlice({
       state.currPlaylist = action.payload;
     },
     setSongURL: (state, action) => {
-      state.currPlaylist.items[action.payload.index].url = action.payload.url;
+      state.currPlaylist.songs[action.payload.index].url = action.payload.url;
     },
     setCurrIndex: (state, action) => {
       state.currIndex = action.payload;

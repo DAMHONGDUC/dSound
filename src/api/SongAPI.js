@@ -13,7 +13,7 @@ export const getTop100PlayList = async () => {
   } catch (err) {}
 };
 
-export const reducePropertySong = async (data, playlistId) => {
+export const reducePropertySong = async (data) => {
   // get all song have "streamingStatus": 1 (1 - normal, 2 - VIP)
   const dataFilter = data.filter((e) => e.streamingStatus === 1);
 
@@ -29,13 +29,7 @@ export const reducePropertySong = async (data, playlistId) => {
   const URL = await getSongURL(songData[0].id);
   songData[0].url = URL;
 
-  const result = {};
-  result.id = playlistId;
-  result.items = songData;
-
-  //console.log(result);
-
-  return result;
+  return songData;
 };
 
 // get 100 song of the first playlist in top 100
@@ -51,8 +45,11 @@ export const get100Song = async () => {
         sig: hashParam("/api/v2/page/get/playlist", playlistId),
       });
 
-      if (res.data.song.items)
-        return await reducePropertySong(res.data.song.items, "top100Song");
+      if (res?.data?.song?.items) {
+        const songs = await reducePropertySong(res.data.song.items);
+
+        return { id: "top100song", songs: songs };
+      }
     }
   } catch (err) {}
 };
@@ -74,6 +71,7 @@ export const getSongURL = async (id) => {
     const data = await getSongById(id);
 
     if (data.data["128"]) return data.data["128"];
+    else return null;
   } catch (err) {}
 };
 
@@ -85,7 +83,9 @@ export const getLyric = async (songId) => {
       sig: hashParam("/api/v2/lyric/get/lyric", songId),
     });
 
-    console.log(res);
+    res.data.sentences.forEach((element) => {
+      element.words.forEach((e) => console.log(e.data));
+    });
     if (res) return res;
   } catch (err) {}
 };

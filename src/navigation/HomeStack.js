@@ -1,24 +1,22 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import BottomTabStack from "./BottomTabStack";
-import PlayMusicPage from "screens/playmusic/PlayMusicPage";
-import { useSelector } from "react-redux";
+import PlaylistPage from "screens/playlist/PlaylistPage";
+import HomePage from "screens/home/HomePage";
 
 const Stack = createNativeStackNavigator();
 
-export default function MainStack() {
+export default function HomeStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="BottomTabStack"
-        component={BottomTabStack}
+        name="HomePage"
+        component={HomePage}
         options={{
-          headerShadowVisible: false,
           headerShown: false,
         }}
       />
       <Stack.Screen
-        name="PlayMusicPage"
-        component={PlayMusicPage}
+        name="PlaylistPage"
+        component={PlaylistPage}
         options={{
           headerShown: false,
         }}

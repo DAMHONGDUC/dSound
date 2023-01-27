@@ -1,0 +1,2110 @@
+{
+    "err": 0,
+    "msg": "Success",
+    "data": {
+        "sentences": [
+            {
+                "words": [
+                    {
+                        "startTime": 11390,
+                        "endTime": 11650,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 11650,
+                        "endTime": 11890,
+                        "data": "do"
+                    },
+                    {
+                        "startTime": 11890,
+                        "endTime": 11890,
+                        "data": "the"
+                    },
+                    {
+                        "startTime": 11890,
+                        "endTime": 12390,
+                        "data": "same"
+                    },
+                    {
+                        "startTime": 12390,
+                        "endTime": 12640,
+                        "data": "thing"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 12640,
+                        "endTime": 12890,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 12890,
+                        "endTime": 12890,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 12890,
+                        "endTime": 13150,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 13150,
+                        "endTime": 13390,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 13390,
+                        "endTime": 13640,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 13640,
+                        "endTime": 13640,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 13640,
+                        "endTime": 13940,
+                        "data": "would"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 13940,
+                        "endTime": 14160,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 14160,
+                        "endTime": 14390,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 14390,
+                        "endTime": 14640,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 14640,
+                        "endTime": 14640,
+                        "data": "I'd"
+                    },
+                    {
+                        "startTime": 14640,
+                        "endTime": 15140,
+                        "data": "change"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 15140,
+                        "endTime": 15390,
+                        "data": "Even"
+                    },
+                    {
+                        "startTime": 15390,
+                        "endTime": 15640,
+                        "data": "when"
+                    },
+                    {
+                        "startTime": 15640,
+                        "endTime": 15890,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 15890,
+                        "endTime": 15890,
+                        "data": "knew"
+                    },
+                    {
+                        "startTime": 15890,
+                        "endTime": 16140,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 16140,
+                        "endTime": 16390,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 16390,
+                        "endTime": 16890,
+                        "data": "could"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 16890,
+                        "endTime": 16890,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 16890,
+                        "endTime": 17140,
+                        "data": "know"
+                    },
+                    {
+                        "startTime": 17140,
+                        "endTime": 17390,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 17390,
+                        "endTime": 17640,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 17640,
+                        "endTime": 18130,
+                        "data": "can't"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 18130,
+                        "endTime": 18390,
+                        "data": "Find"
+                    },
+                    {
+                        "startTime": 18390,
+                        "endTime": 18630,
+                        "data": "nobody"
+                    },
+                    {
+                        "startTime": 18630,
+                        "endTime": 18890,
+                        "data": "else"
+                    },
+                    {
+                        "startTime": 18890,
+                        "endTime": 19140,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 19140,
+                        "endTime": 19140,
+                        "data": "good"
+                    },
+                    {
+                        "startTime": 19140,
+                        "endTime": 19400,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 19400,
+                        "endTime": 19640,
+                        "data": "you"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 19640,
+                        "endTime": 19890,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 19890,
+                        "endTime": 20140,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 20140,
+                        "endTime": 20390,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 20390,
+                        "endTime": 20390,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 20390,
+                        "endTime": 20890,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 20890,
+                        "endTime": 21140,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 21140,
+                        "endTime": 21140,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 21140,
+                        "endTime": 21390,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 21390,
+                        "endTime": 21890,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 21890,
+                        "endTime": 23090,
+                        "data": "hey"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 23090,
+                        "endTime": 23090,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 23090,
+                        "endTime": 23350,
+                        "data": "get"
+                    },
+                    {
+                        "startTime": 23350,
+                        "endTime": 24090,
+                        "data": "drunk,"
+                    },
+                    {
+                        "startTime": 24090,
+                        "endTime": 24350,
+                        "data": "wake"
+                    },
+                    {
+                        "startTime": 24350,
+                        "endTime": 24590,
+                        "data": "up,"
+                    },
+                    {
+                        "startTime": 24590,
+                        "endTime": 25100,
+                        "data": "I'm"
+                    },
+                    {
+                        "startTime": 25100,
+                        "endTime": 25600,
+                        "data": "wasted"
+                    },
+                    {
+                        "startTime": 25600,
+                        "endTime": 25850,
+                        "data": "still"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 25850,
+                        "endTime": 26100,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 26100,
+                        "endTime": 26810,
+                        "data": "realize"
+                    },
+                    {
+                        "startTime": 26810,
+                        "endTime": 27050,
+                        "data": "the"
+                    },
+                    {
+                        "startTime": 27050,
+                        "endTime": 27310,
+                        "data": "time"
+                    },
+                    {
+                        "startTime": 27310,
+                        "endTime": 27550,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 27550,
+                        "endTime": 27810,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 27810,
+                        "endTime": 28310,
+                        "data": "wasted"
+                    },
+                    {
+                        "startTime": 28310,
+                        "endTime": 28560,
+                        "data": "here"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 28560,
+                        "endTime": 28810,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 28810,
+                        "endTime": 29060,
+                        "data": "feel"
+                    },
+                    {
+                        "startTime": 29060,
+                        "endTime": 29560,
+                        "data": "like"
+                    },
+                    {
+                        "startTime": 29560,
+                        "endTime": 29810,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 29810,
+                        "endTime": 30060,
+                        "data": "can't"
+                    },
+                    {
+                        "startTime": 30060,
+                        "endTime": 30300,
+                        "data": "feel"
+                    },
+                    {
+                        "startTime": 30300,
+                        "endTime": 30560,
+                        "data": "the"
+                    },
+                    {
+                        "startTime": 30560,
+                        "endTime": 30800,
+                        "data": "way"
+                    },
+                    {
+                        "startTime": 30800,
+                        "endTime": 31300,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 31300,
+                        "endTime": 31560,
+                        "data": "feel"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 31560,
+                        "endTime": 31560,
+                        "data": "Oh,"
+                    },
+                    {
+                        "startTime": 31560,
+                        "endTime": 31800,
+                        "data": "I'll"
+                    },
+                    {
+                        "startTime": 31800,
+                        "endTime": 32060,
+                        "data": "be"
+                    },
+                    {
+                        "startTime": 32060,
+                        "endTime": 32300,
+                        "data": "***"
+                    },
+                    {
+                        "startTime": 32300,
+                        "endTime": 32550,
+                        "data": "up"
+                    },
+                    {
+                        "startTime": 32550,
+                        "endTime": 32800,
+                        "data": "if"
+                    },
+                    {
+                        "startTime": 32800,
+                        "endTime": 33050,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 33050,
+                        "endTime": 33310,
+                        "data": "can't"
+                    },
+                    {
+                        "startTime": 33310,
+                        "endTime": 33310,
+                        "data": "be"
+                    },
+                    {
+                        "startTime": 33310,
+                        "endTime": 33550,
+                        "data": "right"
+                    },
+                    {
+                        "startTime": 33550,
+                        "endTime": 34050,
+                        "data": "here"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 34050,
+                        "endTime": 35050,
+                        "data": "Oh,"
+                    },
+                    {
+                        "startTime": 35050,
+                        "endTime": 36810,
+                        "data": "ooh-woah"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 36810,
+                        "endTime": 37800,
+                        "data": "Oh,"
+                    },
+                    {
+                        "startTime": 37800,
+                        "endTime": 39560,
+                        "data": "ooh-woah"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 39560,
+                        "endTime": 40810,
+                        "data": "Oh,"
+                    },
+                    {
+                        "startTime": 40810,
+                        "endTime": 42310,
+                        "data": "ooh-woah"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 42310,
+                        "endTime": 42550,
+                        "data": "Oh,"
+                    },
+                    {
+                        "startTime": 42550,
+                        "endTime": 42810,
+                        "data": "I'll"
+                    },
+                    {
+                        "startTime": 42810,
+                        "endTime": 43050,
+                        "data": "be"
+                    },
+                    {
+                        "startTime": 43050,
+                        "endTime": 43560,
+                        "data": "***"
+                    },
+                    {
+                        "startTime": 43560,
+                        "endTime": 43810,
+                        "data": "up"
+                    },
+                    {
+                        "startTime": 43810,
+                        "endTime": 44060,
+                        "data": "if"
+                    },
+                    {
+                        "startTime": 44060,
+                        "endTime": 44300,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 44300,
+                        "endTime": 44560,
+                        "data": "can't"
+                    },
+                    {
+                        "startTime": 44560,
+                        "endTime": 44560,
+                        "data": "be"
+                    },
+                    {
+                        "startTime": 44560,
+                        "endTime": 45060,
+                        "data": "right"
+                    },
+                    {
+                        "startTime": 45060,
+                        "endTime": 45310,
+                        "data": "here"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 45310,
+                        "endTime": 45560,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 45560,
+                        "endTime": 45800,
+                        "data": "do"
+                    },
+                    {
+                        "startTime": 45800,
+                        "endTime": 45800,
+                        "data": "the"
+                    },
+                    {
+                        "startTime": 45800,
+                        "endTime": 46300,
+                        "data": "same"
+                    },
+                    {
+                        "startTime": 46300,
+                        "endTime": 46560,
+                        "data": "thing"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 46560,
+                        "endTime": 46800,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 46800,
+                        "endTime": 47060,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 47060,
+                        "endTime": 47060,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 47060,
+                        "endTime": 47300,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 47300,
+                        "endTime": 47560,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 47560,
+                        "endTime": 47800,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 47800,
+                        "endTime": 47800,
+                        "data": "would"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 47800,
+                        "endTime": 48060,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 48060,
+                        "endTime": 48310,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 48310,
+                        "endTime": 48550,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 48550,
+                        "endTime": 48810,
+                        "data": "I'd"
+                    },
+                    {
+                        "startTime": 48810,
+                        "endTime": 49050,
+                        "data": "change"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 49050,
+                        "endTime": 49320,
+                        "data": "Even"
+                    },
+                    {
+                        "startTime": 49320,
+                        "endTime": 49550,
+                        "data": "when"
+                    },
+                    {
+                        "startTime": 49550,
+                        "endTime": 49810,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 49810,
+                        "endTime": 50050,
+                        "data": "knew"
+                    },
+                    {
+                        "startTime": 50050,
+                        "endTime": 50050,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 50050,
+                        "endTime": 50310,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 50310,
+                        "endTime": 50820,
+                        "data": "could"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 50820,
+                        "endTime": 51060,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 51060,
+                        "endTime": 51060,
+                        "data": "know"
+                    },
+                    {
+                        "startTime": 51060,
+                        "endTime": 51310,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 51310,
+                        "endTime": 51560,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 51560,
+                        "endTime": 52060,
+                        "data": "can't"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 52060,
+                        "endTime": 52300,
+                        "data": "Find"
+                    },
+                    {
+                        "startTime": 52300,
+                        "endTime": 52560,
+                        "data": "nobody"
+                    },
+                    {
+                        "startTime": 52560,
+                        "endTime": 52560,
+                        "data": "else"
+                    },
+                    {
+                        "startTime": 52560,
+                        "endTime": 52810,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 52810,
+                        "endTime": 53060,
+                        "data": "good"
+                    },
+                    {
+                        "startTime": 53060,
+                        "endTime": 53300,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 53300,
+                        "endTime": 53560,
+                        "data": "you"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 53560,
+                        "endTime": 53800,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 53800,
+                        "endTime": 53800,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 53800,
+                        "endTime": 54070,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 54070,
+                        "endTime": 54300,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 54300,
+                        "endTime": 54800,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 54800,
+                        "endTime": 55050,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 55050,
+                        "endTime": 55300,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 55300,
+                        "endTime": 55550,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 55550,
+                        "endTime": 56050,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 56050,
+                        "endTime": 56550,
+                        "data": "hey"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 56550,
+                        "endTime": 56810,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 56810,
+                        "endTime": 57050,
+                        "data": "do"
+                    },
+                    {
+                        "startTime": 57050,
+                        "endTime": 57050,
+                        "data": "the"
+                    },
+                    {
+                        "startTime": 57050,
+                        "endTime": 57550,
+                        "data": "same"
+                    },
+                    {
+                        "startTime": 57550,
+                        "endTime": 57810,
+                        "data": "thing"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 57810,
+                        "endTime": 58050,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 58050,
+                        "endTime": 58310,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 58310,
+                        "endTime": 58310,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 58310,
+                        "endTime": 58560,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 58560,
+                        "endTime": 58810,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 58810,
+                        "endTime": 59060,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 59060,
+                        "endTime": 59310,
+                        "data": "would"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 59310,
+                        "endTime": 59310,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 59310,
+                        "endTime": 59570,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 59570,
+                        "endTime": 59810,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 59810,
+                        "endTime": 60060,
+                        "data": "I'd"
+                    },
+                    {
+                        "startTime": 60060,
+                        "endTime": 60560,
+                        "data": "change"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 60560,
+                        "endTime": 60560,
+                        "data": "Even"
+                    },
+                    {
+                        "startTime": 60560,
+                        "endTime": 60810,
+                        "data": "when"
+                    },
+                    {
+                        "startTime": 60810,
+                        "endTime": 61060,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 61060,
+                        "endTime": 61300,
+                        "data": "knew"
+                    },
+                    {
+                        "startTime": 61300,
+                        "endTime": 61560,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 61560,
+                        "endTime": 61800,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 61800,
+                        "endTime": 62050,
+                        "data": "could"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 62050,
+                        "endTime": 62300,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 62300,
+                        "endTime": 62300,
+                        "data": "know"
+                    },
+                    {
+                        "startTime": 62300,
+                        "endTime": 62560,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 62560,
+                        "endTime": 62800,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 62800,
+                        "endTime": 63310,
+                        "data": "can't"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 63310,
+                        "endTime": 63550,
+                        "data": "Find"
+                    },
+                    {
+                        "startTime": 63550,
+                        "endTime": 63810,
+                        "data": "nobody"
+                    },
+                    {
+                        "startTime": 63810,
+                        "endTime": 64050,
+                        "data": "else"
+                    },
+                    {
+                        "startTime": 64050,
+                        "endTime": 64310,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 64310,
+                        "endTime": 64550,
+                        "data": "good"
+                    },
+                    {
+                        "startTime": 64550,
+                        "endTime": 64550,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 64550,
+                        "endTime": 64820,
+                        "data": "you"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 64820,
+                        "endTime": 65050,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 65050,
+                        "endTime": 65310,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 65310,
+                        "endTime": 65550,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 65550,
+                        "endTime": 65550,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 65550,
+                        "endTime": 66060,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 66060,
+                        "endTime": 66310,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 66310,
+                        "endTime": 66560,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 66560,
+                        "endTime": 66810,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 66810,
+                        "endTime": 67300,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 67300,
+                        "endTime": 68010,
+                        "data": "hey"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 68010,
+                        "endTime": 68260,
+                        "data": "When"
+                    },
+                    {
+                        "startTime": 68260,
+                        "endTime": 68260,
+                        "data": "I'm"
+                    },
+                    {
+                        "startTime": 68260,
+                        "endTime": 68760,
+                        "data": "away"
+                    },
+                    {
+                        "startTime": 68760,
+                        "endTime": 68760,
+                        "data": "from"
+                    },
+                    {
+                        "startTime": 68760,
+                        "endTime": 69010,
+                        "data": "you,"
+                    },
+                    {
+                        "startTime": 69010,
+                        "endTime": 69260,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 69260,
+                        "endTime": 69510,
+                        "data": "miss"
+                    },
+                    {
+                        "startTime": 69510,
+                        "endTime": 69510,
+                        "data": "your"
+                    },
+                    {
+                        "startTime": 69510,
+                        "endTime": 71010,
+                        "data": "touch"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 71010,
+                        "endTime": 71260,
+                        "data": "You're"
+                    },
+                    {
+                        "startTime": 71260,
+                        "endTime": 71510,
+                        "data": "the"
+                    },
+                    {
+                        "startTime": 71510,
+                        "endTime": 71510,
+                        "data": "reason"
+                    },
+                    {
+                        "startTime": 71510,
+                        "endTime": 71770,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 71770,
+                        "endTime": 72010,
+                        "data": "believe"
+                    },
+                    {
+                        "startTime": 72010,
+                        "endTime": 72260,
+                        "data": "in"
+                    },
+                    {
+                        "startTime": 72260,
+                        "endTime": 73760,
+                        "data": "love"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 73760,
+                        "endTime": 74010,
+                        "data": "It's"
+                    },
+                    {
+                        "startTime": 74010,
+                        "endTime": 74260,
+                        "data": "been"
+                    },
+                    {
+                        "startTime": 74260,
+                        "endTime": 74760,
+                        "data": "difficult"
+                    },
+                    {
+                        "startTime": 74760,
+                        "endTime": 75010,
+                        "data": "for"
+                    },
+                    {
+                        "startTime": 75010,
+                        "endTime": 75010,
+                        "data": "me"
+                    },
+                    {
+                        "startTime": 75010,
+                        "endTime": 75260,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 75260,
+                        "endTime": 76760,
+                        "data": "trust"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 76760,
+                        "endTime": 76760,
+                        "data": "And"
+                    },
+                    {
+                        "startTime": 76760,
+                        "endTime": 77010,
+                        "data": "I'm"
+                    },
+                    {
+                        "startTime": 77010,
+                        "endTime": 77260,
+                        "data": "afraid"
+                    },
+                    {
+                        "startTime": 77260,
+                        "endTime": 77510,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 77510,
+                        "endTime": 77510,
+                        "data": "I'ma"
+                    },
+                    {
+                        "startTime": 77510,
+                        "endTime": 78010,
+                        "data": "***"
+                    },
+                    {
+                        "startTime": 78010,
+                        "endTime": 78260,
+                        "data": "it"
+                    },
+                    {
+                        "startTime": 78260,
+                        "endTime": 79510,
+                        "data": "up"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 79510,
+                        "endTime": 79760,
+                        "data": "Ain't"
+                    },
+                    {
+                        "startTime": 79760,
+                        "endTime": 79760,
+                        "data": "no"
+                    },
+                    {
+                        "startTime": 79760,
+                        "endTime": 80010,
+                        "data": "way"
+                    },
+                    {
+                        "startTime": 80010,
+                        "endTime": 80270,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 80270,
+                        "endTime": 80520,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 80520,
+                        "endTime": 80760,
+                        "data": "can"
+                    },
+                    {
+                        "startTime": 80760,
+                        "endTime": 80760,
+                        "data": "leave"
+                    },
+                    {
+                        "startTime": 80760,
+                        "endTime": 81260,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 81260,
+                        "endTime": 82260,
+                        "data": "stranded"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 82260,
+                        "endTime": 82510,
+                        "data": "Cause"
+                    },
+                    {
+                        "startTime": 82510,
+                        "endTime": 82510,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 82510,
+                        "endTime": 82760,
+                        "data": "ain't"
+                    },
+                    {
+                        "startTime": 82760,
+                        "endTime": 83010,
+                        "data": "ever"
+                    },
+                    {
+                        "startTime": 83010,
+                        "endTime": 83260,
+                        "data": "left"
+                    },
+                    {
+                        "startTime": 83260,
+                        "endTime": 83510,
+                        "data": "me"
+                    },
+                    {
+                        "startTime": 83510,
+                        "endTime": 85010,
+                        "data": "empty-handed"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 85010,
+                        "endTime": 85270,
+                        "data": "And"
+                    },
+                    {
+                        "startTime": 85270,
+                        "endTime": 85510,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 85510,
+                        "endTime": 85770,
+                        "data": "know"
+                    },
+                    {
+                        "startTime": 85770,
+                        "endTime": 86010,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 86010,
+                        "endTime": 86010,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 86010,
+                        "endTime": 86510,
+                        "data": "know"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 86510,
+                        "endTime": 86510,
+                        "data": "That"
+                    },
+                    {
+                        "startTime": 86510,
+                        "endTime": 86760,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 86760,
+                        "endTime": 87010,
+                        "data": "can't"
+                    },
+                    {
+                        "startTime": 87010,
+                        "endTime": 87280,
+                        "data": "live"
+                    },
+                    {
+                        "startTime": 87280,
+                        "endTime": 87760,
+                        "data": "without"
+                    },
+                    {
+                        "startTime": 87760,
+                        "endTime": 88760,
+                        "data": "you"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 88760,
+                        "endTime": 88760,
+                        "data": "So,"
+                    },
+                    {
+                        "startTime": 88760,
+                        "endTime": 89010,
+                        "data": "baby,"
+                    },
+                    {
+                        "startTime": 89010,
+                        "endTime": 90510,
+                        "data": "stay"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 90510,
+                        "endTime": 91510,
+                        "data": "Oh,"
+                    },
+                    {
+                        "startTime": 91510,
+                        "endTime": 93270,
+                        "data": "ooh-woah"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 93270,
+                        "endTime": 94260,
+                        "data": "Oh,"
+                    },
+                    {
+                        "startTime": 94260,
+                        "endTime": 96020,
+                        "data": "ooh-woah"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 96020,
+                        "endTime": 97010,
+                        "data": "Oh,"
+                    },
+                    {
+                        "startTime": 97010,
+                        "endTime": 99010,
+                        "data": "ooh-woah"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 99010,
+                        "endTime": 99010,
+                        "data": "I'll"
+                    },
+                    {
+                        "startTime": 99010,
+                        "endTime": 99260,
+                        "data": "be"
+                    },
+                    {
+                        "startTime": 99260,
+                        "endTime": 100010,
+                        "data": "***"
+                    },
+                    {
+                        "startTime": 100010,
+                        "endTime": 100270,
+                        "data": "up"
+                    },
+                    {
+                        "startTime": 100270,
+                        "endTime": 100510,
+                        "data": "if"
+                    },
+                    {
+                        "startTime": 100510,
+                        "endTime": 100770,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 100770,
+                        "endTime": 100770,
+                        "data": "can't"
+                    },
+                    {
+                        "startTime": 100770,
+                        "endTime": 101010,
+                        "data": "be"
+                    },
+                    {
+                        "startTime": 101010,
+                        "endTime": 101510,
+                        "data": "right"
+                    },
+                    {
+                        "startTime": 101510,
+                        "endTime": 101760,
+                        "data": "here"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 101760,
+                        "endTime": 102010,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 102010,
+                        "endTime": 102010,
+                        "data": "do"
+                    },
+                    {
+                        "startTime": 102010,
+                        "endTime": 102260,
+                        "data": "the"
+                    },
+                    {
+                        "startTime": 102260,
+                        "endTime": 102760,
+                        "data": "same"
+                    },
+                    {
+                        "startTime": 102760,
+                        "endTime": 103020,
+                        "data": "thing"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 103020,
+                        "endTime": 103260,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 103260,
+                        "endTime": 103260,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 103260,
+                        "endTime": 103510,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 103510,
+                        "endTime": 103760,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 103760,
+                        "endTime": 104010,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 104010,
+                        "endTime": 104260,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 104260,
+                        "endTime": 104510,
+                        "data": "would"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 104510,
+                        "endTime": 104510,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 104510,
+                        "endTime": 104770,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 104770,
+                        "endTime": 105010,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 105010,
+                        "endTime": 105260,
+                        "data": "I'd"
+                    },
+                    {
+                        "startTime": 105260,
+                        "endTime": 105760,
+                        "data": "change"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 105760,
+                        "endTime": 106010,
+                        "data": "Even"
+                    },
+                    {
+                        "startTime": 106010,
+                        "endTime": 106010,
+                        "data": "when"
+                    },
+                    {
+                        "startTime": 106010,
+                        "endTime": 106260,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 106260,
+                        "endTime": 106510,
+                        "data": "knew"
+                    },
+                    {
+                        "startTime": 106510,
+                        "endTime": 106510,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 106510,
+                        "endTime": 106780,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 106780,
+                        "endTime": 107260,
+                        "data": "could"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 107260,
+                        "endTime": 107510,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 107510,
+                        "endTime": 107510,
+                        "data": "know"
+                    },
+                    {
+                        "startTime": 107510,
+                        "endTime": 107770,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 107770,
+                        "endTime": 108010,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 108010,
+                        "endTime": 108510,
+                        "data": "can't"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 108510,
+                        "endTime": 108510,
+                        "data": "Find"
+                    },
+                    {
+                        "startTime": 108510,
+                        "endTime": 108770,
+                        "data": "nobody"
+                    },
+                    {
+                        "startTime": 108770,
+                        "endTime": 109260,
+                        "data": "else"
+                    },
+                    {
+                        "startTime": 109260,
+                        "endTime": 109260,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 109260,
+                        "endTime": 109510,
+                        "data": "good"
+                    },
+                    {
+                        "startTime": 109510,
+                        "endTime": 109760,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 109760,
+                        "endTime": 110010,
+                        "data": "you"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 110010,
+                        "endTime": 110260,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 110260,
+                        "endTime": 110520,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 110520,
+                        "endTime": 110520,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 110520,
+                        "endTime": 110760,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 110760,
+                        "endTime": 111260,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 111260,
+                        "endTime": 111520,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 111520,
+                        "endTime": 111760,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 111760,
+                        "endTime": 112260,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 112260,
+                        "endTime": 112760,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 112760,
+                        "endTime": 112960,
+                        "data": "hey"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 112960,
+                        "endTime": 113220,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 113220,
+                        "endTime": 113460,
+                        "data": "do"
+                    },
+                    {
+                        "startTime": 113460,
+                        "endTime": 113710,
+                        "data": "the"
+                    },
+                    {
+                        "startTime": 113710,
+                        "endTime": 113960,
+                        "data": "same"
+                    },
+                    {
+                        "startTime": 113960,
+                        "endTime": 114220,
+                        "data": "thing"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 114220,
+                        "endTime": 114460,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 114460,
+                        "endTime": 114710,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 114710,
+                        "endTime": 114710,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 114710,
+                        "endTime": 114970,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 114970,
+                        "endTime": 115210,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 115210,
+                        "endTime": 115460,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 115460,
+                        "endTime": 115710,
+                        "data": "would"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 115710,
+                        "endTime": 115710,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 115710,
+                        "endTime": 115960,
+                        "data": "told"
+                    },
+                    {
+                        "startTime": 115960,
+                        "endTime": 116210,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 116210,
+                        "endTime": 116460,
+                        "data": "I'd"
+                    },
+                    {
+                        "startTime": 116460,
+                        "endTime": 116960,
+                        "data": "change"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 116960,
+                        "endTime": 116960,
+                        "data": "Even"
+                    },
+                    {
+                        "startTime": 116960,
+                        "endTime": 117210,
+                        "data": "when"
+                    },
+                    {
+                        "startTime": 117210,
+                        "endTime": 117470,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 117470,
+                        "endTime": 117710,
+                        "data": "knew"
+                    },
+                    {
+                        "startTime": 117710,
+                        "endTime": 117710,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 117710,
+                        "endTime": 117980,
+                        "data": "never"
+                    },
+                    {
+                        "startTime": 117980,
+                        "endTime": 118460,
+                        "data": "could"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 118460,
+                        "endTime": 118700,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 118700,
+                        "endTime": 118960,
+                        "data": "know"
+                    },
+                    {
+                        "startTime": 118960,
+                        "endTime": 118960,
+                        "data": "that"
+                    },
+                    {
+                        "startTime": 118960,
+                        "endTime": 119200,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 119200,
+                        "endTime": 119700,
+                        "data": "can't"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 119700,
+                        "endTime": 119960,
+                        "data": "Find"
+                    },
+                    {
+                        "startTime": 119960,
+                        "endTime": 120210,
+                        "data": "nobody"
+                    },
+                    {
+                        "startTime": 120210,
+                        "endTime": 120460,
+                        "data": "else"
+                    },
+                    {
+                        "startTime": 120460,
+                        "endTime": 120710,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 120710,
+                        "endTime": 120960,
+                        "data": "good"
+                    },
+                    {
+                        "startTime": 120960,
+                        "endTime": 120960,
+                        "data": "as"
+                    },
+                    {
+                        "startTime": 120960,
+                        "endTime": 121210,
+                        "data": "you"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 121210,
+                        "endTime": 121460,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 121460,
+                        "endTime": 121710,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 121710,
+                        "endTime": 121950,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 121950,
+                        "endTime": 121950,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 121950,
+                        "endTime": 122450,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 122450,
+                        "endTime": 122710,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 122710,
+                        "endTime": 122960,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 122960,
+                        "endTime": 123210,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 123210,
+                        "endTime": 123710,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 123710,
+                        "endTime": 126710,
+                        "data": "hey"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 132750,
+                        "endTime": 132750,
+                        "data": "I"
+                    },
+                    {
+                        "startTime": 132750,
+                        "endTime": 133000,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 133000,
+                        "endTime": 133250,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 133250,
+                        "endTime": 133500,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 133500,
+                        "endTime": 133760,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 133760,
+                        "endTime": 134000,
+                        "data": "need"
+                    },
+                    {
+                        "startTime": 134000,
+                        "endTime": 134260,
+                        "data": "you"
+                    },
+                    {
+                        "startTime": 134260,
+                        "endTime": 134500,
+                        "data": "to"
+                    },
+                    {
+                        "startTime": 134500,
+                        "endTime": 134760,
+                        "data": "stay,"
+                    },
+                    {
+                        "startTime": 134760,
+                        "endTime": 135760,
+                        "data": "hey"
+                    }
+                ]
+            }
+        ],
+        "file": "https://static-zmp3.zmdcdn.me/lyrics/b/7/4/6/b746acefeb8dabe751b4ab7e308302b0.lrc",
+        "enabledVideoBG": true,
+        "streamingUrl": "https://mcloud-bf-s7-mv-zmp3.zmdcdn.me/_w1ShvTdHQQ/67f8c3494e20a47efd31/0a1a7462781a9244cb0b/1080/Stay.mp4?authen=exp=1674208100~acl=/_w1ShvTdHQQ/*~hmac=c28ea0bcd7fb4b4f9f9fe24c5835105b",
+        "defaultIBGUrls": [
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/9/e/0/3/9e0353bfb28c45631c3ac6cbd15e0c7d.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/b/8/b/1/b8b152ff32f44dfc88575b3347e7feb6.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/8/2/f/7/82f7e93e733cad39296bea92091ffeb4.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/3/5/9/2/3592d9a3cf9401dcb96ef86325da6d10.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/4/8/3/a/483a948338535dee13a494069757167c.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/e/8/9/4/e8947c7da6784072bf126d77f687a920.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/0/6/7/c/067c35298c71ccd56bd8de958bbad91e.jpg"
+        ],
+        "BGMode": 0
+    },
+    "timestamp": 1674036364003
+}

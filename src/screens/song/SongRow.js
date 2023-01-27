@@ -14,12 +14,7 @@ import { useSelector } from "react-redux";
 import { useEffect } from "react";
 
 export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
-  const activeSong = useSelector((state) => state.player.activeSong);
-  // const [isActive, setisActive] = useEffect(false);
-
-  // useEffect(() => {
-  //   if (activeSong.id) setisActive(activeSong.id === id ? true : false);
-  // }, [activeSong]);
+  const { activeSong, isPlaying } = useSelector((state) => state.player);
 
   return (
     <TouchableHighlight
@@ -49,14 +44,16 @@ export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
             </Text>
           </View>
         </View>
-        <TouchableOpacity>
-          <FontAwesome5
-            name={activeSong.id === id ? "pause-circle" : "play-circle"}
-            color={activeSong.id === id ? COLORS.primary : COLORS.primary}
-            size={29}
-            solid
-          />
-        </TouchableOpacity>
+
+        <FontAwesome5
+          name={
+            activeSong.id === id && isPlaying ? "pause-circle" : "play-circle"
+          }
+          color={COLORS.primary}
+          size={29}
+          solid
+        />
+
         <TouchableOpacity>
           <Feather name={"more-vertical"} color={COLORS.black} size={25} />
         </TouchableOpacity>

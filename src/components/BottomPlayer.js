@@ -48,6 +48,7 @@ export default BottomPlayer = () => {
   const handleBottomPlayerClick = () => {
     rootNavigationRef.current?.navigate("MainStack", {
       screen: "PlayMusicPage",
+      params: { currSongId: activeSong.id },
     });
   };
 
@@ -75,8 +76,9 @@ export default BottomPlayer = () => {
                   <Text numberOfLines={1}>{activeSong.artist}</Text>
                 </View>
               </View>
+
               <View style={styles.row3}>
-                <TouchableOpacity style={[styles.button, { marginRight: 35 }]}>
+                <TouchableOpacity style={styles.button}>
                   <FontAwesome5
                     name={"heart"}
                     color={COLORS.white}
@@ -84,8 +86,9 @@ export default BottomPlayer = () => {
                     solid
                   />
                 </TouchableOpacity>
+
                 <TouchableOpacity
-                  style={[styles.button, { width: 20 }]}
+                  style={[styles.button, { marginRight: 5 }]}
                   onPress={handlePlayPause}
                 >
                   {isPlaying ? (
@@ -124,17 +127,20 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 10,
+    padding: 7,
   },
   row2: {
     flexDirection: "row",
   },
   row3: {
     flexDirection: "row",
+    alignItems: "stretch",
+    justifyContent: "space-between",
   },
   image: {
-    width: 40,
-    height: 40,
+    width: 45,
+    height: 45,
+    marginLeft: 5,
   },
   progress: {
     height: 3,
@@ -144,8 +150,13 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     flexDirection: "column",
     justifyContent: "space-around",
+    maxWidth: 180,
   },
   button: {
-    marginRight: 20,
+    //backgroundColor: COLORS.yellow,
+    width: 60,
+    height: 45,
+    justifyContent: "center",
+    alignItems: "center",
   },
 });

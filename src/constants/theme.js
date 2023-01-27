@@ -17,6 +17,7 @@ export const COLORS = {
   unSelectTab: "#B2B2B2",
   orange: "#FF7B54",
   newSongRow: "#D6E4E5",
+  tabBarColor: "#EEEEEE",
 };
 
 export const SIZES = {

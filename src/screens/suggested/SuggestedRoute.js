@@ -5,25 +5,27 @@ import { COLORS } from "constants/theme";
 import { getSuggestedPlaylist, getNewSong } from "api/PlaylistAPI";
 import NewSongRow from "./NewSongRow";
 import Loading from "components/Loading";
-import { useDispatch, useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
-import TrackPlayer from "react-native-track-player";
-import {
-  setCurrPlaylist,
-  setCurrIndex,
-  setActiveSong,
-} from "redux/slices/playerSlide";
 import PlayerController from "helper/PlayerController";
+import { useSelector } from "react-redux";
 
 export default function SuggestedRoute() {
   const [dataSuggestedPlaylist, setdataSuggestedPlaylist] = useState();
   const [dataNewSong, setdataNewSong] = useState();
   const [isLoaded, setisLoaded] = useState(false);
-
-  const dispatch = useDispatch();
   const navigation = useNavigation();
 
-  const { isPlaying, currPlaylist } = useSelector((state) => state.player);
+  const { currPlaylist } = useSelector((state) => state.player);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getSuggestedPlaylist();
+
+      setdataSuggestedPlaylist(data);
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,34 +51,26 @@ export default function SuggestedRoute() {
     if (dataSuggestedPlaylist && dataNewSong) setisLoaded(true);
   }, [dataSuggestedPlaylist, dataNewSong]);
 
-  const onClickSongRow = async (index) => {
-    if (currPlaylist.id !== dataNewSong.id) {
-      PlayerController.resetTrackPlayer();
-
-      dispatch(setCurrPlaylist(dataNewSong));
-
-      await TrackPlayer.getState();
-      await TrackPlayer.add(dataNewSong.items);
-      await TrackPlayer.getState();
-    }
-
-    dispatch(setCurrIndex(index));
-
-    navigation.navigate("PlayMusicPage");
-  };
-
   return isLoaded ? (
     <ScrollView>
       <View style={styles.container}>
         <Text style={styles.title}>Mới Phát Hành</Text>
         <View style={styles.newSong}>
-          {dataNewSong.items.slice(0, 6).map((e, index) => (
+          {dataNewSong.songs.slice(0, 6).map((e, index) => (
             <NewSongRow
               key={e.id}
               title={e.title}
               image={{ uri: e.artwork }}
               artist={e.artist}
-              onClick={() => onClickSongRow(index)}
+              onClick={() => {
+                PlayerController.onSongRowClick([
+                  currPlaylist,
+                  dataNewSong,
+                  index,
+                  e.id,
+                  navigation,
+                ]);
+              }}
             ></NewSongRow>
           ))}
         </View>

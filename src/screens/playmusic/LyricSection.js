@@ -11,7 +11,6 @@ export default LyricSection = () => {
   useEffect(() => {
     // const fetchLyric = async () => {
     //   const data = await getLyric(activeSong.id);
-    //   setLyric(data);
     // };
 
     // fetchLyric();
@@ -31,8 +30,10 @@ export default LyricSection = () => {
 const styles = StyleSheet.create({
   lyricSection: {
     backgroundColor: "#fff4e4",
-    padding: 10,
-    marginTop: 10,
+    padding: 13,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
   },
   lyricText: {
     color: COLORS.black,

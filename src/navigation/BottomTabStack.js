@@ -1,32 +1,30 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomePage from "screens/home/HomePage";
 import LibraryPage from "screens/library/LibraryPage";
 import Foundation from "react-native-vector-icons/Foundation";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { COLORS } from "constants/theme";
-import TopTabStack from "./TopTabStack";
 import SearchPage from "screens/search/searchPage";
-import BottomPlayer from "components/BottomPlayer";
+import HomeStack from "./HomeStack";
+import MainHeader from "components/MainHeader";
 
 const BottomTab = createBottomTabNavigator();
 
 export default function BottomTabStack() {
   return (
-    // <>
-    //  <BottomPlayer />
     <BottomTab.Navigator
       screenOptions={{
         tabBarStyle: {
           height: 55,
           elevation: 0,
+          backgroundColor: COLORS.tabBarColor,
         },
         tabBarItemStyle: { paddingVertical: 5 },
       }}
     >
       <BottomTab.Screen
-        name="Home"
-        component={HomePage}
+        name="HomeStack"
+        component={HomeStack}
         options={{
           headerShown: false,
           tabBarLabel: "Home",
@@ -61,6 +59,5 @@ export default function BottomTabStack() {
         }}
       />
     </BottomTab.Navigator>
-    // </>
   );
 }

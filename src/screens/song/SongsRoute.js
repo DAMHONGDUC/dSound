@@ -30,32 +30,25 @@ export default function SongsRoute({ navigation }) {
   useEffect(() => {
     const fetchData = async () => {
       const data = await get100Song();
+
       setdata100Song(data);
     };
 
     fetchData();
   }, []);
 
-  const onSongRowClick = async (item, index) => {
-    if (currPlaylist.id !== data100Song.id) {
-      PlayerController.resetTrackPlayer();
-
-      dispatch(setCurrPlaylist(data100Song));
-
-      await TrackPlayer.getState();
-      await TrackPlayer.add(data100Song.items);
-      await TrackPlayer.getState();
-    }
-
-    dispatch(setCurrIndex(index));
-
-    navigation.navigate("PlayMusicPage");
-  };
-
   const renderItem = ({ item, index }) => {
     return (
       <SongRow
-        onClick={() => onSongRowClick(item, index)}
+        onClick={() =>
+          PlayerController.onSongRowClick([
+            currPlaylist,
+            data100Song,
+            index,
+            item.id,
+            navigation,
+          ])
+        }
         image={{ uri: item.artwork }}
         name={item.title}
         artist={item.artist}
@@ -69,10 +62,12 @@ export default function SongsRoute({ navigation }) {
     <View style={styles.container}>
       {data100Song ? (
         <>
-          <Text style={styles.mainText}>Top {data100Song.length} song</Text>
+          <Text style={styles.mainText}>
+            Top {data100Song.songs.length} song
+          </Text>
           <SeparateLine></SeparateLine>
           <FlatList
-            data={data100Song.items}
+            data={data100Song.songs}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
           />
