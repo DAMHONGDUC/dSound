@@ -3,12 +3,9 @@ import { COLORS } from "constants/theme";
 import { createRef, useEffect, useState } from "react";
 import { getLyric } from "api/SongAPI";
 import { useRoute } from "@react-navigation/native";
-import cloneDeep from "lodash.clonedeep";
 
 export default LyricSection = () => {
   const [lyric, setLyric] = useState();
-  const [lyricLineLayout, setlyricLineLayout] = useState([]);
-  const scrollViewRef = createRef();
   const route = useRoute();
 
   useEffect(() => {
@@ -22,20 +19,18 @@ export default LyricSection = () => {
 
   const getLyricLine = (words) => {
     let str = "";
+
     words.forEach((element) => {
       str = str + element.data + " ";
     });
+
     return str;
   };
 
   return (
     <View style={styles.lyricSection}>
       <Text style={styles.lyricTitle}>Lyric</Text>
-      <ScrollView
-        style={styles.lyricContainer}
-        ref={scrollViewRef}
-        nestedScrollEnabled={true}
-      >
+      <ScrollView style={styles.lyricContainer} nestedScrollEnabled={true}>
         {lyric ? (
           lyric.map((e, index) => {
             return (

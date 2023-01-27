@@ -23,9 +23,7 @@ import { useSelector } from "react-redux";
 
 export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
-  const dispatch = useDispatch();
-
-  const { isPlaying, currPlaylist } = useSelector((state) => state.player);
+  const { currPlaylist } = useSelector((state) => state.player);
 
   useEffect(() => {
     const fetchData = async () => {
