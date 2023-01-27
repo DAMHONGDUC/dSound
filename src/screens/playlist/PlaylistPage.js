@@ -29,13 +29,13 @@ export default PlaylistPage = () => {
     return (
       <SongRow
         onClick={() => {
-          PlayerController.onSongRowClick(
+          PlayerController.onSongRowClick([
             currPlaylist,
             dataPlaylist,
             index,
             item.id,
-            navigation
-          );
+            navigation,
+          ]);
         }}
         image={{ uri: item.artwork }}
         name={item.title}

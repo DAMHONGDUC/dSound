@@ -76,13 +76,13 @@ export default class PlayerController {
     }
   }
 
-  static async onSongRowClick(
+  static async onSongRowClick([
     currPlaylist,
     data,
     index,
     currSongId,
-    navigation
-  ) {
+    navigation,
+  ]) {
     if (currPlaylist.id !== data.id) {
       await PlayerController.resetTrackPlayer();
 

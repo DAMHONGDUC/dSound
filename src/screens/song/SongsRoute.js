@@ -41,13 +41,13 @@ export default function SongsRoute({ navigation }) {
     return (
       <SongRow
         onClick={() =>
-          PlayerController.onSongRowClick(
+          PlayerController.onSongRowClick([
             currPlaylist,
             data100Song,
             index,
             item.id,
-            navigation
-          )
+            navigation,
+          ])
         }
         image={{ uri: item.artwork }}
         name={item.title}

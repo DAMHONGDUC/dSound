@@ -12,13 +12,13 @@ export default PlaylistHeader = ({ playlist, navigation, dataPlaylist }) => {
   const { currIndex, currPlaylist } = useSelector((state) => state.player);
 
   const handlePlayPlaylist = () => {
-    PlayerController.onSongRowClick(
+    PlayerController.onSongRowClick([
       currPlaylist,
       dataPlaylist,
       0,
       dataPlaylist.songs[0].id,
-      navigation
-    );
+      navigation,
+    ]);
   };
 
   return (
