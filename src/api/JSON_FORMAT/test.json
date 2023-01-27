@@ -1,74 +1,109 @@
-[
-    {
-        "id": "ZOFDZ96I",
-        "url": "https://mp3-s1-zmp3.zmdcdn.me/5811a7e1bba752f90bb6/3459732263738424184?authen=exp=1674971485~acl=/5811a7e1bba752f90bb6/*~hmac=c3d20e6b4e7143bf3bcc05c43860c1bb&fs=MTY3NDmUsIC5ODY4NTI1MHx3ZWJWNnwwfDEyMy4yMi40Mi4yOA",
-        "title": "Object",
-        "artist": "Current Affairs",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/0/b/1/a0b1ea1bf5f43d73b56d06bd0910dde2.jpg",
-        "duration": 269
-    },
-    {
-        "id": "ZUOOCZC6",
-        "url": null,
-        "title": "Object",
-        "artist": "Prins Nitram",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/9/3/0/b/930b4f5145d896f86e77abf9e930ac56.jpg",
-        "duration": 198
-    },
-    {
-        "id": "ZUWBWIZF",
-        "url": null,
-        "title": "Object",
-        "artist": "Page 12",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/c/c/8/6/cc868f2095caec0afc3559b044a29ba3.jpg",
-        "duration": 95
-    },
-    {
-        "id": "ZZCDDEBD",
-        "url": null,
-        "title": "Object",
-        "artist": "Benny Montaquila DJ",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/e/f/0/6ef0865d039389117bd6e585e57e37f7.jpg",
-        "duration": 145
-    },
-    {
-        "id": "ZZD0EEWZ",
-        "url": null,
-        "title": "Object",
-        "artist": "comforting",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/4/7/7/b47768817efb5a871f95a1d23e6bcebe.jpg",
-        "duration": 481
-    },
-    {
-        "id": "ZZDUE86F",
-        "url": null,
-        "title": "Object",
-        "artist": "Tom Gage",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/c/4/b/9/c4b950b9d0a755aef5bba7f33fb2a319.jpg",
-        "duration": 336
-    },
-    {
-        "id": "ZZA67FZD",
-        "url": null,
-        "title": "Object",
-        "artist": "Dictionary Dave",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/2/8/8/7/2887c3dabd0fb9d2ffa471ba1e2cc98b.jpg",
-        "duration": 39
-    },
-    {
-        "id": "ZZO0U8UW",
-        "url": null,
-        "title": "Object",
-        "artist": "Fat Jon",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/c/8/d/b/c8db51fb4275c59705da901f1bbb0e42.jpg",
-        "duration": 209
-    },
-    {
-        "id": "ZZ9U87D9",
-        "url": null,
-        "title": "Object",
-        "artist": "Fear Konstruktor",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/2/a/2/e/2a2e9bd582cd65fad3b5657def37eead.jpg",
-        "duration": 329
-    }
-]
+{
+    "id": "IW7BFU8F",
+    "songs": [
+        {
+            "id": "Z6Z7A8E6",
+            "url": "https://mp3-s1-zmp3.zmdcdn.me/cc375e680c28e576bc39/7771346593161306717?authen=exp=1674978000~acl=/cc375e680c28e576bc39/*~hmac=2b0e12c6bbe5ef788e75bf49aa7e8862&fs=MTY3NDgwNTIwMDk4MHx3ZWJWNnwwfDE0LjE2MS4yNC4xMTE",
+            "title": "Xui Hay Vui",
+            "artist": "tlinh, MONO, Onionn",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/d/4/5/d/d45d2020992a64859fd2c5769de63eb0.jpg",
+            "duration": 163
+        },
+        {
+            "id": "Z6UO66Z8",
+            "url": null,
+            "title": "Người Tình Mùa Đông",
+            "artist": "Đức Phúc, MONO, DTAP",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/8/b/a/f/8bafab541be2aed8057c9a6c0515aa63.jpg",
+            "duration": 222
+        },
+        {
+            "id": "ZZFD9DCC",
+            "url": null,
+            "title": "INTRO",
+            "artist": "MONO",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 60
+        },
+        {
+            "id": "ZZFDA0IO",
+            "url": null,
+            "title": "Buông",
+            "artist": "MONO, Onionn",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 149
+        },
+        {
+            "id": "ZZFDA0WD",
+            "url": null,
+            "title": "Em Là",
+            "artist": "MONO, Onionn",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 197
+        },
+        {
+            "id": "ZZFDA0ZO",
+            "url": null,
+            "title": "Kill Me",
+            "artist": "MONO",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 229
+        },
+        {
+            "id": "ZZFDAOFC",
+            "url": null,
+            "title": "MONOlogue",
+            "artist": "MONO",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 64
+        },
+        {
+            "id": "ZZFDAUI8",
+            "url": null,
+            "title": "Anh Không Thể",
+            "artist": "MONO, Onionn",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 220
+        },
+        {
+            "id": "ZZFDAZ7Z",
+            "url": null,
+            "title": "Do You",
+            "artist": "MONO, Rein, Onionn",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 218
+        },
+        {
+            "id": "ZZFDAZ8W",
+            "url": null,
+            "title": "Co Nuong Ahhhh~",
+            "artist": "MONO",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 56
+        },
+        {
+            "id": "ZZFDAZ89",
+            "url": null,
+            "title": "Waiting For You",
+            "artist": "MONO, Onionn",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 266
+        },
+        {
+            "id": "ZZFDAZ8E",
+            "url": null,
+            "title": "L.I.E",
+            "artist": "MONO, Onionn",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
+            "duration": 226
+        },
+        {
+            "id": "ZZFOO6O9",
+            "url": null,
+            "title": "Quên Anh Đi",
+            "artist": "MONO",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/5/5/c/0/55c048ed36d5490a88876575330192be.jpg",
+            "duration": 246
+        }
+    ]
+}

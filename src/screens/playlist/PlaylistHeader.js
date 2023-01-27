@@ -4,7 +4,12 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector } from "react-redux";
 
-export default PlaylistHeader = ({ playlist, navigation, dataPlaylist }) => {
+export default PlaylistHeader = ({
+  playlist,
+  navigation,
+  dataPlaylist,
+  fromArtistPage,
+}) => {
   const handleBackButton = () => {
     navigation.pop();
   };
@@ -35,7 +40,11 @@ export default PlaylistHeader = ({ playlist, navigation, dataPlaylist }) => {
         <Text numberOfLines={2} style={styles.description}>
           {playlist.description}
         </Text>
-        <Text style={styles.likes}>{playlist.like} Likes</Text>
+        <Text style={styles.likes}>
+          {fromArtistPage
+            ? playlist.totalFollow + " Follow"
+            : playlist.like + " Likes"}
+        </Text>
       </View>
       <TouchableOpacity onPress={handlePlayPlaylist}>
         <View style={styles.button}>

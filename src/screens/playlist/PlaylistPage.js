@@ -8,21 +8,35 @@ import Loading from "components/Loading";
 import SongRow from "screens/song/SongRow";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
+import { getListArtistSong } from "api/ArtistAPI";
 
 export default PlaylistPage = () => {
   const { currPlaylist } = useSelector((state) => state.player);
   const [dataPlaylist, setdataPlaylist] = useState();
   const navigation = useNavigation();
   const route = useRoute();
+  const [fromArtistPage, setfromArtistPage] = useState(false);
 
   useEffect(() => {
     const getDataDetailPlaylist = async () => {
-      const data = await getDetailPlaylist(route.params.playlistId);
+      const data = await getDetailPlaylist(route.params.id);
 
       setdataPlaylist(data);
     };
 
-    getDataDetailPlaylist();
+    const getDataDetailArtist = async () => {
+      let data = await getListArtistSong(route.params.id, 1, 20);
+
+      data.image = route.params.fromArtistPage.image;
+      data.title = route.params.fromArtistPage.title;
+      data.totalFollow = route.params.fromArtistPage.totalFollow;
+      setdataPlaylist(data);
+    };
+
+    if (route.params.fromArtistPage.isArtist) {
+      getDataDetailArtist();
+      setfromArtistPage(true);
+    } else getDataDetailPlaylist();
   }, []);
 
   const renderItem = ({ item, index }) => {
@@ -57,6 +71,7 @@ export default PlaylistPage = () => {
               dataPlaylist={dataPlaylist}
               navigation={navigation}
               playlist={dataPlaylist}
+              fromArtistPage={fromArtistPage}
             />
           )}
         />

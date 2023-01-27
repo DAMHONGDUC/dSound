@@ -12,8 +12,7 @@ import { useEffect, useState } from "react";
 import { getArtist } from "api/ArtistAPI";
 import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
-
-const song = [];
+import { getListArtistSong } from "api/ArtistAPI";
 
 export default function ArtistsRoute() {
   const [dataArtist, setdataArtist] = useState();
@@ -22,7 +21,7 @@ export default function ArtistsRoute() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getArtist();
-      setdataArtist(data);
+      setdataArtist(data.slice(0, 100));
     };
 
     fetchData();
@@ -32,7 +31,15 @@ export default function ArtistsRoute() {
     return (
       <ArtistRow
         onClick={() => {
-          navigation.navigate("PlaylistPage", { playlistId: item.id });
+          navigation.navigate("PlaylistPage", {
+            id: item.id,
+            fromArtistPage: {
+              isArtist: true,
+              image: item.thumbnailM,
+              title: item.name,
+              totalFollow: item.totalFollow,
+            },
+          });
         }}
         image={{ uri: item.thumbnailM }}
         name={item.name}

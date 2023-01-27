@@ -1,6 +1,7 @@
-import { hashParamNoId, hashParam } from "./Crypto";
+import { hashParamNoId, hashParam, hashListMV } from "./Crypto";
 import { requestZingMp3 } from "./ZingMp3API";
 import { getTop100PlayList } from "./SongAPI";
+import { reducePropertySong } from "./SongAPI";
 
 const reduceProperty = (data) => {
   return data.map((e) => ({
@@ -33,6 +34,26 @@ export const getArtist = async () => {
       });
 
       if (artist.length > 0) return reduceProperty(artist);
+    }
+  } catch (err) {}
+};
+
+export const getListArtistSong = async (artistId, page, count) => {
+  try {
+    const res = await requestZingMp3("/api/v2/song/get/list", {
+      id: artistId,
+      type: "artist",
+      page: page,
+      count: count,
+      sort: "new",
+      sectionId: "aSong",
+      sig: hashListMV("/api/v2/song/get/list", artistId, "artist", page, count),
+    });
+
+    if (res?.data?.items) {
+      const songs = await reducePropertySong(res.data.items);
+
+      return { id: artistId, songs: songs };
     }
   } catch (err) {}
 };
