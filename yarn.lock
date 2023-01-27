@@ -6816,6 +6816,11 @@ react-native-linear-gradient@^2.6.2:
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.6.2.tgz#56598a76832724b2afa7889747635b5c80948f38"
   integrity sha512-Z8Xxvupsex+9BBFoSYS87bilNPWcRfRsGC0cpJk72Nxb5p2nEkGSBv73xZbEHnW2mUFvP+huYxrVvjZkr/gRjQ==
 
+react-native-lrc@^1.0.0-beta.1:
+  version "1.0.0-beta.1"
+  resolved "https://registry.yarnpkg.com/react-native-lrc/-/react-native-lrc-1.0.0-beta.1.tgz#22bfd2bd833fb25c5bfd790027766f8c4eba3c63"
+  integrity sha512-KRF5i0PPE6S+Af5FaBlQn43riCRGHhKsraqx2da60FyQQG90MII/woAwrAwQm1GZbatFCQj/ca6EFACo4S37ng==
+
 react-native-pager-view@^6.1.2:
   version "6.1.2"
   resolved "https://registry.npmjs.org/react-native-pager-view/-/react-native-pager-view-6.1.2.tgz"

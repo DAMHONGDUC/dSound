@@ -6,2105 +6,1537 @@
             {
                 "words": [
                     {
-                        "startTime": 11390,
-                        "endTime": 11650,
-                        "data": "I"
+                        "startTime": 25080,
+                        "endTime": 25610,
+                        "data": "Khóc"
                     },
                     {
-                        "startTime": 11650,
-                        "endTime": 11890,
-                        "data": "do"
+                        "startTime": 25610,
+                        "endTime": 26140,
+                        "data": "than"
                     },
                     {
-                        "startTime": 11890,
-                        "endTime": 11890,
-                        "data": "the"
+                        "startTime": 26140,
+                        "endTime": 26670,
+                        "data": "với"
                     },
                     {
-                        "startTime": 11890,
-                        "endTime": 12390,
-                        "data": "same"
+                        "startTime": 26670,
+                        "endTime": 27470,
+                        "data": "trời"
                     },
                     {
-                        "startTime": 12390,
-                        "endTime": 12640,
-                        "data": "thing"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 12640,
-                        "endTime": 12890,
-                        "data": "I"
+                        "startTime": 27470,
+                        "endTime": 27740,
+                        "data": "sao"
                     },
                     {
-                        "startTime": 12890,
-                        "endTime": 12890,
-                        "data": "told"
+                        "startTime": 27740,
+                        "endTime": 28270,
+                        "data": "ông"
                     },
                     {
-                        "startTime": 12890,
-                        "endTime": 13150,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 13150,
-                        "endTime": 13390,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 13390,
-                        "endTime": 13640,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 13640,
-                        "endTime": 13640,
-                        "data": "never"
-                    },
-                    {
-                        "startTime": 13640,
-                        "endTime": 13940,
-                        "data": "would"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 13940,
-                        "endTime": 14160,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 14160,
-                        "endTime": 14390,
-                        "data": "told"
-                    },
-                    {
-                        "startTime": 14390,
-                        "endTime": 14640,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 14640,
-                        "endTime": 14640,
-                        "data": "I'd"
-                    },
-                    {
-                        "startTime": 14640,
-                        "endTime": 15140,
-                        "data": "change"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 15140,
-                        "endTime": 15390,
-                        "data": "Even"
-                    },
-                    {
-                        "startTime": 15390,
-                        "endTime": 15640,
-                        "data": "when"
-                    },
-                    {
-                        "startTime": 15640,
-                        "endTime": 15890,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 15890,
-                        "endTime": 15890,
-                        "data": "knew"
-                    },
-                    {
-                        "startTime": 15890,
-                        "endTime": 16140,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 16140,
-                        "endTime": 16390,
-                        "data": "never"
-                    },
-                    {
-                        "startTime": 16390,
-                        "endTime": 16890,
-                        "data": "could"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 16890,
-                        "endTime": 16890,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 16890,
-                        "endTime": 17140,
-                        "data": "know"
-                    },
-                    {
-                        "startTime": 17140,
-                        "endTime": 17390,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 17390,
-                        "endTime": 17640,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 17640,
-                        "endTime": 18130,
-                        "data": "can't"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 18130,
-                        "endTime": 18390,
-                        "data": "Find"
-                    },
-                    {
-                        "startTime": 18390,
-                        "endTime": 18630,
-                        "data": "nobody"
-                    },
-                    {
-                        "startTime": 18630,
-                        "endTime": 18890,
-                        "data": "else"
-                    },
-                    {
-                        "startTime": 18890,
-                        "endTime": 19140,
-                        "data": "as"
-                    },
-                    {
-                        "startTime": 19140,
-                        "endTime": 19140,
-                        "data": "good"
-                    },
-                    {
-                        "startTime": 19140,
-                        "endTime": 19400,
-                        "data": "as"
-                    },
-                    {
-                        "startTime": 19400,
-                        "endTime": 19640,
-                        "data": "you"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 19640,
-                        "endTime": 19890,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 19890,
-                        "endTime": 20140,
-                        "data": "need"
-                    },
-                    {
-                        "startTime": 20140,
-                        "endTime": 20390,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 20390,
-                        "endTime": 20390,
-                        "data": "to"
-                    },
-                    {
-                        "startTime": 20390,
-                        "endTime": 20890,
-                        "data": "stay,"
-                    },
-                    {
-                        "startTime": 20890,
-                        "endTime": 21140,
-                        "data": "need"
-                    },
-                    {
-                        "startTime": 21140,
-                        "endTime": 21140,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 21140,
-                        "endTime": 21390,
-                        "data": "to"
-                    },
-                    {
-                        "startTime": 21390,
-                        "endTime": 21890,
-                        "data": "stay,"
-                    },
-                    {
-                        "startTime": 21890,
-                        "endTime": 23090,
-                        "data": "hey"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 23090,
-                        "endTime": 23090,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 23090,
-                        "endTime": 23350,
-                        "data": "get"
-                    },
-                    {
-                        "startTime": 23350,
-                        "endTime": 24090,
-                        "data": "drunk,"
-                    },
-                    {
-                        "startTime": 24090,
-                        "endTime": 24350,
-                        "data": "wake"
-                    },
-                    {
-                        "startTime": 24350,
-                        "endTime": 24590,
-                        "data": "up,"
-                    },
-                    {
-                        "startTime": 24590,
-                        "endTime": 25100,
-                        "data": "I'm"
-                    },
-                    {
-                        "startTime": 25100,
-                        "endTime": 25600,
-                        "data": "wasted"
-                    },
-                    {
-                        "startTime": 25600,
-                        "endTime": 25850,
-                        "data": "still"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 25850,
-                        "endTime": 26100,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 26100,
-                        "endTime": 26810,
-                        "data": "realize"
-                    },
-                    {
-                        "startTime": 26810,
-                        "endTime": 27050,
-                        "data": "the"
-                    },
-                    {
-                        "startTime": 27050,
-                        "endTime": 27310,
-                        "data": "time"
-                    },
-                    {
-                        "startTime": 27310,
-                        "endTime": 27550,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 27550,
-                        "endTime": 27810,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 27810,
-                        "endTime": 28310,
-                        "data": "wasted"
-                    },
-                    {
-                        "startTime": 28310,
-                        "endTime": 28560,
-                        "data": "here"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 28560,
-                        "endTime": 28810,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 28810,
+                        "startTime": 28270,
                         "endTime": 29060,
-                        "data": "feel"
+                        "data": "quá"
                     },
                     {
                         "startTime": 29060,
-                        "endTime": 29560,
-                        "data": "like"
+                        "endTime": 29600,
+                        "data": "bất"
                     },
                     {
-                        "startTime": 29560,
-                        "endTime": 29810,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 29810,
-                        "endTime": 30060,
-                        "data": "can't"
-                    },
-                    {
-                        "startTime": 30060,
-                        "endTime": 30300,
-                        "data": "feel"
-                    },
-                    {
-                        "startTime": 30300,
-                        "endTime": 30560,
-                        "data": "the"
-                    },
-                    {
-                        "startTime": 30560,
-                        "endTime": 30800,
-                        "data": "way"
-                    },
-                    {
-                        "startTime": 30800,
-                        "endTime": 31300,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 31300,
-                        "endTime": 31560,
-                        "data": "feel"
+                        "startTime": 29600,
+                        "endTime": 30130,
+                        "data": "công"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 31560,
-                        "endTime": 31560,
-                        "data": "Oh,"
+                        "startTime": 30130,
+                        "endTime": 30390,
+                        "data": "Kiếp"
                     },
                     {
-                        "startTime": 31560,
-                        "endTime": 31800,
-                        "data": "I'll"
+                        "startTime": 30390,
+                        "endTime": 30650,
+                        "data": "duyên"
                     },
                     {
-                        "startTime": 31800,
-                        "endTime": 32060,
-                        "data": "be"
+                        "startTime": 30650,
+                        "endTime": 31200,
+                        "data": "này"
                     },
                     {
-                        "startTime": 32060,
-                        "endTime": 32300,
-                        "data": "***"
+                        "startTime": 31200,
+                        "endTime": 31470,
+                        "data": "vẫn"
                     },
                     {
-                        "startTime": 32300,
-                        "endTime": 32550,
-                        "data": "up"
+                        "startTime": 31470,
+                        "endTime": 31740,
+                        "data": "chưa"
                     },
                     {
-                        "startTime": 32550,
-                        "endTime": 32800,
-                        "data": "if"
-                    },
-                    {
-                        "startTime": 32800,
-                        "endTime": 33050,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 33050,
-                        "endTime": 33310,
-                        "data": "can't"
-                    },
-                    {
-                        "startTime": 33310,
-                        "endTime": 33310,
-                        "data": "be"
-                    },
-                    {
-                        "startTime": 33310,
-                        "endTime": 33550,
-                        "data": "right"
-                    },
-                    {
-                        "startTime": 33550,
-                        "endTime": 34050,
-                        "data": "here"
+                        "startTime": 31740,
+                        "endTime": 32270,
+                        "data": "trọn"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 34050,
-                        "endTime": 35050,
-                        "data": "Oh,"
+                        "startTime": 32270,
+                        "endTime": 32540,
+                        "data": "Đã"
                     },
                     {
-                        "startTime": 35050,
-                        "endTime": 36810,
-                        "data": "ooh-woah"
+                        "startTime": 32540,
+                        "endTime": 33330,
+                        "data": "hoá"
+                    },
+                    {
+                        "startTime": 33330,
+                        "endTime": 33600,
+                        "data": "hư"
+                    },
+                    {
+                        "startTime": 33600,
+                        "endTime": 35990,
+                        "data": "không"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 36810,
-                        "endTime": 37800,
-                        "data": "Oh,"
+                        "startTime": 35990,
+                        "endTime": 36520,
+                        "data": "Gói"
                     },
                     {
-                        "startTime": 37800,
-                        "endTime": 39560,
-                        "data": "ooh-woah"
+                        "startTime": 36520,
+                        "endTime": 37320,
+                        "data": "khăn"
+                    },
+                    {
+                        "startTime": 37320,
+                        "endTime": 37590,
+                        "data": "tiễn"
+                    },
+                    {
+                        "startTime": 37590,
+                        "endTime": 38390,
+                        "data": "người"
+                    },
+                    {
+                        "startTime": 38390,
+                        "endTime": 38910,
+                        "data": "chinh"
+                    },
+                    {
+                        "startTime": 38910,
+                        "endTime": 39440,
+                        "data": "chiến"
+                    },
+                    {
+                        "startTime": 39440,
+                        "endTime": 39970,
+                        "data": "chốn"
+                    },
+                    {
+                        "startTime": 39970,
+                        "endTime": 40500,
+                        "data": "sơn"
+                    },
+                    {
+                        "startTime": 40500,
+                        "endTime": 41300,
+                        "data": "khê"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 39560,
-                        "endTime": 40810,
-                        "data": "Oh,"
+                        "startTime": 41300,
+                        "endTime": 41570,
+                        "data": "Ngờ"
                     },
                     {
-                        "startTime": 40810,
-                        "endTime": 42310,
-                        "data": "ooh-woah"
+                        "startTime": 41570,
+                        "endTime": 42100,
+                        "data": "đâu"
+                    },
+                    {
+                        "startTime": 42100,
+                        "endTime": 42370,
+                        "data": "đây"
+                    },
+                    {
+                        "startTime": 42370,
+                        "endTime": 42640,
+                        "data": "là"
+                    },
+                    {
+                        "startTime": 42640,
+                        "endTime": 42900,
+                        "data": "lần"
+                    },
+                    {
+                        "startTime": 42900,
+                        "endTime": 43430,
+                        "data": "cuối"
+                    },
+                    {
+                        "startTime": 43430,
+                        "endTime": 43690,
+                        "data": "đi"
+                    },
+                    {
+                        "startTime": 43690,
+                        "endTime": 44220,
+                        "data": "mãi"
+                    },
+                    {
+                        "startTime": 44220,
+                        "endTime": 44750,
+                        "data": "chẳng"
+                    },
+                    {
+                        "startTime": 44750,
+                        "endTime": 46080,
+                        "data": "về"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 42310,
-                        "endTime": 42550,
-                        "data": "Oh,"
+                        "startTime": 46080,
+                        "endTime": 46610,
+                        "data": "Ngậm"
                     },
                     {
-                        "startTime": 42550,
-                        "endTime": 42810,
-                        "data": "I'll"
+                        "startTime": 46610,
+                        "endTime": 47150,
+                        "data": "ngùi"
                     },
                     {
-                        "startTime": 42810,
-                        "endTime": 43050,
-                        "data": "be"
+                        "startTime": 47150,
+                        "endTime": 47420,
+                        "data": "ngăn"
                     },
                     {
-                        "startTime": 43050,
-                        "endTime": 43560,
-                        "data": "***"
+                        "startTime": 47420,
+                        "endTime": 47680,
+                        "data": "khoé"
                     },
                     {
-                        "startTime": 43560,
-                        "endTime": 43810,
-                        "data": "up"
+                        "startTime": 47680,
+                        "endTime": 48200,
+                        "data": "mi"
                     },
                     {
-                        "startTime": 43810,
-                        "endTime": 44060,
-                        "data": "if"
+                        "startTime": 48200,
+                        "endTime": 48730,
+                        "data": "lăn"
                     },
                     {
-                        "startTime": 44060,
-                        "endTime": 44300,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 44300,
-                        "endTime": 44560,
-                        "data": "can't"
-                    },
-                    {
-                        "startTime": 44560,
-                        "endTime": 44560,
-                        "data": "be"
-                    },
-                    {
-                        "startTime": 44560,
-                        "endTime": 45060,
-                        "data": "right"
-                    },
-                    {
-                        "startTime": 45060,
-                        "endTime": 45310,
-                        "data": "here"
+                        "startTime": 48730,
+                        "endTime": 49800,
+                        "data": "dài"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 45310,
-                        "endTime": 45560,
-                        "data": "I"
+                        "startTime": 49800,
+                        "endTime": 50330,
+                        "data": "Duyên"
                     },
                     {
-                        "startTime": 45560,
-                        "endTime": 45800,
-                        "data": "do"
+                        "startTime": 50330,
+                        "endTime": 50590,
+                        "data": "số"
                     },
                     {
-                        "startTime": 45800,
-                        "endTime": 45800,
-                        "data": "the"
+                        "startTime": 50590,
+                        "endTime": 50860,
+                        "data": "đã"
                     },
                     {
-                        "startTime": 45800,
-                        "endTime": 46300,
-                        "data": "same"
+                        "startTime": 50860,
+                        "endTime": 51400,
+                        "data": "an"
                     },
                     {
-                        "startTime": 46300,
-                        "endTime": 46560,
-                        "data": "thing"
+                        "startTime": 51400,
+                        "endTime": 52190,
+                        "data": "bài"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 46560,
-                        "endTime": 46800,
-                        "data": "I"
+                        "startTime": 52190,
+                        "endTime": 52460,
+                        "data": "Để"
                     },
                     {
-                        "startTime": 46800,
-                        "endTime": 47060,
-                        "data": "told"
+                        "startTime": 52460,
+                        "endTime": 52720,
+                        "data": "người"
                     },
                     {
-                        "startTime": 47060,
-                        "endTime": 47060,
-                        "data": "you"
+                        "startTime": 52720,
+                        "endTime": 53520,
+                        "data": "đi"
                     },
                     {
-                        "startTime": 47060,
-                        "endTime": 47300,
-                        "data": "that"
+                        "startTime": 53520,
+                        "endTime": 53780,
+                        "data": "không"
                     },
                     {
-                        "startTime": 47300,
-                        "endTime": 47560,
-                        "data": "I"
+                        "startTime": 53780,
+                        "endTime": 54050,
+                        "data": "phải"
                     },
                     {
-                        "startTime": 47560,
-                        "endTime": 47800,
-                        "data": "never"
+                        "startTime": 54050,
+                        "endTime": 54320,
+                        "data": "lưu"
                     },
                     {
-                        "startTime": 47800,
-                        "endTime": 47800,
-                        "data": "would"
+                        "startTime": 54320,
+                        "endTime": 54850,
+                        "data": "luyến"
+                    },
+                    {
+                        "startTime": 54850,
+                        "endTime": 55110,
+                        "data": "người"
+                    },
+                    {
+                        "startTime": 55110,
+                        "endTime": 55640,
+                        "data": "ở"
+                    },
+                    {
+                        "startTime": 55640,
+                        "endTime": 57500,
+                        "data": "lại"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 47800,
-                        "endTime": 48060,
-                        "data": "I"
+                        "startTime": 57500,
+                        "endTime": 57770,
+                        "data": "Phận"
                     },
                     {
-                        "startTime": 48060,
-                        "endTime": 48310,
-                        "data": "told"
+                        "startTime": 57770,
+                        "endTime": 58300,
+                        "data": "hồng"
                     },
                     {
-                        "startTime": 48310,
-                        "endTime": 48550,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 48550,
-                        "endTime": 48810,
-                        "data": "I'd"
-                    },
-                    {
-                        "startTime": 48810,
-                        "endTime": 49050,
-                        "data": "change"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 49050,
-                        "endTime": 49320,
-                        "data": "Even"
-                    },
-                    {
-                        "startTime": 49320,
-                        "endTime": 49550,
-                        "data": "when"
-                    },
-                    {
-                        "startTime": 49550,
-                        "endTime": 49810,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 49810,
-                        "endTime": 50050,
-                        "data": "knew"
-                    },
-                    {
-                        "startTime": 50050,
-                        "endTime": 50050,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 50050,
-                        "endTime": 50310,
-                        "data": "never"
-                    },
-                    {
-                        "startTime": 50310,
-                        "endTime": 50820,
-                        "data": "could"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 50820,
-                        "endTime": 51060,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 51060,
-                        "endTime": 51060,
-                        "data": "know"
-                    },
-                    {
-                        "startTime": 51060,
-                        "endTime": 51310,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 51310,
-                        "endTime": 51560,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 51560,
-                        "endTime": 52060,
-                        "data": "can't"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 52060,
-                        "endTime": 52300,
-                        "data": "Find"
-                    },
-                    {
-                        "startTime": 52300,
-                        "endTime": 52560,
-                        "data": "nobody"
-                    },
-                    {
-                        "startTime": 52560,
-                        "endTime": 52560,
-                        "data": "else"
-                    },
-                    {
-                        "startTime": 52560,
-                        "endTime": 52810,
-                        "data": "as"
-                    },
-                    {
-                        "startTime": 52810,
-                        "endTime": 53060,
-                        "data": "good"
-                    },
-                    {
-                        "startTime": 53060,
-                        "endTime": 53300,
-                        "data": "as"
-                    },
-                    {
-                        "startTime": 53300,
-                        "endTime": 53560,
-                        "data": "you"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 53560,
-                        "endTime": 53800,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 53800,
-                        "endTime": 53800,
-                        "data": "need"
-                    },
-                    {
-                        "startTime": 53800,
-                        "endTime": 54070,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 54070,
-                        "endTime": 54300,
-                        "data": "to"
-                    },
-                    {
-                        "startTime": 54300,
-                        "endTime": 54800,
-                        "data": "stay,"
-                    },
-                    {
-                        "startTime": 54800,
-                        "endTime": 55050,
-                        "data": "need"
-                    },
-                    {
-                        "startTime": 55050,
-                        "endTime": 55300,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 55300,
-                        "endTime": 55550,
-                        "data": "to"
-                    },
-                    {
-                        "startTime": 55550,
-                        "endTime": 56050,
-                        "data": "stay,"
-                    },
-                    {
-                        "startTime": 56050,
-                        "endTime": 56550,
-                        "data": "hey"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 56550,
-                        "endTime": 56810,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 56810,
-                        "endTime": 57050,
-                        "data": "do"
-                    },
-                    {
-                        "startTime": 57050,
-                        "endTime": 57050,
-                        "data": "the"
-                    },
-                    {
-                        "startTime": 57050,
-                        "endTime": 57550,
-                        "data": "same"
-                    },
-                    {
-                        "startTime": 57550,
-                        "endTime": 57810,
-                        "data": "thing"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 57810,
-                        "endTime": 58050,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 58050,
-                        "endTime": 58310,
-                        "data": "told"
-                    },
-                    {
-                        "startTime": 58310,
-                        "endTime": 58310,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 58310,
+                        "startTime": 58300,
                         "endTime": 58560,
-                        "data": "that"
+                        "data": "nhan"
                     },
                     {
                         "startTime": 58560,
-                        "endTime": 58810,
-                        "data": "I"
+                        "endTime": 59090,
+                        "data": "quyết"
                     },
                     {
-                        "startTime": 58810,
-                        "endTime": 59060,
-                        "data": "never"
+                        "startTime": 59090,
+                        "endTime": 59360,
+                        "data": "tâm"
                     },
                     {
-                        "startTime": 59060,
-                        "endTime": 59310,
-                        "data": "would"
+                        "startTime": 59360,
+                        "endTime": 59890,
+                        "data": "thay"
+                    },
+                    {
+                        "startTime": 59890,
+                        "endTime": 60970,
+                        "data": "chồng"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 59310,
-                        "endTime": 59310,
-                        "data": "I"
+                        "startTime": 60970,
+                        "endTime": 61480,
+                        "data": "Che"
                     },
                     {
-                        "startTime": 59310,
-                        "endTime": 59570,
-                        "data": "told"
+                        "startTime": 61480,
+                        "endTime": 61750,
+                        "data": "nỗi"
                     },
                     {
-                        "startTime": 59570,
-                        "endTime": 59810,
-                        "data": "you"
+                        "startTime": 61750,
+                        "endTime": 62020,
+                        "data": "đau"
                     },
                     {
-                        "startTime": 59810,
-                        "endTime": 60060,
-                        "data": "I'd"
+                        "startTime": 62020,
+                        "endTime": 62550,
+                        "data": "trong"
                     },
                     {
-                        "startTime": 60060,
-                        "endTime": 60560,
-                        "data": "change"
+                        "startTime": 62550,
+                        "endTime": 63080,
+                        "data": "lòng"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 60560,
-                        "endTime": 60560,
-                        "data": "Even"
+                        "startTime": 63080,
+                        "endTime": 63610,
+                        "data": "Từ"
                     },
                     {
-                        "startTime": 60560,
-                        "endTime": 60810,
-                        "data": "when"
+                        "startTime": 63610,
+                        "endTime": 63880,
+                        "data": "lầu"
                     },
                     {
-                        "startTime": 60810,
-                        "endTime": 61060,
-                        "data": "I"
+                        "startTime": 63880,
+                        "endTime": 64420,
+                        "data": "hoa"
                     },
                     {
-                        "startTime": 61060,
-                        "endTime": 61300,
-                        "data": "knew"
+                        "startTime": 64420,
+                        "endTime": 64940,
+                        "data": "mang"
                     },
                     {
-                        "startTime": 61300,
-                        "endTime": 61560,
-                        "data": "I"
+                        "startTime": 64940,
+                        "endTime": 65210,
+                        "data": "hận"
                     },
                     {
-                        "startTime": 61560,
-                        "endTime": 61800,
-                        "data": "never"
+                        "startTime": 65210,
+                        "endTime": 65470,
+                        "data": "căm"
                     },
                     {
-                        "startTime": 61800,
-                        "endTime": 62050,
-                        "data": "could"
+                        "startTime": 65470,
+                        "endTime": 66000,
+                        "data": "ra"
+                    },
+                    {
+                        "startTime": 66000,
+                        "endTime": 66270,
+                        "data": "chốn"
+                    },
+                    {
+                        "startTime": 66270,
+                        "endTime": 67060,
+                        "data": "sa"
+                    },
+                    {
+                        "startTime": 67060,
+                        "endTime": 68660,
+                        "data": "trường"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 62050,
-                        "endTime": 62300,
-                        "data": "I"
+                        "startTime": 68660,
+                        "endTime": 68930,
+                        "data": "Trút"
                     },
                     {
-                        "startTime": 62300,
-                        "endTime": 62300,
-                        "data": "know"
+                        "startTime": 68930,
+                        "endTime": 69200,
+                        "data": "lớp"
                     },
                     {
-                        "startTime": 62300,
-                        "endTime": 62560,
-                        "data": "that"
+                        "startTime": 69200,
+                        "endTime": 69720,
+                        "data": "thanh"
                     },
                     {
-                        "startTime": 62560,
-                        "endTime": 62800,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 62800,
-                        "endTime": 63310,
-                        "data": "can't"
+                        "startTime": 69720,
+                        "endTime": 70250,
+                        "data": "y"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 63310,
-                        "endTime": 63550,
-                        "data": "Find"
+                        "startTime": 70250,
+                        "endTime": 70780,
+                        "data": "Khoác"
                     },
                     {
-                        "startTime": 63550,
-                        "endTime": 63810,
-                        "data": "nobody"
+                        "startTime": 70780,
+                        "endTime": 71050,
+                        "data": "lên"
                     },
                     {
-                        "startTime": 63810,
-                        "endTime": 64050,
-                        "data": "else"
+                        "startTime": 71050,
+                        "endTime": 71310,
+                        "data": "thân"
                     },
                     {
-                        "startTime": 64050,
-                        "endTime": 64310,
-                        "data": "as"
+                        "startTime": 71310,
+                        "endTime": 71580,
+                        "data": "ngọc"
                     },
                     {
-                        "startTime": 64310,
-                        "endTime": 64550,
-                        "data": "good"
+                        "startTime": 71580,
+                        "endTime": 71840,
+                        "data": "chiếc"
                     },
                     {
-                        "startTime": 64550,
-                        "endTime": 64550,
-                        "data": "as"
+                        "startTime": 71840,
+                        "endTime": 72640,
+                        "data": "chiến"
                     },
                     {
-                        "startTime": 64550,
-                        "endTime": 64820,
-                        "data": "you"
+                        "startTime": 72640,
+                        "endTime": 73450,
+                        "data": "bào"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 64820,
-                        "endTime": 65050,
-                        "data": "I"
+                        "startTime": 73450,
+                        "endTime": 73710,
+                        "data": "Đằng"
                     },
                     {
-                        "startTime": 65050,
-                        "endTime": 65310,
-                        "data": "need"
+                        "startTime": 73710,
+                        "endTime": 73970,
+                        "data": "đông"
                     },
                     {
-                        "startTime": 65310,
-                        "endTime": 65550,
-                        "data": "you"
+                        "startTime": 73970,
+                        "endTime": 74240,
+                        "data": "gió"
                     },
                     {
-                        "startTime": 65550,
-                        "endTime": 65550,
-                        "data": "to"
-                    },
-                    {
-                        "startTime": 65550,
-                        "endTime": 66060,
-                        "data": "stay,"
-                    },
-                    {
-                        "startTime": 66060,
-                        "endTime": 66310,
-                        "data": "need"
-                    },
-                    {
-                        "startTime": 66310,
-                        "endTime": 66560,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 66560,
-                        "endTime": 66810,
-                        "data": "to"
-                    },
-                    {
-                        "startTime": 66810,
-                        "endTime": 67300,
-                        "data": "stay,"
-                    },
-                    {
-                        "startTime": 67300,
-                        "endTime": 68010,
-                        "data": "hey"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 68010,
-                        "endTime": 68260,
-                        "data": "When"
-                    },
-                    {
-                        "startTime": 68260,
-                        "endTime": 68260,
-                        "data": "I'm"
-                    },
-                    {
-                        "startTime": 68260,
-                        "endTime": 68760,
-                        "data": "away"
-                    },
-                    {
-                        "startTime": 68760,
-                        "endTime": 68760,
-                        "data": "from"
-                    },
-                    {
-                        "startTime": 68760,
-                        "endTime": 69010,
-                        "data": "you,"
-                    },
-                    {
-                        "startTime": 69010,
-                        "endTime": 69260,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 69260,
-                        "endTime": 69510,
-                        "data": "miss"
-                    },
-                    {
-                        "startTime": 69510,
-                        "endTime": 69510,
-                        "data": "your"
-                    },
-                    {
-                        "startTime": 69510,
-                        "endTime": 71010,
-                        "data": "touch"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 71010,
-                        "endTime": 71260,
-                        "data": "You're"
-                    },
-                    {
-                        "startTime": 71260,
-                        "endTime": 71510,
-                        "data": "the"
-                    },
-                    {
-                        "startTime": 71510,
-                        "endTime": 71510,
-                        "data": "reason"
-                    },
-                    {
-                        "startTime": 71510,
-                        "endTime": 71770,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 71770,
-                        "endTime": 72010,
-                        "data": "believe"
-                    },
-                    {
-                        "startTime": 72010,
-                        "endTime": 72260,
-                        "data": "in"
-                    },
-                    {
-                        "startTime": 72260,
-                        "endTime": 73760,
-                        "data": "love"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 73760,
-                        "endTime": 74010,
-                        "data": "It's"
-                    },
-                    {
-                        "startTime": 74010,
-                        "endTime": 74260,
-                        "data": "been"
-                    },
-                    {
-                        "startTime": 74260,
+                        "startTime": 74240,
                         "endTime": 74760,
-                        "data": "difficult"
+                        "data": "giông"
                     },
                     {
                         "startTime": 74760,
-                        "endTime": 75010,
-                        "data": "for"
+                        "endTime": 75300,
+                        "data": "ngút"
                     },
                     {
-                        "startTime": 75010,
-                        "endTime": 75010,
-                        "data": "me"
-                    },
-                    {
-                        "startTime": 75010,
-                        "endTime": 75260,
-                        "data": "to"
-                    },
-                    {
-                        "startTime": 75260,
-                        "endTime": 76760,
-                        "data": "trust"
+                        "startTime": 75300,
+                        "endTime": 75830,
+                        "data": "ngàn"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 76760,
-                        "endTime": 76760,
-                        "data": "And"
+                        "startTime": 75830,
+                        "endTime": 76090,
+                        "data": "Đoạn"
                     },
                     {
-                        "startTime": 76760,
-                        "endTime": 77010,
-                        "data": "I'm"
+                        "startTime": 76090,
+                        "endTime": 76630,
+                        "data": "trường"
                     },
                     {
-                        "startTime": 77010,
-                        "endTime": 77260,
-                        "data": "afraid"
+                        "startTime": 76630,
+                        "endTime": 76900,
+                        "data": "vang"
                     },
                     {
-                        "startTime": 77260,
-                        "endTime": 77510,
-                        "data": "that"
+                        "startTime": 76900,
+                        "endTime": 77160,
+                        "data": "thấu"
                     },
                     {
-                        "startTime": 77510,
-                        "endTime": 77510,
-                        "data": "I'ma"
+                        "startTime": 77160,
+                        "endTime": 77430,
+                        "data": "tận"
                     },
                     {
-                        "startTime": 77510,
-                        "endTime": 78010,
-                        "data": "***"
+                        "startTime": 77430,
+                        "endTime": 77950,
+                        "data": "trời"
                     },
                     {
-                        "startTime": 78010,
-                        "endTime": 78260,
-                        "data": "it"
-                    },
-                    {
-                        "startTime": 78260,
-                        "endTime": 79510,
-                        "data": "up"
+                        "startTime": 77950,
+                        "endTime": 79550,
+                        "data": "cao"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 79510,
-                        "endTime": 79760,
-                        "data": "Ain't"
+                        "startTime": 79550,
+                        "endTime": 80080,
+                        "data": "Tiếp"
                     },
                     {
-                        "startTime": 79760,
-                        "endTime": 79760,
-                        "data": "no"
+                        "startTime": 80080,
+                        "endTime": 80350,
+                        "data": "bước"
                     },
                     {
-                        "startTime": 79760,
-                        "endTime": 80010,
-                        "data": "way"
+                        "startTime": 80350,
+                        "endTime": 80880,
+                        "data": "ta"
                     },
                     {
-                        "startTime": 80010,
-                        "endTime": 80270,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 80270,
-                        "endTime": 80520,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 80520,
-                        "endTime": 80760,
-                        "data": "can"
-                    },
-                    {
-                        "startTime": 80760,
-                        "endTime": 80760,
-                        "data": "leave"
-                    },
-                    {
-                        "startTime": 80760,
-                        "endTime": 81260,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 81260,
-                        "endTime": 82260,
-                        "data": "stranded"
+                        "startTime": 80880,
+                        "endTime": 81400,
+                        "data": "đi"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 82260,
-                        "endTime": 82510,
-                        "data": "Cause"
+                        "startTime": 81400,
+                        "endTime": 81940,
+                        "data": "Biết"
                     },
                     {
-                        "startTime": 82510,
-                        "endTime": 82510,
-                        "data": "you"
+                        "startTime": 81940,
+                        "endTime": 82200,
+                        "data": "rằng"
                     },
                     {
-                        "startTime": 82510,
-                        "endTime": 82760,
-                        "data": "ain't"
+                        "startTime": 82200,
+                        "endTime": 82480,
+                        "data": "sẽ"
                     },
                     {
-                        "startTime": 82760,
-                        "endTime": 83010,
-                        "data": "ever"
+                        "startTime": 82480,
+                        "endTime": 82740,
+                        "data": "không"
                     },
                     {
-                        "startTime": 83010,
+                        "startTime": 82740,
                         "endTime": 83260,
-                        "data": "left"
+                        "data": "thể"
                     },
                     {
                         "startTime": 83260,
-                        "endTime": 83510,
-                        "data": "me"
+                        "endTime": 83800,
+                        "data": "trở"
                     },
                     {
-                        "startTime": 83510,
-                        "endTime": 85010,
-                        "data": "empty-handed"
+                        "startTime": 83800,
+                        "endTime": 85130,
+                        "data": "lại"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 85010,
-                        "endTime": 85270,
-                        "data": "And"
+                        "startTime": 85130,
+                        "endTime": 85400,
+                        "data": "Giọt"
                     },
                     {
-                        "startTime": 85270,
-                        "endTime": 85510,
-                        "data": "you"
+                        "startTime": 85400,
+                        "endTime": 85660,
+                        "data": "lệ"
                     },
                     {
-                        "startTime": 85510,
-                        "endTime": 85770,
-                        "data": "know"
+                        "startTime": 85660,
+                        "endTime": 86190,
+                        "data": "tuôn"
                     },
                     {
-                        "startTime": 85770,
-                        "endTime": 86010,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 86010,
-                        "endTime": 86010,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 86010,
-                        "endTime": 86510,
-                        "data": "know"
+                        "startTime": 86190,
+                        "endTime": 86990,
+                        "data": "rơi"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 86510,
-                        "endTime": 86510,
-                        "data": "That"
+                        "startTime": 86990,
+                        "endTime": 87260,
+                        "data": "Nước"
                     },
                     {
-                        "startTime": 86510,
-                        "endTime": 86760,
-                        "data": "I"
+                        "startTime": 87260,
+                        "endTime": 87520,
+                        "data": "mắt"
                     },
                     {
-                        "startTime": 86760,
-                        "endTime": 87010,
-                        "data": "can't"
+                        "startTime": 87520,
+                        "endTime": 88050,
+                        "data": "ta"
                     },
                     {
-                        "startTime": 87010,
-                        "endTime": 87280,
-                        "data": "live"
+                        "startTime": 88050,
+                        "endTime": 88310,
+                        "data": "tuôn"
                     },
                     {
-                        "startTime": 87280,
-                        "endTime": 87760,
-                        "data": "without"
+                        "startTime": 88310,
+                        "endTime": 88850,
+                        "data": "trào"
                     },
                     {
-                        "startTime": 87760,
-                        "endTime": 88760,
-                        "data": "you"
+                        "startTime": 88850,
+                        "endTime": 89370,
+                        "data": "bờ"
+                    },
+                    {
+                        "startTime": 89370,
+                        "endTime": 92370,
+                        "data": "mi"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 88760,
-                        "endTime": 88760,
-                        "data": "So,"
+                        "startTime": 116200,
+                        "endTime": 116740,
+                        "data": "Ngậm"
                     },
                     {
-                        "startTime": 88760,
-                        "endTime": 89010,
-                        "data": "baby,"
+                        "startTime": 116740,
+                        "endTime": 117010,
+                        "data": "ngùi"
                     },
                     {
-                        "startTime": 89010,
-                        "endTime": 90510,
-                        "data": "stay"
+                        "startTime": 117010,
+                        "endTime": 117270,
+                        "data": "ngăn"
+                    },
+                    {
+                        "startTime": 117270,
+                        "endTime": 117800,
+                        "data": "khoé"
+                    },
+                    {
+                        "startTime": 117800,
+                        "endTime": 118070,
+                        "data": "mi"
+                    },
+                    {
+                        "startTime": 118070,
+                        "endTime": 118600,
+                        "data": "lăn"
+                    },
+                    {
+                        "startTime": 118600,
+                        "endTime": 119660,
+                        "data": "dài"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 90510,
-                        "endTime": 91510,
-                        "data": "Oh,"
+                        "startTime": 119660,
+                        "endTime": 120190,
+                        "data": "Duyên"
                     },
                     {
-                        "startTime": 91510,
-                        "endTime": 93270,
-                        "data": "ooh-woah"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 93270,
-                        "endTime": 94260,
-                        "data": "Oh,"
-                    },
-                    {
-                        "startTime": 94260,
-                        "endTime": 96020,
-                        "data": "ooh-woah"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 96020,
-                        "endTime": 97010,
-                        "data": "Oh,"
-                    },
-                    {
-                        "startTime": 97010,
-                        "endTime": 99010,
-                        "data": "ooh-woah"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 99010,
-                        "endTime": 99010,
-                        "data": "I'll"
-                    },
-                    {
-                        "startTime": 99010,
-                        "endTime": 99260,
-                        "data": "be"
-                    },
-                    {
-                        "startTime": 99260,
-                        "endTime": 100010,
-                        "data": "***"
-                    },
-                    {
-                        "startTime": 100010,
-                        "endTime": 100270,
-                        "data": "up"
-                    },
-                    {
-                        "startTime": 100270,
-                        "endTime": 100510,
-                        "data": "if"
-                    },
-                    {
-                        "startTime": 100510,
-                        "endTime": 100770,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 100770,
-                        "endTime": 100770,
-                        "data": "can't"
-                    },
-                    {
-                        "startTime": 100770,
-                        "endTime": 101010,
-                        "data": "be"
-                    },
-                    {
-                        "startTime": 101010,
-                        "endTime": 101510,
-                        "data": "right"
-                    },
-                    {
-                        "startTime": 101510,
-                        "endTime": 101760,
-                        "data": "here"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 101760,
-                        "endTime": 102010,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 102010,
-                        "endTime": 102010,
-                        "data": "do"
-                    },
-                    {
-                        "startTime": 102010,
-                        "endTime": 102260,
-                        "data": "the"
-                    },
-                    {
-                        "startTime": 102260,
-                        "endTime": 102760,
-                        "data": "same"
-                    },
-                    {
-                        "startTime": 102760,
-                        "endTime": 103020,
-                        "data": "thing"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 103020,
-                        "endTime": 103260,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 103260,
-                        "endTime": 103260,
-                        "data": "told"
-                    },
-                    {
-                        "startTime": 103260,
-                        "endTime": 103510,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 103510,
-                        "endTime": 103760,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 103760,
-                        "endTime": 104010,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 104010,
-                        "endTime": 104260,
-                        "data": "never"
-                    },
-                    {
-                        "startTime": 104260,
-                        "endTime": 104510,
-                        "data": "would"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 104510,
-                        "endTime": 104510,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 104510,
-                        "endTime": 104770,
-                        "data": "told"
-                    },
-                    {
-                        "startTime": 104770,
-                        "endTime": 105010,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 105010,
-                        "endTime": 105260,
-                        "data": "I'd"
-                    },
-                    {
-                        "startTime": 105260,
-                        "endTime": 105760,
-                        "data": "change"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 105760,
-                        "endTime": 106010,
-                        "data": "Even"
-                    },
-                    {
-                        "startTime": 106010,
-                        "endTime": 106010,
-                        "data": "when"
-                    },
-                    {
-                        "startTime": 106010,
-                        "endTime": 106260,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 106260,
-                        "endTime": 106510,
-                        "data": "knew"
-                    },
-                    {
-                        "startTime": 106510,
-                        "endTime": 106510,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 106510,
-                        "endTime": 106780,
-                        "data": "never"
-                    },
-                    {
-                        "startTime": 106780,
-                        "endTime": 107260,
-                        "data": "could"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 107260,
-                        "endTime": 107510,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 107510,
-                        "endTime": 107510,
-                        "data": "know"
-                    },
-                    {
-                        "startTime": 107510,
-                        "endTime": 107770,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 107770,
-                        "endTime": 108010,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 108010,
-                        "endTime": 108510,
-                        "data": "can't"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 108510,
-                        "endTime": 108510,
-                        "data": "Find"
-                    },
-                    {
-                        "startTime": 108510,
-                        "endTime": 108770,
-                        "data": "nobody"
-                    },
-                    {
-                        "startTime": 108770,
-                        "endTime": 109260,
-                        "data": "else"
-                    },
-                    {
-                        "startTime": 109260,
-                        "endTime": 109260,
-                        "data": "as"
-                    },
-                    {
-                        "startTime": 109260,
-                        "endTime": 109510,
-                        "data": "good"
-                    },
-                    {
-                        "startTime": 109510,
-                        "endTime": 109760,
-                        "data": "as"
-                    },
-                    {
-                        "startTime": 109760,
-                        "endTime": 110010,
-                        "data": "you"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 110010,
-                        "endTime": 110260,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 110260,
-                        "endTime": 110520,
-                        "data": "need"
-                    },
-                    {
-                        "startTime": 110520,
-                        "endTime": 110520,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 110520,
-                        "endTime": 110760,
-                        "data": "to"
-                    },
-                    {
-                        "startTime": 110760,
-                        "endTime": 111260,
-                        "data": "stay,"
-                    },
-                    {
-                        "startTime": 111260,
-                        "endTime": 111520,
-                        "data": "need"
-                    },
-                    {
-                        "startTime": 111520,
-                        "endTime": 111760,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 111760,
-                        "endTime": 112260,
-                        "data": "to"
-                    },
-                    {
-                        "startTime": 112260,
-                        "endTime": 112760,
-                        "data": "stay,"
-                    },
-                    {
-                        "startTime": 112760,
-                        "endTime": 112960,
-                        "data": "hey"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 112960,
-                        "endTime": 113220,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 113220,
-                        "endTime": 113460,
-                        "data": "do"
-                    },
-                    {
-                        "startTime": 113460,
-                        "endTime": 113710,
-                        "data": "the"
-                    },
-                    {
-                        "startTime": 113710,
-                        "endTime": 113960,
-                        "data": "same"
-                    },
-                    {
-                        "startTime": 113960,
-                        "endTime": 114220,
-                        "data": "thing"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 114220,
-                        "endTime": 114460,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 114460,
-                        "endTime": 114710,
-                        "data": "told"
-                    },
-                    {
-                        "startTime": 114710,
-                        "endTime": 114710,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 114710,
-                        "endTime": 114970,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 114970,
-                        "endTime": 115210,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 115210,
-                        "endTime": 115460,
-                        "data": "never"
-                    },
-                    {
-                        "startTime": 115460,
-                        "endTime": 115710,
-                        "data": "would"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 115710,
-                        "endTime": 115710,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 115710,
-                        "endTime": 115960,
-                        "data": "told"
-                    },
-                    {
-                        "startTime": 115960,
-                        "endTime": 116210,
-                        "data": "you"
-                    },
-                    {
-                        "startTime": 116210,
-                        "endTime": 116460,
-                        "data": "I'd"
-                    },
-                    {
-                        "startTime": 116460,
-                        "endTime": 116960,
-                        "data": "change"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 116960,
-                        "endTime": 116960,
-                        "data": "Even"
-                    },
-                    {
-                        "startTime": 116960,
-                        "endTime": 117210,
-                        "data": "when"
-                    },
-                    {
-                        "startTime": 117210,
-                        "endTime": 117470,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 117470,
-                        "endTime": 117710,
-                        "data": "knew"
-                    },
-                    {
-                        "startTime": 117710,
-                        "endTime": 117710,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 117710,
-                        "endTime": 117980,
-                        "data": "never"
-                    },
-                    {
-                        "startTime": 117980,
-                        "endTime": 118460,
-                        "data": "could"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 118460,
-                        "endTime": 118700,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 118700,
-                        "endTime": 118960,
-                        "data": "know"
-                    },
-                    {
-                        "startTime": 118960,
-                        "endTime": 118960,
-                        "data": "that"
-                    },
-                    {
-                        "startTime": 118960,
-                        "endTime": 119200,
-                        "data": "I"
-                    },
-                    {
-                        "startTime": 119200,
-                        "endTime": 119700,
-                        "data": "can't"
-                    }
-                ]
-            },
-            {
-                "words": [
-                    {
-                        "startTime": 119700,
-                        "endTime": 119960,
-                        "data": "Find"
-                    },
-                    {
-                        "startTime": 119960,
-                        "endTime": 120210,
-                        "data": "nobody"
-                    },
-                    {
-                        "startTime": 120210,
+                        "startTime": 120190,
                         "endTime": 120460,
-                        "data": "else"
+                        "data": "số"
                     },
                     {
                         "startTime": 120460,
-                        "endTime": 120710,
-                        "data": "as"
+                        "endTime": 120720,
+                        "data": "đã"
                     },
                     {
-                        "startTime": 120710,
-                        "endTime": 120960,
-                        "data": "good"
+                        "startTime": 120720,
+                        "endTime": 121260,
+                        "data": "an"
                     },
                     {
-                        "startTime": 120960,
-                        "endTime": 120960,
-                        "data": "as"
-                    },
-                    {
-                        "startTime": 120960,
-                        "endTime": 121210,
-                        "data": "you"
+                        "startTime": 121260,
+                        "endTime": 121790,
+                        "data": "bài"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 121210,
-                        "endTime": 121460,
-                        "data": "I"
+                        "startTime": 121790,
+                        "endTime": 122320,
+                        "data": "Để"
                     },
                     {
-                        "startTime": 121460,
-                        "endTime": 121710,
-                        "data": "need"
+                        "startTime": 122320,
+                        "endTime": 122580,
+                        "data": "người"
                     },
                     {
-                        "startTime": 121710,
-                        "endTime": 121950,
-                        "data": "you"
+                        "startTime": 122580,
+                        "endTime": 123110,
+                        "data": "đi"
                     },
                     {
-                        "startTime": 121950,
-                        "endTime": 121950,
-                        "data": "to"
+                        "startTime": 123110,
+                        "endTime": 123640,
+                        "data": "không"
                     },
                     {
-                        "startTime": 121950,
-                        "endTime": 122450,
-                        "data": "stay,"
+                        "startTime": 123640,
+                        "endTime": 123900,
+                        "data": "phải"
                     },
                     {
-                        "startTime": 122450,
-                        "endTime": 122710,
-                        "data": "need"
+                        "startTime": 123900,
+                        "endTime": 124440,
+                        "data": "lưu"
                     },
                     {
-                        "startTime": 122710,
-                        "endTime": 122960,
-                        "data": "you"
+                        "startTime": 124440,
+                        "endTime": 124710,
+                        "data": "luyến"
                     },
                     {
-                        "startTime": 122960,
-                        "endTime": 123210,
-                        "data": "to"
+                        "startTime": 124710,
+                        "endTime": 124970,
+                        "data": "người"
                     },
                     {
-                        "startTime": 123210,
-                        "endTime": 123710,
-                        "data": "stay,"
+                        "startTime": 124970,
+                        "endTime": 125770,
+                        "data": "ở"
                     },
                     {
-                        "startTime": 123710,
-                        "endTime": 126710,
-                        "data": "hey"
+                        "startTime": 125770,
+                        "endTime": 127360,
+                        "data": "lại"
                     }
                 ]
             },
             {
                 "words": [
                     {
-                        "startTime": 132750,
-                        "endTime": 132750,
-                        "data": "I"
+                        "startTime": 127360,
+                        "endTime": 127890,
+                        "data": "Phận"
                     },
                     {
-                        "startTime": 132750,
-                        "endTime": 133000,
-                        "data": "need"
+                        "startTime": 127890,
+                        "endTime": 128160,
+                        "data": "hồng"
                     },
                     {
-                        "startTime": 133000,
-                        "endTime": 133250,
-                        "data": "you"
+                        "startTime": 128160,
+                        "endTime": 128420,
+                        "data": "nhan"
                     },
                     {
-                        "startTime": 133250,
-                        "endTime": 133500,
-                        "data": "to"
+                        "startTime": 128420,
+                        "endTime": 128960,
+                        "data": "quyết"
                     },
                     {
-                        "startTime": 133500,
-                        "endTime": 133760,
-                        "data": "stay,"
+                        "startTime": 128960,
+                        "endTime": 129220,
+                        "data": "tâm"
                     },
                     {
-                        "startTime": 133760,
-                        "endTime": 134000,
-                        "data": "need"
+                        "startTime": 129220,
+                        "endTime": 129480,
+                        "data": "thay"
                     },
                     {
-                        "startTime": 134000,
-                        "endTime": 134260,
-                        "data": "you"
+                        "startTime": 129480,
+                        "endTime": 130820,
+                        "data": "chồng"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 130820,
+                        "endTime": 131090,
+                        "data": "Che"
                     },
                     {
-                        "startTime": 134260,
-                        "endTime": 134500,
-                        "data": "to"
+                        "startTime": 131090,
+                        "endTime": 131620,
+                        "data": "nỗi"
                     },
                     {
-                        "startTime": 134500,
-                        "endTime": 134760,
-                        "data": "stay,"
+                        "startTime": 131620,
+                        "endTime": 131880,
+                        "data": "đau"
                     },
                     {
-                        "startTime": 134760,
-                        "endTime": 135760,
-                        "data": "hey"
+                        "startTime": 131880,
+                        "endTime": 132410,
+                        "data": "trong"
+                    },
+                    {
+                        "startTime": 132410,
+                        "endTime": 133200,
+                        "data": "lòng"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 133200,
+                        "endTime": 133470,
+                        "data": "Từ"
+                    },
+                    {
+                        "startTime": 133470,
+                        "endTime": 133740,
+                        "data": "lầu"
+                    },
+                    {
+                        "startTime": 133740,
+                        "endTime": 134270,
+                        "data": "hoa"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 134270,
+                        "endTime": 134800,
+                        "data": "Mang"
+                    },
+                    {
+                        "startTime": 134800,
+                        "endTime": 135070,
+                        "data": "hận"
+                    },
+                    {
+                        "startTime": 135070,
+                        "endTime": 135330,
+                        "data": "căm"
+                    },
+                    {
+                        "startTime": 135330,
+                        "endTime": 135860,
+                        "data": "ra"
+                    },
+                    {
+                        "startTime": 135860,
+                        "endTime": 136130,
+                        "data": "chốn"
+                    },
+                    {
+                        "startTime": 136130,
+                        "endTime": 136660,
+                        "data": "sa"
+                    },
+                    {
+                        "startTime": 136660,
+                        "endTime": 138260,
+                        "data": "trường"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 138260,
+                        "endTime": 138520,
+                        "data": "Trút"
+                    },
+                    {
+                        "startTime": 138520,
+                        "endTime": 138780,
+                        "data": "lớp"
+                    },
+                    {
+                        "startTime": 138780,
+                        "endTime": 139320,
+                        "data": "thanh"
+                    },
+                    {
+                        "startTime": 139320,
+                        "endTime": 139850,
+                        "data": "y"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 139850,
+                        "endTime": 140380,
+                        "data": "Khoác"
+                    },
+                    {
+                        "startTime": 140380,
+                        "endTime": 140640,
+                        "data": "lên"
+                    },
+                    {
+                        "startTime": 140640,
+                        "endTime": 140900,
+                        "data": "thân"
+                    },
+                    {
+                        "startTime": 140900,
+                        "endTime": 141170,
+                        "data": "ngọc"
+                    },
+                    {
+                        "startTime": 141170,
+                        "endTime": 141700,
+                        "data": "chiếc"
+                    },
+                    {
+                        "startTime": 141700,
+                        "endTime": 142500,
+                        "data": "chiến"
+                    },
+                    {
+                        "startTime": 142500,
+                        "endTime": 143310,
+                        "data": "bào"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 143310,
+                        "endTime": 143570,
+                        "data": "Đằng"
+                    },
+                    {
+                        "startTime": 143570,
+                        "endTime": 143840,
+                        "data": "đông"
+                    },
+                    {
+                        "startTime": 143840,
+                        "endTime": 144090,
+                        "data": "gió"
+                    },
+                    {
+                        "startTime": 144090,
+                        "endTime": 144370,
+                        "data": "giông"
+                    },
+                    {
+                        "startTime": 144370,
+                        "endTime": 144890,
+                        "data": "ngút"
+                    },
+                    {
+                        "startTime": 144890,
+                        "endTime": 145690,
+                        "data": "ngàn"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 145690,
+                        "endTime": 145950,
+                        "data": "Đoạn"
+                    },
+                    {
+                        "startTime": 145950,
+                        "endTime": 146220,
+                        "data": "trường"
+                    },
+                    {
+                        "startTime": 146220,
+                        "endTime": 146480,
+                        "data": "vang"
+                    },
+                    {
+                        "startTime": 146480,
+                        "endTime": 146750,
+                        "data": "thấu"
+                    },
+                    {
+                        "startTime": 146750,
+                        "endTime": 147010,
+                        "data": "tận"
+                    },
+                    {
+                        "startTime": 147010,
+                        "endTime": 147820,
+                        "data": "trời"
+                    },
+                    {
+                        "startTime": 147820,
+                        "endTime": 149400,
+                        "data": "cao"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 149400,
+                        "endTime": 149670,
+                        "data": "Nếu"
+                    },
+                    {
+                        "startTime": 149670,
+                        "endTime": 149940,
+                        "data": "lỡ"
+                    },
+                    {
+                        "startTime": 149940,
+                        "endTime": 150470,
+                        "data": "hôm"
+                    },
+                    {
+                        "startTime": 150470,
+                        "endTime": 151000,
+                        "data": "nay"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 151000,
+                        "endTime": 151540,
+                        "data": "Không"
+                    },
+                    {
+                        "startTime": 151540,
+                        "endTime": 151800,
+                        "data": "gặp"
+                    },
+                    {
+                        "startTime": 151800,
+                        "endTime": 152340,
+                        "data": "may"
+                    },
+                    {
+                        "startTime": 152340,
+                        "endTime": 152600,
+                        "data": "nằm"
+                    },
+                    {
+                        "startTime": 152600,
+                        "endTime": 152870,
+                        "data": "xuống"
+                    },
+                    {
+                        "startTime": 152870,
+                        "endTime": 153660,
+                        "data": "nơi"
+                    },
+                    {
+                        "startTime": 153660,
+                        "endTime": 154990,
+                        "data": "này"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 154990,
+                        "endTime": 155250,
+                        "data": "Giọt"
+                    },
+                    {
+                        "startTime": 155250,
+                        "endTime": 155520,
+                        "data": "lệ"
+                    },
+                    {
+                        "startTime": 155520,
+                        "endTime": 156050,
+                        "data": "tuôn"
+                    },
+                    {
+                        "startTime": 156050,
+                        "endTime": 156590,
+                        "data": "rơi"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 156590,
+                        "endTime": 156850,
+                        "data": "Nước"
+                    },
+                    {
+                        "startTime": 156850,
+                        "endTime": 157380,
+                        "data": "mắt"
+                    },
+                    {
+                        "startTime": 157380,
+                        "endTime": 157650,
+                        "data": "ta"
+                    },
+                    {
+                        "startTime": 157650,
+                        "endTime": 158170,
+                        "data": "tuôn"
+                    },
+                    {
+                        "startTime": 158170,
+                        "endTime": 158440,
+                        "data": "trào"
+                    },
+                    {
+                        "startTime": 158440,
+                        "endTime": 158970,
+                        "data": "bờ"
+                    },
+                    {
+                        "startTime": 158970,
+                        "endTime": 160510,
+                        "data": "mi"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 160510,
+                        "endTime": 160780,
+                        "data": "Dẫu"
+                    },
+                    {
+                        "startTime": 160780,
+                        "endTime": 161050,
+                        "data": "bước"
+                    },
+                    {
+                        "startTime": 161050,
+                        "endTime": 161580,
+                        "data": "ta"
+                    },
+                    {
+                        "startTime": 161580,
+                        "endTime": 162110,
+                        "data": "đi"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 162110,
+                        "endTime": 162900,
+                        "data": "Chẳng"
+                    },
+                    {
+                        "startTime": 162900,
+                        "endTime": 162900,
+                        "data": "còn"
+                    },
+                    {
+                        "startTime": 162900,
+                        "endTime": 163430,
+                        "data": "nơi"
+                    },
+                    {
+                        "startTime": 163430,
+                        "endTime": 163700,
+                        "data": "nào"
+                    },
+                    {
+                        "startTime": 163700,
+                        "endTime": 164230,
+                        "data": "để"
+                    },
+                    {
+                        "startTime": 164230,
+                        "endTime": 164760,
+                        "data": "trở"
+                    },
+                    {
+                        "startTime": 164760,
+                        "endTime": 165570,
+                        "data": "lại"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 165570,
+                        "endTime": 165830,
+                        "data": "Ở"
+                    },
+                    {
+                        "startTime": 165830,
+                        "endTime": 166080,
+                        "data": "đây"
+                    },
+                    {
+                        "startTime": 166080,
+                        "endTime": 166360,
+                        "data": "có"
+                    },
+                    {
+                        "startTime": 166360,
+                        "endTime": 166880,
+                        "data": "chăng"
+                    },
+                    {
+                        "startTime": 166880,
+                        "endTime": 167150,
+                        "data": "kiếp"
+                    },
+                    {
+                        "startTime": 167150,
+                        "endTime": 167680,
+                        "data": "người"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 167680,
+                        "endTime": 168210,
+                        "data": "Chẳng"
+                    },
+                    {
+                        "startTime": 168210,
+                        "endTime": 168480,
+                        "data": "hoài"
+                    },
+                    {
+                        "startTime": 168480,
+                        "endTime": 168750,
+                        "data": "than"
+                    },
+                    {
+                        "startTime": 168750,
+                        "endTime": 169270,
+                        "data": "số"
+                    },
+                    {
+                        "startTime": 169270,
+                        "endTime": 169540,
+                        "data": "trời"
+                    },
+                    {
+                        "startTime": 169540,
+                        "endTime": 170080,
+                        "data": "đã"
+                    },
+                    {
+                        "startTime": 170080,
+                        "endTime": 171660,
+                        "data": "ban"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 171660,
+                        "endTime": 171930,
+                        "data": "Nếu"
+                    },
+                    {
+                        "startTime": 171930,
+                        "endTime": 172200,
+                        "data": "lỡ"
+                    },
+                    {
+                        "startTime": 172200,
+                        "endTime": 172730,
+                        "data": "hôm"
+                    },
+                    {
+                        "startTime": 172730,
+                        "endTime": 173260,
+                        "data": "nay"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 173260,
+                        "endTime": 173790,
+                        "data": "Không"
+                    },
+                    {
+                        "startTime": 173790,
+                        "endTime": 174060,
+                        "data": "gặp"
+                    },
+                    {
+                        "startTime": 174060,
+                        "endTime": 174600,
+                        "data": "may"
+                    },
+                    {
+                        "startTime": 174600,
+                        "endTime": 174860,
+                        "data": "nằm"
+                    },
+                    {
+                        "startTime": 174860,
+                        "endTime": 175130,
+                        "data": "xuống"
+                    },
+                    {
+                        "startTime": 175130,
+                        "endTime": 175910,
+                        "data": "nơi"
+                    },
+                    {
+                        "startTime": 175910,
+                        "endTime": 177250,
+                        "data": "này"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 177250,
+                        "endTime": 177510,
+                        "data": "Đấy"
+                    },
+                    {
+                        "startTime": 177510,
+                        "endTime": 178050,
+                        "data": "là"
+                    },
+                    {
+                        "startTime": 178050,
+                        "endTime": 178300,
+                        "data": "ý"
+                    },
+                    {
+                        "startTime": 178300,
+                        "endTime": 178840,
+                        "data": "trời"
+                    }
+                ]
+            },
+            {
+                "words": [
+                    {
+                        "startTime": 178840,
+                        "endTime": 179370,
+                        "data": "Cho"
+                    },
+                    {
+                        "startTime": 179370,
+                        "endTime": 179650,
+                        "data": "chúng"
+                    },
+                    {
+                        "startTime": 179650,
+                        "endTime": 180160,
+                        "data": "ta"
+                    },
+                    {
+                        "startTime": 180160,
+                        "endTime": 180430,
+                        "data": "lại"
+                    },
+                    {
+                        "startTime": 180430,
+                        "endTime": 180700,
+                        "data": "được"
+                    },
+                    {
+                        "startTime": 180700,
+                        "endTime": 181490,
+                        "data": "bên"
+                    },
+                    {
+                        "startTime": 181490,
+                        "endTime": 182490,
+                        "data": "nhau"
                     }
                 ]
             }
         ],
-        "file": "https://static-zmp3.zmdcdn.me/lyrics/b/7/4/6/b746acefeb8dabe751b4ab7e308302b0.lrc",
+        "file": "https://static-zmp3.zmdcdn.me/lyrics/9/a/d/e/9aded82ba2a89e1a113aea9dc91678c4.lrc",
         "enabledVideoBG": true,
-        "streamingUrl": "https://mcloud-bf-s7-mv-zmp3.zmdcdn.me/_w1ShvTdHQQ/67f8c3494e20a47efd31/0a1a7462781a9244cb0b/1080/Stay.mp4?authen=exp=1674208100~acl=/_w1ShvTdHQQ/*~hmac=c28ea0bcd7fb4b4f9f9fe24c5835105b",
         "defaultIBGUrls": [
-            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/9/e/0/3/9e0353bfb28c45631c3ac6cbd15e0c7d.jpg",
-            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/b/8/b/1/b8b152ff32f44dfc88575b3347e7feb6.jpg",
-            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/8/2/f/7/82f7e93e733cad39296bea92091ffeb4.jpg",
-            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/3/5/9/2/3592d9a3cf9401dcb96ef86325da6d10.jpg",
-            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/4/8/3/a/483a948338535dee13a494069757167c.jpg",
-            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/e/8/9/4/e8947c7da6784072bf126d77f687a920.jpg",
-            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/0/6/7/c/067c35298c71ccd56bd8de958bbad91e.jpg"
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/9/8/c/8/98c8c77798ecf2bfb1eaafb13e965126.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/5/1/f/5/51f567f00f5b8252ed6702f13b76e4fe.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/b/c/3/a/bc3a22401a4ce2164daad19458b883a2.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/2/9/8/d/298d9043a427d1da7a1f431d85019663.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/8/d/4/f/8d4fa340ce24c14746fc9350877a37cd.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/9/1/4/a/914af84e3526eaa4435e0c39ac371684.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/f/1/d/2/f1d25abd66dcd1cd0ec695ae1a1db53a.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/f/b/f/2/fbf22750511a489746d6f162b44dd478.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/a/a/e/5/aae5239387734a1e61652f08339c9978.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/8/7/0/b/870b5a8335f6e6308bdbea1cbc5a5e22.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/b/9/b/0/b9b032753b3d8bc00401d8335f7b75ec.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/b/1/3/a/b13a65fab4efa6b2ca2fb0038a744a16.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/7/0/1/4/70147be86fd8f42f47e5d4c80272568c.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/5/4/a/c/54ac4fb68389dcbdb9339be31caa033c.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/c/a/8/f/ca8f8f2cf33a301af9c423af26b67d97.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/c/5/0/0/c50038e9df5bac7d2e5e0789e3481a08.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/b/a/1/c/ba1c46549defd525e9c9a2fcae86d350.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/9/2/e/d/92ede0b8144ec3b81486aa24130022ab.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/1/a/8/4/1a84c73f0ad308a06970ac57b31f15c1.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/5/4/c/0/54c06b94d0b1f845b7d315929fb149dc.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/1/e/5/8/1e5859e1188be2156afce6fedcd95114.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/b/3/7/0/b37036b7a2a1abb22537ee82ce13031d.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/3/d/6/d/3d6d068a54a4dc697c65d07c80c93cfd.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/7/3/b/5/73b549530559b63ec7912778004b9d34.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/7/c/1/e/7c1e89576f04c33330991a402f6e3d52.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/e/b/4/e/eb4e370b1baf9ef77983c3ecae477935.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/6/f/1/3/6f13c1b2d60718fdc49d83325aef8af3.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/0/6/b/7/06b7390d647c1af394baa4fc854d932c.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/3/5/9/9/35991a9e25aa74ba15a68e6b4ce7befd.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/c/1/f/a/c1fa754fca52a95271f25b14bfe3a9a9.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/d/f/6/e/df6e65a6d99c0c76a80916bdef059501.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/1/2/1/d/121d9bec6b0ebf7e2997bd39590841ef.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/d/f/f/2/dff251db93d0ad908888d899803ca7b3.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/a/8/0/3/a8035e19913c247509d478ad7085de4b.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/4/c/9/5/4c9562bab13c07954d66689184a0d71d.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/9/b/e/3/9be37809f8d936b1c9ad349dd88eb17f.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/b/0/f/f/b0ffd923f15ccbefcfbf27b53e6c2baa.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/0/1/2/c/012cb44e1d2a889a3d2f7cca0e39f7e7.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/b/5/c/4/b5c448457116d9a8534260ea20d95eca.jpg",
+            "https://photo-resize-zmp3.zmdcdn.me/w1920_r3x2_jpeg/cover/7/e/b/a/7ebad20a8e4628e73b85090efc1f9cc6.jpg"
         ],
         "BGMode": 0
     },
-    "timestamp": 1674036364003
+    "timestamp": 1674786839485
 }

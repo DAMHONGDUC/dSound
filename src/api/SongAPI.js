@@ -83,9 +83,6 @@ export const getLyric = async (songId) => {
       sig: hashParam("/api/v2/lyric/get/lyric", songId),
     });
 
-    res.data.sentences.forEach((element) => {
-      element.words.forEach((e) => console.log(e.data));
-    });
-    if (res) return res;
+    if (res?.data?.sentences) return res.data.sentences;
   } catch (err) {}
 };
