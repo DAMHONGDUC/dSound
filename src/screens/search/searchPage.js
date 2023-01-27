@@ -7,6 +7,7 @@ import {
   FlatList,
   TextInput,
   Keyboard,
+  Alert,
 } from "react-native";
 import SongRow from "screens/song/SongRow";
 import Loading from "components/Loading";
@@ -70,6 +71,7 @@ export default function SongsRoute({ navigation }) {
           placeholder="Bạn muốn nghe gì?"
           placeholderTextColor={COLORS.grey}
           onChangeText={onChangeTextInput}
+          onSubmitEditing={onSearch}
         />
         <TouchableOpacity onPress={onSearch} style={styles.searchIcon}>
           <AntDesign name="search1" size={30} color={COLORS.black} />
@@ -102,7 +104,7 @@ const styles = StyleSheet.create({
   textInput: {
     color: COLORS.black,
     backgroundColor: COLORS.white,
-    borderColor: COLORS.black,
+    borderColor: COLORS.white,
     borderWidth: 1.5,
     borderRadius: 7,
     fontSize: 17,
@@ -118,11 +120,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 20,
+    borderWidth: 1.5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderRadius: 7,
+    borderColor: COLORS.black,
   },
   searchIcon: {
     alignSelf: "center",
   },
   notiText: {
-    color: COLORS.black,
+    color: COLORS.primary,
   },
 });
