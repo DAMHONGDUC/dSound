@@ -73,7 +73,7 @@ export default BottomPlayer = () => {
   }, [progress.position]);
 
   const handlePlayPause = () => {
-    PlayerController.onPlayPause(playBackState === State.Playing);
+    PlayerController.onPlayPause(playBackState);
   };
 
   const handleBottomPlayerClick = () => {

@@ -11,10 +11,11 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Feather from "react-native-vector-icons/Feather";
 import { durationFormat } from "helper";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { usePlaybackState, State } from "react-native-track-player";
 
 export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
-  const { activeSong, isPlaying } = useSelector((state) => state.player);
+  const { activeSong } = useSelector((state) => state.player);
+  const playBackState = usePlaybackState();
 
   return (
     <TouchableHighlight
@@ -47,7 +48,9 @@ export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
 
         <FontAwesome5
           name={
-            activeSong.id === id && isPlaying ? "pause-circle" : "play-circle"
+            activeSong.id === id && playBackState === State.Playing
+              ? "pause-circle"
+              : "play-circle"
           }
           color={COLORS.primary}
           size={29}

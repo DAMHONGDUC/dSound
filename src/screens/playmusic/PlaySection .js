@@ -20,7 +20,7 @@ export default PlaySection = () => {
   }, []);
 
   const handlePlayPause = () => {
-    PlayerController.onPlayPause(playBackState === State.Playing);
+    PlayerController.onPlayPause(playBackState);
   };
 
   const handlePrevious = () => {

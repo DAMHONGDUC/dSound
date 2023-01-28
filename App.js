@@ -20,18 +20,21 @@ export default function App() {
           Capability.Pause,
           Capability.SkipToNext,
           Capability.SkipToPrevious,
+          Capability.SeekTo,
         ],
         compactCapabilities: [
           Capability.Play,
           Capability.Pause,
           Capability.SkipToNext,
           Capability.SkipToPrevious,
+          Capability.SeekTo,
         ],
         notificationCapabilities: [
           Capability.Play,
           Capability.Pause,
           Capability.SkipToNext,
           Capability.SkipToPrevious,
+          Capability.SeekTo,
         ],
       });
     });
