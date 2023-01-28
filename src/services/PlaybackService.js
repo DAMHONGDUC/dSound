@@ -64,6 +64,6 @@ export const PlaybackService = async function () {
   });
 
   TrackPlayer.addEventListener(Event.PlaybackState, (event) => {
-    console.log("Event.PlaybackState", event, stateDefine[event.state]);
+    //console.log("Event.PlaybackState", event, stateDefine[event.state]);
   });
 };

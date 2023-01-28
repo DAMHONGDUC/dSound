@@ -2,20 +2,22 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { COLORS } from "constants/theme";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import PlayerController from "helper/PlayerController";
 import { useRoute } from "@react-navigation/native";
+import TrackPlayer from "react-native-track-player";
+import { State } from "react-native-track-player";
 
 export default PlaySection = () => {
-  const { currPlaylist, currIndex, activeSong, isPlaying } = useSelector(
+  const { currIndex, isPlaying, activeSong } = useSelector(
     (state) => state.player
   );
   const route = useRoute();
 
   useEffect(() => {
     if (route.params.currSongId !== activeSong.id) {
-      PlayerController.onPlayNew(currIndex, currPlaylist);
+      PlayerController.onPlayNew(currIndex);
     }
   }, []);
 
@@ -24,11 +26,11 @@ export default PlaySection = () => {
   };
 
   const handlePrevious = () => {
-    PlayerController.onPrevious(currIndex, currPlaylist);
+    PlayerController.onPrevious(currIndex);
   };
 
   const handleNext = () => {
-    PlayerController.onNext(currIndex, currPlaylist);
+    PlayerController.onNext();
   };
 
   return (

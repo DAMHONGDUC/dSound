@@ -3,19 +3,21 @@ import { COLORS } from "constants/theme";
 import { createRef, useEffect, useState } from "react";
 import { getLyric } from "api/SongAPI";
 import { useRoute } from "@react-navigation/native";
+import { useSelector } from "react-redux";
 
 export default LyricSection = () => {
   const [lyric, setLyric] = useState();
   const route = useRoute();
+  const { activeSong } = useSelector((state) => state.player);
 
   useEffect(() => {
     const fetchLyric = async () => {
-      const data = await getLyric(route.params.currSongId);
+      const data = await getLyric(activeSong.id);
       setLyric(data);
     };
 
     fetchLyric();
-  }, []);
+  }, [activeSong]);
 
   const getLyricLine = (words) => {
     let str = "";
