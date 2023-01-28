@@ -35,10 +35,10 @@ export default class PlayerController {
   static async onPlayPause(isPlaying) {
     if (isPlaying) {
       await TrackPlayer.pause();
-      store.dispatch(setIsPlaying(false));
+      //  store.dispatch(setIsPlaying(false));
     } else {
       await TrackPlayer.play();
-      store.dispatch(setIsPlaying(true));
+      //   store.dispatch(setIsPlaying(true));
     }
   }
 

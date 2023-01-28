@@ -7,28 +7,31 @@ import {
   TouchableOpacity,
   TouchableHighlight,
 } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Fontisto from "react-native-vector-icons/Fontisto";
 import LinearGradient from "react-native-linear-gradient";
 import PlayerController from "helper/PlayerController";
 import { useEffect, useState } from "react";
-import TrackPlayer, { State, useProgress } from "react-native-track-player";
 import { rootNavigationRef } from "navigation/RootNavigation";
-import { useNavigation } from "@react-navigation/native";
-import { useTrackPlayerEvents } from "react-native-track-player";
-import { Event } from "react-native-track-player";
+import {
+  Event,
+  usePlaybackState,
+  useTrackPlayerEvents,
+  useProgress,
+  State,
+} from "react-native-track-player";
 import cloneDeep from "lodash.clonedeep";
-import { setIsPlaying } from "redux/slices/playerSlide";
 
 export default BottomPlayer = () => {
-  const { activeSong, showBottomPlay, isPlaying, currPlaylist, currIndex } =
-    useSelector((state) => state.player);
+  const { activeSong, showBottomPlay, currPlaylist, currIndex } = useSelector(
+    (state) => state.player
+  );
 
   const progress = useProgress();
   const isEmpty = Object.keys(activeSong).length === 0;
   const [progressBar, setprogressBar] = useState(0);
-  const dispatch = useDispatch();
+  const playBackState = usePlaybackState();
 
   useTrackPlayerEvents([Event.PlaybackTrackChanged], async (event) => {
     if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
@@ -53,22 +56,9 @@ export default BottomPlayer = () => {
     }
   });
 
-  useTrackPlayerEvents([Event.PlaybackState], async (event) => {
-    if (event.type === Event.PlaybackState) {
-      switch (event.state) {
-        case State.Playing:
-          dispatch(setIsPlaying(true));
-          break;
-        case State.Paused:
-          dispatch(setIsPlaying(false));
-          break;
-      }
-    }
-  });
-
   useEffect(() => {
     const listenTrackEnd = async () => {
-      if (isPlaying) {
+      if (playBackState === State.Playing) {
         const sec = Math.floor(progress.position / 1);
 
         if (sec === activeSong.duration || sec + 1 === activeSong.duration) {
@@ -83,7 +73,7 @@ export default BottomPlayer = () => {
   }, [progress.position]);
 
   const handlePlayPause = () => {
-    PlayerController.onPlayPause(isPlaying);
+    PlayerController.onPlayPause(playBackState === State.Playing);
   };
 
   const handleBottomPlayerClick = () => {
@@ -132,7 +122,7 @@ export default BottomPlayer = () => {
                   style={[styles.button, { marginRight: 5 }]}
                   onPress={handlePlayPause}
                 >
-                  {isPlaying ? (
+                  {playBackState === State.Playing ? (
                     <Fontisto
                       name={"pause"}
                       color={COLORS.white}

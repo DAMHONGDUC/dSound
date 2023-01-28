@@ -2,18 +2,16 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import { COLORS } from "constants/theme";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import PlayerController from "helper/PlayerController";
 import { useRoute } from "@react-navigation/native";
-import TrackPlayer from "react-native-track-player";
-import { State } from "react-native-track-player";
+import { State, usePlaybackState } from "react-native-track-player";
 
 export default PlaySection = () => {
-  const { currIndex, isPlaying, activeSong } = useSelector(
-    (state) => state.player
-  );
+  const { currIndex, activeSong } = useSelector((state) => state.player);
   const route = useRoute();
+  const playBackState = usePlaybackState();
 
   useEffect(() => {
     if (route.params.currSongId !== activeSong.id) {
@@ -22,7 +20,7 @@ export default PlaySection = () => {
   }, []);
 
   const handlePlayPause = () => {
-    PlayerController.onPlayPause(isPlaying);
+    PlayerController.onPlayPause(playBackState === State.Playing);
   };
 
   const handlePrevious = () => {
@@ -44,7 +42,9 @@ export default PlaySection = () => {
       </TouchableOpacity>
       <TouchableOpacity onPress={handlePlayPause}>
         <FontAwesome5
-          name={isPlaying ? "pause-circle" : "play-circle"}
+          name={
+            playBackState === State.Playing ? "pause-circle" : "play-circle"
+          }
           color={COLORS.primary}
           size={60}
           solid
