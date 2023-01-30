@@ -25,7 +25,10 @@ export default function SongsRoute({ navigation }) {
 
   const onSearch = async () => {
     if (searchText.length > 0) {
+      setdataSearch(null);
+
       const data = await searchSongByName(searchText);
+
       setdataSearch(data);
       Keyboard.dismiss();
     }
@@ -78,15 +81,12 @@ export default function SongsRoute({ navigation }) {
         </TouchableOpacity>
       </View>
       {dataSearch ? (
-        dataSearch.songs?.length > 0 ? (
-          <FlatList
-            data={dataSearch.songs}
-            renderItem={renderItem}
-            keyExtractor={(item) => item.id}
-          />
-        ) : (
-          <Text style={styles.notiText}>{notiText}</Text>
-        )
+        <FlatList
+          data={dataSearch.songs}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          ListEmptyComponent={<Text style={styles.notiText}>{notiText}</Text>}
+        />
       ) : (
         <Loading />
       )}

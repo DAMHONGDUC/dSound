@@ -1,22 +1,21 @@
 import TrackPlayer, { State } from "react-native-track-player";
 import { getSongURL } from "api/SongAPI";
-import { cloneDeep } from "lodash";
 import {
   setCurrIndex,
   setSongURL,
   setActiveSong,
-  setIsPlaying,
   setCurrPlaylist,
-  setShowBottomPlay,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
+import cloneDeep from "lodash";
 
 export default class PlayerController {
   static async updateTrackUrl(song, index) {
     const URL = await getSongURL(song.id);
-    song.url = URL;
+    const newSong = cloneDeep(song);
+    newSong.url = URL;
 
-    await TrackPlayer.add(song, index);
+    await TrackPlayer.add(newSong, index);
     await TrackPlayer.remove(index + 1);
 
     store.dispatch(setSongURL({ index: index, url: URL }));
@@ -33,14 +32,6 @@ export default class PlayerController {
   }
 
   static async onPlayPause(playBackState) {
-    // if (isPlaying) {
-    //   await TrackPlayer.pause();
-    //   //  store.dispatch(setIsPlaying(false));
-    // } else {
-    //   await TrackPlayer.play();
-    //   //   store.dispatch(setIsPlaying(true));
-    // }
-
     if (playBackState == State.Paused) {
       await TrackPlayer.play();
     } else {

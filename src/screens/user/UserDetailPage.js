@@ -21,7 +21,7 @@ export default function LibraryPage() {
   useEffect(() => {
     const res = firebase.auth().currentUser;
 
-    setUser(res);
+    if (res?.providerData[0]) setUser(res.providerData[0]);
   }, []);
 
   const FieldInfor = ({ iconName, content }) => {

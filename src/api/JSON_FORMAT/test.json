@@ -3,25 +3,25 @@
         "enrolledFactors": []
     },
     "metadata": {
-        "lastSignInTime": 1675054970537,
-        "creationTime": 1675049275755
+        "lastSignInTime": 1675062102604,
+        "creationTime": 1675061319447
     },
-    "photoURL": "https://graph.facebook.com/858411845201866/picture",
+    "photoURL": "https://lh3.googleusercontent.com/a/AEdFTp6V3a9CoyPFq5MHGj5r9qW_z_HiETp_LFoIcUVX3Q=s96-c",
     "phoneNumber": null,
     "tenantId": null,
-    "displayName": "Đàm Hồng Đức",
+    "displayName": "Đức Đàm Hồng",
     "emailVerified": false,
     "isAnonymous": false,
-    "uid": "eXJqc6aSDufV9JfAYvgQ6UJwGS93",
+    "uid": "XTRrxwTZcWcCXjljY7JqQtaBpZx1",
     "email": null,
     "providerData": [
         {
             "email": "hongduc001h@gmail.com",
-            "providerId": "facebook.com",
-            "photoURL": "https://graph.facebook.com/858411845201866/picture",
+            "providerId": "google.com",
+            "photoURL": "https://lh3.googleusercontent.com/a/AEdFTp6V3a9CoyPFq5MHGj5r9qW_z_HiETp_LFoIcUVX3Q=s96-c",
             "phoneNumber": null,
-            "displayName": "Đàm Hồng Đức",
-            "uid": "858411845201866"
+            "displayName": "Đức Đàm Hồng",
+            "uid": "106743116837867644105"
         }
     ],
     "providerId": "firebase"

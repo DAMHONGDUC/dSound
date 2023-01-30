@@ -7,6 +7,14 @@ import BottomPlayer from "components/BottomPlayer";
 import { Capability } from "react-native-track-player";
 
 export default function App() {
+  const options = [
+    Capability.Play,
+    Capability.Pause,
+    Capability.SkipToNext,
+    Capability.SkipToPrevious,
+    Capability.SeekTo,
+  ];
+
   useEffect(() => {
     const setUpTrackPlayer = async () => {
       await TrackPlayer.setupPlayer();
@@ -14,28 +22,9 @@ export default function App() {
 
     setUpTrackPlayer().then(() => {
       TrackPlayer.updateOptions({
-        stopWithApp: true,
-        capabilities: [
-          Capability.Play,
-          Capability.Pause,
-          Capability.SkipToNext,
-          Capability.SkipToPrevious,
-          Capability.SeekTo,
-        ],
-        compactCapabilities: [
-          Capability.Play,
-          Capability.Pause,
-          Capability.SkipToNext,
-          Capability.SkipToPrevious,
-          Capability.SeekTo,
-        ],
-        notificationCapabilities: [
-          Capability.Play,
-          Capability.Pause,
-          Capability.SkipToNext,
-          Capability.SkipToPrevious,
-          Capability.SeekTo,
-        ],
+        capabilities: options,
+        compactCapabilities: options,
+        notificationCapabilities: options,
       });
     });
   }, []);
