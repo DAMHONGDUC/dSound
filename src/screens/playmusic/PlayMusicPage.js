@@ -20,16 +20,6 @@ export default PlayMusic = () => {
     dispatch(setShowBottomPlay(false));
   }, []);
 
-  useEffect(() => {
-    const a = async () => {
-      let trackIndex = await TrackPlayer.getCurrentTrack();
-      let trackObject = await TrackPlayer.getTrack(trackIndex);
-      console.log(trackObject);
-    };
-
-    a();
-  });
-
   return (
     <SafeAreaView style={styles.conatiner}>
       <ScrollView>
