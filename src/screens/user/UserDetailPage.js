@@ -37,6 +37,10 @@ export default function LibraryPage() {
     );
   };
 
+  useEffect(() => {
+    throw new Error("We crashed!!!!!");
+  }, []);
+
   const onLogout = async () => {
     await firebase.auth().signOut();
     await handleAfterSignOut();
