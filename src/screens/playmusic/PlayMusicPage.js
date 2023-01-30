@@ -10,6 +10,7 @@ import LyricSection from "./LyricSection";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setShowBottomPlay } from "redux/slices/playerSlide";
+import TrackPlayer from "react-native-track-player";
 
 export default PlayMusic = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,16 @@ export default PlayMusic = () => {
   useEffect(() => {
     dispatch(setShowBottomPlay(false));
   }, []);
+
+  useEffect(() => {
+    const a = async () => {
+      let trackIndex = await TrackPlayer.getCurrentTrack();
+      let trackObject = await TrackPlayer.getTrack(trackIndex);
+      console.log(trackObject);
+    };
+
+    a();
+  });
 
   return (
     <SafeAreaView style={styles.conatiner}>

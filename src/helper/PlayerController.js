@@ -12,7 +12,8 @@ import cloneDeep from "lodash";
 export default class PlayerController {
   static async updateTrackUrl(song, index) {
     const URL = await getSongURL(song.id);
-    const newSong = cloneDeep(song);
+
+    let newSong = { ...song };
     newSong.url = URL;
 
     await TrackPlayer.add(newSong, index);
