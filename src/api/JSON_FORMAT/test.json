@@ -1,109 +1,28 @@
 {
-    "id": "IW7BFU8F",
-    "songs": [
+    "multiFactor": {
+        "enrolledFactors": []
+    },
+    "metadata": {
+        "lastSignInTime": 1675054970537,
+        "creationTime": 1675049275755
+    },
+    "photoURL": "https://graph.facebook.com/858411845201866/picture",
+    "phoneNumber": null,
+    "tenantId": null,
+    "displayName": "Đàm Hồng Đức",
+    "emailVerified": false,
+    "isAnonymous": false,
+    "uid": "eXJqc6aSDufV9JfAYvgQ6UJwGS93",
+    "email": null,
+    "providerData": [
         {
-            "id": "Z6Z7A8E6",
-            "url": "https://mp3-s1-zmp3.zmdcdn.me/cc375e680c28e576bc39/7771346593161306717?authen=exp=1674978000~acl=/cc375e680c28e576bc39/*~hmac=2b0e12c6bbe5ef788e75bf49aa7e8862&fs=MTY3NDgwNTIwMDk4MHx3ZWJWNnwwfDE0LjE2MS4yNC4xMTE",
-            "title": "Xui Hay Vui",
-            "artist": "tlinh, MONO, Onionn",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/d/4/5/d/d45d2020992a64859fd2c5769de63eb0.jpg",
-            "duration": 163
-        },
-        {
-            "id": "Z6UO66Z8",
-            "url": null,
-            "title": "Người Tình Mùa Đông",
-            "artist": "Đức Phúc, MONO, DTAP",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/8/b/a/f/8bafab541be2aed8057c9a6c0515aa63.jpg",
-            "duration": 222
-        },
-        {
-            "id": "ZZFD9DCC",
-            "url": null,
-            "title": "INTRO",
-            "artist": "MONO",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 60
-        },
-        {
-            "id": "ZZFDA0IO",
-            "url": null,
-            "title": "Buông",
-            "artist": "MONO, Onionn",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 149
-        },
-        {
-            "id": "ZZFDA0WD",
-            "url": null,
-            "title": "Em Là",
-            "artist": "MONO, Onionn",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 197
-        },
-        {
-            "id": "ZZFDA0ZO",
-            "url": null,
-            "title": "Kill Me",
-            "artist": "MONO",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 229
-        },
-        {
-            "id": "ZZFDAOFC",
-            "url": null,
-            "title": "MONOlogue",
-            "artist": "MONO",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 64
-        },
-        {
-            "id": "ZZFDAUI8",
-            "url": null,
-            "title": "Anh Không Thể",
-            "artist": "MONO, Onionn",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 220
-        },
-        {
-            "id": "ZZFDAZ7Z",
-            "url": null,
-            "title": "Do You",
-            "artist": "MONO, Rein, Onionn",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 218
-        },
-        {
-            "id": "ZZFDAZ8W",
-            "url": null,
-            "title": "Co Nuong Ahhhh~",
-            "artist": "MONO",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 56
-        },
-        {
-            "id": "ZZFDAZ89",
-            "url": null,
-            "title": "Waiting For You",
-            "artist": "MONO, Onionn",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 266
-        },
-        {
-            "id": "ZZFDAZ8E",
-            "url": null,
-            "title": "L.I.E",
-            "artist": "MONO, Onionn",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/7/7/2/e772358978fef8a02eefd34f6a4ca6f3.jpg",
-            "duration": 226
-        },
-        {
-            "id": "ZZFOO6O9",
-            "url": null,
-            "title": "Quên Anh Đi",
-            "artist": "MONO",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/5/5/c/0/55c048ed36d5490a88876575330192be.jpg",
-            "duration": 246
+            "email": "hongduc001h@gmail.com",
+            "providerId": "facebook.com",
+            "photoURL": "https://graph.facebook.com/858411845201866/picture",
+            "phoneNumber": null,
+            "displayName": "Đàm Hồng Đức",
+            "uid": "858411845201866"
         }
-    ]
+    ],
+    "providerId": "firebase"
 }
