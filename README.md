@@ -20,10 +20,11 @@
   yarn android
 ```
 
-## II. Core technologies
+## II. Tech stack
 - React Native
 - React Native Firebase
 - React Native Track Player
+- Zing Mp3 API
 
 ## III. Release
 - Android apk
