@@ -26,5 +26,5 @@
 - React Native Track Player
 
 ## III. Release
-- android apk
-- ios (not available)
+- Android apk
+- iOS (not available)
