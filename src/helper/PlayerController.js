@@ -5,9 +5,10 @@ import {
   setSongURL,
   setActiveSong,
   setCurrPlaylist,
+  setRepeatMode,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
-import cloneDeep from "lodash";
+import { RepeatMode } from "react-native-track-player";
 
 export default class PlayerController {
   static async updateTrackUrl(song, index) {
@@ -46,6 +47,16 @@ export default class PlayerController {
 
   static async onNext() {
     await TrackPlayer.skipToNext();
+  }
+
+  static async onRepeat(repeatMode) {
+    if (repeatMode) {
+      await TrackPlayer.setRepeatMode(RepeatMode.Off);
+      store.dispatch(setRepeatMode(false));
+    } else {
+      await TrackPlayer.setRepeatMode(RepeatMode.Track);
+      store.dispatch(setRepeatMode(true));
+    }
   }
 
   static async onPrevious(currIndex) {

@@ -24,7 +24,7 @@ import {
 import cloneDeep from "lodash.clonedeep";
 
 export default BottomPlayer = () => {
-  const { activeSong, showBottomPlay, currPlaylist, currIndex } = useSelector(
+  const { activeSong, showBottomPlay, currPlaylist, repeatMode } = useSelector(
     (state) => state.player
   );
 
@@ -61,7 +61,10 @@ export default BottomPlayer = () => {
       if (playBackState === State.Playing) {
         const sec = Math.floor(progress.position / 1);
 
-        if (sec === activeSong.duration || sec + 1 === activeSong.duration) {
+        if (
+          (sec === activeSong.duration || sec + 1 === activeSong.duration) &&
+          !repeatMode
+        ) {
           PlayerController.onNext();
         }
 

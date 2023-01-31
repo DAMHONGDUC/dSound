@@ -9,7 +9,7 @@ import { useRoute } from "@react-navigation/native";
 import { State, usePlaybackState } from "react-native-track-player";
 
 export default PlaySection = () => {
-  const { currIndex, currPlaylist, activeSong } = useSelector(
+  const { currIndex, currPlaylist, activeSong, repeatMode } = useSelector(
     (state) => state.player
   );
   const route = useRoute();
@@ -33,8 +33,19 @@ export default PlaySection = () => {
     PlayerController.onNext();
   };
 
+  const handleRepeatMode = () => {
+    PlayerController.onRepeat(repeatMode);
+  };
+
   return (
     <View style={styles.playSection}>
+      <TouchableOpacity onPress={handleRepeatMode}>
+        <MaterialIcons
+          name={repeatMode ? "repeat-one" : "repeat"}
+          color={COLORS.primary}
+          size={35}
+        ></MaterialIcons>
+      </TouchableOpacity>
       <TouchableOpacity onPress={handlePrevious}>
         <MaterialIcons
           name="skip-previous"
@@ -51,6 +62,13 @@ export default PlaySection = () => {
           size={60}
           solid
         />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handleNext}>
+        <MaterialIcons
+          name="skip-next"
+          color={COLORS.primary}
+          size={40}
+        ></MaterialIcons>
       </TouchableOpacity>
       <TouchableOpacity onPress={handleNext}>
         <MaterialIcons
