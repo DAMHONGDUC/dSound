@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import TrackPlayer from "react-native-track-player";
 import BottomPlayer from "components/BottomPlayer";
 import { Capability } from "react-native-track-player";
+import ErrorBoundary from "components/ErrorBoundary";
 
 export default function App() {
   const options = [
@@ -30,9 +31,11 @@ export default function App() {
   }, []);
 
   return (
-    <Provider store={store}>
-      <RootNavigation />
-      <BottomPlayer />
-    </Provider>
+    <ErrorBoundary>
+      <Provider store={store}>
+        <RootNavigation />
+        <BottomPlayer />
+      </Provider>
+    </ErrorBoundary>
   );
 }

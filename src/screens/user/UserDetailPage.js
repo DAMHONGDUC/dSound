@@ -12,6 +12,7 @@ import Loading from "components/Loading";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
 import { AuthContext } from "constants/values";
+import crashlytics from "@react-native-firebase/crashlytics";
 
 export default function LibraryPage() {
   const [user, setUser] = useState();
@@ -36,6 +37,11 @@ export default function LibraryPage() {
       </View>
     );
   };
+
+  // useEffect(() => {
+  //   throw new Error("We crashed again!!!!!");
+  //   // crashlytics().crash();
+  // }, []);
 
   const onLogout = async () => {
     await firebase.auth().signOut();
