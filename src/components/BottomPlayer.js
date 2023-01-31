@@ -14,7 +14,7 @@ import LinearGradient from "react-native-linear-gradient";
 import PlayerController from "helper/PlayerController";
 import { useEffect, useState } from "react";
 import { rootNavigationRef } from "navigation/RootNavigation";
-import {
+import TrackPlayer, {
   Event,
   usePlaybackState,
   useTrackPlayerEvents,
@@ -70,9 +70,9 @@ export default BottomPlayer = () => {
           (sec === activeSong.duration || sec + 1 === activeSong.duration) &&
           !repeatMode
         ) {
-          if (shuffleMode)
+          if (shuffleMode) {
             PlayerController.onNextShuffle(currIndex, currPlaylist);
-          else PlayerController.onNext();
+          } else PlayerController.onNext();
         }
 
         setprogressBar((sec / activeSong.duration) * 100);

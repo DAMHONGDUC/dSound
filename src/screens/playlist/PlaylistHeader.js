@@ -10,11 +10,17 @@ export default PlaylistHeader = ({
   dataPlaylist,
   fromArtistPage,
 }) => {
+  const { currIndex, currPlaylist, shuffleMode } = useSelector(
+    (state) => state.player
+  );
+
   const handleBackButton = () => {
     navigation.pop();
   };
 
-  const { currIndex, currPlaylist } = useSelector((state) => state.player);
+  const handleShuffleMode = () => {
+    PlayerController.onShuffle(shuffleMode);
+  };
 
   const handlePlayPlaylist = () => {
     PlayerController.onSongRowClick([
@@ -50,6 +56,16 @@ export default PlaylistHeader = ({
         <View style={styles.button}>
           <Text style={styles.buttonText}>PLAY</Text>
         </View>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.shuffleButton}
+        onPress={handleShuffleMode}
+      >
+        <Ionicons
+          name="shuffle-outline"
+          color={shuffleMode ? COLORS.primary : COLORS.black}
+          size={40}
+        ></Ionicons>
       </TouchableOpacity>
     </View>
   );
@@ -94,6 +110,10 @@ const styles = StyleSheet.create({
     color: COLORS.title,
     fontSize: 15,
     marginTop: 5,
+  },
+  shuffleButton: {
+    position: "absolute",
+    top: 324,
   },
   button: {
     backgroundColor: COLORS.primary,

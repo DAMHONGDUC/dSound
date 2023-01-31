@@ -9,6 +9,7 @@ import { useRoute } from "@react-navigation/native";
 import { RepeatMode, State, usePlaybackState } from "react-native-track-player";
 import Feather from "react-native-vector-icons/Feather";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import TrackPlayer from "react-native-track-player";
 
 export default PlaySection = () => {
   const { currIndex, currPlaylist, activeSong, repeatMode, shuffleMode } =
@@ -30,9 +31,11 @@ export default PlaySection = () => {
     PlayerController.onPrevious(currIndex);
   };
 
-  const handleNext = () => {
-    if (shuffleMode) PlayerController.onNextShuffle(currIndex, currPlaylist);
-    else PlayerController.onNext();
+  const handleNext = async () => {
+    if (shuffleMode) {
+      PlayerController.onNextShuffle(currIndex, currPlaylist);
+    }
+    els;
   };
 
   const handleRepeatMode = () => {

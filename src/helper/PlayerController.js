@@ -62,7 +62,11 @@ export default class PlayerController {
   }
 
   static async onShuffle(shuffleMode) {
-    store.dispatch(setShuffleMode(!shuffleMode));
+    if (shuffleMode) {
+      store.dispatch(setShuffleMode(false));
+    } else {
+      store.dispatch(setShuffleMode(true));
+    }
   }
 
   static async onRepeat(repeatMode) {
