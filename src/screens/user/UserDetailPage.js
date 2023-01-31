@@ -38,10 +38,10 @@ export default function LibraryPage() {
     );
   };
 
-  useEffect(() => {
-    throw new Error("We crashed again!!!!!");
-    // crashlytics().crash();
-  }, []);
+  // useEffect(() => {
+  //   throw new Error("We crashed again!!!!!");
+  //   // crashlytics().crash();
+  // }, []);
 
   const onLogout = async () => {
     await firebase.auth().signOut();
