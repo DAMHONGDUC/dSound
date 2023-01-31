@@ -6,6 +6,8 @@ const initialState = {
   activeSong: {},
   showBottomPlay: true,
   isPlaying: false,
+  repeatMode: false,
+  shuffleMode: false,
 };
 
 export const playerSlide = createSlice({
@@ -30,6 +32,12 @@ export const playerSlide = createSlice({
     setIsPlaying: (state, action) => {
       state.isPlaying = action.payload;
     },
+    setRepeatMode: (state, action) => {
+      state.repeatMode = action.payload;
+    },
+    setShuffleMode: (state, action) => {
+      state.shuffleMode = action.payload;
+    },
   },
 });
 
@@ -40,6 +48,8 @@ export const {
   setActiveSong,
   setShowBottomPlay,
   setIsPlaying,
+  setRepeatMode,
+  setShuffleMode,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

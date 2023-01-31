@@ -14,7 +14,7 @@ import LinearGradient from "react-native-linear-gradient";
 import PlayerController from "helper/PlayerController";
 import { useEffect, useState } from "react";
 import { rootNavigationRef } from "navigation/RootNavigation";
-import {
+import TrackPlayer, {
   Event,
   usePlaybackState,
   useTrackPlayerEvents,
@@ -24,9 +24,14 @@ import {
 import cloneDeep from "lodash.clonedeep";
 
 export default BottomPlayer = () => {
-  const { activeSong, showBottomPlay, currPlaylist, currIndex } = useSelector(
-    (state) => state.player
-  );
+  const {
+    activeSong,
+    showBottomPlay,
+    currPlaylist,
+    repeatMode,
+    shuffleMode,
+    currIndex,
+  } = useSelector((state) => state.player);
 
   const progress = useProgress();
   const isEmpty = Object.keys(activeSong).length === 0;
@@ -61,8 +66,13 @@ export default BottomPlayer = () => {
       if (playBackState === State.Playing) {
         const sec = Math.floor(progress.position / 1);
 
-        if (sec === activeSong.duration || sec + 1 === activeSong.duration) {
-          PlayerController.onNext(currIndex, currPlaylist);
+        if (
+          (sec === activeSong.duration || sec + 1 === activeSong.duration) &&
+          !repeatMode
+        ) {
+          if (shuffleMode) {
+            PlayerController.onNextShuffle(currIndex, currPlaylist);
+          } else PlayerController.onNext();
         }
 
         setprogressBar((sec / activeSong.duration) * 100);

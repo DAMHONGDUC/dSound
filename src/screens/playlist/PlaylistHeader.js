@@ -10,11 +10,17 @@ export default PlaylistHeader = ({
   dataPlaylist,
   fromArtistPage,
 }) => {
+  const { currIndex, currPlaylist, shuffleMode } = useSelector(
+    (state) => state.player
+  );
+
   const handleBackButton = () => {
     navigation.pop();
   };
 
-  const { currIndex, currPlaylist } = useSelector((state) => state.player);
+  const handleShuffleMode = () => {
+    PlayerController.onShuffle(shuffleMode);
+  };
 
   const handlePlayPlaylist = () => {
     PlayerController.onSongRowClick([
@@ -46,11 +52,23 @@ export default PlaylistHeader = ({
             : playlist.like + " Likes"}
         </Text>
       </View>
-      <TouchableOpacity onPress={handlePlayPlaylist}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>PLAY</Text>
-        </View>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={handlePlayPlaylist}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>PLAY</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.shuffleButton}
+          onPress={handleShuffleMode}
+        >
+          <Ionicons
+            name="shuffle-outline"
+            color={shuffleMode ? COLORS.primary : COLORS.black}
+            size={40}
+          ></Ionicons>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -94,6 +112,15 @@ const styles = StyleSheet.create({
     color: COLORS.title,
     fontSize: 15,
     marginTop: 5,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  shuffleButton: {
+    position: "absolute",
+    left: 0,
   },
   button: {
     backgroundColor: COLORS.primary,

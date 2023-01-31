@@ -5,9 +5,12 @@ import {
   setSongURL,
   setActiveSong,
   setCurrPlaylist,
+  setRepeatMode,
+  setShuffleMode,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
-import cloneDeep from "lodash";
+import { RepeatMode } from "react-native-track-player";
+import { randomInRange } from "helper";
 
 export default class PlayerController {
   static async updateTrackUrl(song, index) {
@@ -27,13 +30,17 @@ export default class PlayerController {
     store.dispatch(setActiveSong(currPlaylist.songs[index]));
   }
 
-  static async onPlayNew(currIndex) {
+  static async onPlayNew(currIndex, currPlaylist) {
+    let currSong = currPlaylist.songs[currIndex];
+    if (!currSong.url)
+      await PlayerController.updateTrackUrl(currSong, currIndex);
+
     await TrackPlayer.skip(currIndex);
     await TrackPlayer.play();
   }
 
   static async onPlayPause(playBackState) {
-    if (playBackState == State.Paused) {
+    if ([State.Paused, State.Ready].includes(playBackState)) {
       await TrackPlayer.play();
     } else {
       await TrackPlayer.pause();
@@ -42,6 +49,28 @@ export default class PlayerController {
 
   static async onNext() {
     await TrackPlayer.skipToNext();
+  }
+
+  static async onNextShuffle(currIndex, currPlaylist) {
+    let random = randomInRange(0, currPlaylist.songs.length - 1);
+
+    while (random === currIndex) {
+      random = randomInRange(0, currPlaylist.songs.length - 1);
+    }
+
+    await PlayerController.onPlayNew(random, currPlaylist);
+  }
+
+  static async onShuffle(shuffleMode) {
+    store.dispatch(setShuffleMode(!shuffleMode));
+  }
+
+  static async onRepeat(repeatMode) {
+    await TrackPlayer.setRepeatMode(
+      repeatMode ? RepeatMode.Off : RepeatMode.Track
+    );
+
+    store.dispatch(setRepeatMode(!repeatMode));
   }
 
   static async onPrevious(currIndex) {
