@@ -14,6 +14,30 @@
       },
       "oauth_client": [
         {
+          "client_id": "362500748669-75ge501jp147pg0esa8jhbpfmoibfinb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dsound",
+            "certificate_hash": "5a195aa4e6570ddbf5080e9226c222e74033cb77"
+          }
+        },
+        {
+          "client_id": "362500748669-9mup4bfe70kqq5eas78frh3vbenutugh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dsound",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "362500748669-gq23q737v8v8631jas04rrhica02083p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dsound",
+            "certificate_hash": "d7ea05bcfcc37f1be3dd9f320d0c5a22503c0597"
+          }
+        },
+        {
           "client_id": "362500748669-fvb0pj0ohbas2on547ejaruh8n6mgp7a.apps.googleusercontent.com",
           "client_type": 3
         }

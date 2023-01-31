@@ -55,12 +55,7 @@ export default function RootNavigation() {
       <NavigationContainer ref={rootNavigationRef}>
         <RootStack.Navigator>
           <>
-            <RootStack.Screen
-              name="MainStack"
-              component={MainStack}
-              options={{ headerShown: false }}
-            />
-            {/* {!isOnboardingComplete && (
+            {!isOnboardingComplete && (
               <RootStack.Screen
                 name="OnboardingStack"
                 component={OnboardingStack}
@@ -80,7 +75,7 @@ export default function RootNavigation() {
                 component={AuthenticationStack}
                 options={{ headerShown: false }}
               />
-            )} */}
+            )}
           </>
         </RootStack.Navigator>
       </NavigationContainer>
