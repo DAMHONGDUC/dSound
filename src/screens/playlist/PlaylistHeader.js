@@ -52,21 +52,23 @@ export default PlaylistHeader = ({
             : playlist.like + " Likes"}
         </Text>
       </View>
-      <TouchableOpacity onPress={handlePlayPlaylist}>
-        <View style={styles.button}>
-          <Text style={styles.buttonText}>PLAY</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.shuffleButton}
-        onPress={handleShuffleMode}
-      >
-        <Ionicons
-          name="shuffle-outline"
-          color={shuffleMode ? COLORS.primary : COLORS.black}
-          size={40}
-        ></Ionicons>
-      </TouchableOpacity>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity onPress={handlePlayPlaylist}>
+          <View style={styles.button}>
+            <Text style={styles.buttonText}>PLAY</Text>
+          </View>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.shuffleButton}
+          onPress={handleShuffleMode}
+        >
+          <Ionicons
+            name="shuffle-outline"
+            color={shuffleMode ? COLORS.primary : COLORS.black}
+            size={40}
+          ></Ionicons>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -111,9 +113,14 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginTop: 5,
   },
+  buttonContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   shuffleButton: {
     position: "absolute",
-    top: 324,
+    left: 0,
   },
   button: {
     backgroundColor: COLORS.primary,

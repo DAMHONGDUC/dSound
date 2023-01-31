@@ -13,11 +13,15 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
 import { AuthContext } from "constants/values";
 import crashlytics from "@react-native-firebase/crashlytics";
+import { setShowBottomPlay } from "redux/slices/playerSlide";
+import { useDispatch } from "react-redux";
+import TrackPlayer from "react-native-track-player";
 
 export default function LibraryPage() {
   const [user, setUser] = useState();
   const navigation = useNavigation();
   const { handleAfterSignOut } = useContext(AuthContext);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const res = firebase.auth().currentUser;
@@ -44,6 +48,9 @@ export default function LibraryPage() {
   // }, []);
 
   const onLogout = async () => {
+    await TrackPlayer.pause();
+    dispatch(setShowBottomPlay(false));
+
     await firebase.auth().signOut();
     await handleAfterSignOut();
 
@@ -141,7 +148,7 @@ const styles = StyleSheet.create({
   logoutContainer: {
     position: "absolute",
     alignSelf: "center",
-    bottom: 50,
+    bottom: 80,
   },
   logout: {
     flexDirection: "row",

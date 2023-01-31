@@ -40,7 +40,7 @@ export default class PlayerController {
   }
 
   static async onPlayPause(playBackState) {
-    if (playBackState == State.Paused || playBackState === State.Ready) {
+    if ([State.Paused, State.Ready].includes(playBackState)) {
       await TrackPlayer.play();
     } else {
       await TrackPlayer.pause();
@@ -62,21 +62,15 @@ export default class PlayerController {
   }
 
   static async onShuffle(shuffleMode) {
-    if (shuffleMode) {
-      store.dispatch(setShuffleMode(false));
-    } else {
-      store.dispatch(setShuffleMode(true));
-    }
+    store.dispatch(setShuffleMode(!shuffleMode));
   }
 
   static async onRepeat(repeatMode) {
-    if (repeatMode) {
-      await TrackPlayer.setRepeatMode(RepeatMode.Off);
-      store.dispatch(setRepeatMode(false));
-    } else {
-      await TrackPlayer.setRepeatMode(RepeatMode.Track);
-      store.dispatch(setRepeatMode(true));
-    }
+    await TrackPlayer.setRepeatMode(
+      repeatMode ? RepeatMode.Off : RepeatMode.Track
+    );
+
+    store.dispatch(setRepeatMode(!repeatMode));
   }
 
   static async onPrevious(currIndex) {
