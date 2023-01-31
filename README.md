@@ -27,5 +27,5 @@
 - Zing Mp3 API
 
 ## III. Release
-- Android apk
+- Android [apk](release/dsound.apk)
 - iOS (not available)
