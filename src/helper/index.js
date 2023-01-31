@@ -25,3 +25,7 @@ export const durationFormat = (duration) => {
 
   return String(min).padStart(2, "0") + ":" + String(sec).padStart(2, "0");
 };
+
+export const randomInRange = (start, end) => {
+  return Math.floor(Math.random() * (end - start + 1) + start);
+};

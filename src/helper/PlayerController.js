@@ -6,9 +6,11 @@ import {
   setActiveSong,
   setCurrPlaylist,
   setRepeatMode,
+  setShuffleMode,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
 import { RepeatMode } from "react-native-track-player";
+import { randomInRange } from "helper";
 
 export default class PlayerController {
   static async updateTrackUrl(song, index) {
@@ -47,6 +49,20 @@ export default class PlayerController {
 
   static async onNext() {
     await TrackPlayer.skipToNext();
+  }
+
+  static async onNextShuffle(currIndex, currPlaylist) {
+    let random = randomInRange(0, currPlaylist.songs.length - 1);
+
+    while (random === currIndex) {
+      random = randomInRange(0, currPlaylist.songs.length - 1);
+    }
+
+    await PlayerController.onPlayNew(random, currPlaylist);
+  }
+
+  static async onShuffle(shuffleMode) {
+    store.dispatch(setShuffleMode(!shuffleMode));
   }
 
   static async onRepeat(repeatMode) {

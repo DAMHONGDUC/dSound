@@ -6,12 +6,13 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import PlayerController from "helper/PlayerController";
 import { useRoute } from "@react-navigation/native";
-import { State, usePlaybackState } from "react-native-track-player";
+import { RepeatMode, State, usePlaybackState } from "react-native-track-player";
+import Feather from "react-native-vector-icons/Feather";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
 export default PlaySection = () => {
-  const { currIndex, currPlaylist, activeSong, repeatMode } = useSelector(
-    (state) => state.player
-  );
+  const { currIndex, currPlaylist, activeSong, repeatMode, shuffleMode } =
+    useSelector((state) => state.player);
   const route = useRoute();
   const playBackState = usePlaybackState();
 
@@ -30,21 +31,26 @@ export default PlaySection = () => {
   };
 
   const handleNext = () => {
-    PlayerController.onNext();
+    if (shuffleMode) PlayerController.onNextShuffle(currIndex, currPlaylist);
+    else PlayerController.onNext();
   };
 
   const handleRepeatMode = () => {
     PlayerController.onRepeat(repeatMode);
   };
 
+  const handleShuffleMode = () => {
+    PlayerController.onShuffle(shuffleMode);
+  };
+
   return (
     <View style={styles.playSection}>
       <TouchableOpacity onPress={handleRepeatMode}>
-        <MaterialIcons
-          name={repeatMode ? "repeat-one" : "repeat"}
-          color={COLORS.primary}
-          size={35}
-        ></MaterialIcons>
+        <Feather
+          name="repeat"
+          color={repeatMode ? COLORS.primary : COLORS.black}
+          size={24}
+        ></Feather>
       </TouchableOpacity>
       <TouchableOpacity onPress={handlePrevious}>
         <MaterialIcons
@@ -70,12 +76,12 @@ export default PlaySection = () => {
           size={40}
         ></MaterialIcons>
       </TouchableOpacity>
-      <TouchableOpacity onPress={handleNext}>
-        <MaterialIcons
-          name="skip-next"
-          color={COLORS.primary}
-          size={40}
-        ></MaterialIcons>
+      <TouchableOpacity onPress={handleShuffleMode}>
+        <Ionicons
+          name="shuffle-outline"
+          color={shuffleMode ? COLORS.primary : COLORS.black}
+          size={30}
+        ></Ionicons>
       </TouchableOpacity>
     </View>
   );
