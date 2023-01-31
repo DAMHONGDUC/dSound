@@ -13,7 +13,7 @@ export default function SignInPage({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />
+      <StatusBar backgroundColor={"#0081C9"} barStyle="light-content" />
 
       <View style={styles.header}>
         <Text style={styles.title}>Sign in Now!</Text>
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: COLORS.primary,
+    backgroundColor: "#0081C9",
   },
   title: {
     fontWeight: "600",

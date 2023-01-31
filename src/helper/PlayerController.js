@@ -1,70 +1,54 @@
 import TrackPlayer, { State } from "react-native-track-player";
 import { getSongURL } from "api/SongAPI";
-import { cloneDeep } from "lodash";
 import {
   setCurrIndex,
   setSongURL,
   setActiveSong,
-  setIsPlaying,
   setCurrPlaylist,
-  setShowBottomPlay,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
+import cloneDeep from "lodash";
 
 export default class PlayerController {
-  static async setUpSongURL(index, currPlaylist) {
-    let currSong = cloneDeep(currPlaylist.songs[index]);
+  static async updateTrackUrl(song, index) {
+    const URL = await getSongURL(song.id);
 
-    if (index !== 0 && !currSong.url) {
-      const URL = await getSongURL(currPlaylist.songs[index].id);
-      currSong.url = URL;
+    let newSong = { ...song };
+    newSong.url = URL;
 
-      store.dispatch(setSongURL({ index: index, url: URL }));
+    await TrackPlayer.add(newSong, index);
+    await TrackPlayer.remove(index + 1);
 
-      await TrackPlayer.add(currSong, index);
-      await TrackPlayer.remove(index + 1);
-    }
+    store.dispatch(setSongURL({ index: index, url: URL }));
   }
 
-  static async onPlayNew(currIndex, currPlaylist) {
-    await PlayerController.setUpSongURL(currIndex, currPlaylist);
+  static updateSongData(index, currPlaylist) {
+    store.dispatch(setCurrIndex(index));
+    store.dispatch(setActiveSong(currPlaylist.songs[index]));
+  }
+
+  static async onPlayNew(currIndex) {
     await TrackPlayer.skip(currIndex);
     await TrackPlayer.play();
-
-    store.dispatch(setActiveSong(currPlaylist.songs[currIndex]));
-    store.dispatch(setIsPlaying(true));
   }
 
-  static async onPlayPause(isPlaying) {
-    if (isPlaying) {
-      await TrackPlayer.pause();
-      store.dispatch(setIsPlaying(false));
+  static async onPlayPause(playBackState) {
+    if (playBackState == State.Paused) {
+      await TrackPlayer.play();
     } else {
-      await TrackPlayer.play();
-      store.dispatch(setIsPlaying(true));
+      await TrackPlayer.pause();
     }
   }
 
-  static async onNext(currIndex, currPlaylist) {
-    await PlayerController.setUpSongURL(currIndex + 1, currPlaylist);
-    await TrackPlayer.skip(currIndex + 1);
+  static async onNext() {
+    await TrackPlayer.skipToNext();
+  }
+
+  static async onPrevious(currIndex) {
+    if (currIndex === 0) await TrackPlayer.skip(0);
+    else await TrackPlayer.skip(currIndex - 1);
+
     await TrackPlayer.play();
-
-    store.dispatch(setCurrIndex(currIndex + 1));
-    store.dispatch(setActiveSong(currPlaylist.songs[currIndex + 1]));
-    store.dispatch(setIsPlaying(true));
-  }
-
-  static async onPrevious(currIndex, currPlaylist) {
-    if (currIndex >= 1) {
-      await PlayerController.setUpSongURL(currIndex - 1, currPlaylist);
-      await TrackPlayer.skip(currIndex - 1);
-      await TrackPlayer.play();
-
-      store.dispatch(setCurrIndex(currIndex - 1));
-      store.dispatch(setActiveSong(currPlaylist.songs[currIndex - 1]));
-      store.dispatch(setIsPlaying(true));
-    }
   }
 
   static async resetTrackPlayer() {

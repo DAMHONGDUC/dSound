@@ -12,6 +12,7 @@ import MainStack from "./MainStack";
 import OnboardingStack from "./OnboardingStack";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthContext } from "constants/values";
+import { storeData } from "helper";
 
 const RootStack = createNativeStackNavigator();
 export const rootNavigationRef = createRef();
@@ -37,8 +38,11 @@ export default function RootNavigation() {
     setisSignedIn(true);
   };
 
-  const handleAfterSignOut = () => {
+  const handleAfterSignOut = async () => {
     setisSignedIn(false);
+
+    // clear token
+    await storeData(LOGIN_TOKEN, null);
   };
 
   return (

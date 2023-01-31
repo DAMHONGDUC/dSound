@@ -86,3 +86,19 @@ export const getLyric = async (songId) => {
     if (res?.data?.sentences) return res.data.sentences;
   } catch (err) {}
 };
+
+// search
+export const searchSongByName = async (name) => {
+  try {
+    const res = await requestZingMp3("/api/v2/search/multi", {
+      q: name,
+      sig: hashParamNoId("/api/v2/search/multi"),
+    });
+
+    if (res?.data?.songs) {
+      const songs = await reducePropertySong(res.data.songs);
+
+      return { id: "search-result-" + name, songs: songs };
+    }
+  } catch (err) {}
+};

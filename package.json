@@ -37,7 +37,6 @@
     "react-native-fbsdk-next": "^11.1.0",
     "react-native-gesture-handler": "^2.8.0",
     "react-native-linear-gradient": "^2.6.2",
-    "react-native-lrc": "^1.0.0-beta.1",
     "react-native-pager-view": "^6.1.2",
     "react-native-randombytes": "^3.6.1",
     "react-native-safe-area-context": "^4.4.1",

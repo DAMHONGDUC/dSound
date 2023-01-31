@@ -6,29 +6,29 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import PlayerController from "helper/PlayerController";
 import { useRoute } from "@react-navigation/native";
+import { State, usePlaybackState } from "react-native-track-player";
 
 export default PlaySection = () => {
-  const { currPlaylist, currIndex, activeSong, isPlaying } = useSelector(
-    (state) => state.player
-  );
+  const { currIndex, activeSong } = useSelector((state) => state.player);
   const route = useRoute();
+  const playBackState = usePlaybackState();
 
   useEffect(() => {
     if (route.params.currSongId !== activeSong.id) {
-      PlayerController.onPlayNew(currIndex, currPlaylist);
+      PlayerController.onPlayNew(currIndex);
     }
   }, []);
 
   const handlePlayPause = () => {
-    PlayerController.onPlayPause(isPlaying);
+    PlayerController.onPlayPause(playBackState);
   };
 
   const handlePrevious = () => {
-    PlayerController.onPrevious(currIndex, currPlaylist);
+    PlayerController.onPrevious(currIndex);
   };
 
   const handleNext = () => {
-    PlayerController.onNext(currIndex, currPlaylist);
+    PlayerController.onNext();
   };
 
   return (
@@ -42,7 +42,9 @@ export default PlaySection = () => {
       </TouchableOpacity>
       <TouchableOpacity onPress={handlePlayPause}>
         <FontAwesome5
-          name={isPlaying ? "pause-circle" : "play-circle"}
+          name={
+            playBackState === State.Playing ? "pause-circle" : "play-circle"
+          }
           color={COLORS.primary}
           size={60}
           solid

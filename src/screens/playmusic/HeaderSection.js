@@ -39,16 +39,16 @@ export default HeaderSection = () => {
             onPress={handleBackButton}
             name="expand-more"
             color={COLORS.black}
-            size={37}
+            size={35}
           ></MaterialIcons>
         </TouchableOpacity>
       </View>
 
-      <View style={styles.view}>
+      {/* <View style={styles.view}>
         <TouchableOpacity>
           <Feather name={"more-vertical"} color={COLORS.black} size={27} />
         </TouchableOpacity>
-      </View>
+      </View> */}
     </View>
   );
 };

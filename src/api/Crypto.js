@@ -30,3 +30,13 @@ export const hashParamHome = (path) => {
     SECRET_KEY
   );
 };
+
+export const hashListMV = (path, id, type, page, count) => {
+  return getHmac512(
+    path +
+      getHash256(
+        `count=${count}ctime=${CTIME}id=${id}page=${page}type=${type}version=${VERSION}`
+      ),
+    SECRET_KEY
+  );
+};

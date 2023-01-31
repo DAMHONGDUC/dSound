@@ -12,7 +12,15 @@ export default SuggestedPlaylist = ({ playlists }) => {
     return (
       <PlaylistRow
         onClick={() => {
-          navigation.navigate("PlaylistPage", { playlistId: item.id });
+          navigation.navigate("PlaylistPage", {
+            id: item.id,
+            fromArtistPage: {
+              isArtist: false,
+              image: "",
+              title: "",
+              totalFollow: "",
+            },
+          });
         }}
         title={item.title}
         image={{ uri: item.image }}

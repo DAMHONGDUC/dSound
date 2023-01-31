@@ -13,21 +13,52 @@ import Fontisto from "react-native-vector-icons/Fontisto";
 import LinearGradient from "react-native-linear-gradient";
 import PlayerController from "helper/PlayerController";
 import { useEffect, useState } from "react";
-import TrackPlayer, { useProgress } from "react-native-track-player";
 import { rootNavigationRef } from "navigation/RootNavigation";
-import { useNavigation } from "@react-navigation/native";
+import {
+  Event,
+  usePlaybackState,
+  useTrackPlayerEvents,
+  useProgress,
+  State,
+} from "react-native-track-player";
+import cloneDeep from "lodash.clonedeep";
 
 export default BottomPlayer = () => {
-  const { activeSong, showBottomPlay, isPlaying, currPlaylist, currIndex } =
-    useSelector((state) => state.player);
+  const { activeSong, showBottomPlay, currPlaylist, currIndex } = useSelector(
+    (state) => state.player
+  );
 
   const progress = useProgress();
   const isEmpty = Object.keys(activeSong).length === 0;
   const [progressBar, setprogressBar] = useState(0);
+  const playBackState = usePlaybackState();
+
+  useTrackPlayerEvents([Event.PlaybackTrackChanged], async (event) => {
+    if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
+      let index = event.nextTrack;
+      PlayerController.updateSongData(index, currPlaylist);
+
+      if (index === 0) {
+        let nextSong = cloneDeep(currPlaylist.songs[index + 1]);
+
+        if (!nextSong.url)
+          await PlayerController.updateTrackUrl(nextSong, index + 1);
+      } else {
+        let preSong = cloneDeep(currPlaylist.songs[index - 1]);
+        let nextSong = cloneDeep(currPlaylist.songs[index + 1]);
+
+        if (!preSong.url)
+          await PlayerController.updateTrackUrl(preSong, index - 1);
+
+        if (!nextSong.url)
+          await PlayerController.updateTrackUrl(nextSong, index + 1);
+      }
+    }
+  });
 
   useEffect(() => {
     const listenTrackEnd = async () => {
-      if (isPlaying) {
+      if (playBackState === State.Playing) {
         const sec = Math.floor(progress.position / 1);
 
         if (sec === activeSong.duration || sec + 1 === activeSong.duration) {
@@ -42,7 +73,7 @@ export default BottomPlayer = () => {
   }, [progress.position]);
 
   const handlePlayPause = () => {
-    PlayerController.onPlayPause(isPlaying);
+    PlayerController.onPlayPause(playBackState);
   };
 
   const handleBottomPlayerClick = () => {
@@ -91,7 +122,7 @@ export default BottomPlayer = () => {
                   style={[styles.button, { marginRight: 5 }]}
                   onPress={handlePlayPause}
                 >
-                  {isPlaying ? (
+                  {playBackState === State.Playing ? (
                     <Fontisto
                       name={"pause"}
                       color={COLORS.white}
