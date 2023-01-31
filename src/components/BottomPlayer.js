@@ -62,7 +62,7 @@ export default BottomPlayer = () => {
         const sec = Math.floor(progress.position / 1);
 
         if (sec === activeSong.duration || sec + 1 === activeSong.duration) {
-          PlayerController.onNext(currIndex, currPlaylist);
+          PlayerController.onNext();
         }
 
         setprogressBar((sec / activeSong.duration) * 100);

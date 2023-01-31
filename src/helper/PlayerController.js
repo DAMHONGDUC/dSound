@@ -33,7 +33,7 @@ export default class PlayerController {
   }
 
   static async onPlayPause(playBackState) {
-    if (playBackState == State.Paused) {
+    if (playBackState == State.Paused || playBackState === State.Ready) {
       await TrackPlayer.play();
     } else {
       await TrackPlayer.pause();
