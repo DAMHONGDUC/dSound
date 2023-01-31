@@ -9,13 +9,15 @@ import { useRoute } from "@react-navigation/native";
 import { State, usePlaybackState } from "react-native-track-player";
 
 export default PlaySection = () => {
-  const { currIndex, activeSong } = useSelector((state) => state.player);
+  const { currIndex, currPlaylist, activeSong } = useSelector(
+    (state) => state.player
+  );
   const route = useRoute();
   const playBackState = usePlaybackState();
 
   useEffect(() => {
     if (route.params.currSongId !== activeSong.id) {
-      PlayerController.onPlayNew(currIndex);
+      PlayerController.onPlayNew(currIndex, currPlaylist);
     }
   }, []);
 

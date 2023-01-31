@@ -27,7 +27,11 @@ export default class PlayerController {
     store.dispatch(setActiveSong(currPlaylist.songs[index]));
   }
 
-  static async onPlayNew(currIndex) {
+  static async onPlayNew(currIndex, currPlaylist) {
+    let currSong = currPlaylist.songs[currIndex];
+    if (!currSong.url)
+      await PlayerController.updateTrackUrl(currSong, currIndex);
+
     await TrackPlayer.skip(currIndex);
     await TrackPlayer.play();
   }
