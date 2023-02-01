@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BottomPlayer Snapshot  1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "flex": 1,
+      "flexDirection": "row",
+      "justifyContent": "flex-start",
+      "paddingLeft": 15,
+      "paddingRight": 5,
+    }
+  }
+>
+  <Image
+    source={
+      {
+        "testUri": "../../../src/assets/app_icon.png",
+      }
+    }
+    style={
+      {
+        "height": 35,
+        "width": 35,
+      }
+    }
+  />
+  <Text
+    style={
+      {
+        "color": "#000000",
+        "flex": 0.9,
+        "fontSize": 20,
+        "fontWeight": "500",
+        "marginLeft": 15,
+      }
+    }
+  >
+    dSound
+  </Text>
+  <View
+    accessible={true}
+    collapsable={false}
+    focusable={false}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "flex": 0.1,
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      selectable={false}
+      solid={true}
+      style={
+        [
+          {
+            "color": "#000000",
+            "fontSize": 22,
+          },
+          undefined,
+          {
+            "fontFamily": "Feather",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          {},
+        ]
+      }
+    >
+      
+    </Text>
+  </View>
+</View>
+`;
