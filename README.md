@@ -22,7 +22,7 @@
 
 ## II. Tech stack
 - React Native
-- React Native Firebase
+- Firebase
 - React Native Track Player
 - Zing Mp3 API
 
