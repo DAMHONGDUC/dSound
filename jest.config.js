@@ -3,7 +3,7 @@ module.exports = {
   // moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   // setupFilesAfterEnv: ["@testing-library/jest-native/extend-expect"],
   transformIgnorePatterns: [
-    "node_modules/(?!(@react-native|react-native|react-native-vector-icons)/)",
+    "node_modules/(?!(@react-native|react-native|react-native-vector-icons|react-native-social-buttons)/)",
   ],
   // reporters: [
   //   "default",
@@ -16,4 +16,5 @@ module.exports = {
   //   ],
   //],
   preset: "react-native",
+  setupFilesAfterEnv: ["@testing-library/jest-native/extend-expect"],
 };
