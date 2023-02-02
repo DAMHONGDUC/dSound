@@ -32,7 +32,12 @@
 - iOS (not available)
 - App Store (not available)
 
-## IV. Screenshots
+## IV. Features
+- Register account(Google, Facebook), Sign In, Sign Out
+- Play music (previous, play/pause, next)
+- Shuffle mode, Repeat mode
+
+## V. Screenshots
 
 <kbd>
   <img src="RELEASE/Images/1.jpg">
