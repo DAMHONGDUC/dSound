@@ -19,23 +19,22 @@
 ```
   yarn android
 ```
+## II. Features
+- Register account(Google, Facebook), Sign In, Sign Out
+- Play music (previous, play/pause, next)
+- Shuffle mode, Repeat mode
 
-## II. Tech stack
+## III. Tech stack
 - React Native
 - Firebase
 - React Native Track Player
 - Zing Mp3 API
 
-## III. Release
+## IV. Release
 - Android [apk](RELEASE/install/dsound.apk)
 - [Google Play](https://play.google.com/store/apps/details?id=com.dsound)
 - iOS (not available)
 - App Store (not available)
-
-## IV. Features
-- Register account(Google, Facebook), Sign In, Sign Out
-- Play music (previous, play/pause, next)
-- Shuffle mode, Repeat mode
 
 ## V. Screenshots
 
