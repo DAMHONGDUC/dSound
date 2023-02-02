@@ -61,13 +61,13 @@
     "@react-native-community/eslint-config": "^3.2.0",
     "babel-jest": "^26.6.3",
     "babel-plugin-module-resolver": "^4.1.0",
-    "eslint": "^8.30.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.31.11",
-    "husky": "^8.0.3",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.2",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "0.72.3",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.3",
     "react-native-svg-transformer": "^1.0.0",
     "react-test-renderer": "18.1.0"
   },
@@ -75,7 +75,8 @@
     "preset": "react-native"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": "prettier --write"
+    "src/**/*.{js,jsx}": "prettier --write",
+    "src/**/*.{js,jsx}": "eslint"
   },
   "react-native": {
     "crypto": "react-native-crypto",
