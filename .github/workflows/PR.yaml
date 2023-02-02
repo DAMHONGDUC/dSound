@@ -9,7 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: yarn install
-      - run: |
-          cd dSound/dSound
-          yarn lint
       - run: yarn test
+      - run: yarn lint
