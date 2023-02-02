@@ -1,12 +1,13 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
-        "development": {
-            "plugins": [
-              "@babel/plugin-transform-typeof-symbol"
-            ]
-        }
+        "es2021": true
+        // ,
+        // "development": {
+        //     "plugins": [
+        //       "@babel/plugin-transform-typeof-symbol"
+        //     ]
+        // }
     },
     "extends": [
         "eslint:recommended",
