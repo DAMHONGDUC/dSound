@@ -3,6 +3,8 @@ import PlayerController from "helper/PlayerController";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setPlaylistPlayButtonClicked } from "redux/slices/playerSlide";
 
 export default PlaylistHeader = ({
   playlist,
@@ -13,6 +15,7 @@ export default PlaylistHeader = ({
   const { currIndex, currPlaylist, shuffleMode } = useSelector(
     (state) => state.player
   );
+  const dispatch = useDispatch();
 
   const handleBackButton = () => {
     navigation.pop();
@@ -23,6 +26,8 @@ export default PlaylistHeader = ({
   };
 
   const handlePlayPlaylist = () => {
+    dispatch(setPlaylistPlayButtonClicked(true));
+
     PlayerController.onSongRowClick([
       currPlaylist,
       dataPlaylist,
@@ -37,7 +42,7 @@ export default PlaylistHeader = ({
       <Image source={{ uri: playlist.image }} style={styles.image} />
       <View style={styles.backButton}>
         <TouchableOpacity onPress={handleBackButton}>
-          <Ionicons name="arrow-back" color={COLORS.black} size={25}></Ionicons>
+          <Ionicons name="arrow-back" color={COLORS.black} size={25} />
         </TouchableOpacity>
       </View>
 
@@ -66,7 +71,7 @@ export default PlaylistHeader = ({
             name="shuffle-outline"
             color={shuffleMode ? COLORS.primary : COLORS.black}
             size={40}
-          ></Ionicons>
+          />
         </TouchableOpacity>
       </View>
     </View>

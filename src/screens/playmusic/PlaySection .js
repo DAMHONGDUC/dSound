@@ -34,8 +34,9 @@ export default PlaySection = () => {
   const handleNext = async () => {
     if (shuffleMode) {
       PlayerController.onNextShuffle(currIndex, currPlaylist);
+    } else {
+      PlayerController.onNext();
     }
-    els;
   };
 
   const handleRepeatMode = () => {
@@ -53,14 +54,10 @@ export default PlaySection = () => {
           name="repeat"
           color={repeatMode ? COLORS.primary : COLORS.black}
           size={24}
-        ></Feather>
+        />
       </TouchableOpacity>
       <TouchableOpacity onPress={handlePrevious}>
-        <MaterialIcons
-          name="skip-previous"
-          color={COLORS.primary}
-          size={40}
-        ></MaterialIcons>
+        <MaterialIcons name="skip-previous" color={COLORS.primary} size={40} />
       </TouchableOpacity>
       <TouchableOpacity onPress={handlePlayPause}>
         <FontAwesome5
@@ -73,18 +70,14 @@ export default PlaySection = () => {
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={handleNext}>
-        <MaterialIcons
-          name="skip-next"
-          color={COLORS.primary}
-          size={40}
-        ></MaterialIcons>
+        <MaterialIcons name="skip-next" color={COLORS.primary} size={40} />
       </TouchableOpacity>
       <TouchableOpacity onPress={handleShuffleMode}>
         <Ionicons
           name="shuffle-outline"
           color={shuffleMode ? COLORS.primary : COLORS.black}
           size={30}
-        ></Ionicons>
+        />
       </TouchableOpacity>
     </View>
   );

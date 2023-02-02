@@ -22,6 +22,13 @@ import TrackPlayer, {
   State,
 } from "react-native-track-player";
 import cloneDeep from "lodash.clonedeep";
+import { useDispatch } from "react-redux";
+import {
+  setCurrIndex,
+  setActiveSong,
+  setUpdateNearlySong,
+  setPlaylistPlayButtonClicked,
+} from "redux/slices/playerSlide";
 
 export default BottomPlayer = () => {
   const {
@@ -31,32 +38,55 @@ export default BottomPlayer = () => {
     repeatMode,
     shuffleMode,
     currIndex,
+    updateNearlySong,
+    playlistPlayButtonClicked,
   } = useSelector((state) => state.player);
 
   const progress = useProgress();
   const isEmpty = Object.keys(activeSong).length === 0;
   const [progressBar, setprogressBar] = useState(0);
   const playBackState = usePlaybackState();
+  const dispatch = useDispatch();
 
   useTrackPlayerEvents([Event.PlaybackTrackChanged], async (event) => {
     if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
       let index = event.nextTrack;
-      PlayerController.updateSongData(index, currPlaylist);
+      dispatch(setUpdateNearlySong(true));
 
-      if (index === 0) {
-        let nextSong = cloneDeep(currPlaylist.songs[index + 1]);
+      if (index !== 0) {
+        dispatch(setCurrIndex(index));
+        dispatch(setActiveSong(currPlaylist.songs[index]));
+      } else if (playlistPlayButtonClicked) {
+        dispatch(setCurrIndex(0));
+        dispatch(setActiveSong(currPlaylist.songs[0]));
+        dispatch(setPlaylistPlayButtonClicked(false));
+      }
+    }
+  });
 
-        if (!nextSong.url)
-          await PlayerController.updateTrackUrl(nextSong, index + 1);
-      } else {
-        let preSong = cloneDeep(currPlaylist.songs[index - 1]);
-        let nextSong = cloneDeep(currPlaylist.songs[index + 1]);
+  const helperUpdateNearlySong = async (flag, playlist, index) => {
+    if (flag) {
+      let song = playlist.songs[index];
 
-        if (!preSong.url)
-          await PlayerController.updateTrackUrl(preSong, index - 1);
+      if (!song.url) {
+        await PlayerController.updateTrackUrl(song, index);
+      }
+    }
+  };
 
-        if (!nextSong.url)
-          await PlayerController.updateTrackUrl(nextSong, index + 1);
+  useTrackPlayerEvents([Event.PlaybackState], async (event) => {
+    if (event.type === Event.PlaybackState && event.state === State.Playing) {
+      if (updateNearlySong) {
+        let index = currIndex;
+
+        await helperUpdateNearlySong(index - 1 >= 1, currPlaylist, index - 1);
+        await helperUpdateNearlySong(
+          index + 1 <= currPlaylist.songs.length - 1,
+          currPlaylist,
+          index + 1
+        );
+
+        dispatch(setUpdateNearlySong(false));
       }
     }
   });
@@ -72,7 +102,9 @@ export default BottomPlayer = () => {
         ) {
           if (shuffleMode) {
             PlayerController.onNextShuffle(currIndex, currPlaylist);
-          } else PlayerController.onNext();
+          } else {
+            PlayerController.onNext();
+          }
         }
 
         setprogressBar((sec / activeSong.duration) * 100);
@@ -103,15 +135,13 @@ export default BottomPlayer = () => {
             end={{ x: 1, y: 0 }}
             colors={["#205295", "#0A2647", "#1A120B"]}
           >
-            <View
-              style={[styles.progress, { width: `${progressBar}%` }]}
-            ></View>
+            <View style={[styles.progress, { width: `${progressBar}%` }]} />
             <View style={styles.row}>
               <View style={styles.row2}>
                 <Image
                   style={styles.image}
                   source={{ uri: activeSong.artwork }}
-                ></Image>
+                />
                 <View style={styles.titleSection}>
                   <Text numberOfLines={1}>{activeSong.title}</Text>
                   <Text numberOfLines={1}>{activeSong.artist}</Text>

@@ -11,18 +11,22 @@ import {
 import { store } from "redux/store";
 import { RepeatMode } from "react-native-track-player";
 import { randomInRange } from "helper";
+import cloneDeep from "lodash.clonedeep";
 
 export default class PlayerController {
   static async updateTrackUrl(song, index) {
     const URL = await getSongURL(song.id);
 
-    let newSong = { ...song };
+    let newSong = cloneDeep(song);
     newSong.url = URL;
 
     await TrackPlayer.add(newSong, index);
     await TrackPlayer.remove(index + 1);
 
     store.dispatch(setSongURL({ index: index, url: URL }));
+
+    // const tracks = await TrackPlayer.getQueue();
+    // console.log("update track url ", index, tracks);
   }
 
   static updateSongData(index, currPlaylist) {
@@ -32,11 +36,13 @@ export default class PlayerController {
 
   static async onPlayNew(currIndex, currPlaylist) {
     let currSong = currPlaylist.songs[currIndex];
-    if (!currSong.url)
+    if (!currSong.url) {
       await PlayerController.updateTrackUrl(currSong, currIndex);
+    }
 
     await TrackPlayer.skip(currIndex);
     await TrackPlayer.play();
+    //console.log("played");
   }
 
   static async onPlayPause(playBackState) {
@@ -74,8 +80,11 @@ export default class PlayerController {
   }
 
   static async onPrevious(currIndex) {
-    if (currIndex === 0) await TrackPlayer.skip(0);
-    else await TrackPlayer.skip(currIndex - 1);
+    if (currIndex === 0) {
+      await TrackPlayer.skip(0);
+    } else {
+      await TrackPlayer.skip(currIndex - 1);
+    }
 
     await TrackPlayer.play();
   }
