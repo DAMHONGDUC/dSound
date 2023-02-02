@@ -27,7 +27,7 @@
 - Zing Mp3 API
 
 ## III. Release
-- Android [apk](release/dsound.apk)
+- Android [apk](RELEASED ASSETS/file/dsound.apk)
 - [Google Play](https://play.google.com/store/apps/details?id=com.dsound)
 - iOS (not available)
 - App Store (not available)
