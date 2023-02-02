@@ -38,6 +38,14 @@
           }
         },
         {
+          "client_id": "362500748669-jclipg2ruva7g40cedic9ssq24bnn41o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dsound",
+            "certificate_hash": "7092c0dce9e9acc3ddcca3a36d52e30bf20060a1"
+          }
+        },
+        {
           "client_id": "362500748669-fvb0pj0ohbas2on547ejaruh8n6mgp7a.apps.googleusercontent.com",
           "client_type": 3
         }
