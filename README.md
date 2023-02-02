@@ -28,6 +28,7 @@
 
 ## III. Release
 - Android [apk](release/dsound.apk)
+- [Google Play](https://play.google.com/store/apps/details?id=com.dsound)
 - iOS (not available)
 
 ## IV. Screenshots
