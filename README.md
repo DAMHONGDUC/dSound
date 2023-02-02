@@ -43,23 +43,23 @@
 <kbd>
   <img src="release/Images/3.jpg">
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="release/Images/8.jpg">
-</kbd>
-<br/>
-<br/> 
-
-<kbd>
   <img src="release/Images/4.jpg">
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="release/Images/5.jpg">
 </kbd>
 <br/>
 <br/> 
 
 <kbd>
-  <img src="release/Images/6.jpg">
+  <img src="release/Images/5.jpg">
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="release/Images/6.jpg">
+</kbd>
+<br/>
+<br/> 
+
+<kbd>
   <img src="release/Images/7.jpg">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="release/Images/8.jpg">
 </kbd>
 <br/>
 <br/> 
@@ -81,32 +81,6 @@
 
 <kbd>
   <img src="release/Images/13.jpg">
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="release/Images/14.jpg">
-</kbd>
-<br/>
-<br/> 
-
-<kbd>
-  <img src="release/Images/15.jpg">
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="release/Images/16.jpg">
-</kbd>
-<br/>
-<br/> 
-
-<kbd>
-  <img src="release/Images/17.jpg">
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="release/Images/18.jpg">
-</kbd>
-<br/>
-<br/> 
-
-<kbd>
-  <img src="release/Images/19.jpg">
-   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="release/Images/20.jpg">
 </kbd>
 <br/>
 <br/> 
