@@ -8,6 +8,7 @@ jobs:
     name: install package
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2.1.0
       - run: yarn install
-      - run: cd home/runner/work/dSound/dSound && yarn test
+      - run: yarn test
       - run: yarn lint
