@@ -29,10 +29,13 @@ jobs:
       - name: Run yarn lint
         run: yarn lint
         
-      - name: Release application
-        run: |
-             cd android
-             ./gradlew assembleRelease
+      - name: Build Signed APK
+        uses: victorbnl/build-signed-apk@main
+        with:
+          keystore_b64: ${{ secrets.SIGNINGKEYBASE64 }}
+          keystore_password: ${{ MYAPP_UPLOAD_STORE_PASSWORD }}
+          key_alias: ${{ secrets.MYAPP_UPLOAD_KEY_ALIAS }}
+          key_password: ${{ secrets.MYAPP_UPLOAD_KEY_PASSWORD }}
        
       - name: Upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
