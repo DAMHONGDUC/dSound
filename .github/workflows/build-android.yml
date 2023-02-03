@@ -31,7 +31,9 @@ jobs:
                 
       - name: Build Release AAB
         id: buildRelease
-        run: ./gradlew assembleRelease
+        run: |
+             cd android
+             ./gradlew assembleRelease
 
       - name: Sign Android release
         uses: r0adkll/sign-android-release@v1
