@@ -12,13 +12,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
-      - name: Setup Node
+      - name: Setup Node  
         uses: actions/setup-node@v3
         with:
-          node-version: "19.0.1"
-          cache: "yarn"
+          node-version: '19.0.1'
 
       - name: Run corepack enable
         run: corepack enable
@@ -30,7 +29,7 @@ jobs:
       - run: yarn lint
 
       - name: Release application
-        run: ./gradlew assembleRelease
+        run: cd android && ./gradlew assembleRelease
 
       - name: Upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
