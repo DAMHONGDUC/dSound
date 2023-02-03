@@ -47,6 +47,18 @@ export default function BottomTabStack() {
         }}
       />
       <BottomTab.Screen
+        name="Library"
+        component={SearchPage}
+        options={{
+          headerShown: false,
+          tabBarLabel: "Library",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name={"folder"} color={color} size={size - 1} solid />
+          ),
+          tabBarActiveTintColor: COLORS.primary,
+        }}
+      />
+      <BottomTab.Screen
         name="User"
         component={UserDetailPage}
         options={{
