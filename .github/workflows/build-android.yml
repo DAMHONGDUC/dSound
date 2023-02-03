@@ -29,8 +29,8 @@ jobs:
         with:
           node-version: "19.0.1"
 
-      - name: Setup yarn
-        run: npm install -g yarn
+      - name: which yarn
+        run: which yarn
 
       - name: Run Yarn Install
         run: |
