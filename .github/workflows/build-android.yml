@@ -24,22 +24,25 @@ jobs:
       - name: Validate Gradle wrapper
         uses: gradle/wrapper-validation-action@v1
 
-      - name: Setup Node  
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '19.0.1'
+          node-version: "19.0.1"
+
+      - name: Setup yarn
+        run: npm install -g yarn
 
       - name: Run Yarn Install
         run: |
-             cd ./packages/dSound/
-             npm i -g corepack
-             yarn install
+          cd ./packages/dSound/
+          npm i -g corepack
+          yarn install
 
       - name: Build application
         run: |
-             cd ./packages/dSound/android
-             ./gradlew assembleRelease
-      
+          cd ./packages/dSound/android
+          ./gradlew assembleRelease
+
       - name: upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
