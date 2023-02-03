@@ -21,6 +21,7 @@
 ```
 ## II. Struct
 
+```
 ├── android
 │   ├── app
 │   ├── build
@@ -43,7 +44,7 @@
 │   ├── screens
 │   └── services
 └── __tests__
-
+```
 
 ## III. Features
 - Register account(Google, Facebook), Sign In, Sign Out
