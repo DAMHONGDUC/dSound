@@ -11,50 +11,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          node-version: "17"
+          node-version: "19.0.1"
           cache: "yarn"
-      - run: corepack enable
-      - run: yarn install
+
+      - name: Run corepack enable
+        run: corepack enable
+
+      - name: Run yarn install
+        run: yarn install
+
+      - name: Run yarn lint
       - run: yarn lint
-        # - name: Checkout repository
-        #   uses: actions/checkout@v2
 
-        # - name: Install Java
-        #   uses: actions/setup-java@v2
-        #   with:
-        #     java-version: "11"
-        #     distribution: "adopt"
-        #     cache: "gradle"
+      - name: Release application
+        run: ./gradlew assembleRelease
 
-        # - name: Validate Gradle wrapper
-        #   uses: gradle/wrapper-validation-action@v1
-
-        # - name: Setup Node
-        #   uses: actions/setup-node@v3
-        #   with:
-        #     node-version: "19.0.1"
-
-        # - name: which yarn
-        #   run: which yarn
-
-        # - name: Run Yarn Install
-        #   run: |
-        #     cd ./packages/dSound/
-        #     npm i -g corepack
-        #     yarn install
-
-        # - name: Build application
-        #   run: |
-        #     cd ./packages/dSound/android
-        #     ./gradlew assembleRelease
-
-        # - name: upload artifact to Firebase App Distribution
-        #   uses: wzieba/Firebase-Distribution-Github-Action@v1
-        #   with:
-        #     appId: ${{secrets.FIREBASE_APP_ID}}
-        #     serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
-        #     groups: testers
-        #     file: app/build/outputs/apk/release/app-release.apk
+      - name: upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{secrets.FIREBASE_APP_ID}}
+          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+          groups: testers
+          file: app/build/outputs/apk/release/app-release.apk
