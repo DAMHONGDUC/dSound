@@ -1,6 +1,6 @@
 import { COLORS } from "constants/theme";
 import { useEffect, useState } from "react";
-import { StyleSheet, View, FlatList, Text } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import PlaylistHeader from "./PlaylistHeader";
 import { getDetailPlaylist } from "api/PlaylistAPI";
 import { useSelector } from "react-redux";
@@ -10,7 +10,7 @@ import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { getListArtistSong } from "api/ArtistAPI";
 
-export default PlaylistPage = () => {
+export default function PlaylistPage() {
   const { currPlaylist } = useSelector((state) => state.player);
   const [dataPlaylist, setdataPlaylist] = useState();
   const navigation = useNavigation();
@@ -36,7 +36,9 @@ export default PlaylistPage = () => {
     if (route.params.fromArtistPage.isArtist) {
       getDataDetailArtist();
       setfromArtistPage(true);
-    } else getDataDetailPlaylist();
+    } else {
+      getDataDetailPlaylist();
+    }
   }, []);
 
   const renderItem = ({ item, index }) => {
@@ -56,7 +58,7 @@ export default PlaylistPage = () => {
         artist={item.artist}
         duration={item.duration}
         id={item.id}
-      ></SongRow>
+      />
     );
   };
   return (
@@ -80,7 +82,7 @@ export default PlaylistPage = () => {
       )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

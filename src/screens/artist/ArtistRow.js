@@ -10,14 +10,14 @@ import {
 
 import Feather from "react-native-vector-icons/Feather";
 
-export default ArtistRow = ({ image, name, onClick, totalFollow }) => {
+export default function ArtistRow({ image, name, onClick, totalFollow }) {
   return (
     <TouchableHighlight
       underlayColor={COLORS.songRowClickColor}
       onPress={onClick}
     >
       <View style={styles.container}>
-        <Image style={styles.image} source={image}></Image>
+        <Image style={styles.image} source={image} />
         <View style={styles.containerCenter}>
           <Text numberOfLines={1} style={styles.name}>
             {name}
@@ -33,7 +33,7 @@ export default ArtistRow = ({ image, name, onClick, totalFollow }) => {
       </View>
     </TouchableHighlight>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

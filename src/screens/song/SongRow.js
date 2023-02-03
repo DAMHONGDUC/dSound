@@ -13,7 +13,14 @@ import { durationFormat } from "helper";
 import { useSelector } from "react-redux";
 import { usePlaybackState, State } from "react-native-track-player";
 
-export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
+export default function SongRow({
+  image,
+  name,
+  artist,
+  duration,
+  onClick,
+  id,
+}) {
   const { activeSong } = useSelector((state) => state.player);
   const playBackState = usePlaybackState();
 
@@ -23,7 +30,7 @@ export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
       onPress={onClick}
     >
       <View style={styles.container}>
-        <Image style={styles.image} source={image}></Image>
+        <Image style={styles.image} source={image} />
         <View style={styles.containerCenter}>
           <Text
             numberOfLines={1}
@@ -63,7 +70,7 @@ export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
       </View>
     </TouchableHighlight>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

@@ -1,18 +1,11 @@
 import { COLORS } from "constants/theme";
-import {
-  StyleSheet,
-  View,
-  Text,
-  ActivityIndicator,
-  FlatList,
-} from "react-native";
+import { StyleSheet, View, Text, FlatList } from "react-native";
 import SeparateLine from "components/SeparateLine";
 import ArtistRow from "screens/artist/ArtistRow";
 import { useEffect, useState } from "react";
 import { getArtist } from "api/ArtistAPI";
 import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
-import { getListArtistSong } from "api/ArtistAPI";
 
 export default function ArtistsRoute() {
   const [dataArtist, setdataArtist] = useState();
@@ -44,7 +37,7 @@ export default function ArtistsRoute() {
         image={{ uri: item.thumbnailM }}
         name={item.name}
         totalFollow={item.totalFollow}
-      ></ArtistRow>
+      />
     );
   };
 
@@ -53,7 +46,7 @@ export default function ArtistsRoute() {
       {dataArtist ? (
         <>
           <Text style={styles.mainText}>Top {dataArtist.length} artist</Text>
-          <SeparateLine></SeparateLine>
+          <SeparateLine />
           <FlatList
             data={dataArtist}
             renderItem={renderItem}

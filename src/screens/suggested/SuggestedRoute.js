@@ -48,7 +48,9 @@ export default function SuggestedRoute() {
   }, []);
 
   useEffect(() => {
-    if (dataSuggestedPlaylist && dataNewSong) setisLoaded(true);
+    if (dataSuggestedPlaylist && dataNewSong) {
+      setisLoaded(true);
+    }
   }, [dataSuggestedPlaylist, dataNewSong]);
 
   return isLoaded ? (
@@ -71,11 +73,11 @@ export default function SuggestedRoute() {
                   navigation,
                 ]);
               }}
-            ></NewSongRow>
+            />
           ))}
         </View>
         {dataSuggestedPlaylist.map((e) => (
-          <SuggestedPlaylist key={e.id} playlists={e}></SuggestedPlaylist>
+          <SuggestedPlaylist key={e.id} playlists={e} />
         ))}
       </View>
     </ScrollView>

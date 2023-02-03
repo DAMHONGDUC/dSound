@@ -4,7 +4,7 @@ import TopTabStack from "navigation/TopTabStack";
 export default function HomePage() {
   return (
     <SafeAreaView style={styles.container}>
-      <TopTabStack></TopTabStack>
+      <TopTabStack />
     </SafeAreaView>
   );
 }

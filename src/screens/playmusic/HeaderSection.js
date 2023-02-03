@@ -1,13 +1,12 @@
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import Feather from "react-native-vector-icons/Feather";
 import { View, TouchableOpacity, StyleSheet, BackHandler } from "react-native";
 import { COLORS } from "constants/theme";
 import { useDispatch } from "react-redux";
 import { setShowBottomPlay } from "redux/slices/playerSlide";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 
-export default HeaderSection = () => {
+export default function HeaderSection() {
   const dispatch = useDispatch();
   const navigation = useNavigation();
 
@@ -40,7 +39,7 @@ export default HeaderSection = () => {
             name="expand-more"
             color={COLORS.black}
             size={35}
-          ></MaterialIcons>
+          />
         </TouchableOpacity>
       </View>
 
@@ -51,7 +50,7 @@ export default HeaderSection = () => {
       </View> */}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   row: {

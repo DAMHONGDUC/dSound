@@ -2,12 +2,6 @@
     "env": {
         "browser": true,
         "es2021": true
-        ,
-        "development": {
-            "plugins": [
-              "@babel/plugin-transform-typeof-symbol"
-            ]
-        }
     },
     "extends": [
         "eslint:recommended",
@@ -26,5 +20,12 @@
         "jest"
     ],
     "rules": {
+        "quotes": ["error", "double"],
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-uses-react": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "react/no-unescaped-entities":  "off",
+        "react-hooks/exhaustive-deps": "off",
+        "comma-dangle": "off"
     }
 }

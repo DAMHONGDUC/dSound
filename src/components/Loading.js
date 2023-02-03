@@ -1,12 +1,13 @@
 import { COLORS } from "constants/theme";
-import React from "react";
-import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
+import { ActivityIndicator, StyleSheet, View } from "react-native";
 
-export default Loading = () => (
-  <View style={[styles.container, styles.horizontal]}>
-    <ActivityIndicator size="large" color={COLORS.primary} />
-  </View>
-);
+export default function Loading() {
+  return (
+    <View style={[styles.container, styles.horizontal]}>
+      <ActivityIndicator size="large" color={COLORS.primary} />
+    </View>
+  );
+}
 
 const styles = StyleSheet.create({
   container: {

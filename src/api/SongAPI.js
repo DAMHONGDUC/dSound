@@ -1,6 +1,5 @@
 import { hashParamNoId, hashParam } from "./Crypto";
 import { requestZingMp3 } from "./ZingMp3API";
-import { Alert } from "react-native";
 
 // getTop100
 export const getTop100PlayList = async () => {
@@ -9,7 +8,9 @@ export const getTop100PlayList = async () => {
       sig: hashParamNoId("/api/v2/page/get/top-100"),
     });
 
-    if (res) return res;
+    if (res) {
+      return res;
+    }
   } catch (err) {}
 };
 
@@ -62,7 +63,9 @@ export const getSongById = (songId) => {
       sig: hashParam("/api/v2/song/get/streaming", songId),
     });
 
-    if (res) return res;
+    if (res) {
+      return res;
+    }
   } catch (err) {}
 };
 
@@ -70,8 +73,11 @@ export const getSongURL = async (id) => {
   try {
     const data = await getSongById(id);
 
-    if (data.data["128"]) return data.data["128"];
-    else return null;
+    if (data.data["128"]) {
+      return data.data["128"];
+    } else {
+      return null;
+    }
   } catch (err) {}
 };
 
@@ -83,7 +89,9 @@ export const getLyric = async (songId) => {
       sig: hashParam("/api/v2/lyric/get/lyric", songId),
     });
 
-    if (res?.data?.sentences) return res.data.sentences;
+    if (res?.data?.sentences) {
+      return res.data.sentences;
+    }
   } catch (err) {}
 };
 

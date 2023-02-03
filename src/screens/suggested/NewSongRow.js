@@ -8,11 +8,11 @@ import {
 import { COLORS } from "constants/theme";
 import { windowWidth } from "constants/theme";
 
-export default NewSongRow = ({ image, title, artist, onClick }) => {
+export default function NewSongRow({ image, title, artist, onClick }) {
   return (
     <TouchableHighlight underlayColor={COLORS.white} onPress={onClick}>
       <View style={styles.container}>
-        <Image style={styles.image} source={image}></Image>
+        <Image style={styles.image} source={image} />
         <View style={styles.containerTitle}>
           <Text numberOfLines={1} style={styles.title}>
             {title}
@@ -27,7 +27,7 @@ export default NewSongRow = ({ image, title, artist, onClick }) => {
       </View>
     </TouchableHighlight>
   );
-};
+}
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",

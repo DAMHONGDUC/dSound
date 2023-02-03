@@ -12,10 +12,18 @@ import Loading from "components/Loading";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
 import { AuthContext } from "constants/values";
-import crashlytics from "@react-native-firebase/crashlytics";
 import { setShowBottomPlay } from "redux/slices/playerSlide";
 import { useDispatch } from "react-redux";
 import TrackPlayer from "react-native-track-player";
+
+const FieldInfor = ({ iconName, content }) => {
+  return (
+    <View style={styles.row}>
+      <MaterialIcons name={iconName} color={COLORS.primary} size={25} />
+      <Text style={styles.mainText}>{content}</Text>
+    </View>
+  );
+};
 
 export default function LibraryPage() {
   const [user, setUser] = useState();
@@ -26,21 +34,10 @@ export default function LibraryPage() {
   useEffect(() => {
     const res = firebase.auth().currentUser;
 
-    if (res?.providerData[0]) setUser(res.providerData[0]);
+    if (res?.providerData[0]) {
+      setUser(res.providerData[0]);
+    }
   }, []);
-
-  const FieldInfor = ({ iconName, content }) => {
-    return (
-      <View style={styles.row}>
-        <MaterialIcons
-          name={iconName}
-          color={COLORS.primary}
-          size={25}
-        ></MaterialIcons>
-        <Text style={styles.mainText}>{content}</Text>
-      </View>
-    );
-  };
 
   // useEffect(() => {
   //   throw new Error("We crashed again!!!!!");
@@ -62,23 +59,20 @@ export default function LibraryPage() {
       {user ? (
         <>
           <View style={styles.imageContainer}>
-            <Image style={styles.image} source={{ uri: user.photoURL }}></Image>
+            <Image style={styles.image} source={{ uri: user.photoURL }} />
           </View>
           <View style={styles.contentContainer}>
             {user.displayName && (
               <FieldInfor
                 iconName={"drive-file-rename-outline"}
                 content={user.displayName}
-              ></FieldInfor>
+              />
             )}
             {user.email && (
-              <FieldInfor iconName={"email"} content={user.email}></FieldInfor>
+              <FieldInfor iconName={"email"} content={user.email} />
             )}
             {user.phoneNumber && (
-              <FieldInfor
-                iconName={"phone"}
-                content={user.phoneNumber}
-              ></FieldInfor>
+              <FieldInfor iconName={"phone"} content={user.phoneNumber} />
             )}
           </View>
           <TouchableHighlight
@@ -89,11 +83,7 @@ export default function LibraryPage() {
             <View style={styles.logout}>
               <Text style={styles.text}>Logout</Text>
 
-              <MaterialIcons
-                name={"logout"}
-                color={COLORS.primary}
-                size={30}
-              ></MaterialIcons>
+              <MaterialIcons name={"logout"} color={COLORS.primary} size={30} />
             </View>
           </TouchableHighlight>
         </>
