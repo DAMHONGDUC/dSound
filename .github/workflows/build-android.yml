@@ -14,15 +14,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         
-      - name: Setup Node
+      - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: "19.0.1"
           cache: "yarn"
           
-      - run: corepack enable
+      - name: Run corepack enable
+        run: corepack enable
       
-      - run: yarn install
+      - name: Run yarn install
+        run: yarn install
       
-      - run: yarn lint
+      - name: Run yarn lint
+        run: yarn lint
       
