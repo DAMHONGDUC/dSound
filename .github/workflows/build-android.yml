@@ -28,4 +28,9 @@ jobs:
       
       - name: Run yarn lint
         run: yarn lint
+        
+      - name: Release application
+        run: |
+             cd android
+             ./gradlew assembleRelease
       
