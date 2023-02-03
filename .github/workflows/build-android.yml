@@ -33,7 +33,7 @@ jobs:
         uses: victorbnl/build-signed-apk@main
         with:
           keystore_b64: ${{ secrets.SIGNINGKEYBASE64 }}
-          keystore_password: ${{ MYAPP_UPLOAD_STORE_PASSWORD }}
+          keystore_password: ${{ secrets.MYAPP_UPLOAD_STORE_PASSWORD }}
           key_alias: ${{ secrets.MYAPP_UPLOAD_KEY_ALIAS }}
           key_password: ${{ secrets.MYAPP_UPLOAD_KEY_PASSWORD }}
        
