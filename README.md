@@ -19,24 +19,50 @@
 ```
   yarn android
 ```
-## II. Features
+## II. Struct
+
+├── android
+│   ├── app
+│   ├── build
+│   └── gradle
+├── ios
+│   ├── dSound
+│   ├── dSoundTests
+│   └── dSound.xcodeproj
+├── RELEASE
+│   ├── Images
+│   └── install
+├── src
+│   ├── api
+│   ├── assets
+│   ├── components
+│   ├── constants
+│   ├── helper
+│   ├── navigation
+│   ├── redux
+│   ├── screens
+│   └── services
+└── __tests__
+
+
+## III. Features
 - Register account(Google, Facebook), Sign In, Sign Out
 - Play music (previous, play/pause, next)
 - Shuffle mode, Repeat mode
 
-## III. Tech stack
+## IV. Tech stack
 - React Native
 - Firebase
 - React Native Track Player
 - Zing Mp3 API
 
-## IV. Release
+## V. Release
 - Android [apk](RELEASE/install/dsound.apk)
 - [Google Play](https://play.google.com/store/apps/details?id=com.dsound)
 - iOS (not available)
 - App Store (not available)
 
-## V. Screenshots
+## VI. Screenshots
 
 <kbd>
   <img src="RELEASE/Images/1.jpg">
