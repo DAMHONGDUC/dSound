@@ -25,11 +25,15 @@ export default function RootNavigation() {
     SplashScreen.hide();
 
     getData(LOGIN_TOKEN).then((value) => {
-      if (value) setisSignedIn(true);
+      if (value) {
+        setisSignedIn(true);
+      }
     });
 
     getData(ONBOARDING_STATE).then((value) => {
-      if (value === ONBOARDING_COMPLETE) setisOnboardingComplete(true);
+      if (value === ONBOARDING_COMPLETE) {
+        setisOnboardingComplete(true);
+      }
     });
   }, []);
 

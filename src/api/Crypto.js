@@ -1,5 +1,6 @@
 import crypto from "crypto";
 import { CTIME, VERSION, SECRET_KEY } from "./ZingMp3API";
+import { Buffer } from "buffer";
 
 const getHash256 = (str) => {
   return crypto.createHash("sha256").update(str).digest("hex");

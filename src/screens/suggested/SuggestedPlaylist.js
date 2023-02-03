@@ -3,9 +3,8 @@ import { FlatList } from "react-native-gesture-handler";
 import { COLORS } from "constants/theme";
 import PlaylistRow from "./PlaylistRow";
 import { useNavigation } from "@react-navigation/native";
-import { getDetailPlaylist } from "api/PlaylistAPI";
 
-export default SuggestedPlaylist = ({ playlists }) => {
+export default function SuggestedPlaylist({ playlists }) {
   const navigation = useNavigation();
 
   const renderItem = ({ item, index }) => {
@@ -26,7 +25,7 @@ export default SuggestedPlaylist = ({ playlists }) => {
         image={{ uri: item.image }}
         des={item.des}
         id={item.id}
-      ></PlaylistRow>
+      />
     );
   };
 
@@ -38,10 +37,10 @@ export default SuggestedPlaylist = ({ playlists }) => {
         renderItem={renderItem}
         horizontal={true}
         keyExtractor={(item) => item.id}
-      ></FlatList>
+      />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

@@ -6,7 +6,7 @@ import { durationFormat } from "helper";
 import { useState } from "react";
 import TrackPlayer, { useProgress } from "react-native-track-player";
 
-export default SliderSection = () => {
+export default function SliderSection() {
   const activeSong = useSelector((state) => state.player.activeSong);
   const [sliderValue, setsliderValue] = useState(0);
   const progress = useProgress();
@@ -42,7 +42,7 @@ export default SliderSection = () => {
       </View>
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   slider: {

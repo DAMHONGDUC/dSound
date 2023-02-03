@@ -7,7 +7,6 @@ import {
   FlatList,
   TextInput,
   Keyboard,
-  Alert,
 } from "react-native";
 import SongRow from "screens/song/SongRow";
 import Loading from "components/Loading";
@@ -15,7 +14,7 @@ import PlayerController from "helper/PlayerController";
 import { useSelector } from "react-redux";
 import { searchSongByName } from "api/SongAPI";
 import AntDesign from "react-native-vector-icons/AntDesign";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function SongsRoute({ navigation }) {
   const [dataSearch, setdataSearch] = useState([]);
@@ -61,7 +60,7 @@ export default function SongsRoute({ navigation }) {
         artist={item.artist}
         duration={item.duration}
         id={item.id}
-      ></SongRow>
+      />
     );
   };
 

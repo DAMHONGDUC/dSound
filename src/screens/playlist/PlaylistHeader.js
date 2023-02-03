@@ -6,15 +6,13 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setPlaylistPlayButtonClicked } from "redux/slices/playerSlide";
 
-export default PlaylistHeader = ({
+export default function PlaylistHeader({
   playlist,
   navigation,
   dataPlaylist,
   fromArtistPage,
-}) => {
-  const { currIndex, currPlaylist, shuffleMode } = useSelector(
-    (state) => state.player
-  );
+}) {
+  const { currPlaylist, shuffleMode } = useSelector((state) => state.player);
   const dispatch = useDispatch();
 
   const handleBackButton = () => {
@@ -76,7 +74,7 @@ export default PlaylistHeader = ({
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

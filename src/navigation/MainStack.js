@@ -1,7 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BottomTabStack from "./BottomTabStack";
 import PlayMusicPage from "screens/playmusic/PlayMusicPage";
-import { useSelector } from "react-redux";
 
 const Stack = createNativeStackNavigator();
 

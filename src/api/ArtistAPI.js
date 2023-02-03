@@ -1,4 +1,4 @@
-import { hashParamNoId, hashParam, hashListMV } from "./Crypto";
+import { hashListMV } from "./Crypto";
 import { requestZingMp3 } from "./ZingMp3API";
 import { getTop100PlayList } from "./SongAPI";
 import { reducePropertySong } from "./SongAPI";
@@ -25,15 +25,19 @@ export const getArtist = async () => {
           data.items.forEach((item) => {
             if (item.artists) {
               item.artists.forEach((currArtist) => {
-                let found = artist.some((e) => e.id == currArtist.id);
-                if (!found) artist.push(currArtist);
+                let found = artist.some((e) => e.id === currArtist.id);
+                if (!found) {
+                  artist.push(currArtist);
+                }
               });
             }
           });
         }
       });
 
-      if (artist.length > 0) return reduceProperty(artist);
+      if (artist.length > 0) {
+        return reduceProperty(artist);
+      }
     }
   } catch (err) {}
 };

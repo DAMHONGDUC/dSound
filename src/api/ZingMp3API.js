@@ -39,6 +39,8 @@ export const requestZingMp3 = async (path, qs) => {
       },
     });
 
-    if (res) return res;
+    if (res) {
+      return res;
+    }
   } catch (err) {}
 };

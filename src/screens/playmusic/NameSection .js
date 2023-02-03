@@ -2,7 +2,7 @@ import { Text, StyleSheet } from "react-native";
 import { COLORS } from "constants/theme";
 import { useSelector } from "react-redux";
 
-export default NameSection = () => {
+export default function NameSection() {
   const activeSong = useSelector((state) => state.player.activeSong);
 
   return (
@@ -15,7 +15,7 @@ export default NameSection = () => {
       </Text>
     </>
   );
-};
+}
 
 const styles = StyleSheet.create({
   name: {

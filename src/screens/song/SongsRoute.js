@@ -1,22 +1,9 @@
 import { COLORS } from "constants/theme";
-import {
-  StyleSheet,
-  View,
-  Text,
-  ActivityIndicator,
-  FlatList,
-} from "react-native";
+import { StyleSheet, View, Text, FlatList } from "react-native";
 import SeparateLine from "components/SeparateLine";
 import SongRow from "screens/song/SongRow";
-import { get100Song, getSongById } from "api/SongAPI";
+import { get100Song } from "api/SongAPI";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import {
-  setCurrPlaylist,
-  setCurrIndex,
-  setActiveSong,
-} from "redux/slices/playerSlide";
-import TrackPlayer from "react-native-track-player";
 import Loading from "components/Loading";
 import PlayerController from "helper/PlayerController";
 import { useSelector } from "react-redux";
@@ -52,7 +39,7 @@ export default function SongsRoute({ navigation }) {
         artist={item.artist}
         duration={item.duration}
         id={item.id}
-      ></SongRow>
+      />
     );
   };
 
@@ -63,7 +50,7 @@ export default function SongsRoute({ navigation }) {
           <Text style={styles.mainText}>
             Top {data100Song.songs.length} song
           </Text>
-          <SeparateLine></SeparateLine>
+          <SeparateLine />
           <FlatList
             data={data100Song.songs}
             renderItem={renderItem}

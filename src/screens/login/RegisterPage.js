@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { View, Text, StyleSheet, StatusBar } from "react-native";
 import { COLORS, SIZES } from "constants/theme";
 import {
@@ -24,12 +24,12 @@ export default function RegisterPage({ navigation }) {
           buttonText="Register with Facebook"
           buttonViewStyle={styles.btnFBtyle}
           onPress={() => handleFacebookLogin(handleAfterSignIn)}
-        ></FacebookSocialButton>
+        />
         <GoogleSocialButton
           buttonText="Register with Google"
           buttonViewStyle={styles.btnGGtyle}
           onPress={() => handleGoogleLogin(handleAfterSignIn)}
-        ></GoogleSocialButton>
+        />
 
         <Text style={styles.textLink}>
           I'm already a member.

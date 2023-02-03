@@ -14,14 +14,13 @@ import LinearGradient from "react-native-linear-gradient";
 import PlayerController from "helper/PlayerController";
 import { useEffect, useState } from "react";
 import { rootNavigationRef } from "navigation/RootNavigation";
-import TrackPlayer, {
+import {
   Event,
   usePlaybackState,
   useTrackPlayerEvents,
   useProgress,
   State,
 } from "react-native-track-player";
-import cloneDeep from "lodash.clonedeep";
 import { useDispatch } from "react-redux";
 import {
   setCurrIndex,
@@ -30,7 +29,7 @@ import {
   setPlaylistPlayButtonClicked,
 } from "redux/slices/playerSlide";
 
-export default BottomPlayer = () => {
+export default function BottomPlayer() {
   const {
     activeSong,
     showBottomPlay,
@@ -185,7 +184,7 @@ export default BottomPlayer = () => {
       </View>
     )
   );
-};
+}
 
 const styles = StyleSheet.create({
   constainer: {

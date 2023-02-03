@@ -18,7 +18,9 @@ export const getData = async (storeKey) => {
 };
 
 export const durationFormat = (duration) => {
-  if (!duration) return "00:00";
+  if (!duration) {
+    return "00:00";
+  }
 
   let min = Math.floor(duration / 60);
   let sec = Math.floor(duration % 60);

@@ -6,12 +6,11 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import PlayerController from "helper/PlayerController";
 import { useRoute } from "@react-navigation/native";
-import { RepeatMode, State, usePlaybackState } from "react-native-track-player";
+import { State, usePlaybackState } from "react-native-track-player";
 import Feather from "react-native-vector-icons/Feather";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import TrackPlayer from "react-native-track-player";
 
-export default PlaySection = () => {
+export default function PlaySection() {
   const { currIndex, currPlaylist, activeSong, repeatMode, shuffleMode } =
     useSelector((state) => state.player);
   const route = useRoute();
@@ -81,7 +80,7 @@ export default PlaySection = () => {
       </TouchableOpacity>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   playSection: {
