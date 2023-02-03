@@ -11,42 +11,50 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Install Java
-        uses: actions/setup-java@v2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          java-version: "11"
-          distribution: "adopt"
-          cache: "gradle"
+          node-version: "17"
+          cache: "yarn"
+      - run: corepack enable
+      - run: yarn install
+      - run: yarn lint
+        # - name: Checkout repository
+        #   uses: actions/checkout@v2
 
-      - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
+        # - name: Install Java
+        #   uses: actions/setup-java@v2
+        #   with:
+        #     java-version: "11"
+        #     distribution: "adopt"
+        #     cache: "gradle"
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: "19.0.1"
+        # - name: Validate Gradle wrapper
+        #   uses: gradle/wrapper-validation-action@v1
 
-      - name: which yarn
-        run: which yarn
+        # - name: Setup Node
+        #   uses: actions/setup-node@v3
+        #   with:
+        #     node-version: "19.0.1"
 
-      - name: Run Yarn Install
-        run: |
-          cd ./packages/dSound/
-          npm i -g corepack
-          yarn install
+        # - name: which yarn
+        #   run: which yarn
 
-      - name: Build application
-        run: |
-          cd ./packages/dSound/android
-          ./gradlew assembleRelease
+        # - name: Run Yarn Install
+        #   run: |
+        #     cd ./packages/dSound/
+        #     npm i -g corepack
+        #     yarn install
 
-      - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{secrets.FIREBASE_APP_ID}}
-          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
-          groups: testers
-          file: app/build/outputs/apk/release/app-release.apk
+        # - name: Build application
+        #   run: |
+        #     cd ./packages/dSound/android
+        #     ./gradlew assembleRelease
+
+        # - name: upload artifact to Firebase App Distribution
+        #   uses: wzieba/Firebase-Distribution-Github-Action@v1
+        #   with:
+        #     appId: ${{secrets.FIREBASE_APP_ID}}
+        #     serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+        #     groups: testers
+        #     file: app/build/outputs/apk/release/app-release.apk
