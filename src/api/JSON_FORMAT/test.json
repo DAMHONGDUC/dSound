@@ -1,74 +1,36 @@
-update track url  2 [
-    {
-        "artist": "GREY D, B Ray",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/1/e/e/a1ee960090f33b70f1c3092a4b600180.jpg",
-        "duration": 230,
-        "id": "Z6ZEWO8I",
-        "title": "tỉnh thức sau giấc ngủ đông (storm version)",
-        "url": "https://mp3-s1-zmp3.zmdcdn.me/a2e0c0c0888061de3891/1304870407040904491?authen=exp=1675526412~acl=/a2e0c0c0888061de3891/*~hmac=311f0c1f71a9a11116e7ad39d0c160bf&fs=MTY3NTM1MzYxMjI0OXx3ZWJWNnwwfDExNi4xMDkdUngNTUdUngMjUx"
+{
+    "_data": {
+        "songs": [
+            ""
+        ],
+        "title": "Bai hat yeu thich"
     },
-    {
-        "artist": "Hứa Kim Tuyền, GREY D",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/1/3/a/d/13ad8a3ef97a5dc21801f78d3d7e18c1.jpg",
-        "duration": 261,
-        "id": "Z6UBB9ZI",
-        "title": "anh sẽ đến cùng cơn mưa",
-        "url": "https://mp3-s1-zmp3.zmdcdn.me/3ca8aa8ef2ce1b9042df/3964143999251761811?authen=exp=1675526423~acl=/3ca8aa8ef2ce1b9042df/*~hmac=6e1a58f8b5df30bcf8f1d352709caf73&fs=MTY3NTM1MzYyMzg0MXx3ZWJWNnwwfDExNi4xMDkdUngNTUdUngMjUx"
+    "_exists": true,
+    "_metadata": {
+        "_metadata": [
+            false,
+            false
+        ]
     },
-    {
-        "artist": "GREY D, Phúc Du",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/2/c/2/a2c29ff21b3188c1e7051efc783b4068.jpg",
-        "duration": 281,
-        "id": "Z6ZEWO9D",
-        "title": "dự báo thời tiết hôm nay mưa (storm version)"
-    },
-    {
-        "artist": "Kai Đinh, MIN, GREY D",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/a/a/8/aaa8da7569916334eb4c73c153b17ad1.jpg",
-        "duration": 265,
-        "id": "Z6UFF9Z6",
-        "title": "để tôi ôm em bằng giai điệu này"
-    },
-    {
-        "artist": "GREY D, tlinh",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/4/5/1/e/451edeb56e86f4128d78323957b610ea.jpg",
-        "duration": 226,
-        "id": "ZZDUOIA6",
-        "title": "vaicaunoicokhiennguoithaydoi"
-    },
-    {
-        "artist": "GREY D, Orange",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/d/0/f/5/d0f5790631b016b46590a388ba64043c.jpg",
-        "duration": 259,
-        "id": "ZZECU8U8",
-        "title": "lời tạm biệt chưa nói"
-    },
-    {
-        "artist": "tlinh, GREY D",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/d/0/f/5/d0f5790631b016b46590a388ba64043c.jpg",
-        "duration": 201,
-        "id": "ZZECU9ZO",
-        "title": "xích thêm chút nữa"
-    },
-    {
-        "artist": "GREY D, Orange",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/8/f/a/b8fa84127c1c180b94345d5e273bcaae.jpg",
-        "duration": 210,
-        "id": "ZZEU80UE",
-        "title": "simple love"
-    },
-    {
-        "artist": "Hoàng Dũng, GREY D",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/8/f/a/b8fa84127c1c180b94345d5e273bcaae.jpg",
-        "duration": 226,
-        "id": "ZZEU7FFU",
-        "title": "tình em là đại dương"
-    },
-    {
-        "artist": "Nhiều nghệ sĩ",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/d/0/f/5/d0f5790631b016b46590a388ba64043c.jpg",
-        "duration": 222,
-        "id": "ZZECU9AZ",
-        "title": "có hẹn với thanh xuân"
+    "_ref": {
+        "_documentPath": {
+            "_parts": [Array
+            ]
+        },
+        "_firestore": {
+            "_app": [FirebaseApp
+            ],
+            "_config": [Object
+            ],
+            "_customUrlOrRegion": undefined,
+            "_nativeModule": [Object
+            ],
+            "_referencePath": [FirestorePath
+            ],
+            "_settings": [Object
+            ],
+            "_transactionHandler": [FirestoreTransactionHandler
+            ]
+        }
     }
-]
+}

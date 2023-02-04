@@ -25,7 +25,7 @@ const FieldInfor = ({ iconName, content }) => {
   );
 };
 
-export default function LibraryPage() {
+export default function UserDetailPage() {
   const [user, setUser] = useState();
   const navigation = useNavigation();
   const { handleAfterSignOut } = useContext(AuthContext);
