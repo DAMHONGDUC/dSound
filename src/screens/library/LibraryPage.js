@@ -7,36 +7,30 @@ import LibraryPlaylistRow from "./LibraryPlaylistRow";
 import { firebase } from "@react-native-firebase/auth";
 import { getPlaylistByUid, createNewPlaylist } from "api/FirebaseAPI";
 import Dialog from "react-native-dialog";
-import firestore from "@react-native-firebase/firestore";
-import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
+import { useSelector } from "react-redux";
 
 export default function LibraryPage() {
   const notiText = "Bạn chưa có playlist nào !";
   const [dataPlaylist, setDataPlaylist] = useState();
   const [playlistName, setPlaylistName] = useState();
   const [showDialog, setShowDialog] = useState(false);
-  const [uid, setUid] = useState();
-
-  const fetchData = async () => {
-    const res = firebase.auth().currentUser;
-
-    if (res?.uid) {
-      const data = await getPlaylistByUid(res.uid);
-      setUid(res.uid);
-
-      setDataPlaylist(data);
-    }
-  };
-
-  function onError(error) {
-    console.error(error);
-  }
+  const { uid } = useSelector((state) => state.player);
+  const [refreshLibrary, setRefreshLibrary] = useState(true);
 
   useEffect(() => {
-    firestore()
-      .collection(FAVORITE_PLAYLIST_COLLECTION)
-      .onSnapshot(fetchData, onError);
-  }, []);
+    const fetchData = async () => {
+      setDataPlaylist(null);
+
+      const data = await getPlaylistByUid(uid);
+
+      setDataPlaylist(data);
+      setRefreshLibrary(false);
+    };
+
+    if (refreshLibrary && uid) {
+      fetchData();
+    }
+  }, [refreshLibrary, uid]);
 
   const renderItem = ({ item, index }) => {
     return (
@@ -50,9 +44,11 @@ export default function LibraryPage() {
 
   const createPlaylist = async () => {
     if (playlistName) {
-      createNewPlaylist(playlistName, uid);
-
       handleHideDialog();
+
+      await createNewPlaylist(playlistName, uid);
+
+      setRefreshLibrary(true);
     }
   };
 

@@ -55,14 +55,14 @@ export const addPlaylistToUserPlaylist = async (playlistID, uid) => {
 };
 
 export const createNewPlaylist = async (playlistName, uid) => {
-  let playlistID = new Date().valueOf();
+  let playlistID = new Date().valueOf() + playlistName;
 
   await firestore()
     .collection(FAVORITE_PLAYLIST_COLLECTION)
     .doc(playlistID)
     .set({
-      title: playlistName,
       songs: [],
+      title: playlistName,
     });
 
   await addPlaylistToUserPlaylist(playlistID, uid);

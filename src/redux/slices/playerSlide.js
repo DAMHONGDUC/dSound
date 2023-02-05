@@ -10,6 +10,7 @@ const initialState = {
   shuffleMode: false,
   updateNearlySong: false,
   playlistPlayButtonClicked: false,
+  uid: "",
 };
 
 export const playerSlide = createSlice({
@@ -46,6 +47,9 @@ export const playerSlide = createSlice({
     setPlaylistPlayButtonClicked: (state, action) => {
       state.playlistPlayButtonClicked = action.payload;
     },
+    setUid: (state, action) => {
+      state.uid = action.payload;
+    },
   },
 });
 
@@ -60,6 +64,7 @@ export const {
   setShuffleMode,
   setUpdateNearlySong,
   setPlaylistPlayButtonClicked,
+  setUid,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;
