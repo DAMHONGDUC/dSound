@@ -5,18 +5,32 @@ import { firebase } from "@react-native-firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUid } from "redux/slices/playerSlide";
 import { useEffect } from "react";
+import { createNewPlaylist } from "api/LibraryAPI";
+import { LOVED_SONG_PLAYLIST } from "constants/values";
 
 const Stack = createNativeStackNavigator();
 
 export default function MainStack() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  const setUpUser = async () => {
     const res = firebase.auth().currentUser;
 
     if (res?.uid) {
       dispatch(setUid(res.uid));
+
+      const playlistID = res.uid + "loved_song";
+      await createNewPlaylist(
+        playlistID,
+        "Bài hát đã thích",
+        res.uid,
+        LOVED_SONG_PLAYLIST
+      );
     }
+  };
+
+  useEffect(() => {
+    setUpUser();
   }, []);
 
   return (

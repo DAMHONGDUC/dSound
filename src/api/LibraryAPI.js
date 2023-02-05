@@ -37,6 +37,7 @@ export const getPlaylistByUid = async (uid) => {
           id: playlistID,
           title: playlist.title,
           songs: playlist.songs,
+          type: playlist.type,
         });
       }
     }
@@ -45,7 +46,29 @@ export const getPlaylistByUid = async (uid) => {
   return result;
 };
 
+const checkDocExist = (collection, docID) => {
+  return firestore()
+    .collection(collection)
+    .doc(docID)
+    .get()
+    .then((doc) => {
+      return doc.exists;
+    });
+};
+
+const createNewDoc = async (collection, docID) => {
+  await firestore().collection(collection).doc(docID).set({
+    playlistID: [],
+  });
+};
+
 export const addPlaylistToUserPlaylist = async (playlistID, uid) => {
+  const res = await checkDocExist(USER_FAVORITE_PLAYLIST_COLLECTION, uid);
+
+  if (!res) {
+    await createNewDoc(USER_FAVORITE_PLAYLIST_COLLECTION, uid);
+  }
+
   await firestore()
     .collection(USER_FAVORITE_PLAYLIST_COLLECTION)
     .doc(uid)
@@ -54,15 +77,19 @@ export const addPlaylistToUserPlaylist = async (playlistID, uid) => {
     });
 };
 
-export const createNewPlaylist = async (playlistName, uid) => {
-  let playlistID = new Date().valueOf() + playlistName;
-
+export const createNewPlaylist = async (
+  playlistID,
+  playlistName,
+  uid,
+  type
+) => {
   await firestore()
     .collection(FAVORITE_PLAYLIST_COLLECTION)
     .doc(playlistID)
     .set({
       songs: [],
       title: playlistName,
+      type: type,
     });
 
   await addPlaylistToUserPlaylist(playlistID, uid);

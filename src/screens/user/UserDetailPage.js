@@ -12,7 +12,7 @@ import Loading from "components/Loading";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
 import { AuthContext } from "constants/values";
-import { setShowBottomPlay } from "redux/slices/playerSlide";
+import { setShowBottomPlay, setRefreshLibrary } from "redux/slices/playerSlide";
 import { useDispatch } from "react-redux";
 import TrackPlayer from "react-native-track-player";
 
@@ -39,14 +39,10 @@ export default function UserDetailPage() {
     }
   }, []);
 
-  // useEffect(() => {
-  //   throw new Error("We crashed again!!!!!");
-  //   // crashlytics().crash();
-  // }, []);
-
   const onLogout = async () => {
     await TrackPlayer.pause();
     dispatch(setShowBottomPlay(false));
+    dispatch(setRefreshLibrary(true));
 
     await firebase.auth().signOut();
     await handleAfterSignOut();

@@ -4,10 +4,13 @@ import Loading from "components/Loading";
 import { useEffect, useState } from "react";
 import LibraryHeader from "./LibraryHeader";
 import LibraryPlaylistRow from "./LibraryPlaylistRow";
-import { firebase } from "@react-native-firebase/auth";
-import { getPlaylistByUid, createNewPlaylist } from "api/FirebaseAPI";
+import { getPlaylistByUid, createNewPlaylist } from "api/LibraryAPI";
 import Dialog from "react-native-dialog";
 import { useSelector } from "react-redux";
+import { USER_CUSTOM_PLAYLIST, LOVED_SONG_PLAYLIST } from "constants/values";
+import { useDispatch } from "react-redux";
+import { setRefreshLibrary } from "redux/slices/playerSlide";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 
 export default function LibraryPage() {
   const notiText = "Bạn chưa có playlist nào !";
@@ -15,18 +18,28 @@ export default function LibraryPage() {
   const [playlistName, setPlaylistName] = useState();
   const [showDialog, setShowDialog] = useState(false);
   const { uid } = useSelector((state) => state.player);
-  const [refreshLibrary, setRefreshLibrary] = useState(true);
+  const { refreshLibrary } = useSelector((state) => state.player);
+  const dispatch = useDispatch();
+  // const navigation = useNavigation();
+
+  // useEffect(() => {
+  //   const unsubscribe = navigation.addListener("focus", () => {
+  //     dispatch(setRefreshLibrary(true));
+  //   });
+
+  //   return unsubscribe;
+  // }, [navigation]);
+
+  const fetchData = async () => {
+    setDataPlaylist(null);
+
+    const data = await getPlaylistByUid(uid);
+
+    setDataPlaylist(data);
+    dispatch(setRefreshLibrary(false));
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      setDataPlaylist(null);
-
-      const data = await getPlaylistByUid(uid);
-
-      setDataPlaylist(data);
-      setRefreshLibrary(false);
-    };
-
     if (refreshLibrary && uid) {
       fetchData();
     }
@@ -35,7 +48,11 @@ export default function LibraryPage() {
   const renderItem = ({ item, index }) => {
     return (
       <LibraryPlaylistRow
-        image={require("assets/default-loading-image.png")}
+        image={
+          item.type === LOVED_SONG_PLAYLIST
+            ? require("assets/loved_song_playlist.png")
+            : require("assets/default_playlist.png")
+        }
         title={item.title}
         numOfSong={item.songs.length}
       />
@@ -46,9 +63,15 @@ export default function LibraryPage() {
     if (playlistName) {
       handleHideDialog();
 
-      await createNewPlaylist(playlistName, uid);
+      const playlistID = new Date().valueOf() + playlistName;
+      await createNewPlaylist(
+        playlistID,
+        playlistName,
+        uid,
+        USER_CUSTOM_PLAYLIST
+      );
 
-      setRefreshLibrary(true);
+      dispatch(setRefreshLibrary(true));
     }
   };
 

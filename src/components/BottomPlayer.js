@@ -52,13 +52,22 @@ export default function BottomPlayer() {
       let index = event.nextTrack;
       dispatch(setUpdateNearlySong(true));
 
-      if (index !== 0) {
-        dispatch(setCurrIndex(index));
-        dispatch(setActiveSong(currPlaylist.songs[index]));
-      } else if (playlistPlayButtonClicked) {
+      // if (index === 0) {
+      //   dispatch(setCurrIndex(index));
+      //   dispatch(setActiveSong(currPlaylist.songs[index]));
+      // } else if (playlistPlayButtonClicked) {
+      //   dispatch(setCurrIndex(0));
+      //   dispatch(setActiveSong(currPlaylist.songs[0]));
+      //   dispatch(setPlaylistPlayButtonClicked(false));
+      // }
+
+      if (playlistPlayButtonClicked) {
         dispatch(setCurrIndex(0));
         dispatch(setActiveSong(currPlaylist.songs[0]));
         dispatch(setPlaylistPlayButtonClicked(false));
+      } else {
+        dispatch(setCurrIndex(index));
+        dispatch(setActiveSong(currPlaylist.songs[index]));
       }
     }
   });
