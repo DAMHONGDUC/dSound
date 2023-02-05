@@ -5,23 +5,37 @@ import { useEffect, useState } from "react";
 import LibraryHeader from "./LibraryHeader";
 import LibraryPlaylistRow from "./LibraryPlaylistRow";
 import { firebase } from "@react-native-firebase/auth";
-import { getPlaylistByUid } from "api/FirebaseAPI";
+import { getPlaylistByUid, createNewPlaylist } from "api/FirebaseAPI";
+import Dialog from "react-native-dialog";
+import firestore from "@react-native-firebase/firestore";
+import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
 
 export default function LibraryPage() {
   const notiText = "Bạn chưa có playlist nào !";
   const [dataPlaylist, setDataPlaylist] = useState();
+  const [playlistName, setPlaylistName] = useState();
+  const [showDialog, setShowDialog] = useState(false);
+  const [uid, setUid] = useState();
+
+  const fetchData = async () => {
+    const res = firebase.auth().currentUser;
+
+    if (res?.uid) {
+      const data = await getPlaylistByUid(res.uid);
+      setUid(res.uid);
+
+      setDataPlaylist(data);
+    }
+  };
+
+  function onError(error) {
+    console.error(error);
+  }
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = firebase.auth().currentUser;
-
-      if (res?.uid) {
-        const data = await getPlaylistByUid(res.uid);
-
-        setDataPlaylist(data);
-      }
-    };
-    fetchData();
+    firestore()
+      .collection(FAVORITE_PLAYLIST_COLLECTION)
+      .onSnapshot(fetchData, onError);
   }, []);
 
   const renderItem = ({ item, index }) => {
@@ -34,9 +48,32 @@ export default function LibraryPage() {
     );
   };
 
+  const createPlaylist = async () => {
+    if (playlistName) {
+      createNewPlaylist(playlistName, uid);
+
+      handleHideDialog();
+    }
+  };
+
+  const handleShowDialog = () => {
+    setShowDialog(true);
+  };
+
+  const handleHideDialog = () => {
+    setShowDialog(false);
+    setPlaylistName("");
+  };
+
   return (
     <View style={styles.container}>
-      <LibraryHeader />
+      <Dialog.Container visible={showDialog}>
+        <Dialog.Title>Nhập tên playlist</Dialog.Title>
+        <Dialog.Input onChangeText={(text) => setPlaylistName(text)} />
+        <Dialog.Button label="Cancel" onPress={handleHideDialog} />
+        <Dialog.Button label="Create" onPress={createPlaylist} />
+      </Dialog.Container>
+      <LibraryHeader onClickCreate={handleShowDialog} />
       {dataPlaylist ? (
         <FlatList
           data={dataPlaylist}

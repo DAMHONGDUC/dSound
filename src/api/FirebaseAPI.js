@@ -3,6 +3,7 @@ import {
   USER_FAVORITE_PLAYLIST_COLLECTION,
   FAVORITE_PLAYLIST_COLLECTION,
 } from "constants/values";
+import { firebase } from "@react-native-firebase/auth";
 
 const getCollectionByDocId = async (collection, docId) => {
   const res = await firestore().collection(collection).doc(docId).get();
@@ -13,14 +14,16 @@ const getCollectionByDocId = async (collection, docId) => {
 };
 
 export const getPlaylistByUid = async (uid) => {
+  const result = [];
+
   const res = await getCollectionByDocId(
     USER_FAVORITE_PLAYLIST_COLLECTION,
     uid
   );
-  const playlistIDArray = res.playlistID;
-  const result = [];
 
-  if (playlistIDArray) {
+  if (res?.playlistID) {
+    const playlistIDArray = res.playlistID;
+
     for (const playlistID of playlistIDArray) {
       const data = await firestore()
         .collection(FAVORITE_PLAYLIST_COLLECTION)
@@ -40,4 +43,27 @@ export const getPlaylistByUid = async (uid) => {
   }
 
   return result;
+};
+
+export const addPlaylistToUserPlaylist = async (playlistID, uid) => {
+  await firestore()
+    .collection(USER_FAVORITE_PLAYLIST_COLLECTION)
+    .doc(uid)
+    .update({
+      playlistID: firebase.firestore.FieldValue.arrayUnion(playlistID),
+    });
+};
+
+export const createNewPlaylist = async (playlistName, uid) => {
+  let playlistID = new Date().valueOf();
+
+  await firestore()
+    .collection(FAVORITE_PLAYLIST_COLLECTION)
+    .doc(playlistID)
+    .set({
+      title: playlistName,
+      songs: [],
+    });
+
+  await addPlaylistToUserPlaylist(playlistID, uid);
 };
