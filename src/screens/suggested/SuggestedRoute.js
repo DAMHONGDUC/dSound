@@ -8,7 +8,8 @@ import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
 import PlayerController from "helper/PlayerController";
 import { useSelector, useDispatch } from "react-redux";
-import { getCurrLovedSong } from "api/LibraryAPI";
+import { getAllSongByDocId } from "api/LibraryAPI";
+
 import { setCurrLovedSong } from "redux/slices/playerSlide";
 
 export default function SuggestedRoute() {
@@ -22,7 +23,7 @@ export default function SuggestedRoute() {
 
   useEffect(() => {
     const handleGetCurrLovedSong = async () => {
-      const currLovedSong = await getCurrLovedSong(lovedSongId);
+      const currLovedSong = await getAllSongByDocId(lovedSongId);
 
       dispatch(setCurrLovedSong(currLovedSong.songs));
     };

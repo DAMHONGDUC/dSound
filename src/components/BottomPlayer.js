@@ -28,8 +28,13 @@ import {
   setUpdateNearlySong,
   setPlaylistPlayButtonClicked,
   setCurrLovedSong,
+  setRefreshLibrary,
 } from "redux/slices/playerSlide";
-import { addLovedSong, checkSongExist, unLovedSong } from "api/LibraryAPI";
+import {
+  addSongWithDocId,
+  checkSongExist,
+  removeASongWithDocId,
+} from "api/LibraryAPI";
 import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
 import { check } from "prettier";
 import cloneDeep from "lodash.clonedeep";
@@ -58,15 +63,6 @@ export default function BottomPlayer() {
     if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
       let index = event.nextTrack;
       dispatch(setUpdateNearlySong(true));
-
-      // if (index === 0) {
-      //   dispatch(setCurrIndex(index));
-      //   dispatch(setActiveSong(currPlaylist.songs[index]));
-      // } else if (playlistPlayButtonClicked) {
-      //   dispatch(setCurrIndex(0));
-      //   dispatch(setActiveSong(currPlaylist.songs[0]));
-      //   dispatch(setPlaylistPlayButtonClicked(false));
-      // }
 
       if (playlistPlayButtonClicked) {
         dispatch(setCurrIndex(0));
@@ -149,7 +145,7 @@ export default function BottomPlayer() {
     );
 
     if (checkLovedSong) {
-      const newLovedSong = await unLovedSong(
+      const newLovedSong = await removeASongWithDocId(
         activeSong.id,
         lovedSongId,
         currLovedSong
@@ -158,13 +154,15 @@ export default function BottomPlayer() {
       dispatch(setCurrLovedSong(newLovedSong));
       // console.log("unLovedSong", newLovedSong);
     } else {
-      await addLovedSong(activeSong, lovedSongId);
+      await addSongWithDocId(activeSong, lovedSongId);
 
       let newLovedSong = cloneDeep(currLovedSong);
       newLovedSong.push(activeSong);
       dispatch(setCurrLovedSong(newLovedSong));
       // console.log("addLovedSong", newLovedSong);
     }
+
+    dispatch(setRefreshLibrary(true));
   };
   const getLovedStatus = (songid) => {
     if (currLovedSong) {

@@ -1,5 +1,7 @@
 import { COLORS } from "constants/theme";
+import { ARTIST_FLOW, LIBRARY_FLOW, NORMAL_FLOW } from "constants/values";
 import PlayerController from "helper/PlayerController";
+import { useEffect, useState } from "react";
 import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector } from "react-redux";
@@ -10,10 +12,25 @@ export default function PlaylistHeader({
   playlist,
   navigation,
   dataPlaylist,
-  fromArtistPage,
+  flow,
 }) {
   const { currPlaylist, shuffleMode } = useSelector((state) => state.player);
   const dispatch = useDispatch();
+  const [subTitle, setSubTitle] = useState();
+
+  useEffect(() => {
+    switch (flow) {
+      case NORMAL_FLOW:
+        setSubTitle(playlist.like + " Likes");
+        break;
+      case ARTIST_FLOW:
+        setSubTitle(playlist.totalFollow + " Follow");
+        break;
+      case LIBRARY_FLOW:
+        setSubTitle(playlist.numOfSong + " Bài hát");
+        break;
+    }
+  }, []);
 
   const handleBackButton = () => {
     navigation.pop();
@@ -24,20 +41,27 @@ export default function PlaylistHeader({
   };
 
   const handlePlayPlaylist = () => {
-    dispatch(setPlaylistPlayButtonClicked(true));
+    if (dataPlaylist.songs[0]) {
+      dispatch(setPlaylistPlayButtonClicked(true));
 
-    PlayerController.onSongRowClick([
-      currPlaylist,
-      dataPlaylist,
-      0,
-      dataPlaylist.songs[0].id,
-      navigation,
-    ]);
+      PlayerController.onSongRowClick([
+        currPlaylist,
+        dataPlaylist,
+        0,
+        dataPlaylist.songs[0].id,
+        navigation,
+      ]);
+    }
   };
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: playlist.image }} style={styles.image} />
+      <Image
+        source={
+          flow === LIBRARY_FLOW ? playlist.image : { uri: playlist.image }
+        }
+        style={styles.image}
+      />
       <View style={styles.backButton}>
         <TouchableOpacity onPress={handleBackButton}>
           <Ionicons name="arrow-back" color={COLORS.black} size={25} />
@@ -49,11 +73,7 @@ export default function PlaylistHeader({
         <Text numberOfLines={2} style={styles.description}>
           {playlist.description}
         </Text>
-        <Text style={styles.likes}>
-          {fromArtistPage
-            ? playlist.totalFollow + " Follow"
-            : playlist.like + " Likes"}
-        </Text>
+        <Text style={styles.subTitle}>{subTitle}</Text>
       </View>
       <View style={styles.buttonContainer}>
         <TouchableOpacity onPress={handlePlayPlaylist}>
@@ -111,7 +131,7 @@ const styles = StyleSheet.create({
     color: COLORS.title,
     fontSize: 14,
   },
-  likes: {
+  subTitle: {
     color: COLORS.title,
     fontSize: 15,
     marginTop: 5,

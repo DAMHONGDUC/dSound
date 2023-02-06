@@ -55,6 +55,7 @@ export default function LibraryPage() {
         }
         title={item.title}
         numOfSong={item.songs.length}
+        id={item.id}
       />
     );
   };

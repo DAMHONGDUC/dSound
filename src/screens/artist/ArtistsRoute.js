@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { getArtist } from "api/ArtistAPI";
 import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
+import { ARTIST_FLOW } from "constants/values";
 
 export default function ArtistsRoute() {
   const [dataArtist, setdataArtist] = useState();
@@ -26,8 +27,8 @@ export default function ArtistsRoute() {
         onClick={() => {
           navigation.navigate("PlaylistPage", {
             id: item.id,
-            fromArtistPage: {
-              isArtist: true,
+            type: ARTIST_FLOW,
+            props: {
               image: item.thumbnailM,
               title: item.name,
               totalFollow: item.totalFollow,

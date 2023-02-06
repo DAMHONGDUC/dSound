@@ -1,10 +1,154 @@
-[
-    {
-        "artist": "Harry Styles",
-        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/5/5/c/355c9290d8b91bcf9f843b792fa05e8f.jpg",
-        "duration": 167,
-        "id": "ZZ9AUFD7",
-        "title": "As It Was",
-        "url": "https://mp3-s1-zmp3.zmdcdn.me/397dfae855a9bcf7e5b8/3316510322627274731?authen=exp=1675826915~acl=/397dfae855a9bcf7e5b8/*~hmac=36e8f77ce1a4d9d897112aae312e2da4&fs=MTY3NTY1NDExNTIyNHx3ZWJWNnwwfDE0LjE4Ny44NS4xMjmUsIC"
-    }
-]
+{
+    "description": "Pop US-UK tràn đầy năng lượng cho thứ Hai đầu tuần",
+    "duration": 7366,
+    "id": "67WZF8DC",
+    "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/4/9/c/049c4d6ac8897764a93d52ac7cef4768.jpg",
+    "like": 2850,
+    "songs": [
+        {
+            "artist": "Harry Styles",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/5/5/c/355c9290d8b91bcf9f843b792fa05e8f.jpg",
+            "duration": 167,
+            "id": "ZZ9AUFD7",
+            "title": "As It Was",
+            "url": "https://mp3-s1-zmp3.zmdcdn.me/397dfae855a9bcf7e5b8/3316510322627274731?authen=exp=1675833803~acl=/397dfae855a9bcf7e5b8/*~hmac=6b031a69701b620e49aa412b4516b59e&fs=MTY3NTY2MTAwMzIzMHx3ZWJWNnwwfDE3MS4yNTMdUngMTQyLjU0"
+        },
+        {
+            "artist": "Adele",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/c/3/b/f/c3bf4a31317405632d0578a93d6968c6.jpg",
+            "duration": 225,
+            "id": "ZUCIZ7BE",
+            "title": "Oh My God",
+            "url": null
+        },
+        {
+            "artist": "Beyoncé",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/7/2/b/b72bb243dccad052d51c85882515bcd2.jpg",
+            "duration": 278,
+            "id": "ZZD89IBW",
+            "title": "BREAK MY SOUL",
+            "url": null
+        },
+        {
+            "artist": "Walk Off The Earth",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/8/9/c/d/89cd3f98c3734d2c1c7ebc8913d16c70.jpg",
+            "duration": 160,
+            "id": "Z6U9BBIZ",
+            "title": "My Stupid Heart",
+            "url": null
+        },
+        {
+            "artist": "Meghan Trainor",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/1/3/2/9/1329ae5256661f08192b3e12b9b09f4c.jpg",
+            "duration": 133,
+            "id": "Z6W6IC9W",
+            "title": "Made You Look",
+            "url": null
+        },
+        {
+            "artist": "Tate McRae",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/7/a/f/37afa3a96f6e768fb388aeb9da3b724f.jpg",
+            "duration": 207,
+            "id": "ZZOZ60BC",
+            "title": "she's all i wanna be",
+            "url": null
+        },
+        {
+            "artist": "Nicky Youre, Dazy",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/c/1/1/6c1154b5524842169abc5918ba2f22d1.jpg",
+            "duration": 163,
+            "id": "ZZADWAUD",
+            "title": "Sunroof",
+            "url": null
+        },
+        {
+            "artist": "Mimi Webb",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/d/3/b/ad3b72d49755aea796197adec33e840c.jpg",
+            "duration": 142,
+            "id": "Z6Z9UAOC",
+            "title": "Red Flags",
+            "url": null
+        },
+        {
+            "artist": "JVKE",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/2/9/0/4/29047f90188d1ff2a3ab939c3b6cb4a7.jpg",
+            "duration": 178,
+            "id": "Z60AEIIC",
+            "title": "i can't help it",
+            "url": null
+        },
+        {
+            "artist": "Marshmello, Khalid",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/f/a/7/3fa71b3ae05f0b6f04637f87e363fb5a.jpg",
+            "duration": 156,
+            "id": "ZZC67I8A",
+            "title": "Numb",
+            "url": null
+        },
+        {
+            "artist": "The Kid LAROI, Justin Bieber",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/f/2/e/8/f2e804d3613c31ab50fada04a72c915c.jpg",
+            "duration": 142,
+            "id": "ZUWIB0AW",
+            "title": "STAY",
+            "url": null
+        },
+        {
+            "artist": "Camila Cabello, Ed Sheeran",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/9/0/8/69086d59f366e807684048c7844c3b70.jpg",
+            "duration": 206,
+            "id": "ZZ6WIAFI",
+            "title": "Bam Bam",
+            "url": null
+        },
+        {
+            "artist": "Nhiều nghệ sĩ",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/2/1/9/f/219f51345e681f23973b116bc13a53ce.jpg",
+            "duration": 193,
+            "id": "ZWFAZOZB",
+            "title": "Mood (Remix)",
+            "url": null
+        },
+        {
+            "artist": "Khalid",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/f/5/6/2/f5622e303607c5f3665517b5242dfed8.jpg",
+            "duration": 183,
+            "id": "ZZADIUA0",
+            "title": "Skyline",
+            "url": null
+        },
+        {
+            "artist": "Rina Sawayama",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/9/2/b/b92bcddf0dc67ff686dc65d6b2425c44.jpg",
+            "duration": 236,
+            "id": "Z60E8BCF",
+            "title": "This Hell",
+            "url": null
+        },
+        {
+            "artist": "Nea",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/0/2/7/c/027ccbfc120d52bee78a70facef61d98.jpg",
+            "duration": 177,
+            "id": "ZWAE8OBO",
+            "title": "Some Say",
+            "url": null
+        },
+        {
+            "artist": "Latto, Mariah Carey, DJ Khaled",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/1/e/2/b1e2c7347f58f0a45c3190f6b38c5677.jpg",
+            "duration": 182,
+            "id": "ZZ9UFE8I",
+            "title": "Big Energy (Remix)",
+            "url": null
+        },
+        {
+            "artist": "Anne-Marie, Little Mix",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/8/a/7/7/8a77d1fe7ccb34b958f14ffc45280e33.jpg",
+            "duration": 176,
+            "id": "ZUBOFZ9F",
+            "title": "Kiss My (Uh Oh)",
+            "url": null
+        }
+    ],
+    "title": "Nhạc Cho Thứ Hai"
+}

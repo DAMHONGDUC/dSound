@@ -15,3 +15,9 @@ export const FAVORITE_PLAYLIST_COLLECTION = "favorite_playlist";
 export const LOVED_SONG_PLAYLIST = 0;
 
 export const USER_CUSTOM_PLAYLIST = 1;
+
+export const NORMAL_FLOW = 0;
+
+export const ARTIST_FLOW = 1;
+
+export const LIBRARY_FLOW = 2;

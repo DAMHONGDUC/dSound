@@ -52,14 +52,14 @@ const checkDocExist = async (collection, docID) => {
   return doc._exists;
 };
 
-export const unLovedSong = async (songid, docid, currLovedSong) => {
-  const newLovedSong = currLovedSong.filter((e) => e.id !== songid);
+export const removeASongWithDocId = async (songid, docid, cussSongs) => {
+  const newSongs = cussSongs.filter((e) => e.id !== songid);
 
   await firestore().collection(FAVORITE_PLAYLIST_COLLECTION).doc(docid).update({
-    songs: newLovedSong,
+    songs: newSongs,
   });
 
-  return newLovedSong;
+  return newSongs;
 };
 
 export const checkSongExist = async (collection, docid, songid) => {
@@ -119,7 +119,7 @@ export const createNewPlaylist = async (
   await addPlaylistToUserPlaylist(playlistID, uid);
 };
 
-export const addLovedSong = async (song, docid) => {
+export const addSongWithDocId = async (song, docid) => {
   await firestore()
     .collection(FAVORITE_PLAYLIST_COLLECTION)
     .doc(docid)
@@ -128,7 +128,7 @@ export const addLovedSong = async (song, docid) => {
     });
 };
 
-export const getCurrLovedSong = async (docid) => {
+export const getAllSongByDocId = async (docid) => {
   const res = await firestore()
     .collection(FAVORITE_PLAYLIST_COLLECTION)
     .doc(docid)

@@ -1,6 +1,6 @@
 import { COLORS } from "constants/theme";
 import { useEffect, useState } from "react";
-import { StyleSheet, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList, Text } from "react-native";
 import PlaylistHeader from "./PlaylistHeader";
 import { getDetailPlaylist } from "api/PlaylistAPI";
 import { useSelector } from "react-redux";
@@ -9,13 +9,14 @@ import SongRow from "screens/song/SongRow";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { getListArtistSong } from "api/ArtistAPI";
+import { ARTIST_FLOW, LIBRARY_FLOW, NORMAL_FLOW } from "constants/values";
 
 export default function PlaylistPage() {
   const { currPlaylist } = useSelector((state) => state.player);
   const [dataPlaylist, setdataPlaylist] = useState();
   const navigation = useNavigation();
   const route = useRoute();
-  const [fromArtistPage, setfromArtistPage] = useState(false);
+  const [flow, setFlow] = useState();
 
   useEffect(() => {
     const getDataDetailPlaylist = async () => {
@@ -27,17 +28,36 @@ export default function PlaylistPage() {
     const getDataDetailArtist = async () => {
       let data = await getListArtistSong(route.params.id, 1, 20);
 
-      data.image = route.params.fromArtistPage.image;
-      data.title = route.params.fromArtistPage.title;
-      data.totalFollow = route.params.fromArtistPage.totalFollow;
+      data.image = route.params.props.image;
+      data.title = route.params.props.title;
+      data.totalFollow = route.params.props.totalFollow;
+
       setdataPlaylist(data);
     };
 
-    if (route.params.fromArtistPage.isArtist) {
-      getDataDetailArtist();
-      setfromArtistPage(true);
-    } else {
-      getDataDetailPlaylist();
+    const getDataLibrary = () => {
+      let data = {};
+
+      data.id = route.params.id;
+      data.image = route.params.props.image;
+      data.title = route.params.props.title;
+      data.numOfSong = route.params.props.numOfSong;
+      data.songs = route.params.props.songs ?? [];
+
+      setdataPlaylist(data);
+    };
+
+    setFlow(route.params.type);
+    switch (route.params.type) {
+      case ARTIST_FLOW:
+        getDataDetailArtist();
+        break;
+      case LIBRARY_FLOW:
+        getDataLibrary();
+        break;
+      case NORMAL_FLOW:
+        getDataDetailPlaylist();
+        break;
     }
   }, []);
 
@@ -63,7 +83,7 @@ export default function PlaylistPage() {
   };
   return (
     <View style={styles.container}>
-      {dataPlaylist ? (
+      {dataPlaylist?.songs ? (
         <FlatList
           data={dataPlaylist.songs}
           renderItem={renderItem}
@@ -73,9 +93,12 @@ export default function PlaylistPage() {
               dataPlaylist={dataPlaylist}
               navigation={navigation}
               playlist={dataPlaylist}
-              fromArtistPage={fromArtistPage}
+              flow={flow}
             />
           )}
+          ListEmptyComponent={
+            <Text style={styles.notiText}>{"Không có bài hát !"}</Text>
+          }
         />
       ) : (
         <Loading />
@@ -92,5 +115,9 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 20,
     //paddingTop: 10,
+  },
+  notiText: {
+    color: COLORS.primary,
+    alignSelf: "flex-start",
   },
 });

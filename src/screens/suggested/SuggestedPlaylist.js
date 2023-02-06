@@ -3,6 +3,7 @@ import { FlatList } from "react-native-gesture-handler";
 import { COLORS } from "constants/theme";
 import PlaylistRow from "./PlaylistRow";
 import { useNavigation } from "@react-navigation/native";
+import { NORMAL_FLOW } from "constants/values";
 
 export default function SuggestedPlaylist({ playlists }) {
   const navigation = useNavigation();
@@ -13,12 +14,8 @@ export default function SuggestedPlaylist({ playlists }) {
         onClick={() => {
           navigation.navigate("PlaylistPage", {
             id: item.id,
-            fromArtistPage: {
-              isArtist: false,
-              image: "",
-              title: "",
-              totalFollow: "",
-            },
+            type: NORMAL_FLOW,
+            props: {},
           });
         }}
         title={item.title}
