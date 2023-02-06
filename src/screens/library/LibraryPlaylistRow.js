@@ -6,6 +6,10 @@ import {
   TouchableHighlight,
 } from "react-native";
 import { COLORS } from "constants/theme";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setNavToDetailId } from "redux/slices/playerSlide";
 
 export default function LibraryPlaylistRow({
   onPress,
@@ -14,11 +18,26 @@ export default function LibraryPlaylistRow({
   numOfSong,
   id,
 }) {
+  const { navToDetailId } = useSelector((state) => state.player);
+  const dispatch = useDispatch();
+
+  const handleOnPress = () => {
+    onPress({ title, image, numOfSong, id });
+  };
+
+  useEffect(() => {
+    if (navToDetailId && id === navToDetailId) {
+      handleOnPress();
+
+      dispatch(setNavToDetailId(""));
+    }
+  }, [navToDetailId]);
+
   return (
     <TouchableHighlight
       underlayColor={COLORS.songRowClickColor}
       style={styles.container}
-      onPress={onPress}
+      onPress={handleOnPress}
     >
       <View style={styles.row}>
         <Image style={styles.image} source={image} />

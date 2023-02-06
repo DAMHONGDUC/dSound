@@ -20,6 +20,7 @@ import {
   removeASongWithDocId,
   addSongWithDocId,
 } from "api/LibraryAPI";
+import { showToastAndroid } from "helper";
 
 export default class PlayerController {
   static async updateTrackUrl(song, index) {
@@ -98,7 +99,6 @@ export default class PlayerController {
   }
 
   static async onLovedSong([lovedSongId, activeSong, currLovedSong]) {
-    // await addLovedSong(activeSong, lovedSongId);
     const checkLovedSong = await checkSongExist(
       FAVORITE_PLAYLIST_COLLECTION,
       lovedSongId,
@@ -113,7 +113,8 @@ export default class PlayerController {
       );
 
       store.dispatch(setCurrLovedSong(newLovedSong));
-      // console.log("unLovedSong", newLovedSong);
+
+      showToastAndroid("Đã bỏ thích");
     } else {
       await addSongWithDocId(activeSong, lovedSongId);
 
@@ -121,7 +122,8 @@ export default class PlayerController {
       newLovedSong.push(activeSong);
 
       store.dispatch(setCurrLovedSong(newLovedSong));
-      // console.log("addLovedSong", newLovedSong);
+
+      showToastAndroid("Đã thích");
     }
 
     store.dispatch(setRefreshLibrary(true));

@@ -27,17 +27,8 @@ import {
   setActiveSong,
   setUpdateNearlySong,
   setPlaylistPlayButtonClicked,
-  setCurrLovedSong,
-  setRefreshLibrary,
 } from "redux/slices/playerSlide";
-import {
-  addSongWithDocId,
-  checkSongExist,
-  removeASongWithDocId,
-} from "api/LibraryAPI";
-import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
-import { check } from "prettier";
-import cloneDeep from "lodash.clonedeep";
+import { showToastAndroid } from "helper";
 
 export default function BottomPlayer() {
   const {
@@ -135,35 +126,6 @@ export default function BottomPlayer() {
       params: { currSongId: activeSong.id },
     });
   };
-
-  // const handleLovedSong = async () => {
-  //   // await addLovedSong(activeSong, lovedSongId);
-  //   const checkLovedSong = await checkSongExist(
-  //     FAVORITE_PLAYLIST_COLLECTION,
-  //     lovedSongId,
-  //     activeSong.id
-  //   );
-
-  //   if (checkLovedSong) {
-  //     const newLovedSong = await removeASongWithDocId(
-  //       activeSong.id,
-  //       lovedSongId,
-  //       currLovedSong
-  //     );
-
-  //     dispatch(setCurrLovedSong(newLovedSong));
-  //     // console.log("unLovedSong", newLovedSong);
-  //   } else {
-  //     await addSongWithDocId(activeSong, lovedSongId);
-
-  //     let newLovedSong = cloneDeep(currLovedSong);
-  //     newLovedSong.push(activeSong);
-  //     dispatch(setCurrLovedSong(newLovedSong));
-  //     // console.log("addLovedSong", newLovedSong);
-  //   }
-
-  //   dispatch(setRefreshLibrary(true));
-  // };
 
   const handleLovedSong = async () => {
     await PlayerController.onLovedSong([

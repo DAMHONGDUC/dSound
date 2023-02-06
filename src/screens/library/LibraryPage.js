@@ -10,30 +10,58 @@ import { useSelector } from "react-redux";
 import { USER_CUSTOM_PLAYLIST, LOVED_SONG_PLAYLIST } from "constants/values";
 import { useDispatch } from "react-redux";
 import { setRefreshLibrary } from "redux/slices/playerSlide";
-import { useIsFocused, useNavigation } from "@react-navigation/native";
+import {
+  useIsFocused,
+  useNavigation,
+  useRoute,
+} from "@react-navigation/native";
 import { LIBRARY_FLOW } from "constants/values";
 import { getAllSongByDocId } from "api/LibraryAPI";
-import Library from "./Library";
+import LibraryComponent from "./LibraryComponent";
 
 export default function LibraryPage() {
   const navigation = useNavigation();
   const { lovedSongId, currLovedSong } = useSelector((state) => state.player);
+  const { refreshLibrary, uid } = useSelector((state) => state.player);
+  const [dataPlaylist, setDataPlaylist] = useState();
+  const dispatch = useDispatch();
+  const route = useRoute();
+  const [navToDetail, setNavToDetail] = useState();
 
   const onPress = async ({ id, image, title, numOfSong }) => {
-    const data =
-      lovedSongId === id ? currLovedSong : await getAllSongByDocId(id).songs;
+    const data = await getAllSongByDocId(id);
 
-    navigation.navigate("PlaylistPage", {
+    const songs = data.songs;
+
+    navigation.navigate("DetailLibraryPage", {
       id: id,
-      type: LIBRARY_FLOW,
-      props: {
-        image: image,
-        title: title,
-        numOfSong: numOfSong,
-        songs: data,
-      },
+      image: image,
+      title: title,
+      numOfSong: songs.length,
+      songs: songs,
     });
   };
 
-  return <Library onPress={onPress} />;
+  const fetchData = async () => {
+    setDataPlaylist(null);
+
+    const data = await getPlaylistByUid(uid);
+
+    setDataPlaylist(data);
+    dispatch(setRefreshLibrary(false));
+  };
+
+  useEffect(() => {
+    if (refreshLibrary && uid) {
+      fetchData();
+    }
+  }, [refreshLibrary, uid]);
+
+  return (
+    <LibraryComponent
+      setNavToDetail={navToDetail}
+      dataPlaylist={dataPlaylist}
+      onPress={onPress}
+    />
+  );
 }

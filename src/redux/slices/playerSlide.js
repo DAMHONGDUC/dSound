@@ -4,7 +4,7 @@ const initialState = {
   currPlaylist: [],
   currIndex: 0,
   activeSong: {},
-  showBottomPlay: true,
+  showBottomPlay: false,
   isPlaying: false,
   repeatMode: false,
   shuffleMode: false,
@@ -14,6 +14,7 @@ const initialState = {
   refreshLibrary: true,
   lovedSongId: "",
   currLovedSong: [],
+  navToDetailId: "",
 };
 
 export const playerSlide = createSlice({
@@ -63,6 +64,9 @@ export const playerSlide = createSlice({
     setRefreshLibrary: (state, action) => {
       state.refreshLibrary = action.payload;
     },
+    setNavToDetailId: (state, action) => {
+      state.navToDetailId = action.payload;
+    },
   },
 });
 
@@ -81,6 +85,7 @@ export const {
   setRefreshLibrary,
   setLovedSongId,
   setCurrLovedSong,
+  setNavToDetailId,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

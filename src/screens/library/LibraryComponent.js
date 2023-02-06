@@ -4,57 +4,19 @@ import Loading from "components/Loading";
 import { useEffect, useState } from "react";
 import LibraryHeader from "./LibraryHeader";
 import LibraryPlaylistRow from "./LibraryPlaylistRow";
-import { getPlaylistByUid, createNewPlaylist } from "api/LibraryAPI";
+import { createNewPlaylist } from "api/LibraryAPI";
 import Dialog from "react-native-dialog";
 import { useSelector } from "react-redux";
 import { USER_CUSTOM_PLAYLIST, LOVED_SONG_PLAYLIST } from "constants/values";
 import { useDispatch } from "react-redux";
 import { setRefreshLibrary } from "redux/slices/playerSlide";
-import { useIsFocused, useNavigation } from "@react-navigation/native";
-import { LIBRARY_FLOW } from "constants/values";
-import { getAllSongByDocId } from "api/LibraryAPI";
 
-export default function Library({ onPress }) {
+export default function LibraryComponent({ onPress, dataPlaylist }) {
   const notiText = "Bạn chưa có playlist nào !";
-  const [dataPlaylist, setDataPlaylist] = useState();
   const [playlistName, setPlaylistName] = useState();
   const [showDialog, setShowDialog] = useState(false);
   const { uid } = useSelector((state) => state.player);
-  const { refreshLibrary } = useSelector((state) => state.player);
   const dispatch = useDispatch();
-  const navigation = useNavigation();
-  const { lovedSongId, currLovedSong } = useSelector((state) => state.player);
-
-  const fetchData = async () => {
-    setDataPlaylist(null);
-
-    const data = await getPlaylistByUid(uid);
-
-    setDataPlaylist(data);
-    dispatch(setRefreshLibrary(false));
-  };
-
-  useEffect(() => {
-    if (refreshLibrary && uid) {
-      fetchData();
-    }
-  }, [refreshLibrary, uid]);
-
-  //   const onPress = async ({ id, image, title, numOfSong }) => {
-  //     const data =
-  //       lovedSongId === id ? currLovedSong : await getAllSongByDocId(id).songs;
-
-  //     navigation.navigate("PlaylistPage", {
-  //       id: id,
-  //       type: LIBRARY_FLOW,
-  //       props: {
-  //         image: image,
-  //         title: title,
-  //         numOfSong: numOfSong,
-  //         songs: data,
-  //       },
-  //     });
-  //   };
 
   const renderItem = ({ item, index }) => {
     return (
@@ -67,7 +29,7 @@ export default function Library({ onPress }) {
         title={item.title}
         numOfSong={item.songs.length}
         id={item.id}
-        onPress={() => onPress(item)}
+        onPress={onPress}
       />
     );
   };
