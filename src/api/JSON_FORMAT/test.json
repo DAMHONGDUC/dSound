@@ -1,97 +1,10 @@
 [
     {
-        "_data": {
-            "title": "duc dam",
-            "songs": []
-        },
-        "_metadata": {
-            "_metadata": [
-                false,
-                false
-            ]
-        },
-        "_ref": {
-            "_firestore": {
-                "_app": {
-                    "_name": "[DEFAULT]",
-                    "_deleted": false,
-                    "_options": {
-                        "databaseURL": null,
-                        "projectId": "dsound-75b9f",
-                        "apiKey": "AIzaSyBBbz_GEJh4wEQzFZH1KSNwRy_AmFAfje0",
-                        "storageBucket": "dsound-75b9f.appspot.com",
-                        "gaTrackingId": null,
-                        "appId": "1:362500748669:android:f6fd7b0e6c044b6a5e4814",
-                        "messagingSenderId": "362500748669"
-                    },
-                    "_automaticDataCollectionEnabled": true,
-                    "_initialized": true,
-                    "_nativeInitialized": true
-                },
-                "_nativeModule": {
-                    "RNFBFirestoreModule": true,
-                    "RNFBFirestoreCollectionModule": true,
-                    "RNFBFirestoreDocumentModule": true,
-                    "RNFBFirestoreTransactionModule": true
-                },
-                "_config": {
-                    "statics": {
-                        "CACHE_SIZE_UNLIMITED": -1
-                    },
-                    "version": "17.0.0",
-                    "namespace": "firestore",
-                    "nativeModuleName": [
-                        "RNFBFirestoreModule",
-                        "RNFBFirestoreCollectionModule",
-                        "RNFBFirestoreDocumentModule",
-                        "RNFBFirestoreTransactionModule"
-                    ],
-                    "nativeEvents": [
-                        "firestore_collection_sync_event",
-                        "firestore_document_sync_event",
-                        "firestore_transaction_event"
-                    ],
-                    "hasMultiAppSupport": true,
-                    "hasCustomUrlOrRegionSupport": false
-                },
-                "_referencePath": {
-                    "_parts": []
-                },
-                "_transactionHandler": {
-                    "_pending": {}
-                },
-                "_settings": {
-                    "ignoreUndefinedProperties": false
-                }
-            },
-            "_documentPath": {
-                "_parts": [
-                    "favorite_playlist",
-                    "8pyGrjk0Jyu6qOBvcQiq"
-                ]
-            }
-        },
-        "_exists": true
-    },
-    {
-        "_data": {
-            "title": "Bai hay yeu thich",
-            "songs": []
-        },
-        "_metadata": {
-            "_metadata": [
-                false,
-                false
-            ]
-        },
-        "_ref": {
-            "_documentPath": {
-                "_parts": [
-                    "favorite_playlist",
-                    "vHE1KJBMZxk20mqTUPbN"
-                ]
-            }
-        },
-        "_exists": true
+        "artist": "Harry Styles",
+        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/5/5/c/355c9290d8b91bcf9f843b792fa05e8f.jpg",
+        "duration": 167,
+        "id": "ZZ9AUFD7",
+        "title": "As It Was",
+        "url": "https://mp3-s1-zmp3.zmdcdn.me/397dfae855a9bcf7e5b8/3316510322627274731?authen=exp=1675826915~acl=/397dfae855a9bcf7e5b8/*~hmac=36e8f77ce1a4d9d897112aae312e2da4&fs=MTY3NTY1NDExNTIyNHx3ZWJWNnwwfDE0LjE4Ny44NS4xMjmUsIC"
     }
 ]

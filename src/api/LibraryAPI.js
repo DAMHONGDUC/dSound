@@ -46,14 +46,32 @@ export const getPlaylistByUid = async (uid) => {
   return result;
 };
 
-const checkDocExist = (collection, docID) => {
-  return firestore()
+const checkDocExist = async (collection, docID) => {
+  const doc = await firestore().collection(collection).doc(docID).get();
+
+  return doc._exists;
+};
+
+export const unLovedSong = async (songid, docid, currLovedSong) => {
+  const newLovedSong = currLovedSong.filter((e) => e.id !== songid);
+
+  await firestore().collection(FAVORITE_PLAYLIST_COLLECTION).doc(docid).update({
+    songs: newLovedSong,
+  });
+
+  return newLovedSong;
+};
+
+export const checkSongExist = async (collection, docid, songid) => {
+  const currLovedSong = await firestore()
     .collection(collection)
-    .doc(docID)
-    .get()
-    .then((doc) => {
-      return doc.exists;
-    });
+    .doc(docid)
+    .get();
+
+  const listLovedSongID = currLovedSong._data.songs.map((e) => e.id);
+  const check = listLovedSongID.includes(songid);
+
+  return check;
 };
 
 const createNewDoc = async (collection, docID) => {
@@ -83,14 +101,40 @@ export const createNewPlaylist = async (
   uid,
   type
 ) => {
-  await firestore()
-    .collection(FAVORITE_PLAYLIST_COLLECTION)
-    .doc(playlistID)
-    .set({
-      songs: [],
-      title: playlistName,
-      type: type,
-    });
+  const docExist = await checkDocExist(
+    FAVORITE_PLAYLIST_COLLECTION,
+    playlistID
+  );
+
+  !docExist &&
+    (await firestore()
+      .collection(FAVORITE_PLAYLIST_COLLECTION)
+      .doc(playlistID)
+      .set({
+        songs: [],
+        title: playlistName,
+        type: type,
+      }));
 
   await addPlaylistToUserPlaylist(playlistID, uid);
+};
+
+export const addLovedSong = async (song, docid) => {
+  await firestore()
+    .collection(FAVORITE_PLAYLIST_COLLECTION)
+    .doc(docid)
+    .update({
+      songs: firebase.firestore.FieldValue.arrayUnion(song),
+    });
+};
+
+export const getCurrLovedSong = async (docid) => {
+  const res = await firestore()
+    .collection(FAVORITE_PLAYLIST_COLLECTION)
+    .doc(docid)
+    .get();
+
+  if (res?._data) {
+    return res._data;
+  }
 };

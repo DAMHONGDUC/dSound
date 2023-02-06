@@ -12,6 +12,8 @@ const initialState = {
   playlistPlayButtonClicked: false,
   uid: "",
   refreshLibrary: true,
+  lovedSongId: "",
+  currLovedSong: [],
 };
 
 export const playerSlide = createSlice({
@@ -50,6 +52,13 @@ export const playerSlide = createSlice({
     },
     setUid: (state, action) => {
       state.uid = action.payload;
+      state.lovedSongId = action.payload + "loved_song";
+    },
+    setLovedSongId: (state, action) => {
+      state.lovedSongId = action.payload;
+    },
+    setCurrLovedSong: (state, action) => {
+      state.currLovedSong = action.payload;
     },
     setRefreshLibrary: (state, action) => {
       state.refreshLibrary = action.payload;
@@ -70,6 +79,8 @@ export const {
   setPlaylistPlayButtonClicked,
   setUid,
   setRefreshLibrary,
+  setLovedSongId,
+  setCurrLovedSong,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

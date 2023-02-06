@@ -3,7 +3,7 @@ import BottomTabStack from "./BottomTabStack";
 import PlayMusicPage from "screens/playmusic/PlayMusicPage";
 import { firebase } from "@react-native-firebase/auth";
 import { useDispatch } from "react-redux";
-import { setUid } from "redux/slices/playerSlide";
+import { setUid, setLovedSongId } from "redux/slices/playerSlide";
 import { useEffect } from "react";
 import { createNewPlaylist } from "api/LibraryAPI";
 import { LOVED_SONG_PLAYLIST } from "constants/values";
@@ -17,9 +17,11 @@ export default function MainStack() {
     const res = firebase.auth().currentUser;
 
     if (res?.uid) {
-      dispatch(setUid(res.uid));
-
       const playlistID = res.uid + "loved_song";
+
+      dispatch(setUid(res.uid));
+      dispatch(setLovedSongId(playlistID));
+
       await createNewPlaylist(
         playlistID,
         "Bài hát đã thích",

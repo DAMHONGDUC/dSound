@@ -27,7 +27,12 @@ import {
   setActiveSong,
   setUpdateNearlySong,
   setPlaylistPlayButtonClicked,
+  setCurrLovedSong,
 } from "redux/slices/playerSlide";
+import { addLovedSong, checkSongExist, unLovedSong } from "api/LibraryAPI";
+import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
+import { check } from "prettier";
+import cloneDeep from "lodash.clonedeep";
 
 export default function BottomPlayer() {
   const {
@@ -39,6 +44,8 @@ export default function BottomPlayer() {
     currIndex,
     updateNearlySong,
     playlistPlayButtonClicked,
+    lovedSongId,
+    currLovedSong,
   } = useSelector((state) => state.player);
 
   const progress = useProgress();
@@ -133,6 +140,40 @@ export default function BottomPlayer() {
     });
   };
 
+  const handleLovedSong = async () => {
+    // await addLovedSong(activeSong, lovedSongId);
+    const checkLovedSong = await checkSongExist(
+      FAVORITE_PLAYLIST_COLLECTION,
+      lovedSongId,
+      activeSong.id
+    );
+
+    if (checkLovedSong) {
+      const newLovedSong = await unLovedSong(
+        activeSong.id,
+        lovedSongId,
+        currLovedSong
+      );
+
+      dispatch(setCurrLovedSong(newLovedSong));
+      // console.log("unLovedSong", newLovedSong);
+    } else {
+      await addLovedSong(activeSong, lovedSongId);
+
+      let newLovedSong = cloneDeep(currLovedSong);
+      newLovedSong.push(activeSong);
+      dispatch(setCurrLovedSong(newLovedSong));
+      // console.log("addLovedSong", newLovedSong);
+    }
+  };
+  const getLovedStatus = (songid) => {
+    if (currLovedSong) {
+      const listLovedSongID = currLovedSong.map((e) => e.id);
+
+      return listLovedSongID.includes(songid);
+    }
+  };
+
   return (
     !isEmpty &&
     showBottomPlay && (
@@ -157,10 +198,17 @@ export default function BottomPlayer() {
               </View>
 
               <View style={styles.row3}>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity
+                  onPress={handleLovedSong}
+                  style={styles.button}
+                >
                   <FontAwesome5
                     name={"heart"}
-                    color={COLORS.white}
+                    color={
+                      getLovedStatus(activeSong.id)
+                        ? COLORS.primary
+                        : COLORS.white
+                    }
                     size={23}
                     solid
                   />

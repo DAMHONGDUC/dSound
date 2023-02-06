@@ -7,15 +7,30 @@ import NewSongRow from "./NewSongRow";
 import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
 import PlayerController from "helper/PlayerController";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getCurrLovedSong } from "api/LibraryAPI";
+import { setCurrLovedSong } from "redux/slices/playerSlide";
 
 export default function SuggestedRoute() {
   const [dataSuggestedPlaylist, setdataSuggestedPlaylist] = useState();
   const [dataNewSong, setdataNewSong] = useState();
   const [isLoaded, setisLoaded] = useState(false);
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
-  const { currPlaylist } = useSelector((state) => state.player);
+  const { currPlaylist, lovedSongId } = useSelector((state) => state.player);
+
+  useEffect(() => {
+    const handleGetCurrLovedSong = async () => {
+      const currLovedSong = await getCurrLovedSong(lovedSongId);
+
+      dispatch(setCurrLovedSong(currLovedSong.songs));
+    };
+
+    if (lovedSongId) {
+      handleGetCurrLovedSong();
+    }
+  }, [lovedSongId]);
 
   useEffect(() => {
     const fetchData = async () => {
