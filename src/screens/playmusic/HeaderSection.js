@@ -62,6 +62,11 @@ export default function HeaderSection() {
     ]);
   };
 
+  const handleAddToLibrary = () => {
+    setShowPopover(false);
+    navigation.navigate("AddToLibrary");
+  };
+
   return (
     <View style={styles.row}>
       <View style={styles.view}>
@@ -76,14 +81,13 @@ export default function HeaderSection() {
       </View>
 
       <Popover
-        //from={new Rect(5, 100, 20, 40)}
         isVisible={showPopover}
         onRequestClose={() => setShowPopover(false)}
       >
         <View style={styles.popupContainer}>
           <TouchableHighlight
             underlayColor={COLORS.songRowClickColor}
-            onPress={() => {}}
+            onPress={handleAddToLibrary}
           >
             <View style={styles.popupRow}>
               <MaterialIcons
@@ -103,10 +107,10 @@ export default function HeaderSection() {
               <FontAwesome
                 name={getLovedStatus(activeSong.id) ? "heart" : "heart-o"}
                 color={COLORS.primary}
-                size={23}
+                size={25}
                 solid
               />
-              <Text style={styles.popupText}>
+              <Text style={[styles.popupText, { marginLeft: 15 }]}>
                 {getLovedStatus(activeSong.id) ? "Đã thích" : "Thích"}
               </Text>
             </View>
@@ -148,7 +152,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   popupText: {
-    marginLeft: 7,
+    marginLeft: 5,
     color: COLORS.black,
     fontSize: 18,
   },

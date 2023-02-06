@@ -7,6 +7,7 @@ import { setUid, setLovedSongId } from "redux/slices/playerSlide";
 import { useEffect } from "react";
 import { createNewPlaylist } from "api/LibraryAPI";
 import { LOVED_SONG_PLAYLIST } from "constants/values";
+import AddToLibrary from "screens/library/AddToLibrary";
 
 const Stack = createNativeStackNavigator();
 
@@ -48,6 +49,13 @@ export default function MainStack() {
       <Stack.Screen
         name="PlayMusicPage"
         component={PlayMusicPage}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="AddToLibrary"
+        component={AddToLibrary}
         options={{
           headerShown: false,
         }}

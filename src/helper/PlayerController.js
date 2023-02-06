@@ -106,7 +106,6 @@ export default class PlayerController {
     );
 
     if (checkLovedSong) {
-      console.log("entry1");
       const newLovedSong = await removeASongWithDocId(
         activeSong.id,
         lovedSongId,
@@ -116,7 +115,6 @@ export default class PlayerController {
       store.dispatch(setCurrLovedSong(newLovedSong));
       // console.log("unLovedSong", newLovedSong);
     } else {
-      console.log("entry2");
       await addSongWithDocId(activeSong, lovedSongId);
 
       let newLovedSong = cloneDeep(currLovedSong);

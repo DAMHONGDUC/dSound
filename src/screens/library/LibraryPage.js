@@ -11,117 +11,29 @@ import { USER_CUSTOM_PLAYLIST, LOVED_SONG_PLAYLIST } from "constants/values";
 import { useDispatch } from "react-redux";
 import { setRefreshLibrary } from "redux/slices/playerSlide";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
+import { LIBRARY_FLOW } from "constants/values";
+import { getAllSongByDocId } from "api/LibraryAPI";
+import Library from "./Library";
 
 export default function LibraryPage() {
-  const notiText = "Bạn chưa có playlist nào !";
-  const [dataPlaylist, setDataPlaylist] = useState();
-  const [playlistName, setPlaylistName] = useState();
-  const [showDialog, setShowDialog] = useState(false);
-  const { uid } = useSelector((state) => state.player);
-  const { refreshLibrary } = useSelector((state) => state.player);
-  const dispatch = useDispatch();
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
+  const { lovedSongId, currLovedSong } = useSelector((state) => state.player);
 
-  // useEffect(() => {
-  //   const unsubscribe = navigation.addListener("focus", () => {
-  //     dispatch(setRefreshLibrary(true));
-  //   });
+  const onPress = async ({ id, image, title, numOfSong }) => {
+    const data =
+      lovedSongId === id ? currLovedSong : await getAllSongByDocId(id).songs;
 
-  //   return unsubscribe;
-  // }, [navigation]);
-
-  const fetchData = async () => {
-    setDataPlaylist(null);
-
-    const data = await getPlaylistByUid(uid);
-
-    setDataPlaylist(data);
-    dispatch(setRefreshLibrary(false));
+    navigation.navigate("PlaylistPage", {
+      id: id,
+      type: LIBRARY_FLOW,
+      props: {
+        image: image,
+        title: title,
+        numOfSong: numOfSong,
+        songs: data,
+      },
+    });
   };
 
-  useEffect(() => {
-    if (refreshLibrary && uid) {
-      fetchData();
-    }
-  }, [refreshLibrary, uid]);
-
-  const renderItem = ({ item, index }) => {
-    return (
-      <LibraryPlaylistRow
-        image={
-          item.type === LOVED_SONG_PLAYLIST
-            ? require("assets/loved_song_playlist.png")
-            : require("assets/default_playlist.png")
-        }
-        title={item.title}
-        numOfSong={item.songs.length}
-        id={item.id}
-      />
-    );
-  };
-
-  const createPlaylist = async () => {
-    if (playlistName) {
-      handleHideDialog();
-
-      const playlistID = new Date().valueOf() + playlistName;
-      await createNewPlaylist(
-        playlistID,
-        playlistName,
-        uid,
-        USER_CUSTOM_PLAYLIST
-      );
-
-      dispatch(setRefreshLibrary(true));
-    }
-  };
-
-  const handleShowDialog = () => {
-    setShowDialog(true);
-  };
-
-  const handleHideDialog = () => {
-    setShowDialog(false);
-    setPlaylistName("");
-  };
-
-  return (
-    <View style={styles.container}>
-      <Dialog.Container visible={showDialog}>
-        <Dialog.Title>Nhập tên playlist</Dialog.Title>
-        <Dialog.Input onChangeText={(text) => setPlaylistName(text)} />
-        <Dialog.Button label="Cancel" onPress={handleHideDialog} />
-        <Dialog.Button label="Create" onPress={createPlaylist} />
-      </Dialog.Container>
-      <LibraryHeader onClickCreate={handleShowDialog} />
-      {dataPlaylist ? (
-        <FlatList
-          data={dataPlaylist}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          ListEmptyComponent={<Text style={styles.notiText}>{notiText}</Text>}
-        />
-      ) : (
-        <Loading />
-      )}
-    </View>
-  );
+  return <Library onPress={onPress} />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.white,
-    padding: 20,
-  },
-
-  text: {
-    fontSize: 20,
-    color: COLORS.black,
-    fontWeight: "500",
-  },
-  notiText: {
-    color: COLORS.primary,
-    alignSelf: "flex-start",
-  },
-});
