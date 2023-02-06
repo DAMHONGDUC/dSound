@@ -7,11 +7,19 @@ import {
   setCurrPlaylist,
   setRepeatMode,
   setShuffleMode,
+  setCurrLovedSong,
+  setRefreshLibrary,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
 import { RepeatMode } from "react-native-track-player";
 import { randomInRange } from "helper";
 import cloneDeep from "lodash.clonedeep";
+import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
+import {
+  checkSongExist,
+  removeASongWithDocId,
+  addSongWithDocId,
+} from "api/LibraryAPI";
 
 export default class PlayerController {
   static async updateTrackUrl(song, index) {
@@ -87,6 +95,38 @@ export default class PlayerController {
     }
 
     await TrackPlayer.play();
+  }
+
+  static async onLovedSong([lovedSongId, activeSong, currLovedSong]) {
+    // await addLovedSong(activeSong, lovedSongId);
+    const checkLovedSong = await checkSongExist(
+      FAVORITE_PLAYLIST_COLLECTION,
+      lovedSongId,
+      activeSong.id
+    );
+
+    if (checkLovedSong) {
+      console.log("entry1");
+      const newLovedSong = await removeASongWithDocId(
+        activeSong.id,
+        lovedSongId,
+        currLovedSong
+      );
+
+      store.dispatch(setCurrLovedSong(newLovedSong));
+      // console.log("unLovedSong", newLovedSong);
+    } else {
+      console.log("entry2");
+      await addSongWithDocId(activeSong, lovedSongId);
+
+      let newLovedSong = cloneDeep(currLovedSong);
+      newLovedSong.push(activeSong);
+
+      store.dispatch(setCurrLovedSong(newLovedSong));
+      // console.log("addLovedSong", newLovedSong);
+    }
+
+    store.dispatch(setRefreshLibrary(true));
   }
 
   static async resetTrackPlayer() {

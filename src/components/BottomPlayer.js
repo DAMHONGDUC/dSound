@@ -64,13 +64,13 @@ export default function BottomPlayer() {
       let index = event.nextTrack;
       dispatch(setUpdateNearlySong(true));
 
+      dispatch(setCurrIndex(playlistPlayButtonClicked ? 0 : index));
+      dispatch(
+        setActiveSong(currPlaylist.songs[playlistPlayButtonClicked ? 0 : index])
+      );
+
       if (playlistPlayButtonClicked) {
-        dispatch(setCurrIndex(0));
-        dispatch(setActiveSong(currPlaylist.songs[0]));
         dispatch(setPlaylistPlayButtonClicked(false));
-      } else {
-        dispatch(setCurrIndex(index));
-        dispatch(setActiveSong(currPlaylist.songs[index]));
       }
     }
   });
@@ -136,34 +136,43 @@ export default function BottomPlayer() {
     });
   };
 
+  // const handleLovedSong = async () => {
+  //   // await addLovedSong(activeSong, lovedSongId);
+  //   const checkLovedSong = await checkSongExist(
+  //     FAVORITE_PLAYLIST_COLLECTION,
+  //     lovedSongId,
+  //     activeSong.id
+  //   );
+
+  //   if (checkLovedSong) {
+  //     const newLovedSong = await removeASongWithDocId(
+  //       activeSong.id,
+  //       lovedSongId,
+  //       currLovedSong
+  //     );
+
+  //     dispatch(setCurrLovedSong(newLovedSong));
+  //     // console.log("unLovedSong", newLovedSong);
+  //   } else {
+  //     await addSongWithDocId(activeSong, lovedSongId);
+
+  //     let newLovedSong = cloneDeep(currLovedSong);
+  //     newLovedSong.push(activeSong);
+  //     dispatch(setCurrLovedSong(newLovedSong));
+  //     // console.log("addLovedSong", newLovedSong);
+  //   }
+
+  //   dispatch(setRefreshLibrary(true));
+  // };
+
   const handleLovedSong = async () => {
-    // await addLovedSong(activeSong, lovedSongId);
-    const checkLovedSong = await checkSongExist(
-      FAVORITE_PLAYLIST_COLLECTION,
+    await PlayerController.onLovedSong([
       lovedSongId,
-      activeSong.id
-    );
-
-    if (checkLovedSong) {
-      const newLovedSong = await removeASongWithDocId(
-        activeSong.id,
-        lovedSongId,
-        currLovedSong
-      );
-
-      dispatch(setCurrLovedSong(newLovedSong));
-      // console.log("unLovedSong", newLovedSong);
-    } else {
-      await addSongWithDocId(activeSong, lovedSongId);
-
-      let newLovedSong = cloneDeep(currLovedSong);
-      newLovedSong.push(activeSong);
-      dispatch(setCurrLovedSong(newLovedSong));
-      // console.log("addLovedSong", newLovedSong);
-    }
-
-    dispatch(setRefreshLibrary(true));
+      activeSong,
+      currLovedSong,
+    ]);
   };
+
   const getLovedStatus = (songid) => {
     if (currLovedSong) {
       const listLovedSongID = currLovedSong.map((e) => e.id);
