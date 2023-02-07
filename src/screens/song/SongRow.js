@@ -22,6 +22,7 @@ export default function SongRow({
   duration,
   onClick,
   id,
+  item,
 }) {
   const { activeSong } = useSelector((state) => state.player);
   const playBackState = usePlaybackState();
@@ -69,7 +70,7 @@ export default function SongRow({
         <PopUpSongOptions
           showPopover={showPopover}
           setShowPopover={setShowPopover}
-          currSongRow={{ image, name, artist, duration, onClick, id }}
+          currSongRow={item}
         />
         <View style={styles.songRowOptions}>
           <TouchableOpacity onPress={() => setShowPopover(true)}>

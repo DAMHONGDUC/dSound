@@ -39,6 +39,7 @@ export default function SongsRoute({ navigation }) {
         artist={item.artist}
         duration={item.duration}
         id={item.id}
+        item={item}
       />
     );
   };

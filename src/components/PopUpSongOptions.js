@@ -42,7 +42,9 @@ export default function PopUpSongOptions({
 
     setShowPopover(false);
 
-    navToDetail();
+    if (activeLibraryId?.id === lovedSongId) {
+      navToDetail();
+    }
   };
 
   const navToDetail = () => {
