@@ -6,7 +6,7 @@ import {
   setRefreshLibrary,
   setShowBottomPlay,
 } from "redux/slices/playerSlide";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import LibraryComponent from "./LibraryComponent";
 import { View, StyleSheet, TouchableHighlight } from "react-native";
 import { COLORS } from "constants/theme";
@@ -23,6 +23,7 @@ export default function LibraryPage() {
   );
   const dispatch = useDispatch();
   const [dataPlaylist, setDataPlaylist] = useState();
+  const route = useRoute();
 
   useEffect(() => {
     dispatch(setRefreshLibrary(true));
@@ -45,7 +46,10 @@ export default function LibraryPage() {
   }, [refreshLibrary, uid]);
 
   const onPress = async (item) => {
-    await addSongWithDocId(activeSong, item.id);
+    const currSongRow = route.params.currSongRow;
+
+    await addSongWithDocId(currSongRow, item.id);
+
     showToastAndroid("Đã thêm vào " + item.title);
 
     await navToDetail(item);
@@ -58,7 +62,7 @@ export default function LibraryPage() {
     dispatch(setShowBottomPlay(true));
 
     navigation.navigate("BottomTabStack", {
-      screen: "Library",
+      screen: "LibraryStack",
     });
   };
 

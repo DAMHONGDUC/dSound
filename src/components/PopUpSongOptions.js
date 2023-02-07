@@ -48,7 +48,9 @@ export default function PopUpSongOptions({
   };
 
   const navToDetail = () => {
-    navigation.navigate("Library");
+    navigation.navigate("BottomTabStack", {
+      screen: "LibraryStack",
+    });
 
     dispatch(setRefreshLibrary(true));
     dispatch(setNavToDetailId(activeLibraryId.id));
@@ -72,7 +74,8 @@ export default function PopUpSongOptions({
 
   const handleAddToLibrary = () => {
     setShowPopover(false);
-    navigation.navigate("AddToLibrary");
+
+    navigation.navigate("AddToLibrary", { currSongRow: currSongRow });
   };
   return (
     <Popover
