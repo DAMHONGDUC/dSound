@@ -1,5 +1,11 @@
 import { COLORS } from "constants/theme";
-import { StyleSheet, View, Text, FlatList } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  TouchableHighlight,
+} from "react-native";
 import Loading from "components/Loading";
 import { useState } from "react";
 import LibraryHeader from "./LibraryHeader";
@@ -16,6 +22,7 @@ import { useDispatch } from "react-redux";
 import { setRefreshLibrary } from "redux/slices/playerSlide";
 import { showToastAndroid } from "helper";
 import { checkDocExist } from "api/LibraryAPI";
+import { Alert } from "react-native";
 
 export default function LibraryComponent({ onPress, dataPlaylist }) {
   const notiText = "Bạn chưa có playlist nào !";
@@ -63,7 +70,16 @@ export default function LibraryComponent({ onPress, dataPlaylist }) {
 
         dispatch(setRefreshLibrary(true));
       } else {
-        showToastAndroid("Playlist đã tồn tại");
+        Alert.alert(
+          "Thông báo",
+          "Playlist đã tồn tại, vui lòng chọn tên khác",
+          [
+            {
+              text: "Ok",
+              onPress: () => {},
+            },
+          ]
+        );
       }
     }
   };
@@ -85,6 +101,7 @@ export default function LibraryComponent({ onPress, dataPlaylist }) {
         <Dialog.Button label="Cancel" onPress={handleHideDialog} />
         <Dialog.Button label="Create" onPress={createPlaylist} />
       </Dialog.Container>
+
       <LibraryHeader onClickCreate={handleShowDialog} />
       {dataPlaylist ? (
         <FlatList

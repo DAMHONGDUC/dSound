@@ -138,3 +138,7 @@ export const getAllSongByDocId = async (docid) => {
     return res._data;
   }
 };
+
+export const removeWithDocId = async (collection, docId) => {
+  await firestore().collection(collection).doc(docId).delete();
+};

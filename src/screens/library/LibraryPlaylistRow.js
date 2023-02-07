@@ -4,12 +4,18 @@ import {
   Image,
   Text,
   TouchableHighlight,
+  TouchableOpacity,
 } from "react-native";
 import { COLORS } from "constants/theme";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setNavToDetailId } from "redux/slices/playerSlide";
+import { setNavToDetailId, setRefreshLibrary } from "redux/slices/playerSlide";
+import AntDesign from "react-native-vector-icons/AntDesign";
+import { removeWithDocId } from "api/LibraryAPI";
+import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
+import { showToastAndroid } from "helper";
+import { Alert } from "react-native";
 
 export default function LibraryPlaylistRow({
   onPress,
@@ -18,7 +24,7 @@ export default function LibraryPlaylistRow({
   numOfSong,
   id,
 }) {
-  const { navToDetailId } = useSelector((state) => state.player);
+  const { navToDetailId, lovedSongId } = useSelector((state) => state.player);
   const dispatch = useDispatch();
 
   const handleOnPress = () => {
@@ -32,6 +38,27 @@ export default function LibraryPlaylistRow({
       dispatch(setNavToDetailId(""));
     }
   }, [navToDetailId]);
+
+  const handleDeletePlaylist = async () => {
+    await removeWithDocId(FAVORITE_PLAYLIST_COLLECTION, id);
+
+    showToastAndroid("Đã xoá playlist: " + title);
+
+    dispatch(setRefreshLibrary(true));
+  };
+
+  const showDeleteAlert = () => {
+    Alert.alert("Thông báo", "Bạn có chắc chắn muốn xoá playlist này?", [
+      {
+        text: "Cancel",
+        onPress: () => {},
+      },
+      {
+        text: "Ok",
+        onPress: handleDeletePlaylist,
+      },
+    ]);
+  };
 
   return (
     <TouchableHighlight
@@ -49,6 +76,11 @@ export default function LibraryPlaylistRow({
             {numOfSong} bài hát
           </Text>
         </View>
+        {id !== lovedSongId && (
+          <TouchableOpacity style={styles.moreOption} onPress={showDeleteAlert}>
+            <AntDesign name={"delete"} color={COLORS.black} size={22} />
+          </TouchableOpacity>
+        )}
       </View>
     </TouchableHighlight>
   );
@@ -89,5 +121,10 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     flexDirection: "column",
     justifyContent: "center",
+  },
+  moreOption: {
+    position: "absolute",
+    right: 0,
+    alignSelf: "center",
   },
 });
