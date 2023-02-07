@@ -135,9 +135,7 @@ export default function BottomPlayer() {
 
   const getLovedStatus = (songid) => {
     if (currLovedSong) {
-      const listLovedSongID = currLovedSong.map((e) => e.id);
-
-      return listLovedSongID.includes(songid);
+      return currLovedSong.some((e) => e.id === songid);
     }
   };
 

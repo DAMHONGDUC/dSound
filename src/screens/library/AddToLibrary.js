@@ -18,7 +18,7 @@ import { showToastAndroid } from "helper";
 
 export default function LibraryPage() {
   const navigation = useNavigation();
-  const { refreshLibrary, uid, lovedSongId, activeSong } = useSelector(
+  const { refreshLibrary, uid, lovedSongId } = useSelector(
     (state) => state.player
   );
   const dispatch = useDispatch();
@@ -34,8 +34,8 @@ export default function LibraryPage() {
   const fetchData = async () => {
     setDataPlaylist(null);
 
-    const res = await getPlaylistByUid(uid);
-    const data = res.filter((e) => e.id !== lovedSongId);
+    const playlist = await getPlaylistByUid(uid);
+    const data = playlist.filter((e) => e.id !== lovedSongId);
 
     setDataPlaylist(data);
     dispatch(setRefreshLibrary(false));

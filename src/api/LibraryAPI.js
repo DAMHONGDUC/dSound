@@ -14,8 +14,6 @@ const getCollectionByDocId = async (collection, docId) => {
 };
 
 export const getPlaylistByUid = async (uid) => {
-  const result = [];
-
   const res = await getCollectionByDocId(
     USER_FAVORITE_PLAYLIST_COLLECTION,
     uid
@@ -24,26 +22,27 @@ export const getPlaylistByUid = async (uid) => {
   if (res?.playlistID) {
     const playlistIDArray = res.playlistID;
 
-    for (const playlistID of playlistIDArray) {
-      const data = await firestore()
+    const promiseArray = playlistIDArray.map((playlistID) => {
+      return firestore()
         .collection(FAVORITE_PLAYLIST_COLLECTION)
         .doc(playlistID)
-        .get();
+        .get()
+        .then((data) => {
+          if (data?._data) {
+            const playlist = data._data;
 
-      if (data?._data) {
-        const playlist = data._data;
-
-        result.push({
-          id: playlistID,
-          title: playlist.title,
-          songs: playlist.songs,
-          type: playlist.type,
+            return {
+              id: playlistID,
+              title: playlist.title,
+              songs: playlist.songs,
+              type: playlist.type,
+            };
+          }
         });
-      }
-    }
-  }
+    });
 
-  return result;
+    return Promise.all(promiseArray);
+  }
 };
 
 export const checkDocExist = async (collection, docID) => {
@@ -69,9 +68,8 @@ export const checkSongExist = async (collection, docid, songid) => {
     .get();
 
   const listLovedSongID = currLovedSong._data.songs.map((e) => e.id);
-  const check = listLovedSongID.includes(songid);
 
-  return check;
+  return listLovedSongID.includes(songid);
 };
 
 const createNewDoc = async (collection, docID) => {
@@ -81,9 +79,9 @@ const createNewDoc = async (collection, docID) => {
 };
 
 export const addPlaylistToUserPlaylist = async (playlistID, uid) => {
-  const res = await checkDocExist(USER_FAVORITE_PLAYLIST_COLLECTION, uid);
+  const isExist = await checkDocExist(USER_FAVORITE_PLAYLIST_COLLECTION, uid);
 
-  if (!res) {
+  if (!isExist) {
     await createNewDoc(USER_FAVORITE_PLAYLIST_COLLECTION, uid);
   }
 
@@ -106,15 +104,16 @@ export const createNewPlaylist = async (
     playlistID
   );
 
-  !docExist &&
-    (await firestore()
+  if (!docExist) {
+    await firestore()
       .collection(FAVORITE_PLAYLIST_COLLECTION)
       .doc(playlistID)
       .set({
         songs: [],
         title: playlistName,
         type: type,
-      }));
+      });
+  }
 
   await addPlaylistToUserPlaylist(playlistID, uid);
 };
@@ -134,9 +133,7 @@ export const getAllSongByDocId = async (docid) => {
     .doc(docid)
     .get();
 
-  if (res?._data) {
-    return res._data;
-  }
+  return res?._data ?? [];
 };
 
 export const removeWithDocId = async (collection, docId) => {

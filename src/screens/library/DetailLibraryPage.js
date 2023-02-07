@@ -22,14 +22,14 @@ export default function DetailLibraryPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await getAllSongByDocId(route.params.id);
+      const allSongs = await getAllSongByDocId(route.params.id);
 
       const data = {
         id: route.params.id,
         image: route.params.image,
         title: route.params.title,
-        numOfSong: res?.songs ? res.songs.length : 0,
-        songs: res?.songs ?? [],
+        numOfSong: allSongs?.songs?.length ?? 0,
+        songs: allSongs?.songs ?? [],
       };
 
       dispatch(setActiveLibraryId(data));

@@ -1,11 +1,5 @@
 import { COLORS } from "constants/theme";
-import {
-  StyleSheet,
-  View,
-  Text,
-  FlatList,
-  TouchableHighlight,
-} from "react-native";
+import { StyleSheet, View, Text, FlatList } from "react-native";
 import Loading from "components/Loading";
 import { useState } from "react";
 import LibraryHeader from "./LibraryHeader";
@@ -51,13 +45,13 @@ export default function LibraryComponent({ onPress, dataPlaylist }) {
     if (playlistName) {
       handleHideDialog();
 
-      const check = await checkDocExist(
+      const isExist = await checkDocExist(
         FAVORITE_PLAYLIST_COLLECTION,
-        playlistName
+        uid + playlistName
       );
 
-      if (!check) {
-        const playlistID = playlistName; //new Date().valueOf() + playlistName;
+      if (!isExist) {
+        const playlistID = uid + playlistName;
 
         await createNewPlaylist(
           playlistID,

@@ -15,18 +15,18 @@ export default function MainStack() {
   const dispatch = useDispatch();
 
   const setUpUser = async () => {
-    const res = firebase.auth().currentUser;
+    const currentUser = firebase.auth().currentUser;
 
-    if (res?.uid) {
-      const playlistID = res.uid + "loved_song";
+    if (currentUser?.uid) {
+      const playlistID = currentUser.uid + "loved_song";
 
-      dispatch(setUid(res.uid));
+      dispatch(setUid(currentUser.uid));
       dispatch(setLovedSongId(playlistID));
 
       await createNewPlaylist(
         playlistID,
         "Bài hát đã thích",
-        res.uid,
+        currentUser.uid,
         LOVED_SONG_PLAYLIST
       );
     }

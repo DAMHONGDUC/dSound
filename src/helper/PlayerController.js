@@ -33,9 +33,6 @@ export default class PlayerController {
     await TrackPlayer.remove(index + 1);
 
     store.dispatch(setSongURL({ index: index, url: URL }));
-
-    // const tracks = await TrackPlayer.getQueue();
-    // console.log("update track url ", index, tracks);
   }
 
   static updateSongData(index, currPlaylist) {
@@ -51,7 +48,6 @@ export default class PlayerController {
 
     await TrackPlayer.skip(currIndex);
     await TrackPlayer.play();
-    //console.log("played");
   }
 
   static async onPlayPause(playBackState) {
@@ -99,13 +95,13 @@ export default class PlayerController {
   }
 
   static async onLovedSong([lovedSongId, activeSong, currLovedSong]) {
-    const checkLovedSong = await checkSongExist(
+    const isExist = await checkSongExist(
       FAVORITE_PLAYLIST_COLLECTION,
       lovedSongId,
       activeSong.id
     );
 
-    if (checkLovedSong) {
+    if (isExist) {
       const newLovedSong = await removeASongWithDocId(
         activeSong.id,
         lovedSongId,
