@@ -13,7 +13,7 @@ import { COLORS } from "constants/theme";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { getPlaylistByUid } from "api/LibraryAPI";
 import { useState } from "react";
-import { addSongWithDocId, getAllSongByDocId } from "api/LibraryAPI";
+import { addSongWithDocId } from "api/LibraryAPI";
 import { showToastAndroid } from "helper";
 
 export default function LibraryPage() {

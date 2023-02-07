@@ -2,14 +2,12 @@ import { COLORS } from "constants/theme";
 import { useEffect, useState } from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
 import PlaylistHeader from "screens/playlist/PlaylistHeader";
-import { getDetailPlaylist } from "api/PlaylistAPI";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "components/Loading";
 import SongRow from "screens/song/SongRow";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { getListArtistSong } from "api/ArtistAPI";
-import { ARTIST_FLOW, LIBRARY_FLOW, NORMAL_FLOW } from "constants/values";
+import { LIBRARY_FLOW } from "constants/values";
 import { setActiveLibraryId } from "redux/slices/playerSlide";
 import { getAllSongByDocId } from "api/LibraryAPI";
 

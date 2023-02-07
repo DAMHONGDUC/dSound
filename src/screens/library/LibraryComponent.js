@@ -1,7 +1,7 @@
 import { COLORS } from "constants/theme";
 import { StyleSheet, View, Text, FlatList } from "react-native";
 import Loading from "components/Loading";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import LibraryHeader from "./LibraryHeader";
 import LibraryPlaylistRow from "./LibraryPlaylistRow";
 import { createNewPlaylist } from "api/LibraryAPI";

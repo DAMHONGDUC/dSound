@@ -69,7 +69,7 @@ export default function SongRow({
         <PopUpSongOptions
           showPopover={showPopover}
           setShowPopover={setShowPopover}
-          currSongRowId={id}
+          currSongRow={{ image, name, artist, duration, onClick, id }}
         />
         <View style={styles.songRowOptions}>
           <TouchableOpacity onPress={() => setShowPopover(true)}>

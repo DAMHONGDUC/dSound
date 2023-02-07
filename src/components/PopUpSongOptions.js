@@ -1,23 +1,21 @@
-import {
-  View,
-  TouchableOpacity,
-  StyleSheet,
-  BackHandler,
-  Text,
-  TouchableHighlight,
-} from "react-native";
+import { View, StyleSheet, Text, TouchableHighlight } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
 import Popover from "react-native-popover-view";
-import { useFocusEffect, useNavigation } from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import PlayerController from "helper/PlayerController";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { COLORS } from "constants/theme";
 import { removeASongWithDocId } from "api/LibraryAPI";
-import { setNavToDetailId, setRefreshLibrary } from "redux/slices/playerSlide";
+import {
+  setNavToDetailId,
+  setRefreshLibrary,
+  setShowBottomPlay,
+} from "redux/slices/playerSlide";
+import { showToastAndroid } from "helper";
 
 export default function PopUpSongOptions({
-  currSongRowId,
+  currSongRow,
   showPopover,
   setShowPopover,
 }) {
@@ -25,6 +23,7 @@ export default function PopUpSongOptions({
     useSelector((state) => state.player);
   const navigation = useNavigation();
   const dispatch = useDispatch();
+  const isEmpty = Object.keys(activeSong).length === 0;
 
   const getLovedStatus = (songid) => {
     if (currLovedSong) {
@@ -37,23 +36,36 @@ export default function PopUpSongOptions({
   const handleLovedSong = async () => {
     await PlayerController.onLovedSong([
       lovedSongId,
-      activeSong,
+      currSongRow,
       currLovedSong,
     ]);
 
     setShowPopover(false);
+
+    navToDetail();
+  };
+
+  const navToDetail = () => {
+    navigation.navigate("Library");
+
+    dispatch(setRefreshLibrary(true));
+    dispatch(setNavToDetailId(activeLibraryId.id));
+
+    if (!isEmpty) {
+      dispatch(setShowBottomPlay(true));
+    }
   };
 
   const deleteASong = async () => {
     await removeASongWithDocId(
-      currSongRowId,
+      currSongRow.id,
       activeLibraryId.id,
       activeLibraryId.songs
     );
 
-    navigation.navigate("Library");
-    dispatch(setRefreshLibrary(true));
-    dispatch(setNavToDetailId(activeLibraryId.id));
+    showToastAndroid("Đã xoá khỏi " + activeLibraryId.title);
+
+    navToDetail();
   };
 
   const handleAddToLibrary = () => {
@@ -66,32 +78,38 @@ export default function PopUpSongOptions({
       onRequestClose={() => setShowPopover(false)}
     >
       <View style={styles.popupContainer}>
-        <TouchableHighlight
-          underlayColor={COLORS.songRowClickColor}
-          onPress={handleAddToLibrary}
-        >
-          <View style={styles.popupRow}>
-            <MaterialIcons name="playlist-add" color={COLORS.black} size={35} />
-            <Text style={styles.popupText}>Thêm vào thư viện</Text>
-          </View>
-        </TouchableHighlight>
+        {!activeLibraryId && (
+          <TouchableHighlight
+            underlayColor={COLORS.songRowClickColor}
+            onPress={handleAddToLibrary}
+          >
+            <View style={styles.popupRow}>
+              <MaterialIcons
+                name="playlist-add"
+                color={COLORS.black}
+                size={35}
+              />
+              <Text style={styles.popupText}>Thêm vào thư viện</Text>
+            </View>
+          </TouchableHighlight>
+        )}
         <TouchableHighlight
           underlayColor={COLORS.songRowClickColor}
           onPress={handleLovedSong}
         >
           <View style={styles.popupRow}>
             <FontAwesome
-              name={getLovedStatus(activeSong.id) ? "heart" : "heart-o"}
+              name={getLovedStatus(currSongRow.id) ? "heart" : "heart-o"}
               color={COLORS.primary}
               size={25}
               solid
             />
             <Text style={[styles.popupText, { marginLeft: 15 }]}>
-              {getLovedStatus(activeSong.id) ? "Đã thích" : "Thích"}
+              {getLovedStatus(currSongRow.id) ? "Đã thích" : "Thích"}
             </Text>
           </View>
         </TouchableHighlight>
-        {activeLibraryId && (
+        {activeLibraryId && activeLibraryId.id !== lovedSongId && (
           <TouchableHighlight
             underlayColor={COLORS.songRowClickColor}
             onPress={deleteASong}
@@ -104,7 +122,7 @@ export default function PopUpSongOptions({
                 solid
               />
               <Text style={[styles.popupText, { marginLeft: 15 }]}>
-                Xoá khỏi Playlist này
+                Xoá khỏi {activeLibraryId.title}
               </Text>
             </View>
           </TouchableHighlight>
