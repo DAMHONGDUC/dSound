@@ -17,6 +17,7 @@ import Feather from "react-native-vector-icons/Feather";
 import Popover from "react-native-popover-view";
 import { useState } from "react";
 import PlayerController from "helper/PlayerController";
+import PopUpSongOptions from "components/PopUpSongOptions";
 
 export default function HeaderSection() {
   const dispatch = useDispatch();
@@ -46,26 +47,26 @@ export default function HeaderSection() {
     }, [])
   );
 
-  const getLovedStatus = (songid) => {
-    if (currLovedSong) {
-      const listLovedSongID = currLovedSong.map((e) => e.id);
+  // const getLovedStatus = (songid) => {
+  //   if (currLovedSong) {
+  //     const listLovedSongID = currLovedSong.map((e) => e.id);
 
-      return listLovedSongID.includes(songid);
-    }
-  };
+  //     return listLovedSongID.includes(songid);
+  //   }
+  // };
 
-  const handleLovedSong = async () => {
-    await PlayerController.onLovedSong([
-      lovedSongId,
-      activeSong,
-      currLovedSong,
-    ]);
-  };
+  // const handleLovedSong = async () => {
+  //   await PlayerController.onLovedSong([
+  //     lovedSongId,
+  //     activeSong,
+  //     currLovedSong,
+  //   ]);
+  // };
 
-  const handleAddToLibrary = () => {
-    setShowPopover(false);
-    navigation.navigate("AddToLibrary");
-  };
+  // const handleAddToLibrary = () => {
+  //   setShowPopover(false);
+  //   navigation.navigate("AddToLibrary");
+  // };
 
   return (
     <View style={styles.row}>
@@ -79,8 +80,12 @@ export default function HeaderSection() {
           />
         </TouchableOpacity>
       </View>
+      <PopUpSongOptions
+        showPopover={showPopover}
+        setShowPopover={setShowPopover}
+      />
 
-      <Popover
+      {/* <Popover
         isVisible={showPopover}
         onRequestClose={() => setShowPopover(false)}
       >
@@ -116,7 +121,7 @@ export default function HeaderSection() {
             </View>
           </TouchableHighlight>
         </View>
-      </Popover>
+      </Popover> */}
       <View style={styles.view}>
         <TouchableOpacity onPress={() => setShowPopover(true)}>
           <Feather name={"more-vertical"} color={COLORS.black} size={25} />

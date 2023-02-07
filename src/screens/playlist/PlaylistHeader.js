@@ -2,11 +2,23 @@ import { COLORS } from "constants/theme";
 import { ARTIST_FLOW, LIBRARY_FLOW, NORMAL_FLOW } from "constants/values";
 import PlayerController from "helper/PlayerController";
 import { useEffect, useState } from "react";
-import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  TouchableOpacity,
+  BackHandler,
+} from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setPlaylistPlayButtonClicked } from "redux/slices/playerSlide";
+import {
+  setPlaylistPlayButtonClicked,
+  setActiveLibraryId,
+} from "redux/slices/playerSlide";
+import { useFocusEffect } from "@react-navigation/native";
+import { useCallback } from "react";
 
 export default function PlaylistHeader({
   playlist,

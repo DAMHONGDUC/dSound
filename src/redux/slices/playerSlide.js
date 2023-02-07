@@ -15,6 +15,7 @@ const initialState = {
   lovedSongId: "",
   currLovedSong: [],
   navToDetailId: "",
+  activeLibraryId: null,
 };
 
 export const playerSlide = createSlice({
@@ -67,6 +68,9 @@ export const playerSlide = createSlice({
     setNavToDetailId: (state, action) => {
       state.navToDetailId = action.payload;
     },
+    setActiveLibraryId: (state, action) => {
+      state.activeLibraryId = action.payload;
+    },
   },
 });
 
@@ -86,6 +90,7 @@ export const {
   setLovedSongId,
   setCurrLovedSong,
   setNavToDetailId,
+  setActiveLibraryId,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

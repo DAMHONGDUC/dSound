@@ -52,8 +52,8 @@ const checkDocExist = async (collection, docID) => {
   return doc._exists;
 };
 
-export const removeASongWithDocId = async (songid, docid, cussSongs) => {
-  const newSongs = cussSongs.filter((e) => e.id !== songid);
+export const removeASongWithDocId = async (songid, docid, currSongs) => {
+  const newSongs = currSongs.filter((e) => e.id !== songid);
 
   await firestore().collection(FAVORITE_PLAYLIST_COLLECTION).doc(docid).update({
     songs: newSongs,

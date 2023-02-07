@@ -3,31 +3,44 @@ import { useEffect, useState } from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
 import PlaylistHeader from "screens/playlist/PlaylistHeader";
 import { getDetailPlaylist } from "api/PlaylistAPI";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Loading from "components/Loading";
 import SongRow from "screens/song/SongRow";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { getListArtistSong } from "api/ArtistAPI";
 import { ARTIST_FLOW, LIBRARY_FLOW, NORMAL_FLOW } from "constants/values";
+import { setActiveLibraryId } from "redux/slices/playerSlide";
+import { getAllSongByDocId } from "api/LibraryAPI";
 
 export default function DetailLibraryPage() {
   const [dataPlaylist, setdataPlaylist] = useState();
   const navigation = useNavigation();
   const route = useRoute();
-  const { currPlaylist, showBottomPlay } = useSelector((state) => state.player);
+  const { currPlaylist, showBottomPlay, refreshLibrary } = useSelector(
+    (state) => state.player
+  );
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    let data = {};
+    const fetchData = async () => {
+      const res = await getAllSongByDocId(route.params.id);
 
-    data.id = route.params.id;
-    data.image = route.params.image;
-    data.title = route.params.title;
-    data.numOfSong = route.params.numOfSong;
-    data.songs = route.params.songs ?? [];
+      const data = {
+        id: route.params.id,
+        image: route.params.image,
+        title: route.params.title,
+        numOfSong: res?.songs ? res.songs.length : 0,
+        songs: res?.songs ?? [],
+      };
 
-    setdataPlaylist(data);
-  }, []);
+      dispatch(setActiveLibraryId(data));
+
+      setdataPlaylist(data);
+    };
+
+    fetchData();
+  }, [refreshLibrary]);
 
   const renderItem = ({ item, index }) => {
     return (

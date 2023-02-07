@@ -1,154 +1,50 @@
-{
-    "description": "Pop US-UK tràn đầy năng lượng cho thứ Hai đầu tuần",
-    "duration": 7366,
-    "id": "67WZF8DC",
-    "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/4/9/c/049c4d6ac8897764a93d52ac7cef4768.jpg",
-    "like": 2850,
-    "songs": [
-        {
-            "artist": "Harry Styles",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/5/5/c/355c9290d8b91bcf9f843b792fa05e8f.jpg",
-            "duration": 167,
-            "id": "ZZ9AUFD7",
-            "title": "As It Was",
-            "url": "https://mp3-s1-zmp3.zmdcdn.me/397dfae855a9bcf7e5b8/3316510322627274731?authen=exp=1675833803~acl=/397dfae855a9bcf7e5b8/*~hmac=6b031a69701b620e49aa412b4516b59e&fs=MTY3NTY2MTAwMzIzMHx3ZWJWNnwwfDE3MS4yNTMdUngMTQyLjU0"
-        },
-        {
-            "artist": "Adele",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/c/3/b/f/c3bf4a31317405632d0578a93d6968c6.jpg",
-            "duration": 225,
-            "id": "ZUCIZ7BE",
-            "title": "Oh My God",
-            "url": null
-        },
-        {
-            "artist": "Beyoncé",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/7/2/b/b72bb243dccad052d51c85882515bcd2.jpg",
-            "duration": 278,
-            "id": "ZZD89IBW",
-            "title": "BREAK MY SOUL",
-            "url": null
-        },
-        {
-            "artist": "Walk Off The Earth",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/8/9/c/d/89cd3f98c3734d2c1c7ebc8913d16c70.jpg",
-            "duration": 160,
-            "id": "Z6U9BBIZ",
-            "title": "My Stupid Heart",
-            "url": null
-        },
-        {
-            "artist": "Meghan Trainor",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/1/3/2/9/1329ae5256661f08192b3e12b9b09f4c.jpg",
-            "duration": 133,
-            "id": "Z6W6IC9W",
-            "title": "Made You Look",
-            "url": null
-        },
-        {
-            "artist": "Tate McRae",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/7/a/f/37afa3a96f6e768fb388aeb9da3b724f.jpg",
-            "duration": 207,
-            "id": "ZZOZ60BC",
-            "title": "she's all i wanna be",
-            "url": null
-        },
-        {
-            "artist": "Nicky Youre, Dazy",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/c/1/1/6c1154b5524842169abc5918ba2f22d1.jpg",
-            "duration": 163,
-            "id": "ZZADWAUD",
-            "title": "Sunroof",
-            "url": null
-        },
-        {
-            "artist": "Mimi Webb",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/d/3/b/ad3b72d49755aea796197adec33e840c.jpg",
-            "duration": 142,
-            "id": "Z6Z9UAOC",
-            "title": "Red Flags",
-            "url": null
-        },
-        {
-            "artist": "JVKE",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/2/9/0/4/29047f90188d1ff2a3ab939c3b6cb4a7.jpg",
-            "duration": 178,
-            "id": "Z60AEIIC",
-            "title": "i can't help it",
-            "url": null
-        },
-        {
-            "artist": "Marshmello, Khalid",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/f/a/7/3fa71b3ae05f0b6f04637f87e363fb5a.jpg",
-            "duration": 156,
-            "id": "ZZC67I8A",
-            "title": "Numb",
-            "url": null
-        },
-        {
-            "artist": "The Kid LAROI, Justin Bieber",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/f/2/e/8/f2e804d3613c31ab50fada04a72c915c.jpg",
-            "duration": 142,
-            "id": "ZUWIB0AW",
-            "title": "STAY",
-            "url": null
-        },
-        {
-            "artist": "Camila Cabello, Ed Sheeran",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/9/0/8/69086d59f366e807684048c7844c3b70.jpg",
-            "duration": 206,
-            "id": "ZZ6WIAFI",
-            "title": "Bam Bam",
-            "url": null
-        },
-        {
-            "artist": "Nhiều nghệ sĩ",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/2/1/9/f/219f51345e681f23973b116bc13a53ce.jpg",
-            "duration": 193,
-            "id": "ZWFAZOZB",
-            "title": "Mood (Remix)",
-            "url": null
-        },
-        {
-            "artist": "Khalid",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/f/5/6/2/f5622e303607c5f3665517b5242dfed8.jpg",
-            "duration": 183,
-            "id": "ZZADIUA0",
-            "title": "Skyline",
-            "url": null
-        },
-        {
-            "artist": "Rina Sawayama",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/9/2/b/b92bcddf0dc67ff686dc65d6b2425c44.jpg",
-            "duration": 236,
-            "id": "Z60E8BCF",
-            "title": "This Hell",
-            "url": null
-        },
-        {
-            "artist": "Nea",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/0/2/7/c/027ccbfc120d52bee78a70facef61d98.jpg",
-            "duration": 177,
-            "id": "ZWAE8OBO",
-            "title": "Some Say",
-            "url": null
-        },
-        {
-            "artist": "Latto, Mariah Carey, DJ Khaled",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/b/1/e/2/b1e2c7347f58f0a45c3190f6b38c5677.jpg",
-            "duration": 182,
-            "id": "ZZ9UFE8I",
-            "title": "Big Energy (Remix)",
-            "url": null
-        },
-        {
-            "artist": "Anne-Marie, Little Mix",
-            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/8/a/7/7/8a77d1fe7ccb34b958f14ffc45280e33.jpg",
-            "duration": 176,
-            "id": "ZUBOFZ9F",
-            "title": "Kiss My (Uh Oh)",
-            "url": null
-        }
-    ],
-    "title": "Nhạc Cho Thứ Hai"
-}
+[
+    {
+        "artist": "KxK",
+        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/c/8/b/a/c8bac7d9e1c1bef03bdd80542c0c1102.jpg",
+        "duration": 196,
+        "id": "Z66B689O",
+        "title": "Lạc Nhau",
+        "url": "https://mp3-s1-zmp3.zmdcdn.me/9408cd378e7767293e66/6543841433386247207?authen=exp=1675875909~acl=/9408cd378e7767293e66/*~hmac=d891c1de5112704de2546b319e4dc0ef&fs=MTY3NTmUsICwMzEwOTg2N3x3ZWJWNnwwfDExNi4xMDkdUngNTUdUngMjUx"
+    },
+    {
+        "artist": "Jack - J97",
+        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/e/2/e/b/e2eb2e4c19e54ab61871ce9f04ac339f.jpg",
+        "duration": 276,
+        "id": "ZZE886WC",
+        "title": "Ngôi Sao Cô Đơn",
+        "url": "https://mp3-s1-zmp3.zmdcdn.me/66c408efdcae35f06cbf/2779850410373472121?authen=exp=1675877055~acl=/66c408efdcae35f06cbf/*~hmac=b0cf3b8295b966b780ca3f49801ba77b&fs=MTY3NTmUsICwNDI1NTE4Nnx3ZWJWNnwwfDExNi4xMDkdUngNTUdUngMjUx"
+    },
+    {
+        "artist": "Tate McRae",
+        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/8/6/b/0/86b0242dde506360d51a6ea0903e63cf.jpg",
+        "duration": 170,
+        "id": "ZWBWDO99",
+        "title": "you broke me first",
+        "url": "https://mp3-s1-zmp3.zmdcdn.me/f6bd7f4aaa0b43551a1a/302377685645944107?authen=exp=1675878052~acl=/f6bd7f4aaa0b43551a1a/*~hmac=e4b70278c6ddbb4987f7604cca3bbd7c&fs=MTY3NTmUsICwNTI1MjIwOXx3ZWJWNnwwfDExNi4xMDkdUngNTUdUngMjUx"
+    },
+    {
+        "artist": "Mr. Siro",
+        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/5/6/4/0/56402e6e4f61bff944922d456df6c5d9.jpg",
+        "duration": 303,
+        "id": "Z6ZODCCE",
+        "title": "Yêu Mấy Cũng Đừng Quay Lại",
+        "url": "https://mp3-s1-zmp3.zmdcdn.me/8ea9f13aa77a4e24176b/4054401621709894374?authen=exp=1675878233~acl=/8ea9f13aa77a4e24176b/*~hmac=b83c7368348408ded7d49480ef09b4d6&fs=MTY3NTmUsICwNTQzMzYwMnx3ZWJWNnwwfDI3LjmUsIC0LjExNi4xOTI"
+    },
+    {
+        "artist": "GREY D, B Ray",
+        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/1/e/e/a1ee960090f33b70f1c3092a4b600180.jpg",
+        "duration": 230,
+        "id": "Z6ZEWO8I",
+        "title": "tỉnh thức sau giấc ngủ đông (storm version)",
+        "url": "https://mp3-s1-zmp3.zmdcdn.me/a2e0c0c0888061de3891/1304870407040904491?authen=exp=1675911337~acl=/a2e0c0c0888061de3891/*~hmac=6362c1e990e8dab32bd8d7b906a66b17&fs=MTY3NTmUsICzODUzNzA5N3x3ZWJWNnwwfDExNi45Ny4xNzYdUngMg"
+    },
+    {
+        "artist": "Pháo, Sterry",
+        "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/3/f/b/63fb6b25051e8d0bb4f9561158f16ae9.jpg",
+        "duration": 164,
+        "id": "Z6ZAIB0D",
+        "title": "Kìa Bóng Dáng Ai",
+        "url": "https://mp3-s1-zmp3.zmdcdn.me/3fdddc48910878562119/1844055815616632834?authen=exp=1675911465~acl=/3fdddc48910878562119/*~hmac=89d79dbc83f0c94a1c2a3e58a9973c20&fs=MTY3NTmUsICzODY2NTU3OHx3ZWJWNnwwfDE0LjIzMi4yMTAdUngODM"
+    }
+]
