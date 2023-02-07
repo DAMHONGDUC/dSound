@@ -6,7 +6,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { COLORS } from "constants/theme";
 import SearchPage from "screens/search/searchPage";
 import HomeStack from "./HomeStack";
-import LibraryPage from "screens/library/LibraryPage";
+import LibraryStack from "./LibraryStack";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -47,8 +47,8 @@ export default function BottomTabStack() {
         }}
       />
       <BottomTab.Screen
-        name="Library"
-        component={LibraryPage}
+        name="LibraryStack"
+        component={LibraryStack}
         options={{
           headerShown: false,
           tabBarLabel: "Library",

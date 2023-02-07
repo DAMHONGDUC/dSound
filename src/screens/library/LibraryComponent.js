@@ -7,9 +7,15 @@ import LibraryPlaylistRow from "./LibraryPlaylistRow";
 import { createNewPlaylist } from "api/LibraryAPI";
 import Dialog from "react-native-dialog";
 import { useSelector } from "react-redux";
-import { USER_CUSTOM_PLAYLIST, LOVED_SONG_PLAYLIST } from "constants/values";
+import {
+  USER_CUSTOM_PLAYLIST,
+  LOVED_SONG_PLAYLIST,
+  FAVORITE_PLAYLIST_COLLECTION,
+} from "constants/values";
 import { useDispatch } from "react-redux";
 import { setRefreshLibrary } from "redux/slices/playerSlide";
+import { showToastAndroid } from "helper";
+import { checkDocExist } from "api/LibraryAPI";
 
 export default function LibraryComponent({ onPress, dataPlaylist }) {
   const notiText = "Bạn chưa có playlist nào !";
@@ -38,15 +44,27 @@ export default function LibraryComponent({ onPress, dataPlaylist }) {
     if (playlistName) {
       handleHideDialog();
 
-      const playlistID = new Date().valueOf() + playlistName;
-      await createNewPlaylist(
-        playlistID,
-        playlistName,
-        uid,
-        USER_CUSTOM_PLAYLIST
+      const check = await checkDocExist(
+        FAVORITE_PLAYLIST_COLLECTION,
+        playlistName
       );
 
-      dispatch(setRefreshLibrary(true));
+      if (!check) {
+        const playlistID = playlistName; //new Date().valueOf() + playlistName;
+
+        await createNewPlaylist(
+          playlistID,
+          playlistName,
+          uid,
+          USER_CUSTOM_PLAYLIST
+        );
+
+        showToastAndroid("Tạo thành công");
+
+        dispatch(setRefreshLibrary(true));
+      } else {
+        showToastAndroid("Playlist đã tồn tại");
+      }
     }
   };
 

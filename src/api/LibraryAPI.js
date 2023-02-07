@@ -46,7 +46,7 @@ export const getPlaylistByUid = async (uid) => {
   return result;
 };
 
-const checkDocExist = async (collection, docID) => {
+export const checkDocExist = async (collection, docID) => {
   const doc = await firestore().collection(collection).doc(docID).get();
 
   return doc._exists;
