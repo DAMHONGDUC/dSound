@@ -44,7 +44,6 @@ export default function BottomPlayer() {
   } = useSelector((state) => state.player);
 
   const progress = useProgress();
-  const isEmpty = Object.keys(activeSong).length === 0;
   const [progressBar, setprogressBar] = useState(0);
   const playBackState = usePlaybackState();
   const dispatch = useDispatch();
@@ -143,7 +142,6 @@ export default function BottomPlayer() {
   };
 
   return (
-    !isEmpty &&
     showBottomPlay && (
       <View style={styles.constainer}>
         <TouchableHighlight onPress={handleBottomPlayerClick}>

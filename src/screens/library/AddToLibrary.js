@@ -27,6 +27,8 @@ export default function LibraryPage() {
 
   useEffect(() => {
     dispatch(setRefreshLibrary(true));
+
+    dispatch(setShowBottomPlay(false));
   }, []);
 
   const fetchData = async () => {

@@ -23,7 +23,6 @@ export default function PopUpSongOptions({
     useSelector((state) => state.player);
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const isEmpty = Object.keys(activeSong).length === 0;
 
   const getLovedStatus = (songid) => {
     if (currLovedSong) {
@@ -55,9 +54,7 @@ export default function PopUpSongOptions({
     dispatch(setRefreshLibrary(true));
     dispatch(setNavToDetailId(activeLibraryId.id));
 
-    if (!isEmpty) {
-      dispatch(setShowBottomPlay(true));
-    }
+    dispatch(setShowBottomPlay(true));
   };
 
   const deleteASong = async () => {

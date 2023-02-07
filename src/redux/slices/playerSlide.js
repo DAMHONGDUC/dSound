@@ -35,7 +35,10 @@ export const playerSlide = createSlice({
       state.activeSong = action.payload;
     },
     setShowBottomPlay: (state, action) => {
-      state.showBottomPlay = action.payload;
+      const flag = action.payload;
+      const isEmpty = Object.keys(state.activeSong).length === 0;
+
+      state.showBottomPlay = flag && !isEmpty ? true : false;
     },
     setIsPlaying: (state, action) => {
       state.isPlaying = action.payload;
