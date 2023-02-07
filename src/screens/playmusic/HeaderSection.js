@@ -1,14 +1,19 @@
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { View, TouchableOpacity, StyleSheet, BackHandler } from "react-native";
 import { COLORS } from "constants/theme";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setShowBottomPlay } from "redux/slices/playerSlide";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { useCallback } from "react";
+import Feather from "react-native-vector-icons/Feather";
+import { useState } from "react";
+import PopUpSongOptions from "components/PopUpSongOptions";
 
 export default function HeaderSection() {
   const dispatch = useDispatch();
   const navigation = useNavigation();
+  const [showPopover, setShowPopover] = useState(false);
+  const { activeSong } = useSelector((state) => state.player);
 
   const handleBackButton = () => {
     navigation.pop();
@@ -42,12 +47,17 @@ export default function HeaderSection() {
           />
         </TouchableOpacity>
       </View>
+      <PopUpSongOptions
+        showPopover={showPopover}
+        setShowPopover={setShowPopover}
+        currSongRow={activeSong}
+      />
 
-      {/* <View style={styles.view}>
-        <TouchableOpacity>
-          <Feather name={"more-vertical"} color={COLORS.black} size={27} />
+      <View style={styles.view}>
+        <TouchableOpacity onPress={() => setShowPopover(true)}>
+          <Feather name={"more-vertical"} color={COLORS.black} size={25} />
         </TouchableOpacity>
-      </View> */}
+      </View>
     </View>
   );
 }
@@ -61,8 +71,23 @@ const styles = StyleSheet.create({
   view: {
     width: 60,
     height: 60,
-    //backgroundColor: COLORS.yellow,
     alignItems: "center",
     justifyContent: "center",
+  },
+  popupContainer: {
+    flexDirection: "column",
+    height: 130,
+    width: 230,
+    justifyContent: "space-evenly",
+  },
+  popupRow: {
+    flexDirection: "row",
+    marginLeft: 15,
+    alignItems: "center",
+  },
+  popupText: {
+    marginLeft: 5,
+    color: COLORS.black,
+    fontSize: 18,
   },
 });

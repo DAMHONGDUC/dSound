@@ -7,11 +7,20 @@ import {
   setCurrPlaylist,
   setRepeatMode,
   setShuffleMode,
+  setCurrLovedSong,
+  setRefreshLibrary,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
 import { RepeatMode } from "react-native-track-player";
 import { randomInRange } from "helper";
 import cloneDeep from "lodash.clonedeep";
+import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
+import {
+  checkSongExist,
+  removeASongWithDocId,
+  addSongWithDocId,
+} from "api/LibraryAPI";
+import { showToastAndroid } from "helper";
 
 export default class PlayerController {
   static async updateTrackUrl(song, index) {
@@ -24,9 +33,6 @@ export default class PlayerController {
     await TrackPlayer.remove(index + 1);
 
     store.dispatch(setSongURL({ index: index, url: URL }));
-
-    // const tracks = await TrackPlayer.getQueue();
-    // console.log("update track url ", index, tracks);
   }
 
   static updateSongData(index, currPlaylist) {
@@ -42,7 +48,6 @@ export default class PlayerController {
 
     await TrackPlayer.skip(currIndex);
     await TrackPlayer.play();
-    //console.log("played");
   }
 
   static async onPlayPause(playBackState) {
@@ -87,6 +92,37 @@ export default class PlayerController {
     }
 
     await TrackPlayer.play();
+  }
+
+  static async onLovedSong([lovedSongId, activeSong, currLovedSong]) {
+    const isExist = await checkSongExist(
+      FAVORITE_PLAYLIST_COLLECTION,
+      lovedSongId,
+      activeSong.id
+    );
+
+    if (isExist) {
+      const newLovedSong = await removeASongWithDocId(
+        activeSong.id,
+        lovedSongId,
+        currLovedSong
+      );
+
+      store.dispatch(setCurrLovedSong(newLovedSong));
+
+      showToastAndroid("Đã bỏ thích");
+    } else {
+      await addSongWithDocId(activeSong, lovedSongId);
+
+      let newLovedSong = cloneDeep(currLovedSong);
+      newLovedSong.push(activeSong);
+
+      store.dispatch(setCurrLovedSong(newLovedSong));
+
+      showToastAndroid("Đã thích");
+    }
+
+    store.dispatch(setRefreshLibrary(true));
   }
 
   static async resetTrackPlayer() {

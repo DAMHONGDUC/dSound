@@ -7,15 +7,33 @@ import NewSongRow from "./NewSongRow";
 import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
 import PlayerController from "helper/PlayerController";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { getAllSongByDocId } from "api/LibraryAPI";
+
+import { setCurrLovedSong } from "redux/slices/playerSlide";
 
 export default function SuggestedRoute() {
   const [dataSuggestedPlaylist, setdataSuggestedPlaylist] = useState();
   const [dataNewSong, setdataNewSong] = useState();
   const [isLoaded, setisLoaded] = useState(false);
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
-  const { currPlaylist } = useSelector((state) => state.player);
+  const { currPlaylist, lovedSongId, showBottomPlay } = useSelector(
+    (state) => state.player
+  );
+
+  useEffect(() => {
+    const handleGetCurrLovedSong = async () => {
+      const currLovedSong = await getAllSongByDocId(lovedSongId);
+
+      dispatch(setCurrLovedSong(currLovedSong.songs));
+    };
+
+    if (lovedSongId) {
+      handleGetCurrLovedSong();
+    }
+  }, [lovedSongId]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,7 +73,9 @@ export default function SuggestedRoute() {
 
   return isLoaded ? (
     <ScrollView>
-      <View style={styles.container}>
+      <View
+        style={[styles.container, { paddingBottom: showBottomPlay ? 50 : 0 }]}
+      >
         <Text style={styles.title}>Mới Phát Hành</Text>
         <View style={styles.newSong}>
           {dataNewSong.songs.slice(0, 6).map((e, index) => (
@@ -91,7 +111,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     backgroundColor: COLORS.white,
-    padding: 18,
+    paddingTop: 18,
+    paddingLeft: 18,
+    paddingRight: 18,
   },
   newSong: {
     flex: 1,

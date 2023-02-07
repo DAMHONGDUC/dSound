@@ -1,23 +1,15 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import PlaylistPage from "screens/playlist/PlaylistPage";
-import HomePage from "screens/home/HomePage";
+import LibraryPage from "screens/library/LibraryPage";
 import DetailLibraryPage from "screens/library/DetailLibraryPage";
 
 const Stack = createNativeStackNavigator();
 
-export default function HomeStack() {
+export default function LibraryStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="HomePage"
-        component={HomePage}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="PlaylistPage"
-        component={PlaylistPage}
+        name="LibraryPage"
+        component={LibraryPage}
         options={{
           headerShown: false,
         }}

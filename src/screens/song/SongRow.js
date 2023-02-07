@@ -12,6 +12,8 @@ import Feather from "react-native-vector-icons/Feather";
 import { durationFormat } from "helper";
 import { useSelector } from "react-redux";
 import { usePlaybackState, State } from "react-native-track-player";
+import PopUpSongOptions from "components/PopUpSongOptions";
+import { useState } from "react";
 
 export default function SongRow({
   image,
@@ -20,9 +22,11 @@ export default function SongRow({
   duration,
   onClick,
   id,
+  item,
 }) {
   const { activeSong } = useSelector((state) => state.player);
   const playBackState = usePlaybackState();
+  const [showPopover, setShowPopover] = useState(false);
 
   return (
     <TouchableHighlight
@@ -63,10 +67,16 @@ export default function SongRow({
           size={29}
           solid
         />
-
-        <TouchableOpacity>
-          <Feather name={"more-vertical"} color={COLORS.black} size={25} />
-        </TouchableOpacity>
+        <PopUpSongOptions
+          showPopover={showPopover}
+          setShowPopover={setShowPopover}
+          currSongRow={item}
+        />
+        <View style={styles.songRowOptions}>
+          <TouchableOpacity onPress={() => setShowPopover(true)}>
+            <Feather name={"more-vertical"} color={COLORS.black} size={25} />
+          </TouchableOpacity>
+        </View>
       </View>
     </TouchableHighlight>
   );
@@ -108,5 +118,10 @@ const styles = StyleSheet.create({
   duration: {
     color: COLORS.title,
     fontSize: 13,
+  },
+  songRowOptions: {
+    flexDirection: "row",
+    width: 50,
+    justifyContent: "flex-end",
   },
 });

@@ -4,12 +4,18 @@ const initialState = {
   currPlaylist: [],
   currIndex: 0,
   activeSong: {},
-  showBottomPlay: true,
+  showBottomPlay: false,
   isPlaying: false,
   repeatMode: false,
   shuffleMode: false,
   updateNearlySong: false,
   playlistPlayButtonClicked: false,
+  uid: "",
+  refreshLibrary: true,
+  lovedSongId: "",
+  currLovedSong: [],
+  navToDetailId: "",
+  activeLibraryId: null,
 };
 
 export const playerSlide = createSlice({
@@ -29,7 +35,10 @@ export const playerSlide = createSlice({
       state.activeSong = action.payload;
     },
     setShowBottomPlay: (state, action) => {
-      state.showBottomPlay = action.payload;
+      const flag = action.payload;
+      const isEmpty = Object.keys(state.activeSong).length === 0;
+
+      state.showBottomPlay = flag && !isEmpty ? true : false;
     },
     setIsPlaying: (state, action) => {
       state.isPlaying = action.payload;
@@ -46,6 +55,25 @@ export const playerSlide = createSlice({
     setPlaylistPlayButtonClicked: (state, action) => {
       state.playlistPlayButtonClicked = action.payload;
     },
+    setUid: (state, action) => {
+      state.uid = action.payload;
+      state.lovedSongId = action.payload + "loved_song";
+    },
+    setLovedSongId: (state, action) => {
+      state.lovedSongId = action.payload;
+    },
+    setCurrLovedSong: (state, action) => {
+      state.currLovedSong = action.payload;
+    },
+    setRefreshLibrary: (state, action) => {
+      state.refreshLibrary = action.payload;
+    },
+    setNavToDetailId: (state, action) => {
+      state.navToDetailId = action.payload;
+    },
+    setActiveLibraryId: (state, action) => {
+      state.activeLibraryId = action.payload;
+    },
   },
 });
 
@@ -60,6 +88,12 @@ export const {
   setShuffleMode,
   setUpdateNearlySong,
   setPlaylistPlayButtonClicked,
+  setUid,
+  setRefreshLibrary,
+  setLovedSongId,
+  setCurrLovedSong,
+  setNavToDetailId,
+  setActiveLibraryId,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

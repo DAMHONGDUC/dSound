@@ -1,53 +1,44 @@
 import { COLORS } from "constants/theme";
 import { useEffect, useState } from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
-import PlaylistHeader from "./PlaylistHeader";
-import { getDetailPlaylist } from "api/PlaylistAPI";
+import PlaylistHeader from "screens/playlist/PlaylistHeader";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "components/Loading";
 import SongRow from "screens/song/SongRow";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { getListArtistSong } from "api/ArtistAPI";
-import { ARTIST_FLOW, NORMAL_FLOW } from "constants/values";
+import { LIBRARY_FLOW } from "constants/values";
 import { setActiveLibraryId } from "redux/slices/playerSlide";
+import { getAllSongByDocId } from "api/LibraryAPI";
 
-export default function PlaylistPage() {
-  const { currPlaylist, showBottomPlay } = useSelector((state) => state.player);
+export default function DetailLibraryPage() {
   const [dataPlaylist, setdataPlaylist] = useState();
   const navigation = useNavigation();
   const route = useRoute();
-  const [flow, setFlow] = useState();
+  const { currPlaylist, showBottomPlay, refreshLibrary } = useSelector(
+    (state) => state.player
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getDataDetailPlaylist = async () => {
-      const data = await getDetailPlaylist(route.params.id);
+    const fetchData = async () => {
+      const allSongs = await getAllSongByDocId(route.params.id);
+
+      const data = {
+        id: route.params.id,
+        image: route.params.image,
+        title: route.params.title,
+        numOfSong: allSongs?.songs?.length ?? 0,
+        songs: allSongs?.songs ?? [],
+      };
+
+      dispatch(setActiveLibraryId(data));
 
       setdataPlaylist(data);
-      dispatch(setActiveLibraryId(null));
     };
 
-    const getDataDetailArtist = async () => {
-      let data = await getListArtistSong(route.params.id, 1, 20);
-
-      data.image = route.params.props.image;
-      data.title = route.params.props.title;
-      data.totalFollow = route.params.props.totalFollow;
-
-      setdataPlaylist(data);
-    };
-
-    setFlow(route.params.type);
-    switch (route.params.type) {
-      case ARTIST_FLOW:
-        getDataDetailArtist();
-        break;
-      case NORMAL_FLOW:
-        getDataDetailPlaylist();
-        break;
-    }
-  }, []);
+    fetchData();
+  }, [refreshLibrary]);
 
   const renderItem = ({ item, index }) => {
     return (
@@ -84,7 +75,7 @@ export default function PlaylistPage() {
               dataPlaylist={dataPlaylist}
               navigation={navigation}
               playlist={dataPlaylist}
-              flow={flow}
+              flow={LIBRARY_FLOW}
             />
           )}
           ListEmptyComponent={

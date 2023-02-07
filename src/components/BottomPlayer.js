@@ -39,10 +39,11 @@ export default function BottomPlayer() {
     currIndex,
     updateNearlySong,
     playlistPlayButtonClicked,
+    lovedSongId,
+    currLovedSong,
   } = useSelector((state) => state.player);
 
   const progress = useProgress();
-  const isEmpty = Object.keys(activeSong).length === 0;
   const [progressBar, setprogressBar] = useState(0);
   const playBackState = usePlaybackState();
   const dispatch = useDispatch();
@@ -52,12 +53,12 @@ export default function BottomPlayer() {
       let index = event.nextTrack;
       dispatch(setUpdateNearlySong(true));
 
-      if (index !== 0) {
-        dispatch(setCurrIndex(index));
-        dispatch(setActiveSong(currPlaylist.songs[index]));
-      } else if (playlistPlayButtonClicked) {
-        dispatch(setCurrIndex(0));
-        dispatch(setActiveSong(currPlaylist.songs[0]));
+      dispatch(setCurrIndex(playlistPlayButtonClicked ? 0 : index));
+      dispatch(
+        setActiveSong(currPlaylist.songs[playlistPlayButtonClicked ? 0 : index])
+      );
+
+      if (playlistPlayButtonClicked) {
         dispatch(setPlaylistPlayButtonClicked(false));
       }
     }
@@ -124,8 +125,21 @@ export default function BottomPlayer() {
     });
   };
 
+  const handleLovedSong = async () => {
+    await PlayerController.onLovedSong([
+      lovedSongId,
+      activeSong,
+      currLovedSong,
+    ]);
+  };
+
+  const getLovedStatus = (songid) => {
+    if (currLovedSong) {
+      return currLovedSong.some((e) => e.id === songid);
+    }
+  };
+
   return (
-    !isEmpty &&
     showBottomPlay && (
       <View style={styles.constainer}>
         <TouchableHighlight onPress={handleBottomPlayerClick}>
@@ -148,10 +162,17 @@ export default function BottomPlayer() {
               </View>
 
               <View style={styles.row3}>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity
+                  onPress={handleLovedSong}
+                  style={styles.button}
+                >
                   <FontAwesome5
                     name={"heart"}
-                    color={COLORS.white}
+                    color={
+                      getLovedStatus(activeSong.id)
+                        ? COLORS.primary
+                        : COLORS.white
+                    }
                     size={23}
                     solid
                   />
