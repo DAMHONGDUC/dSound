@@ -62,9 +62,7 @@ export default function DetailLibraryPage() {
     );
   };
   return (
-    <View
-      style={[styles.container, { marginBottom: showBottomPlay ? 60 : 20 }]}
-    >
+    <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
       {dataPlaylist?.songs ? (
         <FlatList
           data={dataPlaylist.songs}

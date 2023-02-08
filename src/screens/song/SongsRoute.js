@@ -10,7 +10,7 @@ import { useSelector } from "react-redux";
 
 export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
-  const { currPlaylist } = useSelector((state) => state.player);
+  const { showBottomPlay, currPlaylist } = useSelector((state) => state.player);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,7 +45,7 @@ export default function SongsRoute({ navigation }) {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
       {data100Song ? (
         <>
           <Text style={styles.mainText}>
@@ -69,7 +69,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.white,
-    padding: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   mainText: {
     color: COLORS.primary,

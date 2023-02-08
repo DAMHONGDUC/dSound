@@ -74,7 +74,7 @@ export default function SuggestedRoute() {
   return isLoaded ? (
     <ScrollView>
       <View
-        style={[styles.container, { paddingBottom: showBottomPlay ? 50 : 0 }]}
+        style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}
       >
         <Text style={styles.title}>Mới Phát Hành</Text>
         <View style={styles.newSong}>
