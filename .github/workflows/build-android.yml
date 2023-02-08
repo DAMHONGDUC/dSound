@@ -29,6 +29,14 @@ jobs:
           fileName: android/app/dsound.keystore
           encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
 
+        - name: Run Workflow
+          id: write_file
+          uses: timheuer/base64-to-file@v1.2
+          with:
+            fileName: 'dsound.keystore'
+            fileDir: './android/app/'
+            encodedString: ${{ secrets.SOME_ENCODED_STRING }}
+
       - name: check
         run: |
           cd android/app
