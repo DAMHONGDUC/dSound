@@ -26,13 +26,12 @@ jobs:
         id: decode_keystore
         uses: timheuer/base64-to-file@v1
         with:
-          fileName: '/home/runner/work/dSound/dSound/android/app/dsound.keystore'
+          fileName: android/app/dsound.keystore
           encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
 
       - name: check
         run: |
           cd android/app
-          pwd
           ls
 
       # - name: Build APK
