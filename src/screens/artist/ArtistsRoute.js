@@ -7,10 +7,12 @@ import { getArtist } from "api/ArtistAPI";
 import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
 import { ARTIST_FLOW } from "constants/values";
+import { useSelector } from "react-redux";
 
 export default function ArtistsRoute() {
   const [dataArtist, setdataArtist] = useState();
   const navigation = useNavigation();
+  const { showBottomPlay } = useSelector((state) => state.player);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,7 +45,7 @@ export default function ArtistsRoute() {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
       {dataArtist ? (
         <>
           <Text style={styles.mainText}>Top {dataArtist.length} artist</Text>
@@ -65,7 +67,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.white,
-    padding: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   mainText: {
     color: COLORS.primary,

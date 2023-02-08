@@ -9,13 +9,14 @@ const initialState = {
   repeatMode: false,
   shuffleMode: false,
   updateNearlySong: false,
-  playlistPlayButtonClicked: false,
+  initFirstSong: false,
   uid: "",
   refreshLibrary: true,
   lovedSongId: "",
   currLovedSong: [],
   navToDetailId: "",
   activeLibraryId: null,
+  popUpLibraryOptions: false,
 };
 
 export const playerSlide = createSlice({
@@ -52,8 +53,8 @@ export const playerSlide = createSlice({
     setUpdateNearlySong: (state, action) => {
       state.updateNearlySong = action.payload;
     },
-    setPlaylistPlayButtonClicked: (state, action) => {
-      state.playlistPlayButtonClicked = action.payload;
+    setInitFirstSong: (state, action) => {
+      state.initFirstSong = action.payload;
     },
     setUid: (state, action) => {
       state.uid = action.payload;
@@ -74,6 +75,9 @@ export const playerSlide = createSlice({
     setActiveLibraryId: (state, action) => {
       state.activeLibraryId = action.payload;
     },
+    setPopUpLibraryOptions: (state, action) => {
+      state.popUpLibraryOptions = action.payload;
+    },
   },
 });
 
@@ -87,13 +91,14 @@ export const {
   setRepeatMode,
   setShuffleMode,
   setUpdateNearlySong,
-  setPlaylistPlayButtonClicked,
+  setInitFirstSong,
   setUid,
   setRefreshLibrary,
   setLovedSongId,
   setCurrLovedSong,
   setNavToDetailId,
   setActiveLibraryId,
+  setPopUpLibraryOptions,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

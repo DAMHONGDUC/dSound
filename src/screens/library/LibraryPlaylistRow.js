@@ -23,8 +23,11 @@ export default function LibraryPlaylistRow({
   image,
   numOfSong,
   id,
+  dataPlaylist,
 }) {
-  const { navToDetailId, lovedSongId } = useSelector((state) => state.player);
+  const { navToDetailId, lovedSongId, uid } = useSelector(
+    (state) => state.player
+  );
   const dispatch = useDispatch();
 
   const handleOnPress = () => {
@@ -40,7 +43,7 @@ export default function LibraryPlaylistRow({
   }, [navToDetailId]);
 
   const handleDeletePlaylist = async () => {
-    await removeWithDocId(FAVORITE_PLAYLIST_COLLECTION, id);
+    await removeWithDocId(FAVORITE_PLAYLIST_COLLECTION, id, uid, dataPlaylist);
 
     showToastAndroid("Đã xoá playlist: " + title);
 

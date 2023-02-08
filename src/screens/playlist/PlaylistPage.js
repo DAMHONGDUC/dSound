@@ -25,7 +25,6 @@ export default function PlaylistPage() {
       const data = await getDetailPlaylist(route.params.id);
 
       setdataPlaylist(data);
-      dispatch(setActiveLibraryId(null));
     };
 
     const getDataDetailArtist = async () => {
@@ -67,13 +66,12 @@ export default function PlaylistPage() {
         duration={item.duration}
         id={item.id}
         item={item}
+        index={index}
       />
     );
   };
   return (
-    <View
-      style={[styles.container, { marginBottom: showBottomPlay ? 60 : 20 }]}
-    >
+    <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
       {dataPlaylist?.songs ? (
         <FlatList
           data={dataPlaylist.songs}

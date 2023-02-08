@@ -37,6 +37,7 @@ export default function LibraryComponent({ onPress, dataPlaylist }) {
         numOfSong={item.songs.length}
         id={item.id}
         onPress={onPress}
+        dataPlaylist={dataPlaylist}
       />
     );
   };

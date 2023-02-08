@@ -54,7 +54,7 @@ export default function LibraryPage() {
 
     showToastAndroid("Đã thêm vào " + item.title);
 
-    await navToDetail(item);
+    navToDetail(item);
 
     dispatch(setRefreshLibrary(true));
   };

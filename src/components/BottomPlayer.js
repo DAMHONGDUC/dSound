@@ -14,7 +14,7 @@ import LinearGradient from "react-native-linear-gradient";
 import PlayerController from "helper/PlayerController";
 import { useEffect, useState } from "react";
 import { rootNavigationRef } from "navigation/RootNavigation";
-import {
+import TrackPlayer, {
   Event,
   usePlaybackState,
   useTrackPlayerEvents,
@@ -26,7 +26,7 @@ import {
   setCurrIndex,
   setActiveSong,
   setUpdateNearlySong,
-  setPlaylistPlayButtonClicked,
+  setInitFirstSong,
 } from "redux/slices/playerSlide";
 
 export default function BottomPlayer() {
@@ -38,7 +38,7 @@ export default function BottomPlayer() {
     shuffleMode,
     currIndex,
     updateNearlySong,
-    playlistPlayButtonClicked,
+    initFirstSong,
     lovedSongId,
     currLovedSong,
   } = useSelector((state) => state.player);
@@ -50,16 +50,26 @@ export default function BottomPlayer() {
 
   useTrackPlayerEvents([Event.PlaybackTrackChanged], async (event) => {
     if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
+      console.log(event);
+
       let index = event.nextTrack;
       dispatch(setUpdateNearlySong(true));
 
-      dispatch(setCurrIndex(playlistPlayButtonClicked ? 0 : index));
-      dispatch(
-        setActiveSong(currPlaylist.songs[playlistPlayButtonClicked ? 0 : index])
-      );
+      // dispatch(setCurrIndex(playlistPlayButtonClicked ? 0 : index));
+      // dispatch(
+      //   setActiveSong(currPlaylist.songs[playlistPlayButtonClicked ? 0 : index])
+      // );
 
-      if (playlistPlayButtonClicked) {
-        dispatch(setPlaylistPlayButtonClicked(false));
+      // if (playlistPlayButtonClicked) {
+      //   dispatch(setPlaylistPlayButtonClicked(false));
+      // }
+
+      if (index !== 0) {
+        dispatch(setCurrIndex(index));
+        dispatch(setActiveSong(currPlaylist.songs[index]));
+      } else if (initFirstSong) {
+        dispatch(setCurrIndex(0));
+        dispatch(setActiveSong(currPlaylist.songs[0]));
       }
     }
   });
@@ -75,18 +85,47 @@ export default function BottomPlayer() {
   };
 
   useTrackPlayerEvents([Event.PlaybackState], async (event) => {
+    if (event.type === Event.PlaybackState) {
+      if (initFirstSong) {
+        await TrackPlayer.play();
+      }
+    }
+  });
+
+  const handleReadyStatus = async () => {
+    if (initFirstSong) {
+      await TrackPlayer.play();
+    }
+  };
+
+  const handlePlayingStatus = async () => {
+    if (updateNearlySong) {
+      let index = currIndex;
+
+      await helperUpdateNearlySong(index - 1 >= 1, currPlaylist, index - 1);
+      await helperUpdateNearlySong(
+        index + 1 <= currPlaylist.songs.length - 1,
+        currPlaylist,
+        index + 1
+      );
+
+      dispatch(setUpdateNearlySong(false));
+    }
+
+    if (initFirstSong) {
+      dispatch(setInitFirstSong(false));
+    }
+  };
+
+  useTrackPlayerEvents([Event.PlaybackState], async (event) => {
     if (event.type === Event.PlaybackState && event.state === State.Playing) {
-      if (updateNearlySong) {
-        let index = currIndex;
-
-        await helperUpdateNearlySong(index - 1 >= 1, currPlaylist, index - 1);
-        await helperUpdateNearlySong(
-          index + 1 <= currPlaylist.songs.length - 1,
-          currPlaylist,
-          index + 1
-        );
-
-        dispatch(setUpdateNearlySong(false));
+      switch (event.state) {
+        case State.Playing:
+          await handlePlayingStatus();
+          break;
+        case State.Ready:
+          await handleReadyStatus();
+          break;
       }
     }
   });

@@ -19,7 +19,7 @@ export default function PopUpSongOptions({
   showPopover,
   setShowPopover,
 }) {
-  const { lovedSongId, activeSong, currLovedSong, activeLibraryId } =
+  const { lovedSongId, popUpLibraryOptions, currLovedSong, activeLibraryId } =
     useSelector((state) => state.player);
   const navigation = useNavigation();
   const dispatch = useDispatch();
@@ -78,7 +78,7 @@ export default function PopUpSongOptions({
       onRequestClose={() => setShowPopover(false)}
     >
       <View style={styles.popupContainer}>
-        {!activeLibraryId && (
+        {!popUpLibraryOptions && (
           <TouchableHighlight
             underlayColor={COLORS.songRowClickColor}
             onPress={handleAddToLibrary}
@@ -109,24 +109,26 @@ export default function PopUpSongOptions({
             </Text>
           </View>
         </TouchableHighlight>
-        {activeLibraryId && activeLibraryId.id !== lovedSongId && (
-          <TouchableHighlight
-            underlayColor={COLORS.songRowClickColor}
-            onPress={deleteASong}
-          >
-            <View style={styles.popupRow}>
-              <FontAwesome
-                name={"remove"}
-                color={COLORS.primary}
-                size={29}
-                solid
-              />
-              <Text style={[styles.popupText, { marginLeft: 15 }]}>
-                Xoá khỏi {activeLibraryId.title}
-              </Text>
-            </View>
-          </TouchableHighlight>
-        )}
+        {popUpLibraryOptions &&
+          activeLibraryId &&
+          activeLibraryId.id !== lovedSongId && (
+            <TouchableHighlight
+              underlayColor={COLORS.songRowClickColor}
+              onPress={deleteASong}
+            >
+              <View style={styles.popupRow}>
+                <FontAwesome
+                  name={"remove"}
+                  color={COLORS.primary}
+                  size={29}
+                  solid
+                />
+                <Text style={[styles.popupText, { marginLeft: 15 }]}>
+                  Xoá khỏi {activeLibraryId.title}
+                </Text>
+              </View>
+            </TouchableHighlight>
+          )}
       </View>
     </Popover>
   );

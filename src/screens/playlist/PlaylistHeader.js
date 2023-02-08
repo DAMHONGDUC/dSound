@@ -6,7 +6,7 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setPlaylistPlayButtonClicked } from "redux/slices/playerSlide";
+import { setInitFirstSong } from "redux/slices/playerSlide";
 
 export default function PlaylistHeader({
   playlist,
@@ -42,7 +42,7 @@ export default function PlaylistHeader({
 
   const handlePlayPlaylist = () => {
     if (dataPlaylist.songs[0]) {
-      dispatch(setPlaylistPlayButtonClicked(true));
+      dispatch(setInitFirstSong(true));
 
       PlayerController.onSongRowClick([
         currPlaylist,
