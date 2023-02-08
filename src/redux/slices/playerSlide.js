@@ -17,6 +17,7 @@ const initialState = {
   navToDetailId: "",
   activeLibraryId: null,
   popUpLibraryOptions: false,
+  replayPlaylist: false,
 };
 
 export const playerSlide = createSlice({
@@ -78,6 +79,9 @@ export const playerSlide = createSlice({
     setPopUpLibraryOptions: (state, action) => {
       state.popUpLibraryOptions = action.payload;
     },
+    setReplayPlaylist: (state, action) => {
+      state.replayPlaylist = action.payload;
+    },
   },
 });
 
@@ -99,6 +103,7 @@ export const {
   setNavToDetailId,
   setActiveLibraryId,
   setPopUpLibraryOptions,
+  setReplayPlaylist,
 } = playerSlide.actions;
 
 export default playerSlide.reducer;

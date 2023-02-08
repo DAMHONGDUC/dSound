@@ -9,6 +9,8 @@ import {
   setShuffleMode,
   setCurrLovedSong,
   setRefreshLibrary,
+  setReplayPlaylist,
+  setInitFirstSong,
 } from "redux/slices/playerSlide";
 import { store } from "redux/store";
 import { RepeatMode } from "react-native-track-player";
@@ -72,6 +74,13 @@ export default class PlayerController {
     await PlayerController.onPlayNew(random, currPlaylist);
   }
 
+  static async onNextRepeatPlaylist(currIndex, currPlaylist) {
+    if (currIndex === currPlaylist.songs.length - 1) {
+      store.dispatch(setInitFirstSong(true));
+      await PlayerController.onPlayNew(0, currPlaylist);
+    }
+  }
+
   static async onShuffle(shuffleMode) {
     store.dispatch(setShuffleMode(!shuffleMode));
   }
@@ -82,6 +91,14 @@ export default class PlayerController {
     );
 
     store.dispatch(setRepeatMode(!repeatMode));
+  }
+
+  static async onReplayPlaylist(replayPlaylist) {
+    // await TrackPlayer.setRepeatMode(
+    //   replayPlaylist ? RepeatMode.Off : RepeatMode.Queue
+    // );
+
+    store.dispatch(setReplayPlaylist(!replayPlaylist));
   }
 
   static async onPrevious(currIndex) {
