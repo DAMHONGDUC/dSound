@@ -1,5 +1,5 @@
 import { COLORS } from "constants/theme";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
 import PlaylistHeader from "screens/playlist/PlaylistHeader";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,8 +8,12 @@ import SongRow from "screens/song/SongRow";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { LIBRARY_FLOW } from "constants/values";
-import { setActiveLibraryId } from "redux/slices/playerSlide";
+import {
+  setActiveLibraryId,
+  setPopUpLibraryOptions,
+} from "redux/slices/playerSlide";
 import { getAllSongByDocId } from "api/LibraryAPI";
+import { useFocusEffect } from "@react-navigation/native";
 
 export default function DetailLibraryPage() {
   const [dataPlaylist, setdataPlaylist] = useState();
@@ -19,6 +23,23 @@ export default function DetailLibraryPage() {
     (state) => state.player
   );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    // componentWillUnmount
+    return () => {
+      dispatch(setActiveLibraryId(null));
+    };
+  }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      dispatch(setPopUpLibraryOptions(true));
+
+      return () => {
+        dispatch(setPopUpLibraryOptions(false));
+      };
+    }, [])
+  );
 
   useEffect(() => {
     const fetchData = async () => {

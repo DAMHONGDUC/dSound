@@ -25,7 +25,6 @@ export default function PlaylistPage() {
       const data = await getDetailPlaylist(route.params.id);
 
       setdataPlaylist(data);
-      dispatch(setActiveLibraryId(null));
     };
 
     const getDataDetailArtist = async () => {
