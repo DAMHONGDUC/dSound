@@ -22,12 +22,15 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      # - name: Decode Keystore
-      #   id: decode_keystore
-      #   uses: timheuer/base64-to-file@v1
-      #   with:
-      #     fileName: 'android/app/dsound.keystore'
-      #     encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'android/app/dsound.keystore'
+          encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
+
+      - name: pwd
+        run: pwd
 
       - name: Build APK
         id: build
@@ -35,15 +38,15 @@ jobs:
           cd android
           ./gradlew assembleRelease
 
-      - name: Sign APK
-        id: sign_apk
-        uses: r0adkll/sign-android-release@v1
-        with:
-          releaseDirectory: ./android/app/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.SIGNINGKEYBASE64 }}
-          alias: ${{ secrets.MYAPP_UPLOAD_KEY_ALIAS }}
-          keyStorePassword: ${{ secrets.MYAPP_UPLOAD_STORE_PASSWORD }}
-          keyPassword: ${{ secrets.MYAPP_UPLOAD_KEY_PASSWORD }}
+      # - name: Sign APK
+      #   id: sign_apk
+      #   uses: r0adkll/sign-android-release@v1
+      #   with:
+      #     releaseDirectory: ./android/app/build/outputs/apk/release
+      #     signingKeyBase64: ${{ secrets.SIGNINGKEYBASE64 }}
+      #     alias: ${{ secrets.MYAPP_UPLOAD_KEY_ALIAS }}
+      #     keyStorePassword: ${{ secrets.MYAPP_UPLOAD_STORE_PASSWORD }}
+      #     keyPassword: ${{ secrets.MYAPP_UPLOAD_KEY_PASSWORD }}
 
       - name: upload artifact to Firebase App Distribution
         uses: wzieba/Firebase-Distribution-Github-Action@v1
