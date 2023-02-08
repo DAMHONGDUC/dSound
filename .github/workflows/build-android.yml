@@ -26,7 +26,7 @@ jobs:
         id: decode_keystore
         uses: timheuer/base64-to-file@v1
         with:
-          fileName: 'android/app/dsound.keystore'
+          fileName: '/home/runner/work/dSound/dSound/android/app/dsound.keystore'
           encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
 
       - name: check
@@ -35,11 +35,11 @@ jobs:
           pwd
           ls
 
-      - name: Build APK
-        id: build
-        run: |
-          cd android
-          ./gradlew assembleRelease
+      # - name: Build APK
+      #   id: build
+      #   run: |
+      #     cd android
+      #     ./gradlew assembleRelease
 
       # - name: Sign APK
       #   id: sign_apk
@@ -51,9 +51,9 @@ jobs:
       #     keyStorePassword: ${{ secrets.MYAPP_UPLOAD_STORE_PASSWORD }}
       #     keyPassword: ${{ secrets.MYAPP_UPLOAD_KEY_PASSWORD }}
 
-      - name: upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-          appId: ${{secrets.FIREBASE_APP_ID}}
-          serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
-          file: ./android/app/build/outputs/apk/release/app-release.apk
+      # - name: upload artifact to Firebase App Distribution
+      #   uses: wzieba/Firebase-Distribution-Github-Action@v1
+      #   with:
+      #     appId: ${{secrets.FIREBASE_APP_ID}}
+      #     serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
+      #     file: ./android/app/build/outputs/apk/release/app-release.apk
