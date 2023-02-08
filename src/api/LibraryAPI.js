@@ -136,6 +136,13 @@ export const getAllSongByDocId = async (docid) => {
   return res?._data ?? [];
 };
 
-export const removeWithDocId = async (collection, docId) => {
+export const removeWithDocId = async (collection, docId, uid, dataPlaylist) => {
+  const playlistID = dataPlaylist.map((e) => e.id);
+  const newPlaylistID = playlistID.filter((e) => e !== docId);
+
   await firestore().collection(collection).doc(docId).delete();
+
+  await firestore().collection(USER_FAVORITE_PLAYLIST_COLLECTION).doc(uid).set({
+    playlistID: newPlaylistID,
+  });
 };
