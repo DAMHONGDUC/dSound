@@ -29,8 +29,11 @@ jobs:
           fileName: 'android/app/dsound.keystore'
           encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
 
-      - name: pwd
-        run: pwd
+      - name: check
+        run: |
+          cd android/app
+          pwd
+          ls
 
       - name: Build APK
         id: build
