@@ -66,6 +66,7 @@ export default function PlaylistPage() {
         duration={item.duration}
         id={item.id}
         item={item}
+        index={index}
       />
     );
   };

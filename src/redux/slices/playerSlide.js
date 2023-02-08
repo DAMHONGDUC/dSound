@@ -9,7 +9,7 @@ const initialState = {
   repeatMode: false,
   shuffleMode: false,
   updateNearlySong: false,
-  playlistPlayButtonClicked: false,
+  initFirstSong: false,
   uid: "",
   refreshLibrary: true,
   lovedSongId: "",
@@ -53,8 +53,8 @@ export const playerSlide = createSlice({
     setUpdateNearlySong: (state, action) => {
       state.updateNearlySong = action.payload;
     },
-    setPlaylistPlayButtonClicked: (state, action) => {
-      state.playlistPlayButtonClicked = action.payload;
+    setInitFirstSong: (state, action) => {
+      state.initFirstSong = action.payload;
     },
     setUid: (state, action) => {
       state.uid = action.payload;
@@ -91,7 +91,7 @@ export const {
   setRepeatMode,
   setShuffleMode,
   setUpdateNearlySong,
-  setPlaylistPlayButtonClicked,
+  setInitFirstSong,
   setUid,
   setRefreshLibrary,
   setLovedSongId,
