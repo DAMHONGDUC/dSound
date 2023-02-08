@@ -23,11 +23,11 @@ jobs:
         run: yarn install
 
       - name: Decode Keystore
-          id: decode_keystore
-          uses: timheuer/base64-to-file@v1
-          with:
-            fileName: 'android/app/dsound.keystore'
-            encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1
+        with:
+          fileName: 'android/app/dsound.keystore'
+          encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
 
       - name: Build APK
         id: build
