@@ -79,6 +79,7 @@ export default function DetailLibraryPage() {
         duration={item.duration}
         id={item.id}
         item={item}
+        index={index}
       />
     );
   };

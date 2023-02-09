@@ -40,6 +40,7 @@ export default function SongsRoute({ navigation }) {
         duration={item.duration}
         id={item.id}
         item={item}
+        index={index}
       />
     );
   };

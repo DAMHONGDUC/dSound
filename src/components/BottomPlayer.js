@@ -51,8 +51,6 @@ export default function BottomPlayer() {
 
   useTrackPlayerEvents([Event.PlaybackTrackChanged], async (event) => {
     if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
-      console.log(event);
-
       let index = event.nextTrack;
       dispatch(setUpdateNearlySong(true));
 

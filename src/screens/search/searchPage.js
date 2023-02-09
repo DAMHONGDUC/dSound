@@ -28,6 +28,7 @@ export default function SongsRoute({ navigation }) {
 
       const data = await searchSongByName(searchText);
 
+      console.log(data);
       setdataSearch(data ?? []);
       setnotiText(data ?? "không có kết quả !");
 
@@ -63,6 +64,7 @@ export default function SongsRoute({ navigation }) {
         duration={item.duration}
         id={item.id}
         item={item}
+        index={index}
       />
     );
   };
