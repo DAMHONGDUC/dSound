@@ -1,14 +1,31 @@
 import { COLORS } from "constants/theme";
 import { Image, View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import Feather from "react-native-vector-icons/Feather";
+import EvilIcons from "react-native-vector-icons/EvilIcons";
+import Share from "react-native-share";
 
 export default function MainHeader() {
+  const shareOptions = {
+    title: "Share via",
+    message: "Enjoy free music with dSound",
+    url: "https://play.google.com/store/apps/details?id=com.dsound",
+  };
+
+  const handleShare = () => {
+    Share.open(shareOptions)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        err && console.log(err);
+      });
+  };
+
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={require("assets/app_icon.png")} />
       <Text style={styles.text}>dSound</Text>
-      <TouchableOpacity style={styles.button}>
-        <Feather name={"settings"} color={COLORS.black} size={22} solid />
+      <TouchableOpacity onPress={handleShare} style={styles.button}>
+        <EvilIcons name={"share-google"} color={COLORS.black} size={35} solid />
       </TouchableOpacity>
     </View>
   );
@@ -36,6 +53,6 @@ const styles = StyleSheet.create({
     height: 35,
   },
   button: {
-    flex: 0.1,
+    flex: 0.15,
   },
 });
