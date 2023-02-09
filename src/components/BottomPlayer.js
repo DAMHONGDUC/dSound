@@ -21,9 +21,15 @@ import TrackPlayer, {
   useProgress,
   State,
 } from "react-native-track-player";
-import cloneDeep from "lodash.clonedeep";
+import { useDispatch } from "react-redux";
+import {
+  setCurrIndex,
+  setActiveSong,
+  setUpdateNearlySong,
+  setInitFirstSong,
+} from "redux/slices/playerSlide";
 
-export default BottomPlayer = () => {
+export default function BottomPlayer() {
   const {
     activeSong,
     showBottomPlay,
@@ -31,32 +37,79 @@ export default BottomPlayer = () => {
     repeatMode,
     shuffleMode,
     currIndex,
+    updateNearlySong,
+    initFirstSong,
+    lovedSongId,
+    currLovedSong,
+    replayPlaylist,
   } = useSelector((state) => state.player);
 
   const progress = useProgress();
-  const isEmpty = Object.keys(activeSong).length === 0;
   const [progressBar, setprogressBar] = useState(0);
   const playBackState = usePlaybackState();
+  const dispatch = useDispatch();
 
   useTrackPlayerEvents([Event.PlaybackTrackChanged], async (event) => {
     if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
+      console.log(event);
+
       let index = event.nextTrack;
-      PlayerController.updateSongData(index, currPlaylist);
+      dispatch(setUpdateNearlySong(true));
 
-      if (index === 0) {
-        let nextSong = cloneDeep(currPlaylist.songs[index + 1]);
+      if (index !== 0) {
+        dispatch(setCurrIndex(index));
+        dispatch(setActiveSong(currPlaylist.songs[index]));
+      } else if (initFirstSong) {
+        dispatch(setCurrIndex(0));
+        dispatch(setActiveSong(currPlaylist.songs[0]));
+      }
+    }
+  });
 
-        if (!nextSong.url)
-          await PlayerController.updateTrackUrl(nextSong, index + 1);
-      } else {
-        let preSong = cloneDeep(currPlaylist.songs[index - 1]);
-        let nextSong = cloneDeep(currPlaylist.songs[index + 1]);
+  const helperUpdateNearlySong = async (flag, playlist, index) => {
+    if (flag) {
+      let song = playlist.songs[index];
 
-        if (!preSong.url)
-          await PlayerController.updateTrackUrl(preSong, index - 1);
+      if (!song.url) {
+        await PlayerController.updateTrackUrl(song, index);
+      }
+    }
+  };
 
-        if (!nextSong.url)
-          await PlayerController.updateTrackUrl(nextSong, index + 1);
+  const handleReadyStatus = async () => {
+    if (initFirstSong) {
+      await TrackPlayer.play();
+    }
+  };
+
+  const handlePlayingStatus = async () => {
+    if (updateNearlySong) {
+      let index = currIndex;
+
+      await helperUpdateNearlySong(index - 1 >= 1, currPlaylist, index - 1);
+      await helperUpdateNearlySong(
+        index + 1 <= currPlaylist.songs.length - 1,
+        currPlaylist,
+        index + 1
+      );
+
+      dispatch(setUpdateNearlySong(false));
+    }
+
+    if (initFirstSong) {
+      dispatch(setInitFirstSong(false));
+    }
+  };
+
+  useTrackPlayerEvents([Event.PlaybackState], async (event) => {
+    if (event.type === Event.PlaybackState) {
+      switch (event.state) {
+        case State.Playing:
+          await handlePlayingStatus();
+          break;
+        case State.Ready:
+          await handleReadyStatus();
+          break;
       }
     }
   });
@@ -72,7 +125,11 @@ export default BottomPlayer = () => {
         ) {
           if (shuffleMode) {
             PlayerController.onNextShuffle(currIndex, currPlaylist);
-          } else PlayerController.onNext();
+          } else if (replayPlaylist) {
+            PlayerController.onNextRepeatPlaylist(currIndex, currPlaylist);
+          } else {
+            PlayerController.onNext();
+          }
         }
 
         setprogressBar((sec / activeSong.duration) * 100);
@@ -93,8 +150,21 @@ export default BottomPlayer = () => {
     });
   };
 
+  const handleLovedSong = async () => {
+    await PlayerController.onLovedSong([
+      lovedSongId,
+      activeSong,
+      currLovedSong,
+    ]);
+  };
+
+  const getLovedStatus = (songid) => {
+    if (currLovedSong) {
+      return currLovedSong.some((e) => e.id === songid);
+    }
+  };
+
   return (
-    !isEmpty &&
     showBottomPlay && (
       <View style={styles.constainer}>
         <TouchableHighlight onPress={handleBottomPlayerClick}>
@@ -103,15 +173,13 @@ export default BottomPlayer = () => {
             end={{ x: 1, y: 0 }}
             colors={["#205295", "#0A2647", "#1A120B"]}
           >
-            <View
-              style={[styles.progress, { width: `${progressBar}%` }]}
-            ></View>
+            <View style={[styles.progress, { width: `${progressBar}%` }]} />
             <View style={styles.row}>
               <View style={styles.row2}>
                 <Image
                   style={styles.image}
                   source={{ uri: activeSong.artwork }}
-                ></Image>
+                />
                 <View style={styles.titleSection}>
                   <Text numberOfLines={1}>{activeSong.title}</Text>
                   <Text numberOfLines={1}>{activeSong.artist}</Text>
@@ -119,10 +187,17 @@ export default BottomPlayer = () => {
               </View>
 
               <View style={styles.row3}>
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity
+                  onPress={handleLovedSong}
+                  style={styles.button}
+                >
                   <FontAwesome5
                     name={"heart"}
-                    color={COLORS.white}
+                    color={
+                      getLovedStatus(activeSong.id)
+                        ? COLORS.primary
+                        : COLORS.white
+                    }
                     size={23}
                     solid
                   />
@@ -155,7 +230,7 @@ export default BottomPlayer = () => {
       </View>
     )
   );
-};
+}
 
 const styles = StyleSheet.create({
   constainer: {

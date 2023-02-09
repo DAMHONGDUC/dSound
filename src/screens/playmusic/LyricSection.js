@@ -6,15 +6,14 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { COLORS } from "constants/theme";
-import { createRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getLyric } from "api/SongAPI";
-import { useRoute } from "@react-navigation/native";
 import { useSelector } from "react-redux";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
-export default LyricSection = () => {
+export default function LyricSection() {
   const [lyric, setLyric] = useState();
-  const route = useRoute();
+
   const { activeSong } = useSelector((state) => state.player);
   const [showLyric, setShowLyric] = useState(false);
 
@@ -52,7 +51,7 @@ export default LyricSection = () => {
             name={showLyric ? "up" : "down"}
             color={COLORS.black}
             size={22}
-          ></AntDesign>
+          />
         </TouchableOpacity>
       </View>
 
@@ -74,7 +73,7 @@ export default LyricSection = () => {
       </ScrollView>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   lyricSection: {

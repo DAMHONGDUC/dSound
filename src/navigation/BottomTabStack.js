@@ -6,7 +6,7 @@ import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { COLORS } from "constants/theme";
 import SearchPage from "screens/search/searchPage";
 import HomeStack from "./HomeStack";
-import MainHeader from "components/MainHeader";
+import LibraryStack from "./LibraryStack";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -42,6 +42,18 @@ export default function BottomTabStack() {
           tabBarLabel: "Search",
           tabBarIcon: ({ color, size }) => (
             <AntDesign name={"search1"} color={color} size={size - 1} solid />
+          ),
+          tabBarActiveTintColor: COLORS.primary,
+        }}
+      />
+      <BottomTab.Screen
+        name="LibraryStack"
+        component={LibraryStack}
+        options={{
+          headerShown: false,
+          tabBarLabel: "Library",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name={"folder"} color={color} size={size - 1} solid />
           ),
           tabBarActiveTintColor: COLORS.primary,
         }}

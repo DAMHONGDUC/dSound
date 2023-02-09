@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { ToastAndroid } from "react-native";
 
 export const storeData = async (storeKey, value) => {
   try {
@@ -18,7 +19,9 @@ export const getData = async (storeKey) => {
 };
 
 export const durationFormat = (duration) => {
-  if (!duration) return "00:00";
+  if (!duration) {
+    return "00:00";
+  }
 
   let min = Math.floor(duration / 60);
   let sec = Math.floor(duration % 60);
@@ -28,4 +31,8 @@ export const durationFormat = (duration) => {
 
 export const randomInRange = (start, end) => {
   return Math.floor(Math.random() * (end - start + 1) + start);
+};
+
+export const showToastAndroid = (text) => {
+  ToastAndroid.show(text, ToastAndroid.SHORT);
 };

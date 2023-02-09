@@ -1,22 +1,18 @@
 import { COLORS } from "constants/theme";
-import {
-  StyleSheet,
-  View,
-  Text,
-  ActivityIndicator,
-  FlatList,
-} from "react-native";
+import { StyleSheet, View, Text, FlatList } from "react-native";
 import SeparateLine from "components/SeparateLine";
 import ArtistRow from "screens/artist/ArtistRow";
 import { useEffect, useState } from "react";
 import { getArtist } from "api/ArtistAPI";
 import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
-import { getListArtistSong } from "api/ArtistAPI";
+import { ARTIST_FLOW } from "constants/values";
+import { useSelector } from "react-redux";
 
 export default function ArtistsRoute() {
   const [dataArtist, setdataArtist] = useState();
   const navigation = useNavigation();
+  const { showBottomPlay } = useSelector((state) => state.player);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,8 +29,8 @@ export default function ArtistsRoute() {
         onClick={() => {
           navigation.navigate("PlaylistPage", {
             id: item.id,
-            fromArtistPage: {
-              isArtist: true,
+            type: ARTIST_FLOW,
+            props: {
               image: item.thumbnailM,
               title: item.name,
               totalFollow: item.totalFollow,
@@ -44,16 +40,16 @@ export default function ArtistsRoute() {
         image={{ uri: item.thumbnailM }}
         name={item.name}
         totalFollow={item.totalFollow}
-      ></ArtistRow>
+      />
     );
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
       {dataArtist ? (
         <>
           <Text style={styles.mainText}>Top {dataArtist.length} artist</Text>
-          <SeparateLine></SeparateLine>
+          <SeparateLine />
           <FlatList
             data={dataArtist}
             renderItem={renderItem}
@@ -71,7 +67,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: COLORS.white,
-    padding: 15,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   mainText: {
     color: COLORS.primary,

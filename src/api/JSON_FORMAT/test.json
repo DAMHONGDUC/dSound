@@ -1,28 +1,180 @@
-{
-    "multiFactor": {
-        "enrolledFactors": []
+[
+    {
+        "id": "SBgadAeTPeM2KHzAQquTKCiWWTb2loved_song",
+        "title": "Bài hát đã thích",
+        "songs": [
+            {
+                "title": "drunk text",
+                "id": "Z6ZDOEW7",
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/e/c/e/6ece54e166760ee5d143b7f237a4bf97.jpg",
+                "artist": "Henry Moodie",
+                "url": "https://mp3-s1-zmp3.zmdcdn.me/bd3e7e013141d81f8150/6527444842804846817?authen=exp=1675924563~acl=/bd3e7e013141d81f8150/*~hmac=93f76e7cb0c8bd87b6242ba23bac5ea2&fs=MTY3NTmUsIC1MTmUsIC2MzMyM3x3ZWJWNnwwfDE3MS4yMjQdUngMjQxLjU3",
+                "duration": 187
+            }
+        ],
+        "type": 0
     },
-    "metadata": {
-        "lastSignInTime": 1675062102604,
-        "creationTime": 1675061319447
+    {
+        "id": "Pl 3",
+        "title": "Pl 3",
+        "songs": [
+            {
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/0/8/1/3081ced2d3336cc99ffda5bb9f3511b0.jpg",
+                "title": "Mamma Mia",
+                "id": "ZZB6BBZU",
+                "artist": "Nhiều nghệ sĩ",
+                "url": null,
+                "duration": 233
+            },
+            {
+                "title": "ngủ một mình (tình rất tình)",
+                "id": "Z6UCWZUD",
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/2/3/6/6236866488685b27dba2533be163e21e.jpg",
+                "artist": "HIEUTHUHAI, Negav, Kewtiie",
+                "url": "https://mp3-s1-zmp3.zmdcdn.me/97c6161b4f5ba605ff4a/722226181788818609?authen=exp=1675932503~acl=/97c6161b4f5ba605ff4a/*~hmac=7779658b14228e93ee618c1a92d68abc&fs=MTY3NTmUsIC1OTmUsICwMzU4NXx3ZWJWNnwxMDU1NDg2NjQ3fDE0LjIzNi4yMDMdUngMTQ0",
+                "duration": 192
+            },
+            {
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/9/7/f/a/97fa122b55eefd723d7b97f887ee8786.jpg",
+                "title": "Hết Thương Cạn Nhớ",
+                "id": "ZWAEE7F7",
+                "artist": "Đức Phúc",
+                "url": null,
+                "duration": 283
+            },
+            {
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/8/6/7/d/867dea78919c4ad9e000d1385c9042ab.jpg",
+                "title": "Quả Phụ Tướng",
+                "id": "Z6ZO8B0O",
+                "artist": "Dunghoangpham",
+                "url": "https://mp3-s1-zmp3.zmdcdn.me/d3d17f522912c04c9903/487704677693875669?authen=exp=1675933022~acl=/d3d17f522912c04c9903/*~hmac=ed117c30e5fcc63e8b8543860801a99e&fs=MTY3NTmUsIC2MDIyMjk3MHx3ZWJWNnwxMDE4MzEyMzM4fDExNS43NC4yOC44OQ",
+                "duration": 210
+            },
+            {
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/7/e/2/37e2d1779bbfa6b3f4fd91cbf8d24ed0.jpg",
+                "title": "1-800-LOVE",
+                "id": "ZU0WUBAD",
+                "artist": "HIEUTHUHAI, HURRYKNG, MANBO",
+                "url": null,
+                "duration": 269
+            },
+            {
+                "title": "See Tình",
+                "id": "ZZZBIW69",
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/0/5/1/a/051a297c016cf26e33c9b48f45d0977d.jpg",
+                "artist": "Hoàng Thùy Linh",
+                "url": "https://mp3-s1-zmp3.zmdcdn.me/e6cb90ce5e8fb7d1ee9e/6047939291737099962?authen=exp=1675933510~acl=/e6cb90ce5e8fb7d1ee9e/*~hmac=eb1000d14ba03200dfedc4316b43f3fc&fs=MTY3NTmUsIC2MDmUsICxMDQ5MHx3ZWJWNnwwfDExNS43OC45My4xOTmUsIC",
+                "duration": 185
+            }
+        ],
+        "type": 1
     },
-    "photoURL": "https://lh3.googleusercontent.com/a/AEdFTp6V3a9CoyPFq5MHGj5r9qW_z_HiETp_LFoIcUVX3Q=s96-c",
-    "phoneNumber": null,
-    "tenantId": null,
-    "displayName": "Đức Đàm Hồng",
-    "emailVerified": false,
-    "isAnonymous": false,
-    "uid": "XTRrxwTZcWcCXjljY7JqQtaBpZx1",
-    "email": null,
-    "providerData": [
-        {
-            "email": "hongduc001h@gmail.com",
-            "providerId": "google.com",
-            "photoURL": "https://lh3.googleusercontent.com/a/AEdFTp6V3a9CoyPFq5MHGj5r9qW_z_HiETp_LFoIcUVX3Q=s96-c",
-            "phoneNumber": null,
-            "displayName": "Đức Đàm Hồng",
-            "uid": "106743116837867644105"
-        }
-    ],
-    "providerId": "firebase"
-}
+    null,
+    null,
+    {
+        "id": "Pl 4",
+        "title": "Pl 4",
+        "songs": [
+            {
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/1/e/e/a1ee960090f33b70f1c3092a4b600180.jpg",
+                "title": "tỉnh thức sau giấc ngủ đông (storm version)",
+                "id": "Z6ZEWO8I",
+                "artist": "GREY D, B Ray",
+                "url": "https://mp3-s1-zmp3.zmdcdn.me/a2e0c0c0888061de3891/1304870407040904491?authen=exp=1675934062~acl=/a2e0c0c0888061de3891/*~hmac=1003929a0e530b80adffc135df1a5d10&fs=MTY3NTmUsIC2MTI2MjU3OHx3ZWJWNnwwfDExMy4yMi4zNS4xMjU",
+                "duration": 230
+            },
+            {
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/0/5/1/a/051a297c016cf26e33c9b48f45d0977d.jpg",
+                "title": "See Tình",
+                "id": "ZZZBIW69",
+                "artist": "Hoàng Thùy Linh",
+                "url": "https://mp3-s1-zmp3.zmdcdn.me/e6cb90ce5e8fb7d1ee9e/6047939291737099962?authen=exp=1675933594~acl=/e6cb90ce5e8fb7d1ee9e/*~hmac=73356c51792ab1d33db1f7c8443c706a&fs=MTY3NTmUsIC2MDmUsIC5NDY2M3x3ZWJWNnwwfDExNy42LjQxLjEw",
+                "duration": 185
+            },
+            {
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/d/4/5/d/d45d2020992a64859fd2c5769de63eb0.jpg",
+                "title": "Xui Hay Vui",
+                "id": "Z6Z7A8E6",
+                "artist": "tlinh, MONO, Onionn",
+                "url": null,
+                "duration": 163
+            },
+            {
+                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/3/f/b/63fb6b25051e8d0bb4f9561158f16ae9.jpg",
+                "title": "Kìa Bóng Dáng Ai",
+                "id": "Z6ZAIB0D",
+                "artist": "Pháo, Sterry",
+                "url": "https://mp3-s1-zmp3.zmdcdn.me/3fdddc48910878562119/1844055815616632834?authen=exp=1675934237~acl=/3fdddc48910878562119/*~hmac=789edbf7dd038724eb712d0961495e58&fs=MTY3NTmUsIC2MTQzNzQ4Mnx3ZWJWNnwxMDA3MDYzNDQyfDEdUngNTIdUngMzUdUngMTM",
+                "duration": 164
+            }
+        ],
+        "type": 1
+    },
+    {
+        "id": "K",
+        "title": "K",
+        "songs": [],
+        "type": 1
+    },
+    {
+        "id": "H",
+        "title": "H",
+        "songs": [],
+        "type": 1
+    },
+    {
+        "id": "G",
+        "title": "G",
+        "songs": [],
+        "type": 1
+    },
+    null,
+    {
+        "id": "U",
+        "title": "U",
+        "songs": [],
+        "type": 1
+    },
+    {
+        "id": "Ggg",
+        "title": "Ggg",
+        "songs": [],
+        "type": 1
+    },
+    {
+        "id": "Ko",
+        "title": "Ko",
+        "songs": [],
+        "type": 1
+    },
+    {
+        "id": "Kk",
+        "title": "Kk",
+        "songs": [],
+        "type": 1
+    },
+    {
+        "id": "Kkk",
+        "title": "Kkk",
+        "songs": [],
+        "type": 1
+    },
+    {
+        "id": "Kkkkkk",
+        "title": "Kkkkkk",
+        "songs": [],
+        "type": 1
+    },
+    {
+        "id": "Pppp",
+        "title": "Pppp",
+        "songs": [],
+        "type": 1
+    },
+    {
+        "id": "Op",
+        "title": "Op",
+        "songs": [],
+        "type": 1
+    }
+]

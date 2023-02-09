@@ -1,21 +1,16 @@
 import { COLORS } from "constants/theme";
 import { StyleSheet, View, Text, TouchableHighlight } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import React, { BackHandler } from "react-native";
+import { BackHandler } from "react-native";
 
-export default SomethingWrong = () => {
+export default function SomethingWrong() {
   const onPress = () => {
     BackHandler.exitApp();
   };
 
   return (
     <View style={styles.container}>
-      <MaterialIcons
-        name={"error"}
-        color={COLORS.primary}
-        size={60}
-      ></MaterialIcons>
+      <MaterialIcons name={"error"} color={COLORS.primary} size={60} />
       <Text style={styles.mainText}>Some thing went wrong...</Text>
       <Text style={styles.subText}>We are going to fix it. Try later.</Text>
       <TouchableHighlight
@@ -29,7 +24,7 @@ export default SomethingWrong = () => {
       </TouchableHighlight>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {

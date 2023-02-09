@@ -10,20 +10,42 @@ import {
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Feather from "react-native-vector-icons/Feather";
 import { durationFormat } from "helper";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { usePlaybackState, State } from "react-native-track-player";
+import PopUpSongOptions from "components/PopUpSongOptions";
+import { useState } from "react";
+import { setInitFirstSong } from "redux/slices/playerSlide";
 
-export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
+export default function SongRow({
+  image,
+  name,
+  artist,
+  duration,
+  onClick,
+  id,
+  item,
+  index,
+}) {
   const { activeSong } = useSelector((state) => state.player);
   const playBackState = usePlaybackState();
+  const [showPopover, setShowPopover] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleSongRowClick = () => {
+    if (index === 0) {
+      dispatch(setInitFirstSong(true));
+    }
+
+    onClick();
+  };
 
   return (
     <TouchableHighlight
       underlayColor={COLORS.songRowClickColor}
-      onPress={onClick}
+      onPress={handleSongRowClick}
     >
       <View style={styles.container}>
-        <Image style={styles.image} source={image}></Image>
+        <Image style={styles.image} source={image} />
         <View style={styles.containerCenter}>
           <Text
             numberOfLines={1}
@@ -56,14 +78,20 @@ export default SongRow = ({ image, name, artist, duration, onClick, id }) => {
           size={29}
           solid
         />
-
-        <TouchableOpacity>
-          <Feather name={"more-vertical"} color={COLORS.black} size={25} />
-        </TouchableOpacity>
+        <PopUpSongOptions
+          showPopover={showPopover}
+          setShowPopover={setShowPopover}
+          currSongRow={item}
+        />
+        <View style={styles.songRowOptions}>
+          <TouchableOpacity onPress={() => setShowPopover(true)}>
+            <Feather name={"more-vertical"} color={COLORS.black} size={25} />
+          </TouchableOpacity>
+        </View>
       </View>
     </TouchableHighlight>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -101,5 +129,10 @@ const styles = StyleSheet.create({
   duration: {
     color: COLORS.title,
     fontSize: 13,
+  },
+  songRowOptions: {
+    flexDirection: "row",
+    width: 50,
+    justifyContent: "flex-end",
   },
 });

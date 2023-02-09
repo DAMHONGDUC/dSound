@@ -10,6 +10,8 @@ export const getHome = async () => {
       sig: hashParamHome("/api/v2/page/get/home"),
     });
 
-    if (res) return res;
+    if (res) {
+      return res;
+    }
   } catch (err) {}
 };

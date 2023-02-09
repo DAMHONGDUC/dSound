@@ -2,7 +2,6 @@ import { getHome } from "./homeAPI";
 import { hashParam } from "./Crypto";
 import { requestZingMp3 } from "./ZingMp3API";
 import { reducePropertySong } from "./SongAPI";
-import { getSongURL } from "./SongAPI";
 
 const filterBySectionType = (data, sectionType) => {
   return data.filter((e) => e.sectionType === sectionType);
@@ -30,7 +29,9 @@ const getDataPlaylist = async () => {
     const dataHome = await getHome();
     const data = dataHome?.data?.items;
 
-    if (data) return data;
+    if (data) {
+      return data;
+    }
   } catch (err) {}
 };
 
@@ -41,7 +42,9 @@ export const getSuggestedPlaylist = async () => {
     if (dataPlaylist) {
       const data = filterBySectionType(dataPlaylist, "playlist");
 
-      if (data) return reducePropertyPlaylist(data);
+      if (data) {
+        return reducePropertyPlaylist(data);
+      }
     }
   } catch (err) {}
 };
@@ -72,7 +75,9 @@ export const getDetailPlaylist = async (playlistId) => {
     sig: hashParam("/api/v2/page/get/playlist", playlistId),
   });
 
-  if (res?.data) return await reducePropertyDetailPlaylist(res.data);
+  if (res?.data) {
+    return await reducePropertyDetailPlaylist(res.data);
+  }
 };
 
 const reducePropertyDetailPlaylist = async (data) => {
