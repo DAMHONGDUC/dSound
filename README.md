@@ -1,4 +1,4 @@
-# dSound
+# dSound [v.1.4](https://play.google.com/store/apps/details?id=com.dsound)
 
 ## I. Set Up
 ### 1. Clone project
@@ -47,18 +47,21 @@
 ```
 
 ## III. Features
-- Register account(Google, Facebook), Sign In, Sign Out
+- Authentication (Google, Facebook)
 - Play music (previous, play/pause, next)
 - Shuffle mode, Repeat mode
+- Play in background, play when exit app
+- Control play music in notification
 
 ## IV. Tech stack
 - React Native
 - Firebase
-- React Native Track Player
+- [React Native Track Player](https://react-native-track-player.js.org/)
 - Zing Mp3 API
+- CI/CD github workflow (GitHub Action, Firebase App Distribution)
 
 ## V. Release
-- Android [apk](RELEASE/install/dsound.apk)
+- Android [apk](RELEASE/install/app-release.apk)
 - [Google Play](https://play.google.com/store/apps/details?id=com.dsound)
 - iOS (not available)
 - App Store (not available)
