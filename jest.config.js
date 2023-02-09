@@ -9,6 +9,8 @@ module.exports = {
       "|react-native-vector-icons" +
       "|react-native-popover-view" +
       "|@react-native-firebase" +
+      "|axios" +
+      "|react-redux" +
       ")/)",
   ],
 };
