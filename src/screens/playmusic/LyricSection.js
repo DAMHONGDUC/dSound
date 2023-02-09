@@ -1,14 +1,21 @@
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { COLORS } from "constants/theme";
-import { createRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getLyric } from "api/SongAPI";
-import { useRoute } from "@react-navigation/native";
 import { useSelector } from "react-redux";
+import AntDesign from "react-native-vector-icons/AntDesign";
 
-export default LyricSection = () => {
+export default function LyricSection() {
   const [lyric, setLyric] = useState();
-  const route = useRoute();
+
   const { activeSong } = useSelector((state) => state.player);
+  const [showLyric, setShowLyric] = useState(false);
 
   useEffect(() => {
     const fetchLyric = async () => {
@@ -16,8 +23,10 @@ export default LyricSection = () => {
       setLyric(data);
     };
 
-    fetchLyric();
-  }, [activeSong]);
+    if (showLyric) {
+      fetchLyric();
+    }
+  }, [showLyric]);
 
   const getLyricLine = (words) => {
     let str = "";
@@ -29,10 +38,27 @@ export default LyricSection = () => {
     return str;
   };
 
+  const onPress = () => {
+    setShowLyric(!showLyric);
+  };
+
   return (
     <View style={styles.lyricSection}>
-      <Text style={styles.lyricTitle}>Lyric</Text>
-      <ScrollView style={styles.lyricContainer} nestedScrollEnabled={true}>
+      <View style={styles.buttonContainer}>
+        <Text style={styles.lyricTitle}>Lyric</Text>
+        <TouchableOpacity style={styles.button} onPress={onPress}>
+          <AntDesign
+            name={showLyric ? "up" : "down"}
+            color={COLORS.black}
+            size={22}
+          />
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView
+        style={[styles.lyricContainer, { height: showLyric ? 400 : 0 }]}
+        nestedScrollEnabled={true}
+      >
         {lyric ? (
           lyric.map((e, index) => {
             return (
@@ -47,7 +73,7 @@ export default LyricSection = () => {
       </ScrollView>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   lyricSection: {
@@ -72,5 +98,13 @@ const styles = StyleSheet.create({
   lyricContainer: {
     flex: 1,
     maxHeight: 400,
+  },
+  buttonContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  button: {
+    marginLeft: 12,
+    marginBottom: 7,
   },
 });

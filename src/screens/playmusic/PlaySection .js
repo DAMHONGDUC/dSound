@@ -7,15 +7,18 @@ import { useSelector } from "react-redux";
 import PlayerController from "helper/PlayerController";
 import { useRoute } from "@react-navigation/native";
 import { State, usePlaybackState } from "react-native-track-player";
+import Feather from "react-native-vector-icons/Feather";
+import Ionicons from "react-native-vector-icons/Ionicons";
 
-export default PlaySection = () => {
-  const { currIndex, activeSong } = useSelector((state) => state.player);
+export default function PlaySection() {
+  const { currIndex, currPlaylist, activeSong, repeatMode, shuffleMode } =
+    useSelector((state) => state.player);
   const route = useRoute();
   const playBackState = usePlaybackState();
 
   useEffect(() => {
     if (route.params.currSongId !== activeSong.id) {
-      PlayerController.onPlayNew(currIndex);
+      PlayerController.onPlayNew(currIndex, currPlaylist);
     }
   }, []);
 
@@ -27,18 +30,33 @@ export default PlaySection = () => {
     PlayerController.onPrevious(currIndex);
   };
 
-  const handleNext = () => {
-    PlayerController.onNext();
+  const handleNext = async () => {
+    if (shuffleMode) {
+      PlayerController.onNextShuffle(currIndex, currPlaylist);
+    } else {
+      PlayerController.onNext();
+    }
+  };
+
+  const handleRepeatMode = () => {
+    PlayerController.onRepeat(repeatMode);
+  };
+
+  const handleShuffleMode = () => {
+    PlayerController.onShuffle(shuffleMode);
   };
 
   return (
     <View style={styles.playSection}>
+      <TouchableOpacity onPress={handleRepeatMode}>
+        <Feather
+          name="repeat"
+          color={repeatMode ? COLORS.primary : COLORS.black}
+          size={24}
+        />
+      </TouchableOpacity>
       <TouchableOpacity onPress={handlePrevious}>
-        <MaterialIcons
-          name="skip-previous"
-          color={COLORS.primary}
-          size={40}
-        ></MaterialIcons>
+        <MaterialIcons name="skip-previous" color={COLORS.primary} size={40} />
       </TouchableOpacity>
       <TouchableOpacity onPress={handlePlayPause}>
         <FontAwesome5
@@ -51,15 +69,18 @@ export default PlaySection = () => {
         />
       </TouchableOpacity>
       <TouchableOpacity onPress={handleNext}>
-        <MaterialIcons
-          name="skip-next"
-          color={COLORS.primary}
-          size={40}
-        ></MaterialIcons>
+        <MaterialIcons name="skip-next" color={COLORS.primary} size={40} />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={handleShuffleMode}>
+        <Ionicons
+          name="shuffle-outline"
+          color={shuffleMode ? COLORS.primary : COLORS.black}
+          size={30}
+        />
       </TouchableOpacity>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   playSection: {

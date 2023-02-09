@@ -3,19 +3,22 @@ import { useEffect, useState } from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
 import PlaylistHeader from "./PlaylistHeader";
 import { getDetailPlaylist } from "api/PlaylistAPI";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Loading from "components/Loading";
 import SongRow from "screens/song/SongRow";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { getListArtistSong } from "api/ArtistAPI";
+import { ARTIST_FLOW, NORMAL_FLOW } from "constants/values";
+import { setActiveLibraryId } from "redux/slices/playerSlide";
 
-export default PlaylistPage = () => {
-  const { currPlaylist } = useSelector((state) => state.player);
+export default function PlaylistPage() {
+  const { currPlaylist, showBottomPlay } = useSelector((state) => state.player);
   const [dataPlaylist, setdataPlaylist] = useState();
   const navigation = useNavigation();
   const route = useRoute();
-  const [fromArtistPage, setfromArtistPage] = useState(false);
+  const [flow, setFlow] = useState();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getDataDetailPlaylist = async () => {
@@ -27,16 +30,22 @@ export default PlaylistPage = () => {
     const getDataDetailArtist = async () => {
       let data = await getListArtistSong(route.params.id, 1, 20);
 
-      data.image = route.params.fromArtistPage.image;
-      data.title = route.params.fromArtistPage.title;
-      data.totalFollow = route.params.fromArtistPage.totalFollow;
+      data.image = route.params.props.image;
+      data.title = route.params.props.title;
+      data.totalFollow = route.params.props.totalFollow;
+
       setdataPlaylist(data);
     };
 
-    if (route.params.fromArtistPage.isArtist) {
-      getDataDetailArtist();
-      setfromArtistPage(true);
-    } else getDataDetailPlaylist();
+    setFlow(route.params.type);
+    switch (route.params.type) {
+      case ARTIST_FLOW:
+        getDataDetailArtist();
+        break;
+      case NORMAL_FLOW:
+        getDataDetailPlaylist();
+        break;
+    }
   }, []);
 
   const renderItem = ({ item, index }) => {
@@ -56,12 +65,14 @@ export default PlaylistPage = () => {
         artist={item.artist}
         duration={item.duration}
         id={item.id}
-      ></SongRow>
+        item={item}
+        index={index}
+      />
     );
   };
   return (
-    <View style={styles.container}>
-      {dataPlaylist ? (
+    <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
+      {dataPlaylist?.songs ? (
         <FlatList
           data={dataPlaylist.songs}
           renderItem={renderItem}
@@ -71,16 +82,19 @@ export default PlaylistPage = () => {
               dataPlaylist={dataPlaylist}
               navigation={navigation}
               playlist={dataPlaylist}
-              fromArtistPage={fromArtistPage}
+              flow={flow}
             />
           )}
+          ListEmptyComponent={
+            <Text style={styles.notiText}>{"Không có bài hát !"}</Text>
+          }
         />
       ) : (
         <Loading />
       )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -88,7 +102,9 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     paddingLeft: 20,
     paddingRight: 20,
-    paddingBottom: 20,
-    //paddingTop: 10,
+  },
+  notiText: {
+    color: COLORS.primary,
+    alignSelf: "flex-start",
   },
 });

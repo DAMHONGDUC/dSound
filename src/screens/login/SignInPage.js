@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { View, Text, StyleSheet, StatusBar } from "react-native";
 import { handleFacebookLogin, handleGoogleLogin } from "./AuthenFunction";
 import { COLORS, SIZES } from "constants/theme";
@@ -13,7 +13,7 @@ export default function SignInPage({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />
+      <StatusBar backgroundColor={"#0081C9"} barStyle="light-content" />
 
       <View style={styles.header}>
         <Text style={styles.title}>Sign in Now!</Text>
@@ -24,15 +24,15 @@ export default function SignInPage({ navigation }) {
           buttonText="Sign in with Facebook"
           buttonViewStyle={styles.btnFBtyle}
           onPress={() => handleFacebookLogin(handleAfterSignIn)}
-        ></FacebookSocialButton>
+        />
         <GoogleSocialButton
           buttonText="Sign in with Google"
           buttonViewStyle={styles.btnGGtyle}
           onPress={() => handleGoogleLogin(handleAfterSignIn)}
-        ></GoogleSocialButton>
+        />
 
         <Text style={styles.textLink}>
-          I'm a new member.
+          'I'm a new member.
           <Text
             style={styles.textLinkRight}
             onPress={() => navigation.navigate("Register")}
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: COLORS.primary,
+    backgroundColor: "#0081C9",
   },
   title: {
     fontWeight: "600",

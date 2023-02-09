@@ -1,4 +1,3 @@
-import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import AppIntroSlider from "react-native-app-intro-slider";
 import { COLORS, SIZES, windowWidth, windowHeight } from "constants/theme";
@@ -28,29 +27,29 @@ const slides = [
 ];
 
 function OnboardingFile(type) {
-  height = 500;
-  width = 0;
+  let height = 500;
+  let width = 0;
   switch (type) {
     case 1:
       return (
         <Onboading1
           width={windowWidth - width}
           height={windowHeight - height}
-        ></Onboading1>
+        />
       );
     case 2:
       return (
         <Onboading2
           width={windowWidth - width}
           height={windowHeight - height}
-        ></Onboading2>
+        />
       );
     case 3:
       return (
         <Onboading3
           width={windowWidth - width}
           height={windowHeight - height}
-        ></Onboading3>
+        />
       );
   }
 }

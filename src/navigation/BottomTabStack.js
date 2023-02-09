@@ -1,12 +1,12 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import LibraryPage from "screens/library/LibraryPage";
+import UserDetailPage from "screens/user/UserDetailPage";
 import Foundation from "react-native-vector-icons/Foundation";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { COLORS } from "constants/theme";
 import SearchPage from "screens/search/searchPage";
 import HomeStack from "./HomeStack";
-import MainHeader from "components/MainHeader";
+import LibraryStack from "./LibraryStack";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -47,13 +47,25 @@ export default function BottomTabStack() {
         }}
       />
       <BottomTab.Screen
-        name="Library"
-        component={LibraryPage}
+        name="LibraryStack"
+        component={LibraryStack}
         options={{
           headerShown: false,
           tabBarLabel: "Library",
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome name={"folder"} color={color} size={size - 2} solid />
+            <FontAwesome name={"folder"} color={color} size={size - 1} solid />
+          ),
+          tabBarActiveTintColor: COLORS.primary,
+        }}
+      />
+      <BottomTab.Screen
+        name="User"
+        component={UserDetailPage}
+        options={{
+          headerShown: false,
+          tabBarLabel: "User",
+          tabBarIcon: ({ color, size }) => (
+            <FontAwesome name={"user"} color={color} size={size - 2} solid />
           ),
           tabBarActiveTintColor: COLORS.primary,
         }}

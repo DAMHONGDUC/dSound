@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { setShowBottomPlay } from "redux/slices/playerSlide";
 
-export default PlayMusic = () => {
+export default function PlayMusic() {
   const dispatch = useDispatch();
   const activeSong = useSelector((state) => state.player.activeSong);
 
@@ -22,7 +22,7 @@ export default PlayMusic = () => {
   return (
     <SafeAreaView style={styles.conatiner}>
       <ScrollView>
-        <HeaderSection></HeaderSection>
+        <HeaderSection />
         <Image
           style={styles.image}
           source={
@@ -30,15 +30,15 @@ export default PlayMusic = () => {
               ? { uri: activeSong.artwork }
               : require("assets/default-loading-image.png")
           }
-        ></Image>
-        <NameSection></NameSection>
-        <SliderSection></SliderSection>
-        <PlaySection></PlaySection>
-        <LyricSection></LyricSection>
+        />
+        <NameSection />
+        <SliderSection />
+        <PlaySection />
+        <LyricSection />
       </ScrollView>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   conatiner: {
