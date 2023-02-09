@@ -59,6 +59,7 @@
 - [React Native Track Player](https://react-native-track-player.js.org/)
 - Zing Mp3 API
 - CI/CD github workflow (GitHub Action, Firebase App Distribution)
+- Eslint, Prettier, Husky, Lint-staged
 
 ## V. Release
 - Android [apk](RELEASE/install/app-release.apk)
