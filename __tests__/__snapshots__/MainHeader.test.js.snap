@@ -3,7 +3,7 @@
 exports[`BottomPlayer Snapshot  1`] = `
 <View
   style={
-    {
+    Object {
       "alignItems": "center",
       "backgroundColor": "#FFFFFF",
       "flex": 1,
@@ -16,12 +16,12 @@ exports[`BottomPlayer Snapshot  1`] = `
 >
   <Image
     source={
-      {
+      Object {
         "testUri": "../../../src/assets/app_icon.png",
       }
     }
     style={
-      {
+      Object {
         "height": 35,
         "width": 35,
       }
@@ -29,7 +29,7 @@ exports[`BottomPlayer Snapshot  1`] = `
   />
   <Text
     style={
-      {
+      Object {
         "color": "#000000",
         "flex": 0.9,
         "fontSize": 20,
@@ -52,7 +52,7 @@ exports[`BottomPlayer Snapshot  1`] = `
     onResponderTerminationRequest={[Function]}
     onStartShouldSetResponder={[Function]}
     style={
-      {
+      Object {
         "flex": 0.1,
         "opacity": 1,
       }
@@ -63,18 +63,18 @@ exports[`BottomPlayer Snapshot  1`] = `
       selectable={false}
       solid={true}
       style={
-        [
-          {
+        Array [
+          Object {
             "color": "#000000",
             "fontSize": 22,
           },
           undefined,
-          {
+          Object {
             "fontFamily": "Feather",
             "fontStyle": "normal",
             "fontWeight": "normal",
           },
-          {},
+          Object {},
         ]
       }
     >
