@@ -41,6 +41,7 @@ export default function BottomPlayer() {
     initFirstSong,
     lovedSongId,
     currLovedSong,
+    replayPlaylist,
   } = useSelector((state) => state.player);
 
   const progress = useProgress();
@@ -54,15 +55,6 @@ export default function BottomPlayer() {
 
       let index = event.nextTrack;
       dispatch(setUpdateNearlySong(true));
-
-      // dispatch(setCurrIndex(playlistPlayButtonClicked ? 0 : index));
-      // dispatch(
-      //   setActiveSong(currPlaylist.songs[playlistPlayButtonClicked ? 0 : index])
-      // );
-
-      // if (playlistPlayButtonClicked) {
-      //   dispatch(setPlaylistPlayButtonClicked(false));
-      // }
 
       if (index !== 0) {
         dispatch(setCurrIndex(index));
@@ -83,14 +75,6 @@ export default function BottomPlayer() {
       }
     }
   };
-
-  useTrackPlayerEvents([Event.PlaybackState], async (event) => {
-    if (event.type === Event.PlaybackState) {
-      if (initFirstSong) {
-        await TrackPlayer.play();
-      }
-    }
-  });
 
   const handleReadyStatus = async () => {
     if (initFirstSong) {
@@ -118,7 +102,7 @@ export default function BottomPlayer() {
   };
 
   useTrackPlayerEvents([Event.PlaybackState], async (event) => {
-    if (event.type === Event.PlaybackState && event.state === State.Playing) {
+    if (event.type === Event.PlaybackState) {
       switch (event.state) {
         case State.Playing:
           await handlePlayingStatus();
@@ -141,6 +125,8 @@ export default function BottomPlayer() {
         ) {
           if (shuffleMode) {
             PlayerController.onNextShuffle(currIndex, currPlaylist);
+          } else if (replayPlaylist) {
+            PlayerController.onNextRepeatPlaylist(currIndex, currPlaylist);
           } else {
             PlayerController.onNext();
           }

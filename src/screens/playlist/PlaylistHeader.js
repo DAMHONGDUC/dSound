@@ -7,6 +7,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setInitFirstSong } from "redux/slices/playerSlide";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 export default function PlaylistHeader({
   playlist,
@@ -14,7 +15,9 @@ export default function PlaylistHeader({
   dataPlaylist,
   flow,
 }) {
-  const { currPlaylist, shuffleMode } = useSelector((state) => state.player);
+  const { currPlaylist, shuffleMode, replayPlaylist } = useSelector(
+    (state) => state.player
+  );
   const dispatch = useDispatch();
   const [subTitle, setSubTitle] = useState();
 
@@ -54,6 +57,10 @@ export default function PlaylistHeader({
     }
   };
 
+  const handleReplayPlaylist = () => {
+    PlayerController.onReplayPlaylist(replayPlaylist);
+  };
+
   return (
     <View style={styles.container}>
       <Image
@@ -81,16 +88,25 @@ export default function PlaylistHeader({
             <Text style={styles.buttonText}>PLAY</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.shuffleButton}
-          onPress={handleShuffleMode}
-        >
-          <Ionicons
-            name="shuffle-outline"
-            color={shuffleMode ? COLORS.primary : COLORS.black}
-            size={40}
-          />
-        </TouchableOpacity>
+        <View style={styles.playlistOption}>
+          <TouchableOpacity onPress={handleShuffleMode}>
+            <Ionicons
+              name="shuffle-outline"
+              color={shuffleMode ? COLORS.primary : COLORS.black}
+              size={40}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ marginLeft: 15 }}
+            onPress={handleReplayPlaylist}
+          >
+            <MaterialIcons
+              name="replay"
+              color={replayPlaylist ? COLORS.primary : COLORS.black}
+              size={35}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
@@ -140,10 +156,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    marginTop: 5,
   },
-  shuffleButton: {
+  playlistOption: {
+    flexDirection: "row",
     position: "absolute",
     left: 0,
+    alignItems: "center",
   },
   button: {
     backgroundColor: COLORS.primary,

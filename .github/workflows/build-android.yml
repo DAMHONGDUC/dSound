@@ -1,41 +1,48 @@
-name: Build & upload to Firebase App Distribution
+name: Deploy to Firebase App Distribution
 
 on:
-  pull_request:
-    branches: [master]
   push:
-    branches: [master]
+    branches: [release]
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-      - name: Setup Node
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "19.0.1"
           cache: "yarn"
-
-      - name: Run corepack enable
-        run: corepack enable
-
-      - name: Run yarn install
+      - name: Install dependencies
         run: yarn install
 
-      - name: Run yarn lint
-      - run: yarn lint
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1.2
+        with:
+          fileName: "dsound.keystore"
+          fileDir: "./android/app/"
+          encodedString: ${{ secrets.SIGNINGKEYBASE64 }}
 
-      - name: Release application
-        run: ./gradlew assembleRelease
+      - name: check
+        run: |
+          cd android/app
+          ls
 
-      - name: Upload artifact to Firebase App Distribution
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
+      - name: Build APK
+        id: build
+        run: |
+          cd android
+          ./gradlew assembleRelease
+
+      - name: upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1.5.0
         with:
           appId: ${{secrets.FIREBASE_APP_ID}}
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
-          file: app/build/outputs/apk/release/app-release.apk
+          file: ./android/app/build/outputs/apk/release/app-release.apk
