@@ -1,10 +1,8 @@
 name: Deploy to Firebase App Distribution
 
 on:
-  pull_request:
-    branches: [master]
   push:
-    branches: [master]
+    branches: [release]
 
 jobs:
   build-and-deploy:
@@ -48,11 +46,3 @@ jobs:
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           groups: testers
           file: ./android/app/build/outputs/apk/release/app-release.apk
-
-        #   - name: upload artifact to Firebase App Distribution
-        #   - name: upload artifact to Firebase App Distribution
-        #   - name: upload artifact to Firebase App Distribution
-        #   - name: upload artifact to Firebase App Distribution
-        #   - name: upload artifact to Firebase App Distribution
-        #   - name: upload artifact to Firebase App Distribution
-        #   - name: upload artifact to Firebase App Distribution
