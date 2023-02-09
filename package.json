@@ -70,6 +70,7 @@
     "eslint": "^8.30.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.31.11",
+    "firestore-jest-mock": "^0.20.0",
     "husky": "^8.0.2",
     "jest": "^29.4.1",
     "metro-react-native-babel-preset": "0.72.3",
