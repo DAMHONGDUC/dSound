@@ -1,6 +1,6 @@
 # dSound [v.1.4](https://play.google.com/store/apps/details?id=com.dsound)
 
-## I. Set Up
+## I. Install
 ### 1. Clone project
 ```
   git clone git@github.com:DAMHONGDUC/dSound.git
@@ -19,7 +19,7 @@
 ```
   yarn android
 ```
-## II. Struct
+## II. Project struct
 
 ```
 ├── android
