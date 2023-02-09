@@ -136,3 +136,6 @@
 </kbd>
 <br/>
 <br/> 
+
+## VII. Navigation
+<img src="RELEASE/dSound_nav.png">
