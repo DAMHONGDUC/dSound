@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import {
-  setNavToDetailId,
-  setRefreshLibrary,
-  setShowBottomPlay,
-} from "redux/slices/playerSlide";
+import { setRefreshLibrary, setShowBottomPlay } from "redux/slices/playerSlide";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import LibraryComponent from "./LibraryComponent";
 import { View, StyleSheet, TouchableHighlight } from "react-native";
@@ -52,23 +48,15 @@ export default function LibraryPage() {
 
     await addSongWithDocId(currSongRow, item.id);
 
-    showToastAndroid("Đã thêm vào " + item.title);
+    handleBackButton();
 
-    navToDetail(item);
+    showToastAndroid("Đã thêm vào " + item.title);
 
     dispatch(setRefreshLibrary(true));
   };
 
-  const navToDetail = async ({ id, image, title, numOfSong }) => {
-    dispatch(setNavToDetailId(id));
-    dispatch(setShowBottomPlay(true));
-
-    navigation.navigate("BottomTabStack", {
-      screen: "LibraryStack",
-    });
-  };
-
   const handleBackButton = () => {
+    dispatch(setShowBottomPlay(true));
     navigation.pop();
   };
 

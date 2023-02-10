@@ -8,16 +8,24 @@ import PlaySection from "./PlaySection ";
 import SliderSection from "./SliderSection";
 import LyricSection from "./LyricSection";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { setShowBottomPlay } from "redux/slices/playerSlide";
+import { useFocusEffect } from "@react-navigation/native";
 
 export default function PlayMusic() {
   const dispatch = useDispatch();
   const activeSong = useSelector((state) => state.player.activeSong);
 
-  useEffect(() => {
-    dispatch(setShowBottomPlay(false));
-  }, []);
+  // useEffect(() => {
+  //   dispatch(setShowBottomPlay(false));
+  // }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      dispatch(setShowBottomPlay(false));
+      return () => {};
+    }, [])
+  );
 
   return (
     <SafeAreaView style={styles.conatiner}>
