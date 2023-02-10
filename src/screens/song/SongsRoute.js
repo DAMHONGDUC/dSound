@@ -7,16 +7,31 @@ import { useEffect, useState } from "react";
 import Loading from "components/Loading";
 import PlayerController from "helper/PlayerController";
 import { useSelector } from "react-redux";
+import { pushMoreDataPlaylist, sleep } from "helper";
+import ListFooterLoading from "components/ListFooterLoading";
+import cloneDeep from "lodash.clonedeep";
 
 export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
+  const [currShowingData, setCurrShowingData] = useState({});
   const { showBottomPlay, currPlaylist } = useSelector((state) => state.player);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const delay = 1.5;
+  const endOfData =
+    currShowingData?.songs?.length === data100Song?.songs?.length;
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await get100Song();
 
       setdata100Song(data);
+
+      const newData = pushMoreDataPlaylist(
+        data,
+        { id: data.id, songs: [] },
+        20
+      );
+      setCurrShowingData(cloneDeep(newData));
     };
 
     fetchData();
@@ -46,6 +61,19 @@ export default function SongsRoute({ navigation }) {
     );
   };
 
+  const handleOnEndReached = async () => {
+    if (!endOfData) {
+      setLoadingMore(true);
+
+      await sleep(delay * 1000);
+
+      const newData = pushMoreDataPlaylist(data100Song, currShowingData, 20);
+      setCurrShowingData(cloneDeep(newData));
+
+      setLoadingMore(false);
+    }
+  };
+
   return (
     <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
       {data100Song ? (
@@ -54,10 +82,14 @@ export default function SongsRoute({ navigation }) {
             Top {data100Song.songs.length} song
           </Text>
           <SeparateLine />
+
           <FlatList
-            data={data100Song.songs}
+            data={currShowingData.songs}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
+            onEndReachedThreshold={0.5}
+            onEndReached={handleOnEndReached}
+            ListFooterComponent={() => loadingMore && <ListFooterLoading />}
           />
         </>
       ) : (
@@ -78,5 +110,12 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     fontSize: 16,
     fontWeight: "bold",
+  },
+  container2: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  horizontal2: {
+    padding: 0,
   },
 });
