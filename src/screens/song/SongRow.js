@@ -25,6 +25,7 @@ export default function SongRow({
   id,
   item,
   index,
+  status,
 }) {
   const { activeSong } = useSelector((state) => state.player);
   const playBackState = usePlaybackState();
@@ -51,7 +52,12 @@ export default function SongRow({
             numberOfLines={1}
             style={[
               styles.name,
-              { color: activeSong.id === id ? COLORS.primary : COLORS.black },
+              {
+                color:
+                  status && activeSong.id === id
+                    ? COLORS.primary
+                    : COLORS.black,
+              },
             ]}
           >
             {name}
@@ -70,7 +76,7 @@ export default function SongRow({
 
         <FontAwesome5
           name={
-            activeSong.id === id && playBackState === State.Playing
+            status && activeSong.id === id && playBackState === State.Playing
               ? "pause-circle"
               : "play-circle"
           }

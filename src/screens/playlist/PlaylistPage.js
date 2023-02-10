@@ -67,6 +67,7 @@ export default function PlaylistPage() {
         id={item.id}
         item={item}
         index={index}
+        status={dataPlaylist.id === currPlaylist.id}
       />
     );
   };

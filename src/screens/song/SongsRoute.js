@@ -41,6 +41,7 @@ export default function SongsRoute({ navigation }) {
         id={item.id}
         item={item}
         index={index}
+        status={data100Song.id === currPlaylist.id}
       />
     );
   };

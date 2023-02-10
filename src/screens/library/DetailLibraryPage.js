@@ -80,6 +80,7 @@ export default function DetailLibraryPage() {
         id={item.id}
         item={item}
         index={index}
+        status={dataPlaylist.id === currPlaylist.id}
       />
     );
   };
