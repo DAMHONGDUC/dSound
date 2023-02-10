@@ -4,6 +4,7 @@ import {
   FAVORITE_PLAYLIST_COLLECTION,
 } from "constants/values";
 import { firebase } from "@react-native-firebase/auth";
+import { getSongURL } from "./SongAPI";
 
 const getCollectionByDocId = async (collection, docId) => {
   const res = await firestore().collection(collection).doc(docId).get();
@@ -43,6 +44,38 @@ export const getPlaylistByUid = async (uid) => {
 
     return Promise.all(promiseArray);
   }
+};
+
+export const getDataAndSetUpFirstSong = async (uid) => {
+  let data = await getPlaylistByUid(uid);
+  let result = [];
+
+  if (data) {
+    // console.log(JSON.stringify(data[].songs[0]));
+    // if (data.songs[0]) {
+    //   console.log(data.songs[0]);
+
+    //   const URL = await getSongURL(data.songs[0].id);
+
+    //   data.songs[0].url = URL;
+    // }
+
+    //console.log(JSON.stringify(data));
+
+    for (let e of data) {
+      if (!e.songs[0].url) {
+        const URL = await getSongURL(e.songs[0].id);
+
+        e.songs[0].url = URL;
+
+        result.push(e);
+      }
+    }
+  }
+
+  console.log(JSON.stringify(result));
+
+  return data;
 };
 
 export const checkDocExist = async (collection, docID) => {
