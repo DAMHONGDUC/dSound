@@ -63,7 +63,7 @@ export const getDataAndSetUpFirstSong = async (uid) => {
     //console.log(JSON.stringify(data));
 
     for (let e of data) {
-      if (!e.songs[0].url) {
+      if (e.songs[0] && !e.songs[0].url) {
         const URL = await getSongURL(e.songs[0].id);
 
         e.songs[0].url = URL;
