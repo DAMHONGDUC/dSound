@@ -67,9 +67,8 @@ export const getDataAndSetUpFirstSong = async (uid) => {
         const URL = await getSongURL(e.songs[0].id);
 
         e.songs[0].url = URL;
-
-        result.push(e);
       }
+      result.push(e);
     }
   }
 
