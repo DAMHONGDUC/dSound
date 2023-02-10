@@ -45,15 +45,15 @@ export default function SuggestedRoute() {
     fetchData();
   }, []);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await getSuggestedPlaylist();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await getSuggestedPlaylist();
 
-      setdataSuggestedPlaylist(data);
-    };
+  //     setdataSuggestedPlaylist(data);
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const fetchData = async () => {

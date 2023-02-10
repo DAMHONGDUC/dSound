@@ -8,16 +8,27 @@ import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
 import { ARTIST_FLOW } from "constants/values";
 import { useSelector } from "react-redux";
+import { pushMoreDataArtist, sleep } from "helper";
+import ListFooterLoading from "components/ListFooterLoading";
+import cloneDeep from "lodash.clonedeep";
 
 export default function ArtistsRoute() {
   const [dataArtist, setdataArtist] = useState();
   const navigation = useNavigation();
   const { showBottomPlay } = useSelector((state) => state.player);
+  const [currShowingData, setCurrShowingData] = useState({});
+  const [loadingMore, setLoadingMore] = useState(false);
+  const delay = 1.5;
+  const endOfData = currShowingData?.length === dataArtist?.length;
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getArtist();
-      setdataArtist(data.slice(0, 100));
+      const dataSlice = data.slice(0, 100);
+      setdataArtist(dataSlice);
+
+      const newData = pushMoreDataArtist(dataSlice, [], 20);
+      setCurrShowingData(cloneDeep(newData));
     };
 
     fetchData();
@@ -44,6 +55,19 @@ export default function ArtistsRoute() {
     );
   };
 
+  const handleOnEndReached = async () => {
+    if (!endOfData) {
+      setLoadingMore(true);
+
+      await sleep(delay * 1000);
+
+      const newData = pushMoreDataArtist(dataArtist, currShowingData, 20);
+      setCurrShowingData(cloneDeep(newData));
+
+      setLoadingMore(false);
+    }
+  };
+
   return (
     <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
       {dataArtist ? (
@@ -51,9 +75,12 @@ export default function ArtistsRoute() {
           <Text style={styles.mainText}>Top {dataArtist.length} artist</Text>
           <SeparateLine />
           <FlatList
-            data={dataArtist}
+            data={currShowingData}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
+            onEndReachedThreshold={0.5}
+            onEndReached={handleOnEndReached}
+            ListFooterComponent={() => loadingMore && <ListFooterLoading />}
           />
         </>
       ) : (

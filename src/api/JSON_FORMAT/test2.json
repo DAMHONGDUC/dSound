@@ -1,0 +1,555 @@
+[
+    {
+        "id": "hAutoTheme1",
+        "title": "Thứ sáu đây rồi",
+        "items": [
+            {
+                "id": "6UDI7C6W",
+                "title": "Nhạc Cho Thứ Sáu",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/1/d/d/a1dd45b141b92844478a6eee1252493e.jpg",
+                "des": "Bỏ hết mọi buồn phiền cùng âm nhạc US-UK cho ngày thứ Sáu"
+            },
+            {
+                "id": "ZWZBCIZO",
+                "title": "Love Messages",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/a/e/a/1aea307a6a994532203e196af8fcecc4.jpg",
+                "des": "Gửi lời yêu cùng những bản tình ca US-UK thời nay"
+            },
+            {
+                "id": "6B89FBO0",
+                "title": "buitruonglinh's Vọng Story",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/c/b/3/dcb343a35ef5650b758915ebd8066dea.jpg",
+                "des": "Điều gì ẩn chứa đằng sau 'tiếng vọng' trong âm nhạc của buitruonglinh? Chỉ có tại Artist's Story"
+            },
+            {
+                "id": "ZWZAF09E",
+                "title": "Những Sự Kết Hợp Mới",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/c/2/2/ac224f07edb7171e02a72ca49f7eced5.jpg",
+                "des": "Những pha hội ngộ mới mẻ nhưng không bỡ ngỡ của V-Pop"
+            },
+            {
+                "id": "ZOCIIUWW",
+                "title": "Chill Hits",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/6/3/2/7/6327ef96372a865c8ee7760423aa879c.jpg",
+                "des": "Những bản hit cực chill, vừa nghe vừa feel"
+            }
+        ]
+    },
+    {
+        "id": "hArtistTheme",
+        "title": "Nghệ sĩ thịnh hành 💫",
+        "items": [
+            {
+                "id": "ZOZ9678O",
+                "title": "Những Bài Hát Hay Nhất Của Hoàng Thùy Linh",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/2/b/d/a2bdbad3b7acf3b92b0e29d30903f51e.jpg",
+                "des": "Hoàng Thùy Linh cùng bản Hit toàn cầu 'See tình' và nhiều hơn thế nữa"
+            },
+            {
+                "id": "6UW9CWZO",
+                "title": "Những Bài Hát Hay Nhất Của Pháo",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/9/0/6/c9062043b873adcab6b7bd33bdabbd26.jpg",
+                "des": "Ở đây có Pháo và 'Kìa bóng dáng ai', 'Hai phút hơn'..."
+            },
+            {
+                "id": "6UW9BFUW",
+                "title": "Những Bài Hát Hay Nhất Của HIEUTHUHAI",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/a/1/e/0/a1e02cdf50690af710b77af59db01d60.jpg",
+                "des": "Những chiếc nhạc mlem của HIEUTHUHAI"
+            },
+            {
+                "id": "ZUDICAF0",
+                "title": "Những Bài Hát Hay Nhất Của Jack - J97",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/b/0/6/8b06c3c523c6bb6b1c52d8b62c75823f.jpg",
+                "des": "Jack - J97 và những bản Hit đỉnh nhất ở đây hết"
+            },
+            {
+                "id": "6B7OEOW7",
+                "title": "Những Bài Hát Hay Nhất Của Myra Trần",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/4/f/5/1/4f517d7a902dc1eb1b9735dc11108536.jpg",
+                "des": "Nghe 'Anh chưa thương em đến vậy đâu' của Myra Trần và những ca khúc nổi bật khác"
+            },
+            {
+                "id": "6UW9BUUU",
+                "title": "Những Bài Hát Hay Nhất Của GREY D",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/d/1/c/9/d1c91711ab72fe5b6cad8bc2b7176358.jpg",
+                "des": "'Tỉnh thức' cùng GREY D và những bản Hit nổi bật khác"
+            },
+            {
+                "id": "6BUFZBCD",
+                "title": "Những Bài Hát Hay Nhất Của MONO",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/5/1/9/a5199dc00d416498bd38ca44b8b79c4d.jpg",
+                "des": "Ú òa một cái có ngay nhạc xịn của MONO"
+            },
+            {
+                "id": "ZO6IA97F",
+                "title": "Những Bài Hát Hay Nhất Của Trúc Nhân",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/a/2/e/1a2e7b4845e7b40cfd9d1e169245928f.jpg",
+                "des": "Trúc Nhân và siêu Hit 'Có không giữ mất đừng tìm', 'Sáng mắt chưa'..."
+            },
+            {
+                "id": "ZOZAWCCO",
+                "title": "Những Bài Hát Hay Nhất Của Đức Phúc",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/c/0/9/1c09b567187b39cd42b433ee5a9b3d5f.jpg",
+                "des": "'Đồng ý' làm fan ruột của Đức Phúc thì nghe ngay"
+            },
+            {
+                "id": "ZOU8DC8Z",
+                "title": "Những Bài Hát Hay Nhất Của Vũ Cát Tường",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/d/a/c/8dac50eb79753190ee18bb46f95797f3.jpg",
+                "des": "Vũ Cát Tường và bộ sưu tập Hit 'độc nhất'"
+            }
+        ]
+    },
+    {
+        "id": "hAutoTheme2",
+        "title": "Nhạc mới mỗi ngày",
+        "items": [
+            {
+                "id": "69I8CU7C",
+                "title": "V-Pop Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/2/d/e/32defbe0d6f94c91921a74ba532e9fd1.jpg",
+                "des": "Muôn màu V-Pop tháng 2"
+            },
+            {
+                "id": "69I8CZFB",
+                "title": "US-UK Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/0/1/c/101c660282e9df755a4b65e1677627e7.jpg",
+                "des": "Nhạc US-UK tháng 2 này có gì mới?"
+            },
+            {
+                "id": "69I8C799",
+                "title": "K-Pop Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/e/e/d/deede1c57b9f630aa514943137d7b1a2.jpg",
+                "des": "K-Pop mới tinh của tháng 2"
+            },
+            {
+                "id": "69I8C87B",
+                "title": "C-Pop Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/c/e/4/5ce4e179666e49cde24d9bc4a751e583.jpg",
+                "des": "C-Pop nổi bật của tháng 2 gọi tên"
+            },
+            {
+                "id": "68FB8W8O",
+                "title": "Indie Việt Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/d/5/5/3d55e89301f73ada38af4546d0520660.jpg",
+                "des": "Lựa chọn tiềm năng của Indie Việt trong tháng 2"
+            }
+        ]
+    },
+    {
+        "id": "h100",
+        "title": "Top 100",
+        "items": [
+            {
+                "id": "ZWZB969E",
+                "title": "Top 100 Bài Hát Nhạc Trẻ Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/9/5/4/09542fd83e019d4734587f836bc9bbc0.jpg",
+                "des": "Top 100 Nhạc Trẻ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trẻ, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AB",
+                "title": "Top 100 Pop Âu Mỹ Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/6/6/8/d6685aca6f5adec29805f6f906616da2.jpg",
+                "des": "Top 100 Nhạc Pop Âu Mỹ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Top 100 Nhạc Pop Âu Mỹ, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96C7",
+                "title": "Top 100 Nhạc Electronic/Dance Âu Mỹ Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/5/f/c/c5fc615c43215c6b72676f42767855ee.jpg",
+                "des": "Top 100 Nhạc Electronic/Dance Âu Mỹ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Top 100 Nhạc Electronic/Dance Âu Mỹ, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB969F",
+                "title": "Top 100 Nhạc Trữ Tình Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/9/1/d/891d56e72dde29423e7c2c934727f5ab.jpg",
+                "des": "Top 100 Nhạc Trữ Tình là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trữ Tình, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96DC",
+                "title": "Top 100 Nhạc Hàn Quốc Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/a/b/c/8abcfc5b85e7c581bf49057d01bfd1d4.jpg",
+                "des": "Top 100 Nhạc Hàn Quốc Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Hàn Quốc, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AI",
+                "title": "Top 100 Nhạc Rap Việt Nam Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/a/8/3/8a83cec61decaf2277c68fdef3726ce9.jpg",
+                "des": "Top 100 Nhạc Rap Việt Nam Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại nhạc Rap Việt Nam, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AU",
+                "title": "Top 100 Nhạc Quê Hương Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/6/c/3/86c3040f44aca0cdf8de2ec42963dcba.jpg",
+                "des": "Top 100 Nhạc Quê Hương Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại nhạc Quê Hương, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AO",
+                "title": "Top 100 Nhạc Cách Mạng Việt Nam",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/f/2/6/4/f26467e87075a96bf974a8c49450bad5.jpg",
+                "des": "Top 100 Nhạc Cách Mạng Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại nhạc Cách Mạng, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96A0",
+                "title": "Top 100 Nhạc Rock Việt Nam Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/6/9/a/d/69adc20d10b93758ae077afc03608e02.jpg",
+                "des": "Top 100 Nhạc Rock Việt Nam là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Rock Việt Nam, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AW",
+                "title": "Top 100 Nhạc Dance Việt Nam Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/b/8/0/0/b800a8b039fd00210f54e58b3309b46f.jpg",
+                "des": "Top 100 Nhạc Dance Việt Nam Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại nhạc Dance Việt Nam, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            }
+        ]
+    },
+    {
+        "id": "hAlbum",
+        "title": "",
+        "items": [
+            {
+                "id": "6B8AEFEW",
+                "title": "Mong Một Ngày Anh Nhớ Đến Em (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/a/4/f/aa4ffa6ae290dbc67a7ea46a76af0805.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8AZ0ZO",
+                "title": "Tuesday (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/6/5/0/d65075af2f7365fb06b187e3ae691214.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8AAZE6",
+                "title": "Hoa Lạc Lối (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/9/a/8/9/9a894135b316f76d84a2ed6e113d8ad6.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B88CWZF",
+                "title": "Hết Tết (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/2/1/8/9/2189ba431e1a973fb0c3a493d1fefc7a.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8A98U9",
+                "title": "Trà Tam Rượu Tứ (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/6/6/a/1/66a14ebea8646df1666cf3de667d5464.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8A8U8E",
+                "title": "Rời Xa Thế Giới (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/f/4/b/df4b97eed06fc583cfe690bea4872a23.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8AU9F0",
+                "title": "Cẩm Y Vệ (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/3/5/3/5353c885f07cd3b6617f8c9dda6585be.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8A0B0O",
+                "title": "PHÁO HOA (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/c/4/e/0c4e0f3ca9a5455fcef3ad17e28907e9.jpg",
+                "des": ""
+            },
+            {
+                "id": "SB88C9ED",
+                "title": "Naul <Ballad Pop City> (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/f/2/5/df251e59edff4c80cbd05a8807add66a.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8AZ7O0",
+                "title": "Tiếc Cho Một Mối Tình (Cover) (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/4/1/a/341ace908cb906cc5ecf6951e53d31b3.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B89EBZU",
+                "title": "Lạc Nhau (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/7/b/a/57ba603b66c05e9f3259419d2b13e633.jpg",
+                "des": ""
+            }
+        ]
+    }
+][
+    {
+        "id": "hAutoTheme1",
+        "title": "Thứ sáu đây rồi",
+        "items": [
+            {
+                "id": "6UDI7C6W",
+                "title": "Nhạc Cho Thứ Sáu",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/1/d/d/a1dd45b141b92844478a6eee1252493e.jpg",
+                "des": "Bỏ hết mọi buồn phiền cùng âm nhạc US-UK cho ngày thứ Sáu"
+            },
+            {
+                "id": "ZWZBCIZO",
+                "title": "Love Messages",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/a/e/a/1aea307a6a994532203e196af8fcecc4.jpg",
+                "des": "Gửi lời yêu cùng những bản tình ca US-UK thời nay"
+            },
+            {
+                "id": "6B89FBO0",
+                "title": "buitruonglinh's Vọng Story",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/c/b/3/dcb343a35ef5650b758915ebd8066dea.jpg",
+                "des": "Điều gì ẩn chứa đằng sau 'tiếng vọng' trong âm nhạc của buitruonglinh? Chỉ có tại Artist's Story"
+            },
+            {
+                "id": "ZWZAF09E",
+                "title": "Những Sự Kết Hợp Mới",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/c/2/2/ac224f07edb7171e02a72ca49f7eced5.jpg",
+                "des": "Những pha hội ngộ mới mẻ nhưng không bỡ ngỡ của V-Pop"
+            },
+            {
+                "id": "ZOCIIUWW",
+                "title": "Chill Hits",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/6/3/2/7/6327ef96372a865c8ee7760423aa879c.jpg",
+                "des": "Những bản hit cực chill, vừa nghe vừa feel"
+            }
+        ]
+    },
+    {
+        "id": "hArtistTheme",
+        "title": "Nghệ sĩ thịnh hành 💫",
+        "items": [
+            {
+                "id": "ZOZ9678O",
+                "title": "Những Bài Hát Hay Nhất Của Hoàng Thùy Linh",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/2/b/d/a2bdbad3b7acf3b92b0e29d30903f51e.jpg",
+                "des": "Hoàng Thùy Linh cùng bản Hit toàn cầu 'See tình' và nhiều hơn thế nữa"
+            },
+            {
+                "id": "6UW9CWZO",
+                "title": "Những Bài Hát Hay Nhất Của Pháo",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/9/0/6/c9062043b873adcab6b7bd33bdabbd26.jpg",
+                "des": "Ở đây có Pháo và 'Kìa bóng dáng ai', 'Hai phút hơn'..."
+            },
+            {
+                "id": "6UW9BFUW",
+                "title": "Những Bài Hát Hay Nhất Của HIEUTHUHAI",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/a/1/e/0/a1e02cdf50690af710b77af59db01d60.jpg",
+                "des": "Những chiếc nhạc mlem của HIEUTHUHAI"
+            },
+            {
+                "id": "ZUDICAF0",
+                "title": "Những Bài Hát Hay Nhất Của Jack - J97",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/b/0/6/8b06c3c523c6bb6b1c52d8b62c75823f.jpg",
+                "des": "Jack - J97 và những bản Hit đỉnh nhất ở đây hết"
+            },
+            {
+                "id": "6B7OEOW7",
+                "title": "Những Bài Hát Hay Nhất Của Myra Trần",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/4/f/5/1/4f517d7a902dc1eb1b9735dc11108536.jpg",
+                "des": "Nghe 'Anh chưa thương em đến vậy đâu' của Myra Trần và những ca khúc nổi bật khác"
+            },
+            {
+                "id": "6UW9BUUU",
+                "title": "Những Bài Hát Hay Nhất Của GREY D",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/images/d/1/c/9/d1c91711ab72fe5b6cad8bc2b7176358.jpg",
+                "des": "'Tỉnh thức' cùng GREY D và những bản Hit nổi bật khác"
+            },
+            {
+                "id": "6BUFZBCD",
+                "title": "Những Bài Hát Hay Nhất Của MONO",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/5/1/9/a5199dc00d416498bd38ca44b8b79c4d.jpg",
+                "des": "Ú òa một cái có ngay nhạc xịn của MONO"
+            },
+            {
+                "id": "ZO6IA97F",
+                "title": "Những Bài Hát Hay Nhất Của Trúc Nhân",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/a/2/e/1a2e7b4845e7b40cfd9d1e169245928f.jpg",
+                "des": "Trúc Nhân và siêu Hit 'Có không giữ mất đừng tìm', 'Sáng mắt chưa'..."
+            },
+            {
+                "id": "ZOZAWCCO",
+                "title": "Những Bài Hát Hay Nhất Của Đức Phúc",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/c/0/9/1c09b567187b39cd42b433ee5a9b3d5f.jpg",
+                "des": "'Đồng ý' làm fan ruột của Đức Phúc thì nghe ngay"
+            },
+            {
+                "id": "ZOU8DC8Z",
+                "title": "Những Bài Hát Hay Nhất Của Vũ Cát Tường",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/d/a/c/8dac50eb79753190ee18bb46f95797f3.jpg",
+                "des": "Vũ Cát Tường và bộ sưu tập Hit 'độc nhất'"
+            }
+        ]
+    },
+    {
+        "id": "hAutoTheme2",
+        "title": "Nhạc mới mỗi ngày",
+        "items": [
+            {
+                "id": "69I8CU7C",
+                "title": "V-Pop Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/2/d/e/32defbe0d6f94c91921a74ba532e9fd1.jpg",
+                "des": "Muôn màu V-Pop tháng 2"
+            },
+            {
+                "id": "69I8CZFB",
+                "title": "US-UK Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/1/0/1/c/101c660282e9df755a4b65e1677627e7.jpg",
+                "des": "Nhạc US-UK tháng 2 này có gì mới?"
+            },
+            {
+                "id": "69I8C799",
+                "title": "K-Pop Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/e/e/d/deede1c57b9f630aa514943137d7b1a2.jpg",
+                "des": "K-Pop mới tinh của tháng 2"
+            },
+            {
+                "id": "69I8C87B",
+                "title": "C-Pop Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/c/e/4/5ce4e179666e49cde24d9bc4a751e583.jpg",
+                "des": "C-Pop nổi bật của tháng 2 gọi tên"
+            },
+            {
+                "id": "68FB8W8O",
+                "title": "Indie Việt Tháng 2/2023",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/d/5/5/3d55e89301f73ada38af4546d0520660.jpg",
+                "des": "Lựa chọn tiềm năng của Indie Việt trong tháng 2"
+            }
+        ]
+    },
+    {
+        "id": "h100",
+        "title": "Top 100",
+        "items": [
+            {
+                "id": "ZWZB969E",
+                "title": "Top 100 Bài Hát Nhạc Trẻ Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/9/5/4/09542fd83e019d4734587f836bc9bbc0.jpg",
+                "des": "Top 100 Nhạc Trẻ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trẻ, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AB",
+                "title": "Top 100 Pop Âu Mỹ Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/6/6/8/d6685aca6f5adec29805f6f906616da2.jpg",
+                "des": "Top 100 Nhạc Pop Âu Mỹ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Top 100 Nhạc Pop Âu Mỹ, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96C7",
+                "title": "Top 100 Nhạc Electronic/Dance Âu Mỹ Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/c/5/f/c/c5fc615c43215c6b72676f42767855ee.jpg",
+                "des": "Top 100 Nhạc Electronic/Dance Âu Mỹ là danh sách 100 ca khúc hot nhất hiện tại của thể loại Top 100 Nhạc Electronic/Dance Âu Mỹ, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB969F",
+                "title": "Top 100 Nhạc Trữ Tình Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/9/1/d/891d56e72dde29423e7c2c934727f5ab.jpg",
+                "des": "Top 100 Nhạc Trữ Tình là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Trữ Tình, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96DC",
+                "title": "Top 100 Nhạc Hàn Quốc Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/a/b/c/8abcfc5b85e7c581bf49057d01bfd1d4.jpg",
+                "des": "Top 100 Nhạc Hàn Quốc Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Hàn Quốc, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AI",
+                "title": "Top 100 Nhạc Rap Việt Nam Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/a/8/3/8a83cec61decaf2277c68fdef3726ce9.jpg",
+                "des": "Top 100 Nhạc Rap Việt Nam Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại nhạc Rap Việt Nam, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AU",
+                "title": "Top 100 Nhạc Quê Hương Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/8/6/c/3/86c3040f44aca0cdf8de2ec42963dcba.jpg",
+                "des": "Top 100 Nhạc Quê Hương Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại nhạc Quê Hương, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AO",
+                "title": "Top 100 Nhạc Cách Mạng Việt Nam",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/f/2/6/4/f26467e87075a96bf974a8c49450bad5.jpg",
+                "des": "Top 100 Nhạc Cách Mạng Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại nhạc Cách Mạng, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96A0",
+                "title": "Top 100 Nhạc Rock Việt Nam Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/6/9/a/d/69adc20d10b93758ae077afc03608e02.jpg",
+                "des": "Top 100 Nhạc Rock Việt Nam là danh sách 100 ca khúc hot nhất hiện tại của thể loại Nhạc Rock Việt Nam, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            },
+            {
+                "id": "ZWZB96AW",
+                "title": "Top 100 Nhạc Dance Việt Nam Hay Nhất",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/b/8/0/0/b800a8b039fd00210f54e58b3309b46f.jpg",
+                "des": "Top 100 Nhạc Dance Việt Nam Hay Nhất là danh sách 100 ca khúc hot nhất hiện tại của thể loại nhạc Dance Việt Nam, được Zing MP3 tự động tổng hợp dựa trên thông tin số liệu lượt nghe và lượt chia sẻ của từng bài hát trên phiên bản web và phiên bản Mobile. Dữ liệu sẽ được lấy trong 30 ngày gần nhất và được cập nhật liên tục."
+            }
+        ]
+    },
+    {
+        "id": "hAlbum",
+        "title": "",
+        "items": [
+            {
+                "id": "6B8AEFEW",
+                "title": "Mong Một Ngày Anh Nhớ Đến Em (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/a/a/4/f/aa4ffa6ae290dbc67a7ea46a76af0805.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8AZ0ZO",
+                "title": "Tuesday (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/6/5/0/d65075af2f7365fb06b187e3ae691214.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8AAZE6",
+                "title": "Hoa Lạc Lối (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/9/a/8/9/9a894135b316f76d84a2ed6e113d8ad6.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B88CWZF",
+                "title": "Hết Tết (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/2/1/8/9/2189ba431e1a973fb0c3a493d1fefc7a.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8A98U9",
+                "title": "Trà Tam Rượu Tứ (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/6/6/a/1/66a14ebea8646df1666cf3de667d5464.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8A8U8E",
+                "title": "Rời Xa Thế Giới (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/f/4/b/df4b97eed06fc583cfe690bea4872a23.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8AU9F0",
+                "title": "Cẩm Y Vệ (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/3/5/3/5353c885f07cd3b6617f8c9dda6585be.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8A0B0O",
+                "title": "PHÁO HOA (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/0/c/4/e/0c4e0f3ca9a5455fcef3ad17e28907e9.jpg",
+                "des": ""
+            },
+            {
+                "id": "SB88C9ED",
+                "title": "Naul <Ballad Pop City> (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/d/f/2/5/df251e59edff4c80cbd05a8807add66a.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B8AZ7O0",
+                "title": "Tiếc Cho Một Mối Tình (Cover) (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/3/4/1/a/341ace908cb906cc5ecf6951e53d31b3.jpg",
+                "des": ""
+            },
+            {
+                "id": "6B89EBZU",
+                "title": "Lạc Nhau (Single)",
+                "image": "https://photo-resize-zmp3.zmdcdn.me/w320_r1x1_jpeg/cover/5/7/b/a/57ba603b66c05e9f3259419d2b13e633.jpg",
+                "des": ""
+            }
+        ]
+    }
+]

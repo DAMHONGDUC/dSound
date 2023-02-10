@@ -36,3 +36,29 @@ export const randomInRange = (start, end) => {
 export const showToastAndroid = (text) => {
   ToastAndroid.show(text, ToastAndroid.SHORT);
 };
+
+export const pushMoreDataPlaylist = (totalData, currData, num) => {
+  let result = currData;
+
+  const length = currData?.songs?.length;
+  const extraSongs = totalData.songs.slice(length, num + length);
+
+  result.songs = currData.songs.concat(extraSongs);
+
+  return result;
+};
+
+export const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+export const pushMoreDataArtist = (totalData, currData, num) => {
+  let result = currData;
+
+  const length = currData?.length;
+  const extraArtist = totalData.slice(length, num + length);
+
+  result = currData.concat(extraArtist);
+
+  return result;
+};
