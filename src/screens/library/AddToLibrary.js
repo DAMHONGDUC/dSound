@@ -7,10 +7,11 @@ import LibraryComponent from "./LibraryComponent";
 import { View, StyleSheet, TouchableHighlight } from "react-native";
 import { COLORS } from "constants/theme";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { getPlaylistByUid } from "api/LibraryAPI";
+import { checkSongExist, getPlaylistByUid } from "api/LibraryAPI";
 import { useState } from "react";
 import { addSongWithDocId } from "api/LibraryAPI";
 import { showToastAndroid } from "helper";
+import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
 
 export default function LibraryPage() {
   const navigation = useNavigation();
@@ -46,13 +47,23 @@ export default function LibraryPage() {
   const onPress = async (item) => {
     const currSongRow = route.params.currSongRow;
 
-    await addSongWithDocId(currSongRow, item.id);
+    const songExist = await checkSongExist(
+      FAVORITE_PLAYLIST_COLLECTION,
+      item.id,
+      currSongRow.id
+    );
 
-    handleBackButton();
+    if (!songExist) {
+      await addSongWithDocId(currSongRow, item.id);
 
-    showToastAndroid("Đã thêm vào " + item.title);
+      showToastAndroid("Đã thêm vào " + item.title);
 
-    dispatch(setRefreshLibrary(true));
+      handleBackButton();
+
+      dispatch(setRefreshLibrary(true));
+    } else {
+      showToastAndroid("Bài hát đã tồn tại trong " + item.title);
+    }
   };
 
   const handleBackButton = () => {

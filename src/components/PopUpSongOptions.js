@@ -31,13 +31,13 @@ export default function PopUpSongOptions({
   };
 
   const handleLovedSong = async () => {
+    setShowPopover(false);
+
     await PlayerController.onLovedSong([
       lovedSongId,
       currSongRow,
       currLovedSong,
     ]);
-
-    setShowPopover(false);
 
     if (activeLibraryId?.id === lovedSongId) {
       navToDetail();
