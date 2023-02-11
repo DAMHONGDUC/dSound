@@ -13,6 +13,8 @@ import OnboardingStack from "./OnboardingStack";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthContext } from "constants/values";
 import { storeData } from "helper";
+import { setRefreshLibrary } from "redux/slices/playerSlide";
+import { useDispatch } from "react-redux";
 
 const RootStack = createNativeStackNavigator();
 export const rootNavigationRef = createRef();
@@ -20,6 +22,7 @@ export const rootNavigationRef = createRef();
 export default function RootNavigation() {
   const [isSignedIn, setisSignedIn] = useState(false);
   const [isOnboardingComplete, setisOnboardingComplete] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     SplashScreen.hide();
@@ -35,6 +38,9 @@ export default function RootNavigation() {
         setisOnboardingComplete(true);
       }
     });
+
+    // refreshLibrary
+    dispatch(setRefreshLibrary(true));
   }, []);
 
   const handleAfterSignIn = () => {
