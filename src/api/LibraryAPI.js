@@ -51,28 +51,18 @@ export const getDataAndSetUpFirstSong = async (uid) => {
   let result = [];
 
   if (data) {
-    // console.log(JSON.stringify(data[].songs[0]));
-    // if (data.songs[0]) {
-    //   console.log(data.songs[0]);
-
-    //   const URL = await getSongURL(data.songs[0].id);
-
-    //   data.songs[0].url = URL;
-    // }
-
-    //console.log(JSON.stringify(data));
-
     for (let e of data) {
-      if (e.songs[0] && !e.songs[0].url) {
-        const URL = await getSongURL(e.songs[0].id);
+      let songs = e.songs;
 
-        e.songs[0].url = URL;
+      if (songs !== undefined && songs.length > 0 && !songs[0].url) {
+        const URL = await getSongURL(songs[0].id);
+
+        songs[0].url = URL;
       }
-      result.push(e);
+
+      result.push(songs);
     }
   }
-
-  console.log(JSON.stringify(result));
 
   return data;
 };

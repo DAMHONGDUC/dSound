@@ -31,6 +31,7 @@ export default function LibraryPage() {
     setDataPlaylist(null);
 
     const data = await getDataAndSetUpFirstSong(uid);
+    console.log(JSON.stringify(data));
 
     setDataPlaylist(data);
     dispatch(setRefreshLibrary(false));
