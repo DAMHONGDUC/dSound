@@ -5,6 +5,7 @@ import {
 } from "constants/values";
 import { firebase } from "@react-native-firebase/auth";
 import { getSongURL } from "./SongAPI";
+import cloneDeep from "lodash.clonedeep";
 
 const getCollectionByDocId = async (collection, docId) => {
   const res = await firestore().collection(collection).doc(docId).get();
@@ -44,27 +45,6 @@ export const getPlaylistByUid = async (uid) => {
 
     return Promise.all(promiseArray);
   }
-};
-
-export const getDataAndSetUpFirstSong = async (uid) => {
-  let data = await getPlaylistByUid(uid);
-  let result = [];
-
-  if (data) {
-    for (let e of data) {
-      let songs = e.songs;
-
-      if (songs !== undefined && songs.length > 0 && !songs[0].url) {
-        const URL = await getSongURL(songs[0].id);
-
-        songs[0].url = URL;
-      }
-
-      result.push(songs);
-    }
-  }
-
-  return data;
 };
 
 export const checkDocExist = async (collection, docID) => {
@@ -149,13 +129,36 @@ export const addSongWithDocId = async (song, docid) => {
     });
 };
 
+export const setUpFirstSong = async (data) => {
+  let songs = cloneDeep(data);
+
+  if (songs !== undefined && songs.length > 0 && !songs[0].url) {
+    const URL = await getSongURL(songs[0].id);
+
+    songs[0].url = URL;
+  }
+
+  return songs;
+};
+
 export const getAllSongByDocId = async (docid) => {
   const res = await firestore()
     .collection(FAVORITE_PLAYLIST_COLLECTION)
     .doc(docid)
     .get();
 
-  return res?._data ?? [];
+  if (res?._data) {
+    return res._data;
+  }
+};
+
+export const getAllSongByDocIdAndSetUp = async (docid) => {
+  let data = await getAllSongByDocId(docid);
+
+  const setUpSongs = await setUpFirstSong(data.songs);
+  data.songs = setUpSongs;
+
+  return data;
 };
 
 export const removeWithDocId = async (collection, docId, uid, dataPlaylist) => {

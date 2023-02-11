@@ -12,7 +12,7 @@ import {
   setActiveLibraryId,
   setPopUpLibraryOptions,
 } from "redux/slices/playerSlide";
-import { getAllSongByDocId } from "api/LibraryAPI";
+import { getAllSongByDocIdAndSetUp } from "api/LibraryAPI";
 import { useFocusEffect } from "@react-navigation/native";
 
 export default function DetailLibraryPage() {
@@ -43,7 +43,7 @@ export default function DetailLibraryPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const allSongs = await getAllSongByDocId(route.params.id);
+      const allSongs = await getAllSongByDocIdAndSetUp(route.params.id);
 
       const data = {
         id: route.params.id,

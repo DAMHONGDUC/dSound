@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { getPlaylistByUid } from "api/LibraryAPI";
+import { getPlaylistByUid, getAllSongByDocId } from "api/LibraryAPI";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setRefreshLibrary } from "redux/slices/playerSlide";
 import { useNavigation } from "@react-navigation/native";
-import { getAllSongByDocId, getDataAndSetUpFirstSong } from "api/LibraryAPI";
 import LibraryComponent from "./LibraryComponent";
 
 export default function LibraryPage() {
@@ -30,8 +29,7 @@ export default function LibraryPage() {
   const fetchData = async () => {
     setDataPlaylist(null);
 
-    const data = await getDataAndSetUpFirstSong(uid);
-    console.log(JSON.stringify(data));
+    const data = await getPlaylistByUid(uid);
 
     setDataPlaylist(data);
     dispatch(setRefreshLibrary(false));

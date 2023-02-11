@@ -1,84 +1,46 @@
-[
-    {
-        "id": "SBgadAeTPeM2KHzAQquTKCiWWTb2loved_song",
-        "title": "Bài hát đã thích",
-        "songs": [
-            {
-                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/0/8/1/3081ced2d3336cc99ffda5bb9f3511b0.jpg",
-                "title": "Mamma Mia",
-                "id": "ZZB6BBZU",
-                "artist": "Nhiều nghệ sĩ",
-                "url": "https://mp3-s1-zmp3.zmdcdn.me/980a7b37d6763f286667/1415781704679369646?authen=exp=1676274231~acl=/980a7b37d6763f286667/*~hmac=00c772320da814e43080eb269c8df70c&fs=MTY3NjEwMTQzMTIyMXx3ZWJWNnwwfDE3MS4yMjUdUngMTg0LjExMQ",
-                "duration": 233
-            },
-            {
-                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/2/3/6/6236866488685b27dba2533be163e21e.jpg",
-                "title": "ngủ một mình (tình rất tình)",
-                "id": "Z6UCWZUD",
-                "artist": "HIEUTHUHAI, Negav, Kewtiie",
-                "url": "https://mp3-s1-zmp3.zmdcdn.me/97c6161b4f5ba605ff4a/722226181788818609?authen=exp=1676185050~acl=/97c6161b4f5ba605ff4a/*~hmac=447b43b72c68ea07fbecb032d9e09d40&fs=MTY3NjAxMjI1MDA0M3x3ZWJWNnwwfDExMy4xNjEdUngMTUyLjIwMQ",
-                "duration": 192
-            },
-            {
-                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/5/3/c/a53cc3bada8da2c3d002f57cf028f81c.jpg",
-                "title": "We Go Down Together",
-                "id": "Z66CZDUF",
-                "artist": "Dove Cameron, Khalid",
-                "url": "https://mp3-s1-zmp3.zmdcdn.me/1f75f63e4a7ea320fa6f/951621939765028531?authen=exp=1676270098~acl=/1f75f63e4a7ea320fa6f/*~hmac=f58253dc2769428d86dfdce3965b7e14&fs=MTY3NjA5NzI5ODY1MHx3ZWJWNnwxMDI3MDE4ODY4fDExOC42OS4xOTEdUngMjE",
-                "duration": 185
-            },
-            {
-                "title": "Nghe Như Tình Yêu",
-                "id": "ZUWW8WCA",
-                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/d/7/4/d/d74d1e7fe540aa0f8b53ec27f4039aee.jpg",
-                "artist": "HIEUTHUHAI",
-                "url": null,
-                "duration": 193
-            },
-            {
-                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/4/3/7/2/4372ff36962b66277889ebdf7b294089.jpg",
-                "title": "Phải Là Yêu",
-                "id": "ZU0WUBAE",
-                "artist": "HIEUTHUHAI, HURRYKNG, MANBO",
-                "url": null,
-                "duration": 227
-            }
-        ],
-        "type": 0
-    },
-    {
-        "id": "SBgadAeTPeM2KHzAQquTKCiWWTb2Pl 1",
-        "title": "Pl 1",
-        "songs": [
-            {
-                "title": "Vệ Tinh",
-                "id": "ZZF8O0U0",
-                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/4/9/f/6/49f6f7ebf517b9a6b2bc47abd6abfa32.jpg",
-                "artist": "HIEUTHUHAI, Hoàng Tôn, Kewtiie",
-                "url": "https://mp3-s1-zmp3.zmdcdn.me/e64554ed91ac78f221bd/199639201111179158?authen=exp=1676274803~acl=/e64554ed91ac78f221bd/*~hmac=214a2a4420608d84b63420567cb5d5ec&fs=MTY3NjEwMjAwMzg2OHx3ZWJWNnwwfDExNS43OS4yMzYdUngMTMy",
-                "duration": 219
-            },
-            {
-                "title": "Mamma Mia",
-                "id": "ZZB6BBZU",
-                "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/0/8/1/3081ced2d3336cc99ffda5bb9f3511b0.jpg",
-                "artist": "Nhiều nghệ sĩ",
-                "url": null,
-                "duration": 233
-            }
-        ],
-        "type": 1
-    },
-    {
-        "id": "SBgadAeTPeM2KHzAQquTKCiWWTb2Pl 2",
-        "title": "Pl 2",
-        "songs": [],
-        "type": 1
-    },
-    {
-        "id": "SBgadAeTPeM2KHzAQquTKCiWWTb2P",
-        "title": "P",
-        "songs": [],
-        "type": 1
-    }
-]
+{
+    "songs": [
+        {
+            "artist": "Nhiều nghệ sĩ",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/3/0/8/1/3081ced2d3336cc99ffda5bb9f3511b0.jpg",
+            "duration": 233,
+            "id": "ZZB6BBZU",
+            "title": "Mamma Mia",
+            "url": null
+        },
+        {
+            "artist": "HIEUTHUHAI, Negav, Kewtiie",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/6/2/3/6/6236866488685b27dba2533be163e21e.jpg",
+            "duration": 192,
+            "id": "Z6UCWZUD",
+            "title": "ngủ một mình (tình rất tình)",
+            "url": "https://mp3-s1-zmp3.zmdcdn.me/97c6161b4f5ba605ff4a/722226181788818609?authen=exp=1676185050~acl=/97c6161b4f5ba605ff4a/*~hmac=447b43b72c68ea07fbecb032d9e09d40&fs=MTY3NjAxMjI1MDA0M3x3ZWJWNnwwfDExMy4xNjEdUngMTUyLjIwMQ"
+        },
+        {
+            "artist": "Dove Cameron, Khalid",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/a/5/3/c/a53cc3bada8da2c3d002f57cf028f81c.jpg",
+            "duration": 185,
+            "id": "Z66CZDUF",
+            "title": "We Go Down Together",
+            "url": "https://mp3-s1-zmp3.zmdcdn.me/1f75f63e4a7ea320fa6f/951621939765028531?authen=exp=1676270098~acl=/1f75f63e4a7ea320fa6f/*~hmac=f58253dc2769428d86dfdce3965b7e14&fs=MTY3NjA5NzI5ODY1MHx3ZWJWNnwxMDI3MDE4ODY4fDExOC42OS4xOTEdUngMjE"
+        },
+        {
+            "artist": "HIEUTHUHAI",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/d/7/4/d/d74d1e7fe540aa0f8b53ec27f4039aee.jpg",
+            "duration": 193,
+            "id": "ZUWW8WCA",
+            "title": "Nghe Như Tình Yêu",
+            "url": null
+        },
+        {
+            "artist": "HIEUTHUHAI, HURRYKNG, MANBO",
+            "artwork": "https://photo-resize-zmp3.zmdcdn.me/w240_r1x1_jpeg/cover/4/3/7/2/4372ff36962b66277889ebdf7b294089.jpg",
+            "duration": 227,
+            "id": "ZU0WUBAE",
+            "title": "Phải Là Yêu",
+            "url": null
+        }
+    ],
+    "title": "Bài hát đã thích",
+    "type": 0
+}
