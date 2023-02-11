@@ -3,14 +3,16 @@ import { useEffect, useState } from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
 import PlaylistHeader from "./PlaylistHeader";
 import { getDetailPlaylist } from "api/PlaylistAPI";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import Loading from "components/Loading";
 import SongRow from "screens/song/SongRow";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { getListArtistSong } from "api/ArtistAPI";
 import { ARTIST_FLOW, NORMAL_FLOW } from "constants/values";
-import { setActiveLibraryId } from "redux/slices/playerSlide";
+import { pushMoreDataPlaylist, sleep } from "helper";
+import ListFooterLoading from "components/ListFooterLoading";
+import cloneDeep from "lodash.clonedeep";
 
 export default function PlaylistPage() {
   const { currPlaylist, showBottomPlay } = useSelector((state) => state.player);
@@ -18,13 +20,26 @@ export default function PlaylistPage() {
   const navigation = useNavigation();
   const route = useRoute();
   const [flow, setFlow] = useState();
-  const dispatch = useDispatch();
+
+  const [currShowingData, setCurrShowingData] = useState({});
+  const [loadingMore, setLoadingMore] = useState(false);
+  const delay = 1;
+  const endOfData =
+    currShowingData?.songs?.length === dataPlaylist?.songs?.length;
+
+  const setDataPlaylistToState = (data) => {
+    setdataPlaylist(data);
+
+    const newData = pushMoreDataPlaylist(data, { id: data.id, songs: [] }, 10);
+    setCurrShowingData(cloneDeep(newData));
+  };
 
   useEffect(() => {
     const getDataDetailPlaylist = async () => {
       const data = await getDetailPlaylist(route.params.id);
 
-      setdataPlaylist(data);
+      // setdataPlaylist(data);
+      setDataPlaylistToState(data);
     };
 
     const getDataDetailArtist = async () => {
@@ -34,7 +49,8 @@ export default function PlaylistPage() {
       data.title = route.params.props.title;
       data.totalFollow = route.params.props.totalFollow;
 
-      setdataPlaylist(data);
+      //setdataPlaylist(data);
+      setDataPlaylistToState(data);
     };
 
     setFlow(route.params.type);
@@ -71,11 +87,25 @@ export default function PlaylistPage() {
       />
     );
   };
+
+  const handleOnEndReached = async () => {
+    if (!endOfData) {
+      setLoadingMore(true);
+
+      await sleep(delay * 1000);
+
+      const newData = pushMoreDataPlaylist(dataPlaylist, currShowingData, 10);
+      setCurrShowingData(cloneDeep(newData));
+
+      setLoadingMore(false);
+    }
+  };
+
   return (
     <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
       {dataPlaylist?.songs ? (
         <FlatList
-          data={dataPlaylist.songs}
+          data={currShowingData.songs}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
           ListHeaderComponent={() => (
@@ -89,6 +119,9 @@ export default function PlaylistPage() {
           ListEmptyComponent={
             <Text style={styles.notiText}>{"Không có bài hát !"}</Text>
           }
+          onEndReachedThreshold={0.5}
+          onEndReached={handleOnEndReached}
+          ListFooterComponent={() => loadingMore && <ListFooterLoading />}
         />
       ) : (
         <Loading />

@@ -18,7 +18,7 @@ export default function ArtistsRoute() {
   const { showBottomPlay } = useSelector((state) => state.player);
   const [currShowingData, setCurrShowingData] = useState({});
   const [loadingMore, setLoadingMore] = useState(false);
-  const delay = 1.5;
+  const delay = 1;
   const endOfData = currShowingData?.length === dataArtist?.length;
 
   useEffect(() => {

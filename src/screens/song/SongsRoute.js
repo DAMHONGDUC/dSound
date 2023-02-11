@@ -16,7 +16,7 @@ export default function SongsRoute({ navigation }) {
   const [currShowingData, setCurrShowingData] = useState({});
   const { showBottomPlay, currPlaylist } = useSelector((state) => state.player);
   const [loadingMore, setLoadingMore] = useState(false);
-  const delay = 1.5;
+  const delay = 1;
   const endOfData =
     currShowingData?.songs?.length === data100Song?.songs?.length;
 
