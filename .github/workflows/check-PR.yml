@@ -1,0 +1,19 @@
+name: Check pull request
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run yarn install
+        run: yarn install
+
+      - name: Run yarn lint
+        run: yarn lint
+
+      - name: Run yarn test
+        run: yarn test
