@@ -1,4 +1,4 @@
-# dSound [v.1.6 in Google Play](https://play.google.com/store/apps/details?id=com.dsound)
+# dSound - M[v.1.6 in Google Play](https://play.google.com/store/apps/details?id=com.dsound)
 
 ## I. Install
 ### 1. Clone project
