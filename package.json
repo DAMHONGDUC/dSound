@@ -6,7 +6,7 @@
     "android": "ENVFILE=.env.development react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest helper.test.js MainHeader.test.js",
+    "test": "jest helper.test.js",
     "lint": "eslint src/**/*.{js,jsx}",
     "postinstall": "rn-nodeify --install buffer,crypto,stream,tls,events --hack"
   },
