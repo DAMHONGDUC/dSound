@@ -11,6 +11,7 @@ module.exports = {
       "|@react-native-firebase" +
       "|axios" +
       "|react-redux" +
+      "|react-native-share" +
       ")/)",
   ],
 };
