@@ -10,8 +10,10 @@
 ```
   yarn install
 ```
+### 3. ENV Key
+- Pls contact me for .env key
 
-### 3. Run app
+### 4. Run app
 - Open terminal in project folder and run these command:
 ```
   yarn start
