@@ -1,10 +1,11 @@
 import axios from "axios";
+import Config from "react-native-config";
 
-export const VERSION = "1.6.34";
-export const SECRET_KEY = "2aa2d1c561e809b267f3638c4a307aab";
+export const VERSION = Config.ZINGMP3_VERSION;
+export const SECRET_KEY = Config.ZINGMP3_SECRET_KEY;
 export const CTIME = Math.floor(Date.now() / 1000);
-const URL = "https://zingmp3.vn";
-const API_KEY = "88265e23d4284f25963e6eedac8fbfa3";
+const URL = Config.ZINGMP3_URL;
+const API_KEY = Config.ZINGMP3_API_KEY;
 
 const getCookie = async () => {
   try {
