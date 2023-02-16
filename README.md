@@ -63,6 +63,7 @@
 - Zing Mp3 API
 - CI/CD github workflow (GitHub Action, Firebase App Distribution)
 - Eslint, Prettier, Husky, Lint-staged
+- Jest test, React Native Testing Library
 
 ## V. Release
 - Android [apk](RELEASE/install/app-release.apk)
