@@ -16,7 +16,7 @@ import { searchSongByName } from "api/SongAPI";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { useState } from "react";
 
-export default function SongsRoute({ navigation }) {
+export default function SearchPage({ navigation }) {
   const [dataSearch, setdataSearch] = useState([]);
   const { currPlaylist } = useSelector((state) => state.player);
   const [searchText, setsearchText] = useState("");
@@ -74,13 +74,18 @@ export default function SongsRoute({ navigation }) {
       <Text style={styles.text}>Tìm kiếm</Text>
       <View style={styles.searchSection}>
         <TextInput
+          testID="searchText"
           style={styles.textInput}
           placeholder="Bạn muốn nghe gì?"
           placeholderTextColor={COLORS.grey}
           onChangeText={onChangeTextInput}
           onSubmitEditing={onSearch}
         />
-        <TouchableOpacity onPress={onSearch} style={styles.searchIcon}>
+        <TouchableOpacity
+          testID="searchButton"
+          onPress={onSearch}
+          style={styles.searchIcon}
+        >
           <AntDesign name="search1" size={30} color={COLORS.black} />
         </TouchableOpacity>
       </View>
