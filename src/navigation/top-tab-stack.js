@@ -5,7 +5,7 @@ import ArtistsRoute from "screens/artist/artist-route";
 import { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Animated } from "react-native";
 import { COLORS } from "constants/theme";
-import MainHeader from "components/MainHeader";
+import MainHeader from "components/main-header";
 
 const TopTab = createMaterialTopTabNavigator();
 

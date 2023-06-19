@@ -1,5 +1,5 @@
-import { StyleSheet, SafeAreaView } from "react-native";
-import TopTabStack from "navigation/TopTabStack";
+import { StyleSheet, SafeAreaView } from 'react-native';
+import TopTabStack from 'navigation/top-tab-stack';
 
 export default function HomePage() {
   return (

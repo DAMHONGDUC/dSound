@@ -1,26 +1,26 @@
-import { COLORS } from "constants/theme";
-import { useEffect, useState, useCallback } from "react";
-import { StyleSheet, View, FlatList, Text } from "react-native";
-import PlaylistHeader from "screens/playlist/playlist-header";
-import { useDispatch, useSelector } from "react-redux";
-import Loading from "components/Loading";
-import SongRow from "screens/song/song-row";
-import PlayerController from "helper/PlayerController";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { LIBRARY_FLOW } from "constants/values";
+import { COLORS } from 'constants/theme';
+import { useEffect, useState, useCallback } from 'react';
+import { StyleSheet, View, FlatList, Text } from 'react-native';
+import PlaylistHeader from 'screens/playlist/playlist-header';
+import { useDispatch, useSelector } from 'react-redux';
+import Loading from 'components/Loading';
+import SongRow from 'screens/song/song-row';
+import PlayerController from 'helper/player-controller';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { LIBRARY_FLOW } from 'constants/values';
 import {
   setActiveLibraryId,
   setPopUpLibraryOptions,
-} from "stores/player/player-store";
-import { getAllSongByDocIdAndSetUp } from "api/LibraryAPI";
-import { useFocusEffect } from "@react-navigation/native";
+} from 'stores/player/player-store';
+import { getAllSongByDocIdAndSetUp } from 'api/LibraryAPI';
+import { useFocusEffect } from '@react-navigation/native';
 
 export default function DetailLibraryPage() {
   const [dataPlaylist, setdataPlaylist] = useState();
   const navigation = useNavigation();
   const route = useRoute();
   const { currPlaylist, showBottomPlay, refreshLibrary } = useSelector(
-    (state) => state.player
+    state => state.player,
   );
   const dispatch = useDispatch();
 
@@ -38,7 +38,7 @@ export default function DetailLibraryPage() {
       return () => {
         dispatch(setPopUpLibraryOptions(false));
       };
-    }, [])
+    }, []),
   );
 
   useEffect(() => {
@@ -90,7 +90,7 @@ export default function DetailLibraryPage() {
         <FlatList
           data={dataPlaylist.songs}
           renderItem={renderItem}
-          keyExtractor={(item) => item.id}
+          keyExtractor={item => item.id}
           ListHeaderComponent={() => (
             <PlaylistHeader
               dataPlaylist={dataPlaylist}
@@ -100,7 +100,7 @@ export default function DetailLibraryPage() {
             />
           )}
           ListEmptyComponent={
-            <Text style={styles.notiText}>{"Không có bài hát !"}</Text>
+            <Text style={styles.notiText}>{'Không có bài hát !'}</Text>
           }
         />
       ) : (
@@ -119,6 +119,6 @@ const styles = StyleSheet.create({
   },
   notiText: {
     color: COLORS.primary,
-    alignSelf: "flex-start",
+    alignSelf: 'flex-start',
   },
 });

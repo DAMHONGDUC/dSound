@@ -1,11 +1,11 @@
-import RootNavigation from "navigation/RootNavigation";
-import { store } from "stores";
-import { Provider } from "react-redux";
-import { useEffect } from "react";
-import TrackPlayer from "react-native-track-player";
-import BottomPlayer from "components/BottomPlayer";
-import { Capability } from "react-native-track-player";
-import ErrorBoundary from "components/ErrorBoundary";
+import { store } from 'stores';
+import { Provider } from 'react-redux';
+import { useEffect } from 'react';
+import TrackPlayer from 'react-native-track-player';
+import BottomPlayer from 'components/bottom-player';
+import { Capability } from 'react-native-track-player';
+import ErrorBoundary from 'components/error-boundary';
+import RootNavigation from 'navigation/root-navigation';
 
 export default function App() {
   const options = [

@@ -1,4 +1,4 @@
-import { COLORS } from "constants/theme";
+import { COLORS } from 'constants/theme';
 import {
   Image,
   View,
@@ -6,15 +6,15 @@ import {
   StyleSheet,
   TouchableOpacity,
   TouchableHighlight,
-} from "react-native";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import Feather from "react-native-vector-icons/Feather";
-import { durationFormat } from "helper";
-import { useDispatch, useSelector } from "react-redux";
-import { usePlaybackState, State } from "react-native-track-player";
-import PopUpSongOptions from "components/PopUpSongOptions";
-import { useState } from "react";
-import { setInitFirstSong } from "stores/player/player-store";
+} from 'react-native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Feather from 'react-native-vector-icons/Feather';
+import { durationFormat } from 'helper';
+import { useDispatch, useSelector } from 'react-redux';
+import { usePlaybackState, State } from 'react-native-track-player';
+import PopUpSongOptions from 'components/pop-up-song-options';
+import { useState } from 'react';
+import { setInitFirstSong } from 'stores/player/player-store';
 
 export default function SongRow({
   image,
@@ -27,7 +27,7 @@ export default function SongRow({
   index,
   status,
 }) {
-  const { activeSong } = useSelector((state) => state.player);
+  const { activeSong } = useSelector(state => state.player);
   const playBackState = usePlaybackState();
   const [showPopover, setShowPopover] = useState(false);
   const dispatch = useDispatch();
@@ -43,8 +43,7 @@ export default function SongRow({
   return (
     <TouchableHighlight
       underlayColor={COLORS.songRowClickColor}
-      onPress={handleSongRowClick}
-    >
+      onPress={handleSongRowClick}>
       <View style={styles.container}>
         <Image style={styles.image} source={image} />
         <View style={styles.containerCenter}>
@@ -58,17 +57,16 @@ export default function SongRow({
                     ? COLORS.primary
                     : COLORS.black,
               },
-            ]}
-          >
+            ]}>
             {name}
           </Text>
           <View style={styles.containerArtist}>
             <Text numberOfLines={1} style={styles.artist}>
               {artist}
-              {"  "}
+              {'  '}
             </Text>
             <Text style={styles.duration}>
-              |{"  "}
+              |{'  '}
               {durationFormat(duration)} mins
             </Text>
           </View>
@@ -77,8 +75,8 @@ export default function SongRow({
         <FontAwesome5
           name={
             status && activeSong.id === id && playBackState === State.Playing
-              ? "pause-circle"
-              : "play-circle"
+              ? 'pause-circle'
+              : 'play-circle'
           }
           color={COLORS.primary}
           size={29}
@@ -91,7 +89,7 @@ export default function SongRow({
         />
         <View style={styles.songRowOptions}>
           <TouchableOpacity onPress={() => setShowPopover(true)}>
-            <Feather name={"more-vertical"} color={COLORS.black} size={25} />
+            <Feather name={'more-vertical'} color={COLORS.black} size={25} />
           </TouchableOpacity>
         </View>
       </View>
@@ -101,20 +99,20 @@ export default function SongRow({
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-around",
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
     marginBottom: 10,
     marginTop: 10,
   },
   containerCenter: {
-    flexDirection: "column",
+    flexDirection: 'column',
     width: 200,
     marginLeft: 10,
   },
   containerArtist: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   image: {
     height: 70,
@@ -123,7 +121,7 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 10,
     maxWidth: 160,
   },
@@ -137,8 +135,8 @@ const styles = StyleSheet.create({
     fontSize: 13,
   },
   songRowOptions: {
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 50,
-    justifyContent: "flex-end",
+    justifyContent: 'flex-end',
   },
 });

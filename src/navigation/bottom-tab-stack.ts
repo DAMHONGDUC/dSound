@@ -5,8 +5,8 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { COLORS } from "constants/theme";
 import SearchPage from "screens/search/search-page";
-import HomeStack from "./HomeStack";
-import LibraryStack from "./LibraryStack";
+import HomeStack from "./home-stack";
+import LibraryStack from "./library-stack";
 
 const BottomTab = createBottomTabNavigator();
 

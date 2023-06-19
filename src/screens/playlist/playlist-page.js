@@ -1,21 +1,21 @@
-import { COLORS } from "constants/theme";
-import { useEffect, useState } from "react";
-import { StyleSheet, View, FlatList, Text } from "react-native";
-import PlaylistHeader from "./playlist-header";
-import { getDetailPlaylist } from "api/PlaylistAPI";
-import { useSelector } from "react-redux";
-import Loading from "components/Loading";
-import SongRow from "screens/song/song-row";
-import PlayerController from "helper/PlayerController";
-import { useNavigation, useRoute } from "@react-navigation/native";
-import { getListArtistSong } from "api/ArtistAPI";
-import { ARTIST_FLOW, NORMAL_FLOW } from "constants/values";
-import { pushMoreDataPlaylist, sleep } from "helper";
-import ListFooterLoading from "components/ListFooterLoading";
-import cloneDeep from "lodash.clonedeep";
+import { COLORS } from 'constants/theme';
+import { useEffect, useState } from 'react';
+import { StyleSheet, View, FlatList, Text } from 'react-native';
+import PlaylistHeader from './playlist-header';
+import { getDetailPlaylist } from 'api/PlaylistAPI';
+import { useSelector } from 'react-redux';
+import Loading from 'components/Loading';
+import SongRow from 'screens/song/song-row';
+import PlayerController from 'helper/player-controller';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { getListArtistSong } from 'api/ArtistAPI';
+import { ARTIST_FLOW, NORMAL_FLOW } from 'constants/values';
+import { pushMoreDataPlaylist, sleep } from 'helper';
+import ListFooterLoading from 'components/list-footer-loading';
+import cloneDeep from 'lodash.clonedeep';
 
 export default function PlaylistPage() {
-  const { currPlaylist, showBottomPlay } = useSelector((state) => state.player);
+  const { currPlaylist, showBottomPlay } = useSelector(state => state.player);
   const [dataPlaylist, setdataPlaylist] = useState();
   const navigation = useNavigation();
   const route = useRoute();
@@ -27,7 +27,7 @@ export default function PlaylistPage() {
   const endOfData =
     currShowingData?.songs?.length === dataPlaylist?.songs?.length;
 
-  const setDataPlaylistToState = (data) => {
+  const setDataPlaylistToState = data => {
     setdataPlaylist(data);
 
     const newData = pushMoreDataPlaylist(data, { id: data.id, songs: [] }, 10);
@@ -107,7 +107,7 @@ export default function PlaylistPage() {
         <FlatList
           data={currShowingData.songs}
           renderItem={renderItem}
-          keyExtractor={(item) => item.id}
+          keyExtractor={item => item.id}
           ListHeaderComponent={() => (
             <PlaylistHeader
               dataPlaylist={dataPlaylist}
@@ -117,7 +117,7 @@ export default function PlaylistPage() {
             />
           )}
           ListEmptyComponent={
-            <Text style={styles.notiText}>{"Không có bài hát !"}</Text>
+            <Text style={styles.notiText}>{'Không có bài hát !'}</Text>
           }
           onEndReachedThreshold={0.5}
           onEndReached={handleOnEndReached}
@@ -139,6 +139,6 @@ const styles = StyleSheet.create({
   },
   notiText: {
     color: COLORS.primary,
-    alignSelf: "flex-start",
+    alignSelf: 'flex-start',
   },
 });

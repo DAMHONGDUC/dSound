@@ -1,25 +1,25 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { getData } from "helper";
-import { useState, useEffect, createRef } from "react";
-import SplashScreen from "react-native-splash-screen";
+import { NavigationContainer } from '@react-navigation/native';
+import { getData } from 'helper';
+import { useState, useEffect, createRef, FC } from 'react';
+import SplashScreen from 'react-native-splash-screen';
 import {
   ONBOARDING_COMPLETE,
   ONBOARDING_STATE,
   LOGIN_TOKEN,
-} from "constants/values";
-import AuthenticationStack from "./AuthenticationStack";
-import MainStack from "./MainStack";
-import OnboardingStack from "./OnboardingStack";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { AuthContext } from "constants/values";
-import { storeData } from "helper";
-import { setRefreshLibrary } from "stores/player/player-store";
-import { useDispatch } from "react-redux";
+} from 'constants/values';
+import AuthenticationStack from './authentication-stack';
+import MainStack from './main-stack';
+import OnboardingStack from './onboarding-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { AuthContext } from 'constants/values';
+import { storeData } from 'helper';
+import { setRefreshLibrary } from 'stores/player/player-store';
+import { useDispatch } from 'react-redux';
 
 const RootStack = createNativeStackNavigator();
 export const rootNavigationRef = createRef();
 
-export default function RootNavigation() {
+export default function RootNavigation(): JSX {
   const [isSignedIn, setisSignedIn] = useState(false);
   const [isOnboardingComplete, setisOnboardingComplete] = useState(false);
   const dispatch = useDispatch();
@@ -27,13 +27,13 @@ export default function RootNavigation() {
   useEffect(() => {
     SplashScreen.hide();
 
-    getData(LOGIN_TOKEN).then((value) => {
+    getData(LOGIN_TOKEN).then(value => {
       if (value) {
         setisSignedIn(true);
       }
     });
 
-    getData(ONBOARDING_STATE).then((value) => {
+    getData(ONBOARDING_STATE).then(value => {
       if (value === ONBOARDING_COMPLETE) {
         setisOnboardingComplete(true);
       }
@@ -60,8 +60,7 @@ export default function RootNavigation() {
       value={{
         handleAfterSignIn,
         handleAfterSignOut,
-      }}
-    >
+      }}>
       <NavigationContainer ref={rootNavigationRef}>
         <RootStack.Navigator>
           <>

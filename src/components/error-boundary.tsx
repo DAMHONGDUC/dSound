@@ -1,6 +1,6 @@
 import React from "react";
 import crashlytics from "@react-native-firebase/crashlytics";
-import SomethingWrong from "./SomethingWrong";
+import SomethingWrong from "./something-wrong";
 
 export default class ErrorBoundary extends React.Component {
   constructor(props) {

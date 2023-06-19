@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import BottomTabStack from "./BottomTabStack";
+import BottomTabStack from "./bottom-tab-stack";
 import PlayMusicPage from "screens/playmusic/play-music-page";
 import { firebase } from "@react-native-firebase/auth";
 import { useDispatch } from "react-redux";

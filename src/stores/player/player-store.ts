@@ -1,6 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
+interface IPlayerState {
+  currPlaylist: [];
+  currIndex: 0;
+  activeSong: {};
+  showBottomPlay: false;
+  isPlaying: false;
+  repeatMode: false;
+  shuffleMode: false;
+  updateNearlySong: false;
+  initFirstSong: false;
+  refreshLibrary: true;
+  lovedSongId: '';
+  currLovedSong: [];
+  navToDetailId: '';
+  popUpLibraryOptions: false;
+  replayPlaylist: false;
+}
+
+const initialStateL: IPlayerState = {
   currPlaylist: [],
   currIndex: 0,
   activeSong: {},
@@ -10,18 +28,16 @@ const initialState = {
   shuffleMode: false,
   updateNearlySong: false,
   initFirstSong: false,
-  uid: "",
   refreshLibrary: true,
-  lovedSongId: "",
+  lovedSongId: '',
   currLovedSong: [],
-  navToDetailId: "",
-  activeLibraryId: null,
+  navToDetailId: '',
   popUpLibraryOptions: false,
   replayPlaylist: false,
 };
 
 export const playerSlide = createSlice({
-  name: "player",
+  name: 'player',
   initialState: initialState,
   reducers: {
     setCurrPlaylist: (state, action) => {
@@ -59,7 +75,7 @@ export const playerSlide = createSlice({
     },
     setUid: (state, action) => {
       state.uid = action.payload;
-      state.lovedSongId = action.payload + "loved_song";
+      state.lovedSongId = action.payload + 'loved_song';
     },
     setLovedSongId: (state, action) => {
       state.lovedSongId = action.payload;

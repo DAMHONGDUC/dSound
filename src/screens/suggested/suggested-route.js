@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
-import SuggestedPlaylist from "./suggested-playlist";
-import { COLORS } from "constants/theme";
-import { getSuggestedPlaylist, getNewSong } from "api/PlaylistAPI";
-import NewSongRow from "./new-song-row";
-import Loading from "components/Loading";
-import { useNavigation } from "@react-navigation/native";
-import PlayerController from "helper/PlayerController";
-import { useSelector, useDispatch } from "react-redux";
-import { getAllSongByDocId } from "api/LibraryAPI";
+import { useEffect, useState } from 'react';
+import { StyleSheet, View, Text, ScrollView } from 'react-native';
+import SuggestedPlaylist from './suggested-playlist';
+import { COLORS } from 'constants/theme';
+import { getSuggestedPlaylist, getNewSong } from 'api/PlaylistAPI';
+import NewSongRow from './new-song-row';
+import Loading from 'components/Loading';
+import { useNavigation } from '@react-navigation/native';
+import PlayerController from 'helper/player-controller';
+import { useSelector, useDispatch } from 'react-redux';
+import { getAllSongByDocId } from 'api/LibraryAPI';
 
-import { setCurrLovedSong } from "stores/player/player-store";
+import { setCurrLovedSong } from 'stores/player/player-store';
 
 export default function SuggestedRoute() {
   const [dataSuggestedPlaylist, setdataSuggestedPlaylist] = useState();
@@ -20,7 +20,7 @@ export default function SuggestedRoute() {
   const dispatch = useDispatch();
 
   const { currPlaylist, lovedSongId, showBottomPlay } = useSelector(
-    (state) => state.player
+    state => state.player,
   );
 
   useEffect(() => {
@@ -74,8 +74,7 @@ export default function SuggestedRoute() {
   return isLoaded ? (
     <ScrollView>
       <View
-        style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}
-      >
+        style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
         <Text style={styles.title}>Mới Phát Hành</Text>
         <View style={styles.newSong}>
           {dataNewSong.songs.slice(0, 6).map((e, index) => (
@@ -96,7 +95,7 @@ export default function SuggestedRoute() {
             />
           ))}
         </View>
-        {dataSuggestedPlaylist.map((e) => (
+        {dataSuggestedPlaylist.map(e => (
           <SuggestedPlaylist key={e.id} playlists={e} />
         ))}
       </View>
@@ -109,7 +108,7 @@ export default function SuggestedRoute() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
+    flexDirection: 'column',
     backgroundColor: COLORS.white,
     paddingTop: 18,
     paddingLeft: 18,
@@ -117,15 +116,15 @@ const styles = StyleSheet.create({
   },
   newSong: {
     flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
     marginBottom: 20,
   },
   title: {
     color: COLORS.primary,
     marginBottom: 7,
     fontSize: 16,
-    fontWeight: "700",
+    fontWeight: '700',
   },
 });

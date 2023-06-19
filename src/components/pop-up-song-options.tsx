@@ -1,18 +1,18 @@
-import { View, StyleSheet, Text, TouchableHighlight } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-import Popover from "react-native-popover-view";
-import { useNavigation } from "@react-navigation/native";
-import PlayerController from "helper/PlayerController";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import FontAwesome from "react-native-vector-icons/FontAwesome";
-import { COLORS } from "constants/theme";
-import { removeASongWithDocId } from "api/LibraryAPI";
+import { View, StyleSheet, Text, TouchableHighlight } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import Popover from 'react-native-popover-view';
+import { useNavigation } from '@react-navigation/native';
+import PlayerController from 'helper/player-controller';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import { COLORS } from 'constants/theme';
+import { removeASongWithDocId } from 'api/LibraryAPI';
 import {
   setNavToDetailId,
   setRefreshLibrary,
   setShowBottomPlay,
-} from "stores/player/player-store";
-import { showToastAndroid } from "helper";
+} from 'stores/player/player-store';
+import { showToastAndroid } from 'helper';
 
 export default function PopUpSongOptions({
   currSongRow,
@@ -20,13 +20,13 @@ export default function PopUpSongOptions({
   setShowPopover,
 }) {
   const { lovedSongId, popUpLibraryOptions, currLovedSong, activeLibraryId } =
-    useSelector((state) => state.player);
+    useSelector(state => state.player);
   const navigation = useNavigation();
   const dispatch = useDispatch();
 
-  const getLovedStatus = (songid) => {
+  const getLovedStatus = songid => {
     if (currLovedSong) {
-      return currLovedSong.some((e) => e.id === songid);
+      return currLovedSong.some(e => e.id === songid);
     }
   };
 
@@ -45,8 +45,8 @@ export default function PopUpSongOptions({
   };
 
   const navToDetail = () => {
-    navigation.navigate("BottomTabStack", {
-      screen: "LibraryStack",
+    navigation.navigate('BottomTabStack', {
+      screen: 'LibraryStack',
     });
 
     dispatch(setRefreshLibrary(true));
@@ -59,10 +59,10 @@ export default function PopUpSongOptions({
     await removeASongWithDocId(
       currSongRow.id,
       activeLibraryId.id,
-      activeLibraryId.songs
+      activeLibraryId.songs,
     );
 
-    showToastAndroid("Đã xoá khỏi " + activeLibraryId.title);
+    showToastAndroid('Đã xoá khỏi ' + activeLibraryId.title);
 
     navToDetail();
   };
@@ -70,19 +70,17 @@ export default function PopUpSongOptions({
   const handleAddToLibrary = () => {
     setShowPopover(false);
 
-    navigation.navigate("AddToLibrary", { currSongRow: currSongRow });
+    navigation.navigate('AddToLibrary', { currSongRow: currSongRow });
   };
   return (
     <Popover
       isVisible={showPopover}
-      onRequestClose={() => setShowPopover(false)}
-    >
+      onRequestClose={() => setShowPopover(false)}>
       <View style={styles.popupContainer}>
         {!popUpLibraryOptions && (
           <TouchableHighlight
             underlayColor={COLORS.songRowClickColor}
-            onPress={handleAddToLibrary}
-          >
+            onPress={handleAddToLibrary}>
             <View style={styles.popupRow}>
               <MaterialIcons
                 name="playlist-add"
@@ -95,17 +93,16 @@ export default function PopUpSongOptions({
         )}
         <TouchableHighlight
           underlayColor={COLORS.songRowClickColor}
-          onPress={handleLovedSong}
-        >
+          onPress={handleLovedSong}>
           <View style={styles.popupRow}>
             <FontAwesome
-              name={getLovedStatus(currSongRow.id) ? "heart" : "heart-o"}
+              name={getLovedStatus(currSongRow.id) ? 'heart' : 'heart-o'}
               color={COLORS.primary}
               size={25}
               solid
             />
             <Text style={[styles.popupText, { marginLeft: 15 }]}>
-              {getLovedStatus(currSongRow.id) ? "Đã thích" : "Thích"}
+              {getLovedStatus(currSongRow.id) ? 'Đã thích' : 'Thích'}
             </Text>
           </View>
         </TouchableHighlight>
@@ -114,11 +111,10 @@ export default function PopUpSongOptions({
           activeLibraryId.id !== lovedSongId && (
             <TouchableHighlight
               underlayColor={COLORS.songRowClickColor}
-              onPress={deleteASong}
-            >
+              onPress={deleteASong}>
               <View style={styles.popupRow}>
                 <FontAwesome
-                  name={"remove"}
+                  name={'remove'}
                   color={COLORS.primary}
                   size={29}
                   solid
@@ -136,16 +132,16 @@ export default function PopUpSongOptions({
 
 const styles = StyleSheet.create({
   popupContainer: {
-    flexDirection: "column",
+    flexDirection: 'column',
     height: 150,
     width: 300,
-    justifyContent: "space-evenly",
+    justifyContent: 'space-evenly',
   },
   popupRow: {
-    flexDirection: "row",
+    flexDirection: 'row',
     // marginTop: 10,
     marginLeft: 15,
-    alignItems: "center",
+    alignItems: 'center',
   },
   popupText: {
     marginLeft: 5,

@@ -1,20 +1,20 @@
-import { COLORS } from "constants/theme";
-import { StyleSheet, View, Text, FlatList } from "react-native";
-import SeparateLine from "components/SeparateLine";
-import SongRow from "screens/song/song-row";
-import { get100Song } from "api/SongAPI";
-import { useEffect, useState } from "react";
-import Loading from "components/Loading";
-import PlayerController from "helper/PlayerController";
-import { useSelector } from "react-redux";
-import { pushMoreDataPlaylist, sleep } from "helper";
-import ListFooterLoading from "components/ListFooterLoading";
-import cloneDeep from "lodash.clonedeep";
+import { COLORS } from 'constants/theme';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
+import SeparateLine from 'components/separate-line';
+import SongRow from 'screens/song/song-row';
+import { get100Song } from 'api/SongAPI';
+import { useEffect, useState } from 'react';
+import Loading from 'components/Loading';
+import PlayerController from 'helper/player-controller';
+import { useSelector } from 'react-redux';
+import { pushMoreDataPlaylist, sleep } from 'helper';
+import ListFooterLoading from 'components/list-footer-loading';
+import cloneDeep from 'lodash.clonedeep';
 
 export default function SongsRoute({ navigation }) {
   const [data100Song, setdata100Song] = useState();
   const [currShowingData, setCurrShowingData] = useState({});
-  const { showBottomPlay, currPlaylist } = useSelector((state) => state.player);
+  const { showBottomPlay, currPlaylist } = useSelector(state => state.player);
   const [loadingMore, setLoadingMore] = useState(false);
   const delay = 1;
   const endOfData =
@@ -29,7 +29,7 @@ export default function SongsRoute({ navigation }) {
       const newData = pushMoreDataPlaylist(
         data,
         { id: data.id, songs: [] },
-        20
+        20,
       );
       setCurrShowingData(cloneDeep(newData));
     };
@@ -86,7 +86,7 @@ export default function SongsRoute({ navigation }) {
           <FlatList
             data={currShowingData.songs}
             renderItem={renderItem}
-            keyExtractor={(item) => item.id}
+            keyExtractor={item => item.id}
             onEndReachedThreshold={0.5}
             onEndReached={handleOnEndReached}
             ListFooterComponent={() => loadingMore && <ListFooterLoading />}
@@ -109,11 +109,11 @@ const styles = StyleSheet.create({
   mainText: {
     color: COLORS.primary,
     fontSize: 16,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   container2: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
   horizontal2: {
     padding: 0,

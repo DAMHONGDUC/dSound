@@ -1,4 +1,4 @@
-import { COLORS } from "constants/theme";
+import { COLORS } from 'constants/theme';
 import {
   View,
   Text,
@@ -6,28 +6,28 @@ import {
   Image,
   TouchableOpacity,
   TouchableHighlight,
-} from "react-native";
-import { useSelector } from "react-redux";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import Fontisto from "react-native-vector-icons/Fontisto";
-import LinearGradient from "react-native-linear-gradient";
-import PlayerController from "helper/PlayerController";
-import { useEffect, useState } from "react";
-import { rootNavigationRef } from "navigation/RootNavigation";
+} from 'react-native';
+import { useSelector } from 'react-redux';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import LinearGradient from 'react-native-linear-gradient';
+import PlayerController from 'helper/player-controller';
+import { useEffect, useState } from 'react';
+import { rootNavigationRef } from 'navigation/root-navigation';
 import TrackPlayer, {
   Event,
   usePlaybackState,
   useTrackPlayerEvents,
   useProgress,
   State,
-} from "react-native-track-player";
-import { useDispatch } from "react-redux";
+} from 'react-native-track-player';
+import { useDispatch } from 'react-redux';
 import {
   setCurrIndex,
   setActiveSong,
   setUpdateNearlySong,
   setInitFirstSong,
-} from "stores/player/player-store";
+} from 'stores/player/player-store';
 
 export default function BottomPlayer() {
   const {
@@ -42,14 +42,14 @@ export default function BottomPlayer() {
     lovedSongId,
     currLovedSong,
     replayPlaylist,
-  } = useSelector((state) => state.player);
+  } = useSelector(state => state.player);
 
   const progress = useProgress();
   const [progressBar, setprogressBar] = useState(0);
   const playBackState = usePlaybackState();
   const dispatch = useDispatch();
 
-  useTrackPlayerEvents([Event.PlaybackTrackChanged], async (event) => {
+  useTrackPlayerEvents([Event.PlaybackTrackChanged], async event => {
     if (event.type === Event.PlaybackTrackChanged && event.nextTrack != null) {
       let index = event.nextTrack;
       dispatch(setUpdateNearlySong(true));
@@ -88,7 +88,7 @@ export default function BottomPlayer() {
       await helperUpdateNearlySong(
         index + 1 <= currPlaylist.songs.length - 1,
         currPlaylist,
-        index + 1
+        index + 1,
       );
 
       dispatch(setUpdateNearlySong(false));
@@ -99,7 +99,7 @@ export default function BottomPlayer() {
     }
   };
 
-  useTrackPlayerEvents([Event.PlaybackState], async (event) => {
+  useTrackPlayerEvents([Event.PlaybackState], async event => {
     if (event.type === Event.PlaybackState) {
       switch (event.state) {
         case State.Playing:
@@ -142,8 +142,8 @@ export default function BottomPlayer() {
   };
 
   const handleBottomPlayerClick = () => {
-    rootNavigationRef.current?.navigate("MainStack", {
-      screen: "PlayMusicPage",
+    rootNavigationRef.current?.navigate('MainStack', {
+      screen: 'PlayMusicPage',
       params: { currSongId: activeSong.id },
     });
   };
@@ -156,9 +156,9 @@ export default function BottomPlayer() {
     ]);
   };
 
-  const getLovedStatus = (songid) => {
+  const getLovedStatus = songid => {
     if (currLovedSong) {
-      return currLovedSong.some((e) => e.id === songid);
+      return currLovedSong.some(e => e.id === songid);
     }
   };
 
@@ -169,8 +169,7 @@ export default function BottomPlayer() {
           <LinearGradient
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
-            colors={["#205295", "#0A2647", "#1A120B"]}
-          >
+            colors={['#205295', '#0A2647', '#1A120B']}>
             <View style={[styles.progress, { width: `${progressBar}%` }]} />
             <View style={styles.row}>
               <View style={styles.row2}>
@@ -187,10 +186,9 @@ export default function BottomPlayer() {
               <View style={styles.row3}>
                 <TouchableOpacity
                   onPress={handleLovedSong}
-                  style={styles.button}
-                >
+                  style={styles.button}>
                   <FontAwesome5
-                    name={"heart"}
+                    name={'heart'}
                     color={
                       getLovedStatus(activeSong.id)
                         ? COLORS.primary
@@ -203,18 +201,17 @@ export default function BottomPlayer() {
 
                 <TouchableOpacity
                   style={[styles.button, { marginRight: 5 }]}
-                  onPress={handlePlayPause}
-                >
+                  onPress={handlePlayPause}>
                   {playBackState === State.Playing ? (
                     <Fontisto
-                      name={"pause"}
+                      name={'pause'}
                       color={COLORS.white}
                       size={22}
                       solid
                     />
                   ) : (
                     <FontAwesome5
-                      name={"play"}
+                      name={'play'}
                       color={COLORS.white}
                       size={22}
                       solid
@@ -233,23 +230,23 @@ export default function BottomPlayer() {
 const styles = StyleSheet.create({
   constainer: {
     backgroundColor: COLORS.grey,
-    position: "absolute",
+    position: 'absolute',
     bottom: 55,
-    width: "100%",
+    width: '100%',
   },
   row: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     padding: 7,
   },
   row2: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   row3: {
-    flexDirection: "row",
-    alignItems: "stretch",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    justifyContent: 'space-between',
   },
   image: {
     width: 45,
@@ -262,15 +259,15 @@ const styles = StyleSheet.create({
   },
   titleSection: {
     marginLeft: 10,
-    flexDirection: "column",
-    justifyContent: "space-around",
+    flexDirection: 'column',
+    justifyContent: 'space-around',
     maxWidth: 180,
   },
   button: {
     //backgroundColor: COLORS.yellow,
     width: 60,
     height: 45,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

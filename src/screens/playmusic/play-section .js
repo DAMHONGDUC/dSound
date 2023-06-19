@@ -1,18 +1,18 @@
-import { View, TouchableOpacity, StyleSheet } from "react-native";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
-import { COLORS } from "constants/theme";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import PlayerController from "helper/PlayerController";
-import { useRoute } from "@react-navigation/native";
-import { State, usePlaybackState } from "react-native-track-player";
-import Feather from "react-native-vector-icons/Feather";
-import Ionicons from "react-native-vector-icons/Ionicons";
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import { COLORS } from 'constants/theme';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import PlayerController from 'helper/player-controller';
+import { useRoute } from '@react-navigation/native';
+import { State, usePlaybackState } from 'react-native-track-player';
+import Feather from 'react-native-vector-icons/Feather';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function PlaySection() {
   const { currIndex, currPlaylist, activeSong, repeatMode, shuffleMode } =
-    useSelector((state) => state.player);
+    useSelector(state => state.player);
   const route = useRoute();
   const playBackState = usePlaybackState();
 
@@ -61,7 +61,7 @@ export default function PlaySection() {
       <TouchableOpacity onPress={handlePlayPause}>
         <FontAwesome5
           name={
-            playBackState === State.Playing ? "pause-circle" : "play-circle"
+            playBackState === State.Playing ? 'pause-circle' : 'play-circle'
           }
           color={COLORS.primary}
           size={60}
@@ -84,9 +84,9 @@ export default function PlaySection() {
 
 const styles = StyleSheet.create({
   playSection: {
-    flexDirection: "row",
-    justifyContent: "space-around",
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     padding: 20,
-    alignItems: "center",
+    alignItems: 'center',
   },
 });

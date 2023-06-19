@@ -1,13 +1,13 @@
-import { COLORS } from "constants/theme";
-import { ARTIST_FLOW, LIBRARY_FLOW, NORMAL_FLOW } from "constants/values";
-import PlayerController from "helper/PlayerController";
-import { useEffect, useState } from "react";
-import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { setInitFirstSong } from "stores/player/player-store";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import { COLORS } from 'constants/theme';
+import { ARTIST_FLOW, LIBRARY_FLOW, NORMAL_FLOW } from 'constants/values';
+import PlayerController from 'helper/player-controller';
+import { useEffect, useState } from 'react';
+import { StyleSheet, View, Image, Text, TouchableOpacity } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { setInitFirstSong } from 'stores/player/player-store';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 export default function PlaylistHeader({
   playlist,
@@ -16,7 +16,7 @@ export default function PlaylistHeader({
   flow,
 }) {
   const { currPlaylist, shuffleMode, replayPlaylist } = useSelector(
-    (state) => state.player
+    state => state.player,
   );
   const dispatch = useDispatch();
   const [subTitle, setSubTitle] = useState();
@@ -24,13 +24,13 @@ export default function PlaylistHeader({
   useEffect(() => {
     switch (flow) {
       case NORMAL_FLOW:
-        setSubTitle(playlist.like + " Likes");
+        setSubTitle(playlist.like + ' Likes');
         break;
       case ARTIST_FLOW:
-        setSubTitle(playlist.totalFollow + " Follow");
+        setSubTitle(playlist.totalFollow + ' Follow');
         break;
       case LIBRARY_FLOW:
-        setSubTitle(playlist.numOfSong + " Bài hát");
+        setSubTitle(playlist.numOfSong + ' Bài hát');
         break;
     }
   }, [flow]);
@@ -98,8 +98,7 @@ export default function PlaylistHeader({
           </TouchableOpacity>
           <TouchableOpacity
             style={{ marginLeft: 15 }}
-            onPress={handleReplayPlaylist}
-          >
+            onPress={handleReplayPlaylist}>
             <MaterialIcons
               name="replay"
               color={replayPlaylist ? COLORS.primary : COLORS.black}
@@ -121,27 +120,27 @@ const styles = StyleSheet.create({
     width: 200,
     height: 200,
     margin: 15,
-    alignSelf: "center",
+    alignSelf: 'center',
     marginTop: 25,
   },
   name: {
     color: COLORS.black,
     fontSize: 21,
-    fontWeight: "500",
-    alignSelf: "center",
+    fontWeight: '500',
+    alignSelf: 'center',
   },
   creatorContainer: {
-    flexDirection: "column",
+    flexDirection: 'column',
     marginTop: 7,
-    alignSelf: "flex-start",
+    alignSelf: 'flex-start',
   },
   backButton: {
-    position: "absolute",
+    position: 'absolute',
     width: 60,
     height: 60,
     // backgroundColor: COLORS.yellow,
-    alignItems: "flex-start",
-    justifyContent: "center",
+    alignItems: 'flex-start',
+    justifyContent: 'center',
   },
   description: {
     color: COLORS.title,
@@ -153,29 +152,29 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 5,
   },
   playlistOption: {
-    flexDirection: "row",
-    position: "absolute",
+    flexDirection: 'row',
+    position: 'absolute',
     left: 0,
-    alignItems: "center",
+    alignItems: 'center',
   },
   button: {
     backgroundColor: COLORS.primary,
     height: 50,
     width: 130,
     borderRadius: 50,
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
   },
   buttonText: {
-    color: "white",
-    fontWeight: "bold",
+    color: 'white',
+    fontWeight: 'bold',
     fontSize: 20,
   },
 });
