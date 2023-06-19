@@ -13,7 +13,7 @@ import {
   FAVORITE_PLAYLIST_COLLECTION,
 } from "constants/values";
 import { useDispatch } from "react-redux";
-import { setRefreshLibrary } from "redux/slices/playerSlide";
+import { setRefreshLibrary } from "stores/player/player-store";
 import { showToastAndroid } from "helper";
 import { checkDocExist } from "api/LibraryAPI";
 import { Alert } from "react-native";

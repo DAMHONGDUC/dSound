@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getPlaylistByUid, getAllSongByDocId } from "api/LibraryAPI";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setRefreshLibrary } from "redux/slices/playerSlide";
+import { setRefreshLibrary } from "stores/player/player-store";
 import { useNavigation } from "@react-navigation/native";
 import LibraryComponent from "./LibraryComponent";
 

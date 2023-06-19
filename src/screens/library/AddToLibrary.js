@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setRefreshLibrary, setShowBottomPlay } from "redux/slices/playerSlide";
+import {
+  setRefreshLibrary,
+  setShowBottomPlay,
+} from "stores/player/player-store";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import LibraryComponent from "./LibraryComponent";
 import { View, StyleSheet, TouchableHighlight } from "react-native";

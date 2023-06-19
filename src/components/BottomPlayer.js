@@ -27,7 +27,7 @@ import {
   setActiveSong,
   setUpdateNearlySong,
   setInitFirstSong,
-} from "redux/slices/playerSlide";
+} from "stores/player/player-store";
 
 export default function BottomPlayer() {
   const {

@@ -3,7 +3,7 @@ import BottomTabStack from "./BottomTabStack";
 import PlayMusicPage from "screens/playmusic/PlayMusicPage";
 import { firebase } from "@react-native-firebase/auth";
 import { useDispatch } from "react-redux";
-import { setUid, setLovedSongId } from "redux/slices/playerSlide";
+import { setUid, setLovedSongId } from "stores/player/player-store";
 import { useEffect } from "react";
 import { createNewPlaylist } from "api/LibraryAPI";
 import { LOVED_SONG_PLAYLIST } from "constants/values";

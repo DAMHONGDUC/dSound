@@ -12,7 +12,10 @@ import Loading from "components/Loading";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
 import { AuthContext } from "constants/values";
-import { setShowBottomPlay, setRefreshLibrary } from "redux/slices/playerSlide";
+import {
+  setShowBottomPlay,
+  setRefreshLibrary,
+} from "stores/player/player-store";
 import { useDispatch } from "react-redux";
 import TrackPlayer from "react-native-track-player";
 

@@ -2,7 +2,7 @@ import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { View, TouchableOpacity, StyleSheet, BackHandler } from "react-native";
 import { COLORS } from "constants/theme";
 import { useDispatch, useSelector } from "react-redux";
-import { setShowBottomPlay } from "redux/slices/playerSlide";
+import { setShowBottomPlay } from "stores/player/player-store";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { useCallback } from "react";
 import Feather from "react-native-vector-icons/Feather";

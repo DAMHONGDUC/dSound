@@ -13,7 +13,7 @@ import OnboardingStack from "./OnboardingStack";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { AuthContext } from "constants/values";
 import { storeData } from "helper";
-import { setRefreshLibrary } from "redux/slices/playerSlide";
+import { setRefreshLibrary } from "stores/player/player-store";
 import { useDispatch } from "react-redux";
 
 const RootStack = createNativeStackNavigator();

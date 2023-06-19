@@ -10,7 +10,7 @@ import PlayerController from "helper/PlayerController";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllSongByDocId } from "api/LibraryAPI";
 
-import { setCurrLovedSong } from "redux/slices/playerSlide";
+import { setCurrLovedSong } from "stores/player/player-store";
 
 export default function SuggestedRoute() {
   const [dataSuggestedPlaylist, setdataSuggestedPlaylist] = useState();

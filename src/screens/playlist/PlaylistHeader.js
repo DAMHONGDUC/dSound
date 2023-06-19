@@ -6,7 +6,7 @@ import { StyleSheet, View, Image, Text, TouchableOpacity } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setInitFirstSong } from "redux/slices/playerSlide";
+import { setInitFirstSong } from "stores/player/player-store";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 
 export default function PlaylistHeader({

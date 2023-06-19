@@ -11,7 +11,7 @@ import {
   setNavToDetailId,
   setRefreshLibrary,
   setShowBottomPlay,
-} from "redux/slices/playerSlide";
+} from "stores/player/player-store";
 import { showToastAndroid } from "helper";
 
 export default function PopUpSongOptions({

@@ -9,7 +9,7 @@ import SliderSection from "./SliderSection";
 import LyricSection from "./LyricSection";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useCallback } from "react";
-import { setShowBottomPlay } from "redux/slices/playerSlide";
+import { setShowBottomPlay } from "stores/player/player-store";
 import { useFocusEffect } from "@react-navigation/native";
 
 export default function PlayMusic() {

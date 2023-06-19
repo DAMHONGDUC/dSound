@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { usePlaybackState, State } from "react-native-track-player";
 import PopUpSongOptions from "components/PopUpSongOptions";
 import { useState } from "react";
-import { setInitFirstSong } from "redux/slices/playerSlide";
+import { setInitFirstSong } from "stores/player/player-store";
 
 export default function SongRow({
   image,

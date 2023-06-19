@@ -11,8 +11,8 @@ import {
   setRefreshLibrary,
   setReplayPlaylist,
   setInitFirstSong,
-} from "redux/slices/playerSlide";
-import { store } from "redux/store";
+} from "stores/player/player-store";
+import { store } from "stores";
 import { RepeatMode } from "react-native-track-player";
 import { randomInRange } from "helper";
 import cloneDeep from "lodash.clonedeep";

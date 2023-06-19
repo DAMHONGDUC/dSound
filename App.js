@@ -1,5 +1,5 @@
 import RootNavigation from "navigation/RootNavigation";
-import { store } from "redux/store";
+import { store } from "stores";
 import { Provider } from "react-redux";
 import { useEffect } from "react";
 import TrackPlayer from "react-native-track-player";

@@ -11,7 +11,7 @@ import { LIBRARY_FLOW } from "constants/values";
 import {
   setActiveLibraryId,
   setPopUpLibraryOptions,
-} from "redux/slices/playerSlide";
+} from "stores/player/player-store";
 import { getAllSongByDocIdAndSetUp } from "api/LibraryAPI";
 import { useFocusEffect } from "@react-navigation/native";
 

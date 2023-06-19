@@ -10,7 +10,10 @@ import { COLORS } from "constants/theme";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { setNavToDetailId, setRefreshLibrary } from "redux/slices/playerSlide";
+import {
+  setNavToDetailId,
+  setRefreshLibrary,
+} from "stores/player/player-store";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { removeWithDocId } from "api/LibraryAPI";
 import { FAVORITE_PLAYLIST_COLLECTION } from "constants/values";
