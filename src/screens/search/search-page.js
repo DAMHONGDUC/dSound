@@ -8,7 +8,7 @@ import {
   TextInput,
   Keyboard,
 } from "react-native";
-import SongRow from "screens/song/SongRow";
+import SongRow from "screens/song/song-row";
 import Loading from "components/Loading";
 import PlayerController from "helper/PlayerController";
 import { useSelector } from "react-redux";

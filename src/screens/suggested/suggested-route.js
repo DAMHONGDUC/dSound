@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, View, Text, ScrollView } from "react-native";
-import SuggestedPlaylist from "./SuggestedPlaylist";
+import SuggestedPlaylist from "./suggested-playlist";
 import { COLORS } from "constants/theme";
 import { getSuggestedPlaylist, getNewSong } from "api/PlaylistAPI";
-import NewSongRow from "./NewSongRow";
+import NewSongRow from "./new-song-row";
 import Loading from "components/Loading";
 import { useNavigation } from "@react-navigation/native";
 import PlayerController from "helper/PlayerController";

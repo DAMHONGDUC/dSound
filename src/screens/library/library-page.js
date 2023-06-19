@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setRefreshLibrary } from "stores/player/player-store";
 import { useNavigation } from "@react-navigation/native";
-import LibraryComponent from "./LibraryComponent";
+import LibraryComponent from "./library-component";
 
 export default function LibraryPage() {
   const navigation = useNavigation();

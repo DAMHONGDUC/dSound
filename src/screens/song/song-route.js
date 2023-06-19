@@ -1,56 +1,62 @@
 import { COLORS } from "constants/theme";
 import { StyleSheet, View, Text, FlatList } from "react-native";
 import SeparateLine from "components/SeparateLine";
-import ArtistRow from "screens/artist/ArtistRow";
+import SongRow from "screens/song/song-row";
+import { get100Song } from "api/SongAPI";
 import { useEffect, useState } from "react";
-import { getArtist } from "api/ArtistAPI";
 import Loading from "components/Loading";
-import { useNavigation } from "@react-navigation/native";
-import { ARTIST_FLOW } from "constants/values";
+import PlayerController from "helper/PlayerController";
 import { useSelector } from "react-redux";
-import { pushMoreDataArtist, sleep } from "helper";
+import { pushMoreDataPlaylist, sleep } from "helper";
 import ListFooterLoading from "components/ListFooterLoading";
 import cloneDeep from "lodash.clonedeep";
 
-export default function ArtistsRoute() {
-  const [dataArtist, setdataArtist] = useState();
-  const navigation = useNavigation();
-  const { showBottomPlay } = useSelector((state) => state.player);
+export default function SongsRoute({ navigation }) {
+  const [data100Song, setdata100Song] = useState();
   const [currShowingData, setCurrShowingData] = useState({});
+  const { showBottomPlay, currPlaylist } = useSelector((state) => state.player);
   const [loadingMore, setLoadingMore] = useState(false);
   const delay = 1;
-  const endOfData = currShowingData?.length === dataArtist?.length;
+  const endOfData =
+    currShowingData?.songs?.length === data100Song?.songs?.length;
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getArtist();
-      const dataSlice = data.slice(0, 100);
-      setdataArtist(dataSlice);
+      const data = await get100Song();
 
-      const newData = pushMoreDataArtist(dataSlice, [], 20);
+      setdata100Song(data);
+
+      const newData = pushMoreDataPlaylist(
+        data,
+        { id: data.id, songs: [] },
+        20
+      );
       setCurrShowingData(cloneDeep(newData));
     };
 
     fetchData();
   }, []);
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item, index }) => {
     return (
-      <ArtistRow
-        onClick={() => {
-          navigation.navigate("PlaylistPage", {
-            id: item.id,
-            type: ARTIST_FLOW,
-            props: {
-              image: item.thumbnailM,
-              title: item.name,
-              totalFollow: item.totalFollow,
-            },
-          });
-        }}
-        image={{ uri: item.thumbnailM }}
-        name={item.name}
-        totalFollow={item.totalFollow}
+      <SongRow
+        onClick={() =>
+          PlayerController.onSongRowClick([
+            currPlaylist,
+            data100Song,
+            index,
+            item.id,
+            navigation,
+          ])
+        }
+        image={{ uri: item.artwork }}
+        name={item.title}
+        artist={item.artist}
+        duration={item.duration}
+        id={item.id}
+        item={item}
+        index={index}
+        status={data100Song.id === currPlaylist.id}
       />
     );
   };
@@ -61,7 +67,7 @@ export default function ArtistsRoute() {
 
       await sleep(delay * 1000);
 
-      const newData = pushMoreDataArtist(dataArtist, currShowingData, 20);
+      const newData = pushMoreDataPlaylist(data100Song, currShowingData, 20);
       setCurrShowingData(cloneDeep(newData));
 
       setLoadingMore(false);
@@ -70,12 +76,15 @@ export default function ArtistsRoute() {
 
   return (
     <View style={[styles.container, { marginBottom: showBottomPlay ? 60 : 0 }]}>
-      {dataArtist ? (
+      {data100Song ? (
         <>
-          <Text style={styles.mainText}>Top {dataArtist.length} artist</Text>
+          <Text style={styles.mainText}>
+            Top {data100Song.songs.length} song
+          </Text>
           <SeparateLine />
+
           <FlatList
-            data={currShowingData}
+            data={currShowingData.songs}
             renderItem={renderItem}
             keyExtractor={(item) => item.id}
             onEndReachedThreshold={0.5}
@@ -101,5 +110,12 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
     fontSize: 16,
     fontWeight: "bold",
+  },
+  container2: {
+    flex: 1,
+    justifyContent: "center",
+  },
+  horizontal2: {
+    padding: 0,
   },
 });

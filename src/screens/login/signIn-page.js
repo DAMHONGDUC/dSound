@@ -1,44 +1,44 @@
 import { useContext } from "react";
 import { View, Text, StyleSheet, StatusBar } from "react-native";
+import { handleFacebookLogin, handleGoogleLogin } from "./authen-function";
 import { COLORS, SIZES } from "constants/theme";
 import {
   FacebookSocialButton,
   GoogleSocialButton,
 } from "react-native-social-buttons";
-import { handleFacebookLogin, handleGoogleLogin } from "./AuthenFunction";
 import { AuthContext } from "constants/values";
 
-export default function RegisterPage({ navigation }) {
+export default function SignInPage({ navigation }) {
   const { handleAfterSignIn } = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={COLORS.primary} barStyle="light-content" />
+      <StatusBar backgroundColor={"#0081C9"} barStyle="light-content" />
 
       <View style={styles.header}>
-        <Text style={styles.title}>Register Now!</Text>
+        <Text style={styles.title}>Sign in Now!</Text>
       </View>
 
       <View style={styles.footer}>
         <FacebookSocialButton
-          buttonText="Register with Facebook"
+          buttonText="Sign in with Facebook"
           buttonViewStyle={styles.btnFBtyle}
           onPress={() => handleFacebookLogin(handleAfterSignIn)}
         />
         <GoogleSocialButton
-          buttonText="Register with Google"
+          buttonText="Sign in with Google"
           buttonViewStyle={styles.btnGGtyle}
           onPress={() => handleGoogleLogin(handleAfterSignIn)}
         />
 
         <Text style={styles.textLink}>
-          I'm already a member.
+          'I'm a new member.
           <Text
             style={styles.textLinkRight}
-            onPress={() => navigation.navigate("SignIn")}
+            onPress={() => navigation.navigate("Register")}
           >
             {" "}
-            Sign In
+            Register
           </Text>
         </Text>
       </View>
@@ -64,13 +64,18 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    backgroundColor: COLORS.primary,
+    backgroundColor: "#0081C9",
   },
   title: {
     fontWeight: "600",
     fontSize: SIZES.h0,
     color: COLORS.white,
     marginBottom: 50,
+  },
+  text_header: {
+    color: "#fff",
+    fontWeight: "bold",
+    fontSize: 30,
   },
   btnFBtyle: {
     height: 50,

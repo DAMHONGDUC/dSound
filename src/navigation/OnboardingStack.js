@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import OnboadingPage from "screens/onboading/OnboadingPage";
+import OnboadingPage from "screens/onboading/onboading-page";
 
 const Stack = createNativeStackNavigator();
 

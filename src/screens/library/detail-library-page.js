@@ -1,10 +1,10 @@
 import { COLORS } from "constants/theme";
 import { useEffect, useState, useCallback } from "react";
 import { StyleSheet, View, FlatList, Text } from "react-native";
-import PlaylistHeader from "screens/playlist/PlaylistHeader";
+import PlaylistHeader from "screens/playlist/playlist-header";
 import { useDispatch, useSelector } from "react-redux";
 import Loading from "components/Loading";
-import SongRow from "screens/song/SongRow";
+import SongRow from "screens/song/song-row";
 import PlayerController from "helper/PlayerController";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { LIBRARY_FLOW } from "constants/values";

@@ -1,7 +1,7 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import SuggestedRoute from "screens/suggested/SuggestedRoute";
-import SongsRoute from "screens/song/SongsRoute";
-import ArtistsRoute from "screens/artist/ArtistsRoute";
+import SuggestedRoute from "screens/suggested/suggested-route";
+import SongsRoute from "screens/song/song-route";
+import ArtistsRoute from "screens/artist/artist-route";
 import { useState } from "react";
 import { View, StyleSheet, TouchableOpacity, Animated } from "react-native";
 import { COLORS } from "constants/theme";

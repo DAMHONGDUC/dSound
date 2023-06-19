@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { COLORS } from "constants/theme";
-import PlaylistRow from "./PlaylistRow";
+import PlaylistRow from "./playlist-row";
 import { useNavigation } from "@react-navigation/native";
 import { NORMAL_FLOW } from "constants/values";
 

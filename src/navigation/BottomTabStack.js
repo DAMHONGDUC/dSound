@@ -1,10 +1,10 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import UserDetailPage from "screens/user/UserDetailPage";
+import UserDetailPage from "screens/user/user-detail-page";
 import Foundation from "react-native-vector-icons/Foundation";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { COLORS } from "constants/theme";
-import SearchPage from "screens/search/searchPage";
+import SearchPage from "screens/search/search-page";
 import HomeStack from "./HomeStack";
 import LibraryStack from "./LibraryStack";
 

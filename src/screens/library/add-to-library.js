@@ -6,7 +6,7 @@ import {
   setShowBottomPlay,
 } from "stores/player/player-store";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import LibraryComponent from "./LibraryComponent";
+import LibraryComponent from "./library-component";
 import { View, StyleSheet, TouchableHighlight } from "react-native";
 import { COLORS } from "constants/theme";
 import Ionicons from "react-native-vector-icons/Ionicons";

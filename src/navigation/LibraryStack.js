@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LibraryPage from "screens/library/LibraryPage";
-import DetailLibraryPage from "screens/library/DetailLibraryPage";
+import LibraryPage from "screens/library/library-page";
+import DetailLibraryPage from "screens/library/detail-library-page";
 
 const Stack = createNativeStackNavigator();
 

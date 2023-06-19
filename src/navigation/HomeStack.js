@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import PlaylistPage from "screens/playlist/PlaylistPage";
-import HomePage from "screens/home/HomePage";
-import DetailLibraryPage from "screens/library/DetailLibraryPage";
+import PlaylistPage from "screens/playlist/playlist-page";
+import HomePage from "screens/home/home-page";
+import DetailLibraryPage from "screens/library/detail-library-page";
 
 const Stack = createNativeStackNavigator();
 
